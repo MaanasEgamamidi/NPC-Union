@@ -59,6 +59,6 @@ The player's skill and knowledge should be the main thing that grows across runs
 
 ## Sources
 
-- English Wikipedia pages linked in the table above (years and developers). Links are standard Wikipedia URLs; not fetched in this session, so treat each as UNVERIFIED until checked.
-- Berlin Interpretation (2008), RogueBasin: https://www.roguebasin.com/index.php/Berlin_Interpretation UNVERIFIED.
+- English Wikipedia pages linked in the table above (years and developers). All seven links returned HTTP 200 on 2026-11-05; page contents were not re-read in that check.
+- Berlin Interpretation (2008), RogueBasin: https://www.roguebasin.com/index.php/Berlin_Interpretation (returned HTTP 200 on 2026-11-05).
 - Specific numbers in the agent file (Slay the Spire's 20 Ascension levels, Vampire Survivors' 30-minute standard stage) are from memory of the games; recheck against current patch notes.

@@ -58,5 +58,5 @@ The meta loop is learn, lose, lab (training mode), and come back with an answer.
 ## Sources
 
 - English Wikipedia pages for each game in the table above (links listed in the table).
-- GGPO rollback library by Tony Cannon: https://en.wikipedia.org/wiki/GGPO UNVERIFIED
+- GGPO rollback library by Tony Cannon: https://en.wikipedia.org/wiki/GGPO
 - Official patch notes from each publisher for version-specific frame data and balance changes.

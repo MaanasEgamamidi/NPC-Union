@@ -30,7 +30,7 @@ Read the next obstacle, move and jump to answer it, land or fail, retry quickly,
 | Super Mario Odyssey | 2017 | Nintendo EPD | Capture mechanic; dense 3D sandboxes; many small goals | https://en.wikipedia.org/wiki/Super_Mario_Odyssey |
 | Celeste | 2018 | Maddy Makes Games (credited at release as Matt Makes Games) | Coyote time, jump buffer, corner correction; Assist Mode; dash refills | https://en.wikipedia.org/wiki/Celeste_(video_game) |
 
-Links are standard English Wikipedia page titles; not fetched in this pass (UNVERIFIED).
+All seven Wikipedia links returned HTTP 200 on 2026-11-05.
 
 ## Common failures
 
@@ -54,7 +54,7 @@ Links are standard English Wikipedia page titles; not fetched in this pass (UNVE
 
 ## Sources
 
-- English Wikipedia pages for each reference game (links above, UNVERIFIED).
+- English Wikipedia pages for each reference game (links above, checked 2026-11-05).
 - Itay Keren, "Scroll Back: The Theory and Practice of Cameras in Side-Scrollers", GDC 2015 (GDC Vault, URL UNVERIFIED).
 - Derek Yu, "Spelunky" (Boss Fight Books, 2016), on room-template generation.
 - Maddy Thorson's public notes on Celeste's forgiveness mechanics (coyote time, jump buffering, corner correction); exact post URL UNVERIFIED.

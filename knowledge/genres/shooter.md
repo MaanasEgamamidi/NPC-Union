@@ -41,7 +41,7 @@ Outer loops sit on top: rounds and buy phases (Counter-Strike, Valorant), match 
 | Fortnite | 2017 | Epic Games | Third-person shooting plus building, seasons and battle pass, cross-platform live service | https://en.wikipedia.org/wiki/Fortnite |
 | Valorant | 2020 | Riot Games | Tactical round-based shooting combined with hero abilities, 128-tick servers, anti-cheat stance | https://en.wikipedia.org/wiki/Valorant |
 
-Link check: see Sources for which links were fetched on 2026-11-05.
+Link check: all eight Wikipedia links returned HTTP 200 on 2026-11-05. Game details in the table were written from knowledge and not re-read against each page.
 
 ## Common failures
 
@@ -66,7 +66,7 @@ Link check: see Sources for which links were fetched on 2026-11-05.
 
 ## Sources
 
-- Wikipedia pages listed in the table. Links fetched on 2026-11-05 are noted below; any not listed as checked are UNVERIFIED.
+- Wikipedia pages listed in the table, all fetched (HTTP 200) on 2026-11-05.
 - Jaime Griesemer's "30 seconds of fun" framing for Halo combat is widely cited in design writing; primary source not checked (UNVERIFIED).
 - Valorant 128-tick servers: stated by Riot at launch; check current Riot sources before citing (UNVERIFIED).
 - Patch-dependent numbers (weapon damage, fire rates, aim assist values) change often. Check publisher patch notes before citing.

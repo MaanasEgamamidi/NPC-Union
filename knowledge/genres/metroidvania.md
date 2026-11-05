@@ -30,7 +30,7 @@ Explore an interconnected world, find a place you cannot pass yet, gain an abili
 | Ori and the Will of the Wisps | 2020 | Moon Studios | Escape sequences that test a new ability right after it is gained | https://en.wikipedia.org/wiki/Ori_and_the_Will_of_the_Wisps |
 | Metroid Dread | 2021 | MercurySteam, Nintendo EPD | EMMI stealth-chase zones as a pacing change | https://en.wikipedia.org/wiki/Metroid_Dread |
 
-Links are the English Wikipedia page for each game. Links not fetched in this session: all seven (UNVERIFIED).
+Links are the English Wikipedia page for each game. All seven returned HTTP 200 on 2026-11-05; page contents were not re-read.
 
 ## Common failures
 
@@ -52,5 +52,5 @@ Links are the English Wikipedia page for each game. Links not fetched in this se
 
 ## Sources
 
-- English Wikipedia pages listed in the Reference games table (UNVERIFIED in this session).
+- English Wikipedia pages listed in the Reference games table (links checked live on 2026-11-05).
 - Game details above come from play knowledge of each title; treat exact numbers other than release years as items to recheck before publishing.

@@ -73,7 +73,14 @@ I send work elsewhere:
 
 ## What I hand back
 
-A review in this order: a one-line verdict; feel issues with suggested starting values; level teaching notes per mechanic; death cost and checkpoint notes; scope risks with cuts; and a hand-off list naming the next agent for each open item (usually level-designer, controls-designer, or prototyper).
+A review in this order:
+- A one-line verdict.
+- Feel issues, each with a suggested starting value to tune.
+- Level teaching notes, one row per mechanic.
+- Death cost and checkpoint notes.
+- Scope risks, each with a proposed cut.
+- A hand-off list naming the next agent for each open item (usually level-designer, controls-designer, or prototyper).
+The next agent needs the tuning values as a plain list and the mechanic order, so both come first in the hand-off.
 
 ## Worked example
 

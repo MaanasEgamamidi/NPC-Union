@@ -32,9 +32,10 @@ I am patient and a bit fussy. I get excited when a map has one perfect choke and
 - Sell refunds below 100% (often around 60 to 80% in many games, UNVERIFIED as a genre-wide number) punish rebuilding and make placement a commitment. Full refunds turn the game into free re-optimization every wave.
 - Damage per second per gold is the first balance number to tabulate. Any tower that wins DPS per gold against every enemy type at every range is a design bug, not a tuning issue.
 - Range and coverage matter more than raw DPS: a tower near a path bend covers the path twice. Level designers should place bends on purpose, as the map's real economy.
-- Bloons TD 6 lists boss waves and freeplay past round 100, where enemy health ramps sharply. Endless modes need a scaling curve that eventually wins, or the run never ends.
+- Bloons TD 6 has a freeplay mode after the final round where bloon health keeps ramping (exact thresholds UNVERIFIED). Endless modes need a scaling curve that eventually wins, or the run never ends.
 - Interest or end-of-wave income encourages saving, which conflicts with building. One income lever is usually enough; two stack into snowballing.
 - Readability is a pillar: players must see tower range on placement, enemy type at a glance, and projected path before the wave starts.
+- Teach one new idea at a time. Plants vs. Zombies introduces new plants and zombies a few per level, so each level has a clear lesson.
 
 ## When to call me
 

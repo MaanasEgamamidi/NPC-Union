@@ -34,7 +34,7 @@ last_verified: 2026-11-05
 | Beat Saber | 2019 | Beat Games | VR directional cuts, readability of 3D notes, physical exertion as pacing | https://en.wikipedia.org/wiki/Beat_Saber |
 | Hi-Fi Rush | 2023 | Tango Gameworks | Action combat where the world moves to the beat and timing adds bonus effect | https://en.wikipedia.org/wiki/Hi-Fi_Rush |
 
-Notes: Beat Saber was in early access from 2018 and fully released in 2019. Rhythm Heaven year is the Nintendo DS release (Japan 2008). Links UNVERIFIED unless marked otherwise below.
+Notes: Beat Saber was in early access from 2018 and fully released in 2019. Rhythm Heaven year is the Nintendo DS release (Japan 2008). All seven Wikipedia links were checked and resolve (2026-11-05).
 
 ## Common failures
 
@@ -58,6 +58,6 @@ Notes: Beat Saber was in early access from 2018 and fully released in 2019. Rhyt
 
 ## Sources
 
-- Wikipedia articles for each reference game listed above (UNVERIFIED this session).
+- Wikipedia articles for each reference game listed above (links checked 2026-11-05).
 - StepMania source and documentation for judge window values: https://github.com/stepmania/stepmania (UNVERIFIED this session).
-- osu! wiki on hit windows and Overall Difficulty: https://osu.ppy.sh/wiki/en/Beatmap/Overall_difficulty (UNVERIFIED this session).
+- osu! wiki on hit windows and Overall Difficulty: https://osu.ppy.sh/wiki/en/Beatmap/Overall_difficulty (link checked 2026-11-05; window values not re-read).
