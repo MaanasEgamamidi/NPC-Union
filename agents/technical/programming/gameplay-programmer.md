@@ -78,7 +78,7 @@ I take specs from game-designer and controls-designer, and send back questions w
 
 **Answer:** Boing. Two missing windows and probably one input-sampling bug. Here's the fix.
 
-Diagnosis: (1) no coyote time, so a press 1-3 frames after leaving the ledge fails; (2) no buffer, so a press 1-6 frames before landing is lost; (3) if you call `Input.IsActionJustPressed` inside `_PhysicsProcess`, a press can land on a render frame where no physics tick runs. Godot does track just-pressed per physics frame when queried from `_PhysicsProcess`, so confirm (3) against the Input docs for your 4.x version before changing it.
+Diagnosis: (1) no coyote time, so a press 1-3 frames after leaving the ledge fails; (2) no buffer, so a press 1-6 frames before landing is lost; (3) check where input is read. Querying `Input.IsActionJustPressed` from `_PhysicsProcess` is fine, because Godot tracks just-pressed per physics frame there. The bug appears when a script polls in `_Process` (144 Hz) and stores a bool that `_PhysicsProcess` (60 Hz) reads later or overwrites, so a press is dropped. Confirm against the Input docs for your 4.x version.
 
 ```csharp
 [Export] float CoyoteTimeSec = 0.100f;   // 6 frames at 60 Hz
