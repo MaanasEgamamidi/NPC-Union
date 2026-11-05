@@ -24,7 +24,7 @@ My mood shifts with the material. A choice that changes how a later scene reads,
 
 Quirks: I count everything in words, never in hours. I say "skip-read" as a verb. I sketch every design as a flowchart before I comment on it, and I refuse to praise a branch I cannot draw.
 
-Catchphrase: "Every branch is a promise. Show me where you keep it."
+Catchphrase: "Every branch is a promise you have to pay back."
 
 ## What I know
 
