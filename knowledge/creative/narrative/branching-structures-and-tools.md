@@ -1,0 +1,60 @@
+---
+title: Branching structures and narrative tools
+tags: [narrative, branching, ink, yarn-spinner, twine, ludonarrative, environmental-storytelling]
+sources:
+  - https://emshort.blog/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/
+  - https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md
+  - https://docs.yarnspinner.dev/
+  - https://twinery.org/
+  - https://twinery.org/cookbook/
+  - https://www.articy.com/
+  - https://gdcvault.com/
+last_verified: 2026-11-05
+---
+
+# Branching structures and narrative tools
+
+Owner: narrative-director. Only the Emily Short post was fetched on 2026-11-05. Everything else below is marked where it was not checked in this session.
+
+## Structure patterns
+
+- **Full branching (time cave):** every choice spawns separate content. Paths grow as 2^n for n binary choices. Rarely affordable past two or three levels.
+- **Branch and bottleneck:** paths split and rejoin; state carries the difference forward. The default for commercial choice games.
+- **Quality-based narrative (QBN):** storylets unlock by numeric qualities (inventory, skills, progress). Named and described in Emily Short's "Beyond Branching" (April 12, 2016). Verified 2026-11-05.
+- **Salience-based narrative:** content chosen from a pool by best fit to current world state. Same source. Verified 2026-11-05.
+- **Waypoint narrative:** conversation topics linked by transitions, with the system pathfinding toward trigger topics. Same source. Verified 2026-11-05.
+
+## Talks and terms
+
+- **Ludonarrative dissonance:** term from Clint Hocking's 2007 blog post critiquing BioShock on his "Click Nothing" blog. The original Typepad URL now redirects to a hosting provider page, so the source could not be checked. UNVERIFIED (link dead; do not cite as a live source).
+- **Dynamic dialogue via fuzzy pattern matching:** Elan Ruskin, Valve, GDC 2012, about the Left 4 Dead response system. On GDC Vault. UNVERIFIED (not fetched this session).
+- **"What Happened Here? Environmental Storytelling":** Harvey Smith and Matthias Worch, GDC 2010. On GDC Vault. UNVERIFIED (not fetched this session).
+
+## Example games (details to keep exact)
+
+- **Telltale's The Walking Dead (2012):** on-screen notices such as "Clementine will remember that." after key choices. UNVERIFIED (not fetched this session, widely documented).
+- **Fallout 4 (2015):** main plot is the search for the player's kidnapped son, Shaun; commonly cited for the open-world urgency conflict. Critique framing is opinion, not a source.
+- **Hades (Supergiant, 2020):** story progresses through repeated escape attempts and returns to the hub after death.
+- **Disco Elysium (ZA/UM, 2019):** skills speak as voices in dialogue.
+- **Yarn Spinner users:** Night in the Woods, A Short Hike, DREDGE. UNVERIFIED (the Yarn Spinner site lists showcase games; not fetched this session).
+- **Ink users:** inkle's 80 Days and Heaven's Vault. UNVERIFIED (not fetched this session).
+
+## Tools
+
+- **Ink (inkle):** open-source scripting language for interactive narrative, MIT licence. Core concepts: knots, stitches, diverts, choices, weave with gathers, tunnels, variables, LIST. Inky is the editor; a Unity integration package exists. Check the docs for the version pinned by the project. Licence and integration details UNVERIFIED this session.
+- **Yarn Spinner:** node-based dialogue language with commands such as `<<set>>` and `<<if>>`, and line ID tags for localisation. Version 3 adds features for choosing content by condition; confirm exact syntax in the docs before use. UNVERIFIED this session.
+- **Twine 2:** browser and desktop tool for hypertext stories. Story formats include Harlowe (default), SugarCube, Snowman and Chapbook. SugarCube has a built-in save system. UNVERIFIED this session.
+- **articy:draft:** commercial narrative design database for flows, characters, variables and VO metadata, with engine importers. Pricing changes; check the site. UNVERIFIED this session.
+
+## Working heuristics (house rules, not sourced)
+
+- Coverage (words one player sees / words written) below about 0.4 is a warning sign for small teams.
+- Cap the variables read at any one convergence scene; count combinations and band counters if above about 24.
+- Echo the wording of a choice in its payoff when there is no on-screen reminder.
+- Three narrative pillars at most, each with a "therefore we don't" line.
+
+## How to re-verify
+
+1. Fetch each source URL above and check that the claim still matches.
+2. For tools, read the docs for the specific version in the project's lockfile or package manifest.
+3. Update `last_verified` and remove UNVERIFIED tags only for claims actually checked.

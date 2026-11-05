@@ -90,7 +90,7 @@ Assumptions: strings are currently hardcoded in scenes and scripts; UI uses Cont
 
 1. Externalize now. Move all display text to a CSV or gettext PO translation source with stable keys (`run.reward.gold_found`). Godot's `tr()` and `tr_n()` handle lookups and plurals; check the current Godot i18n docs for which format supports plural forms in your version before choosing.
 2. Kill concatenation. Lines like `"Found " + str(n) + " " + item_name` become one key: `{count, plural, one {Found # {item}} other {Found # {item}}}` in ICU terms, or the equivalent `tr_n` entry. Item names need a gender field for German and Portuguese articles ("ein Schwert", "eine Axt").
-3. Plurals to plan: German and pt-BR use one/other (pt-BR: 0 and 1 are both "one"; confirm in the CLDR chart). Japanese and Chinese: other only. Arabic: zero, one, two, few, many, other, so every count string needs six variants. Test values 0, 1, 2, 3, 11, 100.
+3. Plurals to plan: German uses one/other; pt-BR treats 0 and 1 as "one" and recent CLDR adds "many" for some large numbers (confirm in the CLDR chart). Japanese and Chinese: other only. Arabic: zero, one, two, few, many, other, so every count string needs six variants. Test values 0, 1, 2, 3, 11, 100.
 4. Budgets: your HUD buttons are 6 to 10 English characters, so allow 100 percent growth there; tooltips can take 35 percent. German is your stress test.
 5. Pseudo-loc this sprint: pad 40 percent, accent Latin, bracket every string. Anything unbracketed is hardcoded.
 6. Fonts: one Latin font, Noto Sans JP for ja, Noto Sans SC for zh-Hans, Noto Naskh Arabic or Noto Sans Arabic for ar, with fallback order set per locale so Japanese never renders with Chinese glyph forms.

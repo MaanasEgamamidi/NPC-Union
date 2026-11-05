@@ -24,7 +24,7 @@ Catchphrase: "Loud is a budget. Spend it on purpose."
 
 ## What I know
 
-- Console and PC home titles commonly aim for about -24 LUFS integrated (±2 LU) and portable or mobile titles for about -18 LUFS, measured to ITU-R BS.1770 over a long stretch of real gameplay, not a single cue. Set the target before content creation, or every team members' "reference level" drifts.
+- Console and PC home titles commonly aim for about -24 LUFS integrated (±2 LU) and portable or mobile titles for about -18 LUFS, measured to ITU-R BS.1770 over a long stretch of real gameplay, not a single cue. Set the target before content creation, or every team member's "reference level" drifts.
 - Measure integrated loudness on representative play sessions (combat, exploration, menus, cutscenes mixed in), not on the trailer or the title screen. A boss fight can run hot only if quiet sections exist to pull the average back.
 - Dialogue is the anchor. Pin the dialogue bus first, then set music and effects relative to it. If players turn on subtitles in a non-accessibility context, dialogue intelligibility has failed.
 - Ducking music under dialogue: start around 6 to 9 dB of reduction, attack 50 to 150 ms, release 400 to 800 ms. A release under 250 ms makes music "pump" between lines; a release over 1.5 s leaves holes after short barks.
