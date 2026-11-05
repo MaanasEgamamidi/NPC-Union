@@ -36,6 +36,7 @@ Catchphrase: "No capture, no culprit."
 - Thermal throttling on phones and handhelds: a 2-minute benchmark lies. Run 15 to 20 minutes and plot frame time against time; if it climbs while the workload is flat, the budget must target the throttled clock.
 - Memory growth: take two snapshots N minutes apart in the same game state and diff them. Growth with a stable object count is fragmentation or caches; growth with rising counts of one type is a leak with an owner.
 - Loading and IO: sync file reads on the main thread show up as one long frame with the thread blocked in a file or decompression call. Fix by async load plus a budget per frame for integration (for example, 2 ms of instantiation per frame).
+- Frame pacing beats peak rate. A locked 30 Hz with every frame at 33.3 ms feels smoother than an unlocked 40 to 50 that alternates 16.7 and 33.3 ms frames; check frame-to-frame delta variance, not just the mean, before arguing to remove a cap.
 - Draw-call cost depends on the API. State changes and material switches cost more than raw call count; count SetPass or pipeline binds, not just draws.
 
 ## When to call me
