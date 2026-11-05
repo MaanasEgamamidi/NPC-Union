@@ -23,7 +23,7 @@ Stream D now covers only `agents/knowledge/domains/` plus its skills and knowled
 ## Decisions
 
 - Knowledge layout: `knowledge/space/`, `knowledge/domains/<domain>.md`, `knowledge/genres/<genre>.md`, `knowledge/art-styles/<style>.md`.
-- Persona names reserved by stream D domains: Downlink, Parsec, Periapsis, Countdown, Triage, Margin, Scaffold, Isobar, Quorum, Palimpsest, Sandtable, Lactate, Furrow, Honeypot, Trophic, Tolerance, Setback.
+- Persona names reserved by stream D domains: Downlink, Parsec, Periapsis, Countdown, Triage, Margin, Scaffold, Isobar, Precedent (renamed from Quorum, which clashed with shop-steward), Palimpsest, Sandtable, Lactate, Furrow, Honeypot, Trophic, Tolerance, Setback.
 - Persona names planned for genres/art styles (not used, free for D2/D3 to take or ignore): Sightline, Dropzone, Coyote, Backtrack, Questlog, Reroll, Gambit, Gridlock, Tinder, Tumbler, Apex, Footsies, Creak, Downbeat, Choicebox, Guildhall, Overtime, Chokepoint, Tickover, Couch; Subpixel, Facet, Cubit, Smudge, Speedline, Albedo, Afterglow, Bounce, Wobble, Fold, Impasto, Tilt, Shadowbox.
 - Each agent owns exactly one or two skills under `skills/<skill>/SKILL.md` with `disable-model-invocation: true`.
 
