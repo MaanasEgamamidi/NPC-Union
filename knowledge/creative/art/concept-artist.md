@@ -1,13 +1,13 @@
 ---
 title: Concept art for game screens and key art
 tags: [concept-art, key-art, title-screen, image-generation, prompts, thumbnails]
-sources: [https://partner.steamgames.com/doc/store/assets (UNVERIFIED), https://www.w3.org/TR/WCAG21/ (UNVERIFIED)]
+sources: [https://partner.steamgames.com/doc/store/assets, https://www.w3.org/TR/WCAG21/]
 last_verified: 2026-11-05
 ---
 
 # Concept art reference
 
-Used by `concept-artist`. Nothing here was fetched during writing; every store size and external fact is UNVERIFIED until checked against the linked source.
+Used by `concept-artist`. Check current store sizes and project-specific requirements against the linked sources before use.
 
 ## Formats to plan for
 
@@ -15,7 +15,7 @@ Used by `concept-artist`. Nothing here was fetched during writing; every store s
 |---|---|---|
 | Title screen background | 16:9 (1920x1080 common) | Also check a 4:3 and 16:10 safe crop if the game supports them |
 | Menu background | 16:9 | Low detail behind menu column; loops for minutes |
-| Store capsules and key art | Several sizes, wide and vertical | Get exact sizes from Steamworks graphical assets docs (UNVERIFIED); sizes change |
+| Store capsules and key art | Several sizes, wide and vertical | Get exact sizes from [Steamworks graphical assets docs](https://partner.steamgames.com/doc/store/assets); sizes change |
 | Character portrait | Fixed per project | Same crop line, eye height, light direction across the cast |
 | Parallax background | Wide, per plane | Generate or plan separable sky, far, mid, near planes |
 
@@ -45,7 +45,7 @@ Model parameters (aspect ratio flags, seed, negative prompt support, reference i
 - [ ] Silhouette reads as solid black at about 64 px tall.
 - [ ] 3 or 4 value groups; focal point has the highest contrast.
 - [ ] Logo and UI zones are low detail and one middle value.
-- [ ] Text over the image can reach 4.5:1 contrast (WCAG 2.1 AA for normal text, UNVERIFIED link).
+- [ ] Text over the image can reach 4.5:1 contrast ([WCAG 2.1 AA](https://www.w3.org/TR/WCAG21/#contrast-minimum) for normal text, subject to its exceptions).
 - [ ] Image still works when cropped to the smallest required format.
 - [ ] No tangents (edges touching) at the focal point.
 

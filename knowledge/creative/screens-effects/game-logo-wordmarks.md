@@ -29,15 +29,15 @@ Steam rules from the same page: no quotes or other text strings beyond the title
 
 ## Steam library assets (UNVERIFIED this session)
 
-The library assets page was not fetched on 2026-11-05. Commonly cited values, to be checked on https://partner.steamgames.com/doc/store/assets/libraryassets before use:
-- Library capsule 600 x 900. UNVERIFIED.
-- Library hero 3840 x 1240, with no logo or text in the hero itself. UNVERIFIED.
-- Library logo as a transparent PNG, 1280 px wide and/or 720 px tall, placed over the hero. UNVERIFIED.
+The [Steamworks library assets documentation](https://partner.steamgames.com/doc/store/assets/libraryassets) specifies:
+- Library capsule 600 x 900.
+- Library hero 3840 x 1240, with no text in the hero itself.
+- Library logo as a transparent PNG, 1280 px wide and/or 720 px tall, placed over the hero.
 
 ## App icons (UNVERIFIED this session)
 
-- Apple: App Store icon artwork is supplied as a 1024 x 1024 square; the system applies the corner mask. Check the HIG app icons page. UNVERIFIED.
-- Google Play: store listing icon 512 x 512, 32-bit PNG. Check the icon design specifications page. UNVERIFIED.
+- Apple: iOS, iPadOS and macOS app icon layouts are 1024 x 1024; the system applies the corner mask. Other Apple platforms have different specifications. See the [Apple icon guidelines](https://developer.apple.com/design/human-interface-guidelines/app-icons).
+- Google Play: store listing icon 512 x 512, 32-bit PNG. See [Google Play icon specifications](https://developer.android.com/distribute/google-play/resources/icon-design-specifications).
 - Consoles (Nintendo, PlayStation, Xbox): specs are under developer NDA portals and cannot be checked publicly. Always ask the team for the current spec sheet.
 
 ## Small-size legibility rules (craft practice, not platform rules)

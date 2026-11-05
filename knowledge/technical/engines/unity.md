@@ -39,9 +39,9 @@ Whether 6.7 will be an LTS: UNVERIFIED (not stated on the support page today).
 |---|---|
 | Personal | free, up to $200,000 USD revenue and funding (last 12 months); effective with Unity 6, 17 Oct 2024 |
 | Pro | required above $200,000; range $200,001 to $24,999,999, effective 1 Jan 2025 |
-| Enterprise | above Pro range (UNVERIFIED exact wording) |
+| Enterprise | $25,000,000 USD and over in total finances in the most recent 12 months; see https://unity.com/pages/license-compliance |
 
-Seat prices: UNVERIFIED today, check https://unity.com/products/pricing.
+Seat prices: UNVERIFIED today, check https://unity.com/products.
 
 Runtime Fee: cancelled as of 12 September 2024, effective immediately; it will not apply to games made with Unity 6 or any other version (pricing-updates page).
 
@@ -56,5 +56,5 @@ Runtime Fee: cancelled as of 12 September 2024, effective immediately; it will n
 
 1. Release API above, or https://unity.com/releases/editor/archive, for the latest patch per line.
 2. https://unity.com/releases/unity-6/support for LTS end dates.
-3. https://unity.com/products/pricing-updates and https://unity.com/products/pricing for tiers.
+3. https://unity.com/products/pricing-updates and https://unity.com/products for tiers.
 4. Upgrade guides: https://docs.unity3d.com/6000.3/Documentation/Manual/upgrade-guides.html (swap the version in the URL; UNVERIFIED today).

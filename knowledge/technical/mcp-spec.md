@@ -29,11 +29,11 @@ Facts below were read from the live spec pages on 2026-11-05 unless marked UNVER
 ## Transports
 
 - Two standard bindings: stdio (newline-delimited messages over the standard streams of a client-launched subprocess) and Streamable HTTP (each message is an HTTP POST to a single MCP endpoint; replies arrive as a JSON object or a request-scoped SSE stream). Source: https://modelcontextprotocol.io/specification/2026-07-28/basic/transports
-- Streamable HTTP mirrors selected body metadata into HTTP headers so intermediaries can route without parsing the body; the binding defines how mismatches are rejected. Exact header names: UNVERIFIED (see the streamable-http page). Source: https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http
+- Streamable HTTP mirrors selected body metadata into HTTP headers so intermediaries can route without parsing the body; the binding defines how mismatches are rejected. Required headers include `MCP-Protocol-Version` and `Mcp-Method` on all requests, and `Mcp-Name` for tool calls, resource reads and prompt gets. Source: https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http
 - Cancellation: on stdio the client sends `notifications/cancelled`; on Streamable HTTP the client closes the request's response stream. Source: https://modelcontextprotocol.io/specification/2026-07-28/basic/transports
 - Custom transports MAY be built. They MUST keep the JSON-RPC format, message patterns and per-request metadata model. Over a reliable byte stream (Unix socket, TCP) they SHOULD reuse stdio framing. Source: https://modelcontextprotocol.io/specification/2026-07-28/basic/transports
-- On stdio, stdout carries only MCP messages and logs go to stderr. UNVERIFIED for 2026-07-28 (true in earlier revisions, from memory).
-- The older HTTP+SSE two-endpoint transport was replaced by Streamable HTTP in 2025-03-26. UNVERIFIED (from memory).
+- On stdio, the server must write only MCP messages to stdout and may write logs to stderr. Source: https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/stdio
+- The 2025-03-26 revision replaced the 2024-11-05 HTTP+SSE transport with Streamable HTTP. Source: https://modelcontextprotocol.io/specification/2025-03-26/basic/transports
 
 ## Features
 
@@ -45,7 +45,7 @@ Facts below were read from the live spec pages on 2026-11-05 unless marked UNVER
 
 - Tools represent arbitrary code execution. Tool annotations and descriptions are untrusted unless obtained from a trusted server. Hosts must obtain explicit user consent before invoking any tool. Source: https://modelcontextprotocol.io/specification
 - Hosts must get explicit user consent before exposing user data to servers and must not transmit resource data elsewhere without consent. Source: https://modelcontextprotocol.io/specification
-- HTTP authorization is based on OAuth 2.1 with protected resource metadata. UNVERIFIED for 2026-07-28 (from memory of 2025 revisions). Check https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization before use; that URL is UNVERIFIED.
+- For HTTP authorization, authorization servers must implement OAuth 2.1, and MCP servers must implement OAuth 2.0 Protected Resource Metadata. Source: https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization
 
 ## How to re-verify
 

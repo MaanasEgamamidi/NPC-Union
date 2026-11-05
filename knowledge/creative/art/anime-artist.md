@@ -1,13 +1,13 @@
 ---
 title: Anime artist reference
 tags: [anime, cel-shading, expression-sheet, visual-novel, model-sheet, character-art]
-sources: ["https://www.renpy.org/doc/html/ (UNVERIFIED)", "https://www.renpy.org/doc/html/layeredimage.html (UNVERIFIED)"]
+sources: ["https://www.renpy.org/doc/html/", "https://www.renpy.org/doc/html/layeredimage.html"]
 last_verified: 2026-11-05
 ---
 
 # Anime artist reference
 
-Working heuristics for anime-style characters, VN sprites and backgrounds. Numbers are practical ranges, not fixed rules; adjust to the project's art bible. Engine-specific facts are UNVERIFIED until checked against the linked docs.
+Working heuristics for anime-style characters, VN sprites and backgrounds. Numbers are practical ranges, not fixed rules; adjust to the project's art bible. Check engine-specific details against the documentation for the project version.
 
 ## Cel shading tones
 
@@ -52,7 +52,7 @@ neutral, happy, sad, angry, surprised, embarrassed, thinking, one character-spec
 - [ ] Knee-up or mid-thigh crop for dialogue sprites; head in the upper third of the screen
 - [ ] Expressions as face layers or full variants, named `<char>_<outfit>_<expression>`
 - [ ] Overlays separate, with a stated layer order
-- [ ] Engine layering approach confirmed in the engine docs (Ren'Py layered images: UNVERIFIED)
+- [ ] Engine layering approach confirmed in the engine docs (Ren'Py [layered images](https://www.renpy.org/doc/html/layeredimage.html))
 
 ## On-model checklist (per generation)
 

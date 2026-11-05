@@ -3,6 +3,8 @@ title: "NASA International Space Apps Challenge: history, rules, judging, and ga
 tags: [space-apps, nasa, hackathon, judging, awards, game-jam, open-data]
 sources:
   - https://www.spaceappschallenge.org/
+  - https://www.spaceappschallenge.org/blog/explore-the-next-frontier-at-the-2026-nasa-space-apps-challenge/
+  - https://www.spaceappschallenge.org/2025/awards/global-winners/
   - https://en.wikipedia.org/wiki/NASA_International_Space_Apps_Challenge
   - https://www.nasa.gov/learning-resources/stem-engagement-at-nasa/nasa-announces-2025-international-space-apps-challenge-global-winners/
   - https://www.nasa.gov/learning-resources/stem-engagement-at-nasa/nasa-international-space-apps-challenge-announces-2024-global-winners/
@@ -28,7 +30,7 @@ Access note: www.spaceappschallenge.org serves an incomplete TLS chain (leaf iss
 - 2026 hackathon: **November 14-15, 2026**, registration open (homepage banner: "Be a part of the largest annual global hackathon on November 14-15, 2026"). This breaks the October pattern of 2018-2025. Source: https://www.spaceappschallenge.org/
 - Homepage cumulative stats (all years): 487k+ registrations, 3,400+ local events, 190+ countries/territories, 17 Space Agency Partners.
 - Funded by NASA's Science Mission Directorate through a contract with Booz Allen Hamilton, Mindgrub, and SecondMuse (homepage footer). Wikipedia says it is managed by the Earth Science Division at NASA HQ.
-- Registration open date, challenge release date, and 2026 team-size and demo rules: UNVERIFIED (seen only in search snippets; one snippet said registration opened August 26, 2026). Check the 2026 Participant Guides.
+- Registration was open by August 26, 2026, and remains open through November 15, according to the [Space Apps announcement](https://www.spaceappschallenge.org/blog/explore-the-next-frontier-at-the-2026-nasa-space-apps-challenge/). Exact opening date, challenge release date, and 2026 team-size and demo rules: UNVERIFIED. Check the 2026 Participant Guides.
 
 ## Year-by-year
 
@@ -51,7 +53,7 @@ From the Wikipedia table (which cites spaceappschallenge.org results pages). "Re
 | 2023 | Oct 7-8 | "Explore Open Science Together" | 152 | 402 | 57,999 | 30 | 5,556 |
 | 2024 | Oct 5-6 | "The Sun Touches Everything" | 163 | 485 | 93,520 | 20 | 9,996 |
 | 2025 | Oct 4-5 | "Learn, Launch, Lead" | 167 | 551 | 114,094 | 18 | 11,511 |
-| 2026 | Nov 14-15 | UNVERIFIED | | | | | |
+| 2026 | Nov 14-15 | The Next Frontier | | | | | |
 
 Cross-checks: the 2019 awards page says 2,067 projects; legacy.spaceappschallenge.org says 2022 had "over 31,500 registrants, across 162 countries and territories", 22 challenges, 3,094 projects, 11 partner agencies, and dates Oct 7-8, 2023 for the next event; NASA's 2024 release gives 93,520 / 485 / 163 / 9,996; NASA's 2025 release gives 114,000+ participants, 551 events, 167 countries/territories, 11,500+ submissions; science.nasa.gov gives 57,999 / 152 / 5,556 for 2023. Wikipedia flags the article for primary-source reliance and its 2021 and 2022 country/event rows are identical, so treat those two rows with care.
 
@@ -110,7 +112,7 @@ Names vary by year: 2020 used Data, Mission, Impact, Science, Technology, Inspir
 | 2024 | Best Storytelling | TerraTales (Cairo), climate stories web app with an eco-choices game | Tell Us a Climate Story! | Story plus game hybrid | same NASA 2024 page |
 | 2025 | Best Use of Storytelling | HerCode Space (Universal Event), "A Solar Tale" | Stellar Stories: Space Weather Through the Eyes of Earthlings | Narrative format for space weather | https://www.nasa.gov/learning-resources/stem-engagement-at-nasa/nasa-announces-2025-international-space-apps-challenge-global-winners/ |
 
-Official project pages for 2023-2025 winners live under www.spaceappschallenge.org (e.g. /2025/awards/global-winners/); those URLs were not loaded in this session, so they are not linked here (UNVERIFIED).
+The official [2025 Global Winners page](https://www.spaceappschallenge.org/2025/awards/global-winners/) lists the awards; see the NASA release above for the projects. Official project pages for 2023-2024 were not checked (UNVERIFIED).
 
 Lessons from the list: prototypes in Adobe XD, Canva, and Construct 3 have won; game-shaped challenges come with an age group and explicit data; storytelling and inspirational awards are where most games land, while Best Use of Science/Data winners put the dataset at the center of the interaction.
 

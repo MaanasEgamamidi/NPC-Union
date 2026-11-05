@@ -8,7 +8,7 @@ last_verified: 2026-11-05
 
 last_verified: 2026-11-05
 
-Verification note: on 2026-11-05 a WebFetch of https://www.fab.com/eula returned HTTP 403 Forbidden, so nothing below was confirmed against the live site on that date. Every fact is marked UNVERIFIED until someone with browser or Codex live search access checks it and updates the date.
+Verification note: the Fab licence summary was fetched on 2026-11-05 at https://www.fab.com/eula?lang=en%5C. The summary says the full EULA is binding; check it and the individual listing before relying on terms. Other unchecked facts remain marked UNVERIFIED.
 
 ## What Fab is
 
@@ -21,8 +21,8 @@ Verification note: on 2026-11-05 a WebFetch of https://www.fab.com/eula returned
 
 | Licence | What to record | Status |
 |---|---|---|
-| Fab Standard License | Commercial use allowed within the EULA terms; check the tier bought | UNVERIFIED |
-| Personal license | Non-commercial use only; do not ship in a paid product | UNVERIFIED |
+| Fab Standard License | Commercial use is allowed subject to its terms; check the tier and full EULA | Licence summary: https://www.fab.com/eula?lang=en%5C |
+| Personal tier of Standard License | Commercial use is permitted; Personal and Professional grant the same scope of rights | Licence summary: https://www.fab.com/eula?lang=en%5C |
 | Creative Commons (CC BY, CC BY-SA, CC0 and similar) | Copy the exact CC variant and the attribution text required | UNVERIFIED |
 | "Unreal Engine only" restriction | Some content, largely legacy Marketplace and Epic-produced content, may only be used in Unreal Engine projects | UNVERIFIED |
 
@@ -41,7 +41,7 @@ Verification note: on 2026-11-05 a WebFetch of https://www.fab.com/eula returned
 ## Sources
 
 - Fab home: https://www.fab.com (not fetched 2026-11-05)
-- Fab EULA: https://www.fab.com/eula (HTTP 403 on 2026-11-05)
+- Fab licence summary: https://www.fab.com/eula?lang=en%5C (fetched 2026-11-05; full EULA governs)
 
 ## How to re-verify
 

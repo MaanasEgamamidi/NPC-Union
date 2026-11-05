@@ -4,6 +4,8 @@ tags: [trailer, cutscene, store-video, capture, steam, app-store, flash-safety]
 sources:
   - https://partner.steamgames.com/doc/store/trailer
   - https://developer.apple.com/app-store/app-previews/
+  - https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications
+  - https://support.google.com/googleplay/android-developer/answer/9866151
   - https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html
 last_verified: 2026-11-05
 ---
@@ -30,15 +32,15 @@ Source: https://partner.steamgames.com/doc/store/trailer
 
 ## Apple App Store app previews (UNVERIFIED)
 
-Source to check: https://developer.apple.com/app-store/app-previews/
+Sources: [Apple app previews](https://developer.apple.com/app-store/app-previews/) and [App Store Connect specifications](https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications).
 
-- UNVERIFIED: previews run 15 to 30 seconds, up to three per localisation, and autoplay muted in the store.
-- UNVERIFIED: footage must be captured from the app itself, and device-specific resolutions apply.
+- Previews run 15 to 30 seconds, with up to three per supported device size and language. They autoplay muted when autoplay is enabled.
+- Footage must be captured from the app itself; accepted resolutions depend on the display size.
 - Check the page and App Store Connect help before giving numbers.
 
 ## Google Play and console stores (UNVERIFIED)
 
-- UNVERIFIED: Google Play uses a YouTube link for the preview video rather than an uploaded file.
+- Google Play uses a [YouTube URL](https://support.google.com/googleplay/android-developer/answer/9866151) for the store listing preview video.
 - Console store video specs (PlayStation, Xbox, Nintendo) sit behind partner portals. Ask the user to check their partner documentation. Do not quote from memory.
 
 ## Flash safety (checked 2026-11-05)

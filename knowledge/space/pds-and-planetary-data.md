@@ -6,6 +6,8 @@ sources:
   - https://pds.nasa.gov/services/search/
   - https://pds.mcp.nasa.gov/api/search/1/products
   - https://trek.nasa.gov/
+  - https://trek.nasa.gov/tiles/apidoc/
+  - https://docs.unity3d.com/2019.4/Documentation/Manual/terrain-OtherSettings.html
   - https://naif.jpl.nasa.gov/
 last_verified: 2026-11-05
 ---
@@ -45,7 +47,7 @@ The node descriptions in the right column are generic; read each node site for w
 
 - Browser portals: Moon, Mars, Vesta, Ceres, Titan, Icy Moons, Mercury, Ryugu, Bennu, Europa, Callisto, Venus, Ganymede, Phobos, Io Trek.
 - Tools: elevation profiles from a DEM with CSV export, sun-angle calculator, distance tool, VR flyovers, 3D printing (whole-globe print files for Bennu, Ceres, Ryugu, Vesta).
-- "Most of the map layers shown from Treks are available through OGC RESTful Web Map Tile Service (WMTS)", documented on a "WMTS Layer Services" page (URL and layer names UNVERIFIED). Use it to stream textured tiles into a map view.
+- The [WMTS Layer Services](https://trek.nasa.gov/tiles/apidoc/) page links body-specific services. The [Vesta service](https://trek.nasa.gov/tiles/apidoc/trekAPI.html?body=vesta) documents OGC RESTful WMTS requests and tile URL templates; check the relevant body and layer before streaming tiles.
 
 ## Game-ready products to check (all UNVERIFIED this session)
 
@@ -58,7 +60,7 @@ The node descriptions in the right column are generic; read each node site for w
 
 1. Pick the product and read its label: units (meters vs km), datum (radius or areoid reference), data type, no-data value, pixel scale (m/pixel), projection.
 2. Reproject/crop with GDAL: `gdalwarp -t_srs <projection> -te <bounds> -tr <m> <m> -r bilinear in.tif crop.tif`. Use an equal-area or local projection for a playable patch; equirectangular stretches toward the poles.
-3. Resample to the engine's size (e.g. Unity terrain heightmaps use 2^n+1 sizes such as 1025 or 2049; confirm in the engine docs, UNVERIFIED this session). Use bilinear or cubic for heights, never nearest.
+3. Resample to the engine's size. [Unity 2019.4 terrain settings](https://docs.unity3d.com/2019.4/Documentation/Manual/terrain-OtherSettings.html) specify heightmap resolutions of 2^n+1, such as 1025 or 2049; check the manual for the target Unity version. Use bilinear or cubic for heights, never nearest.
 4. Fill no-data holes (`gdal_fillnodata.py`) before normalizing, or the minimum value wrecks your range.
 5. Normalize to 16-bit: `h16 = round((h - hmin) / (hmax - hmin) * 65535)`. Record `hmin`, `hmax` and pixel size. 8-bit PNG gives visible terracing; use 16-bit PNG or little-endian RAW (`gdal_translate -ot UInt16 -scale hmin hmax 0 65535 -of ENVI`).
 6. Scale in-engine: horizontal size = pixels x m/pixel; vertical range = hmax - hmin. Any vertical exaggeration (1.5x to 3x is common for readability on flat Moon/Mars plains) should be stated in-game if you claim realism.

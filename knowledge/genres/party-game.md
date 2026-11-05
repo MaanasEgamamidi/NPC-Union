@@ -62,4 +62,4 @@ Wikipedia links returned HTTP 200 on 2026-11-05. Gang Beasts entered early acces
 ## Sources
 
 - Wikipedia pages listed in the reference table (checked 2026-11-05).
-- Jackbox Games official site: https://www.jackboxgames.com/ UNVERIFIED
+- Jackbox Games official site: https://www.jackboxgames.com/

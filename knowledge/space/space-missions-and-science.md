@@ -77,7 +77,7 @@ Moon counts on the fact sheet (Jupiter 95, Saturn 274, Uranus 28, Neptune 16, Pl
 
 | Moon | Gravity | Orbit / day | Surface temp | Atmosphere | Notes for games |
 |---|---|---|---|---|---|
-| Europa (Jupiter) | ~1.31 m/s² (0.13 g), computed | 3.55 days, synchronous | Midday equator about 130 K (-143 °C), Galileo PPR | Not on fetched pages (UNVERIFIED) | Ice shell averages about 29 km (18 mi) in the region Juno measured; ocean likely holds twice the water of Earth's ocean |
+| Europa (Jupiter) | ~1.31 m/s² (0.13 g), computed | 3.55 days, synchronous | Midday equator about 130 K (-143 °C), Galileo PPR | Extremely thin oxygen atmosphere, unbreathable ([NASA](https://science.nasa.gov/jupiter/jupiter-moons/europa/europa-facts/)) | Ice shell averages about 29 km (18 mi) in the region Juno measured; ocean likely holds twice the water of Earth's ocean |
 | Titan (Saturn) | ~1.35 m/s² (0.14 g), computed | 15.95 days, synchronous | About -179 °C | ~95% N2, ~5% CH4; surface pressure about 60% higher than Earth's | Rivers, lakes, and seas of liquid methane and ethane; water ice acts as rock |
 | Enceladus (Saturn) | ~0.11 m/s² (0.012 g), computed | 1.37 days, synchronous | About -201 °C | Not on fetched pages | About 500 km across; jets of water vapour and ice from "tiger stripe" fractures at about 800 mph; plume holds water, CO2, methane, salts, silica, organics; global ocean; ice thinnest (about 1 to 5 km) near the south pole |
 
@@ -145,4 +145,4 @@ Game use: a dose budget that rises faster in transit than on the surface, with s
 
 - Fact sheet: open https://nssdc.gsfc.nasa.gov/planetary/factsheet/ and compare the "Last Updated" footer to 18 March 2025. If it changed, re-copy the table.
 - Missions: open each mission page, read its "last updated" date and newest news item, and update section 5 with the date you read it.
-- Anything not confirmed on a fetched page is marked UNVERIFIED above (Europa and Enceladus atmospheres, Pluto atmosphere composition).
+- Enceladus atmosphere and Pluto atmosphere composition require further checking (UNVERIFIED).

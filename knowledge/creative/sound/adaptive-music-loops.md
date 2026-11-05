@@ -4,6 +4,7 @@ tags: [music, loops, adaptive-audio, stems, godot, unity, web-audio, fmod, wwise
 sources:
   - https://docs.godotengine.org/en/stable/classes/class_audiostreamoggvorbis.html
   - https://docs.godotengine.org/en/stable/classes/class_audiostreamwav.html
+  - https://godotengine.org/releases/4.3/
   - https://docs.godotengine.org/en/stable/classes/class_audiostreaminteractive.html
   - https://docs.godotengine.org/en/stable/classes/class_audiostreamsynchronized.html
   - https://docs.unity3d.com/ScriptReference/AudioSource.PlayScheduled.html
@@ -15,7 +16,7 @@ last_verified: 2026-11-05
 
 # Adaptive music loops, layers and engine loop points
 
-Note: the links above were not fetched in the session that wrote this file (time limit). Treat engine property names as UNVERIFIED until checked against the current docs page.
+The Godot interactive and synchronized stream documentation and 4.3 release notes were checked on 2026-11-05. Other engine properties remain UNVERIFIED until checked against the current docs.
 
 ## Loop math
 
@@ -34,7 +35,7 @@ Note: the links above were not fetched in the session that wrote this file (time
 
 - Godot 4 AudioStreamOggVorbis: `loop` (bool), `loop_offset` (seconds).
 - Godot 4 AudioStreamWAV: `loop_mode`, `loop_begin`, `loop_end` (samples).
-- Godot 4.3 added AudioStreamInteractive (clip switching with transitions), AudioStreamSynchronized (stems in sync with per-stream volume) and AudioStreamPlaylist. Version of introduction: UNVERIFIED.
+- [Godot 4.3](https://godotengine.org/releases/4.3/) added AudioStreamInteractive (clip switching with transitions), AudioStreamSynchronized (stems in sync with per-stream volume) and AudioStreamPlaylist.
 - Unity: AudioSource has `loop` but no loop-start property. Intro then loop is done by scheduling a second clip with `AudioSource.PlayScheduled` at a time based on `AudioSettings.dspTime`.
 - Web Audio: AudioBufferSourceNode `loop`, `loopStart`, `loopEnd` (seconds).
 - Some tools read `LOOPSTART` and `LOOPLENGTH` Ogg comment tags (RPG Maker MV/MZ is commonly cited). UNVERIFIED.

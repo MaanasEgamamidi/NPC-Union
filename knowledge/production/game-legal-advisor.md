@@ -2,7 +2,7 @@
 title: Game legal reference facts (version and policy sensitive)
 tags: [licences, eula, age-ratings, loot-boxes, coppa, gdpr-k, trademarks]
 sources: [https://creativecommons.org/licenses/by/4.0/legalcode, https://creativecommons.org/publicdomain/zero/1.0/legalcode, https://openfontlicense.org, https://spdx.org/licenses/, https://www.gnu.org/licenses/license-list.html, https://www.esrb.org, https://pegi.info, https://www.globalratings.com, https://www.ftc.gov, https://ico.org.uk]
-last_verified: UNVERIFIED
+last_verified: 2026-11-05
 ---
 
 Legal information, not legal advice. Every fact below is UNVERIFIED until checked against its primary source and dated.
@@ -23,7 +23,7 @@ Legal information, not legal advice. Every fact below is UNVERIFIED until checke
 
 - Belgium: Gaming Commission treated paid loot boxes as gambling (2018). Current enforcement: UNVERIFIED.
 - Netherlands: Council of State overturned the EA FIFA fine (2022). Current position: UNVERIFIED.
-- Australia: paid loot boxes lead to at least an M classification, simulated gambling to R18+, from September 2024. UNVERIFIED.
+- Australia: chance-based in-game purchases, including paid loot boxes, lead to at least M, and simulated gambling to R 18+, from 22 September 2024. [Australian Classification](https://www.classification.gov.au/about-us/media-and-news/news/new-classifications-for-gambling-content-video-games).
 - Odds disclosure duties on app stores and in China: UNVERIFIED, check each store's current guidelines.
 
 ## Child privacy

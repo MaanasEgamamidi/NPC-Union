@@ -53,7 +53,7 @@ Working notes for the sfx-designer. Numbers here are craft heuristics, not stand
 - Do not upsample 44.1 kHz library files to 48 kHz for no reason beyond matching the project; resampling is fine, but it adds nothing.
 - Avoid MP3 for loops: encoders add padding at start and end that causes a gap. Ogg Vorbis and WAV loop cleanly.
 - Unity: AudioClip import offers load types (decompress on load, compressed in memory, streaming) and compression formats (PCM, ADPCM, Vorbis). Check the current manual before stating defaults. UNVERIFIED for the current version.
-- Godot: imports WAV and Ogg Vorbis (and MP3); WAV import has compression options. Godot 4.3 added QOA compression for WAV: UNVERIFIED.
+- Godot imports WAV, Ogg Vorbis and MP3; [Godot 4.3 documentation](https://docs.godotengine.org/en/4.3/tutorials/assets_pipeline/importing_audio_samples.html) lists QOA as a WAV compression option.
 - Mono for anything the engine spatialises. Stereo for UI, 2D and non-diegetic sounds.
 - Put loop points on zero crossings and crossfade noisy loops.
 

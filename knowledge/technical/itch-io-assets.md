@@ -52,7 +52,7 @@ Each tag is used as https://itch.io/game-assets/<tag>, for example https://itch.
 
 ## UNVERIFIED
 
-- Chaining segments, such as https://itch.io/game-assets/free/tag-pixel-art, is believed to combine filters. UNVERIFIED; fetch it before relying on it.
+- Chaining segments can combine filters: https://itch.io/game-assets/free/tag-pixel-art displays free game assets tagged Pixel Art.
 - Free-text search at https://itch.io/search?q=<terms> covers all itch content, not only assets. UNVERIFIED.
 - Download counts are not public on asset pages; ratings and rating counts are shown when the creator allows it. UNVERIFIED.
 

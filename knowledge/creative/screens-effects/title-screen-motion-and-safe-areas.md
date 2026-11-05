@@ -11,7 +11,7 @@ last_verified: 2026-11-05
 
 # Title screen motion, loops and safe areas
 
-Reference notes for `title-screen-designer`. Links were not fetched in this session; claims taken from them are marked UNVERIFIED until a local check confirms them.
+Reference notes for `title-screen-designer`. WCAG and Godot parallax details were checked on 2026-11-05; other unchecked claims remain marked UNVERIFIED.
 
 ## Safe areas
 
@@ -22,13 +22,13 @@ Reference notes for `title-screen-designer`. Links were not fetched in this sess
 
 ## Flashing and motion
 
-- WCAG 2.3.1 (Level A): content must not flash more than three times in any one-second period, unless the flashes are below the general and red flash thresholds. UNVERIFIED (source not re-fetched).
-- WCAG 2.2.2 (Level A): moving, blinking or scrolling content that starts automatically, lasts more than five seconds and is shown alongside other content needs a way to pause, stop or hide it. WCAG targets web content, but the same reasoning supports a reduced-motion option for animated title screens. UNVERIFIED (source not re-fetched).
+- [WCAG 2.3.1](https://www.w3.org/TR/WCAG21/#three-flashes-or-below-threshold) (Level A): content must not flash more than three times in any one-second period, unless the flashes are below the general and red flash thresholds.
+- [WCAG 2.2.2](https://www.w3.org/TR/WCAG21/#pause-stop-hide) (Level A): moving, blinking or scrolling content that starts automatically, lasts more than five seconds and is shown alongside other content needs a way to pause, stop or hide it, unless essential. The criterion also addresses auto-updating content. WCAG targets web content, but the same reasoning supports a reduced-motion option for animated title screens.
 - Working heuristic: a press-start blink near 1 Hz, or a soft alpha pulse, sits well inside the WCAG flash limit.
 
 ## Parallax and loop maths
 
-- Godot 4 has a `Parallax2D` node with a `scroll_scale` property per layer and a `repeat_size` for wrapping layers. It replaced `ParallaxBackground`/`ParallaxLayer` for new projects from Godot 4.3. UNVERIFIED (class reference not re-fetched; check the version you target).
+- Godot 4 has a `Parallax2D` node with a `scroll_scale` property per layer and a `repeat_size` for wrapping layers. Introduced in Godot 4.3, it is intended as a replacement for `ParallaxBackground`/`ParallaxLayer` ([Godot progress report](https://godotengine.org/article/parallax-progress-report/); [class reference](https://docs.godotengine.org/en/stable/classes/class_parallax2d.html)).
 - Loop length of a composed screen = least common multiple of every layer's cycle length. Example: cycles of 8, 3 and 2 s repeat together every 24 s. Choose cycles that divide one master length.
 - A wrapping layer is seamless only if the scroll distance per cycle is a whole multiple of its tile width. For pixel art, the per-frame position must also land on whole source pixels or the layer shimmers when scaled.
 - Typical parallax factors (heuristic, not a standard): sky 0.0 to 0.1, far 0.2 to 0.3, mid 0.5, play plane 1.0, foreground 1.2 to 1.5.

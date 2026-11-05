@@ -7,13 +7,13 @@ last_verified: 2026-11-05
 
 # 3D modeling reference
 
-All sources above are UNVERIFIED (not fetched this session). Re-check before quoting version-specific options.
+The glTF specification was checked on 2026-11-05. Other sources are UNVERIFIED; re-check before quoting version-specific options.
 
 ## Engine units and axes
 
 | Target | Unit | Up axis | Notes |
 |---|---|---|---|
-| glTF 2.0 | 1 = 1 m | +Y | Right-handed, asset front faces +Z. Source: glTF 2.0 spec (UNVERIFIED) |
+| glTF 2.0 | 1 = 1 m | +Y | Right-handed, asset front faces +Z. Source: [glTF 2.0 spec](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units) |
 | Blender | 1 = 1 m (default) | +Z | glTF exporter converts to +Y up |
 | Unity | 1 = 1 m | +Y | Left-handed |
 | Godot | 1 = 1 m | +Y | Right-handed |

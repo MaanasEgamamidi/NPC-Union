@@ -35,6 +35,6 @@ last_verified: 2026-11-05
 
 ## Version and language
 
-- Godot 3.x to 4.x broke the API. 3.x addons need porting for 4.x. See https://docs.godotengine.org/en/stable/tutorials/migrating/upgrading_to_godot_4.html (not fetched on 2026-11-05, UNVERIFIED path).
-- C# addons need the .NET build of Godot. C# web export support in 4.x: check current docs, UNVERIFIED.
+- Godot 3 projects and addons may require migration to 4.x; consult the upgrade guide and test each addon: https://docs.godotengine.org/en/stable/tutorials/migrating/upgrading_to_godot_4.html.
+- C# addons need the .NET build of Godot. Godot 4 C# projects currently cannot be exported to the web: https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/index.html.
 - GDExtension addons ship native binaries per platform; check which platforms have builds.

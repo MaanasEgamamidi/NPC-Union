@@ -13,11 +13,11 @@ Facts the asset-license-auditor relies on. Each line says whether it was checked
 ## Identifiers and tooling
 
 - SPDX licence list: https://spdx.org/licenses/ . VERIFIED 2026-11-05: version 3.29.0 dated 2026-09-16. Confirmed identifiers: `CC-BY-4.0`, `CC-BY-SA-4.0`, `CC-BY-NC-4.0`, `CC0-1.0`, `OFL-1.1`, `MIT`, `Apache-2.0`, `GPL-3.0-only`, `LGPL-3.0-only`.
-- REUSE: https://reuse.software . VERIFIED 2026-11-05: an FSFE initiative with three steps: choose and provide licences, add copyright and licensing information to each file, confirm compliance. The `reuse lint` tool and `LICENSES/` folder convention are UNVERIFIED from that page; check the developer tools section before citing them.
+- REUSE: https://reuse.software . VERIFIED 2026-11-05: an FSFE initiative with three steps: choose and provide licences, add copyright and licensing information to each file, confirm compliance. The `reuse lint` command checks REUSE compliance: https://reuse.readthedocs.io/en/stable/man/reuse-lint.html. The `LICENSES/` folder convention is UNVERIFIED from that page.
 
 ## Creative Commons
 
-- Licence index: https://creativecommons.org/licenses/ . UNVERIFIED in this pass.
+- Licence index: https://creativecommons.org/licenses/ .
 - BY: attribution required. BY-SA: adaptations must carry the same licence (share-alike). NC: no commercial use, which rules out a paid game and is risky for a free game with ads or IAP. ND: no adaptations, so recolouring, cropping or re-rigging an ND asset is a breach. UNVERIFIED wording; read the deed and legal code for the exact version used.
 - CC0 is a waiver plus fallback licence, not the same as public domain status. Public domain depends on jurisdiction and date. UNVERIFIED.
 - BY-SA art inside a game: whether the whole game counts as an adaptation is a legal question. Escalate to game-legal-advisor.

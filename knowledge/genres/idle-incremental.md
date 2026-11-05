@@ -29,9 +29,9 @@ Earn a currency, buy generators or upgrades that earn more, hit milestones that 
 | Universal Paperclips | 2017 | Frank Lantz | Phase changes that replace the interface and the goal | https://en.wikipedia.org/wiki/Universal_Paperclips |
 | Antimatter Dimensions | 2016 | Hevipelle | Stacked prestige layers, automation of earlier layers, big-number handling | https://en.wikipedia.org/wiki/Antimatter_Dimensions |
 | Egg, Inc. | 2016 | Auxbrain | Mobile idle pacing, optional ad boosts, prestige via soul eggs | https://en.wikipedia.org/wiki/Egg,_Inc. |
-| Melvor Idle | 2021 (Steam release; earlier browser version) | Games by Malcs | Idle timers across many RPG skills, offline progress cap | UNVERIFIED (no English Wikipedia page found) https://melvoridle.com/ |
+| Melvor Idle | 2021 (Steam release date) | Games by Malcs | Idle timers across many RPG skills, offline progress cap | https://store.steampowered.com/app/1267910/Melvor_Idle/ |
 
-Note: the Wikipedia links above returned HTTP 200 on 2026-11-05; page contents were not read line by line. Year and developer details for Antimatter Dimensions and Melvor Idle are UNVERIFIED.
+Note: the Wikipedia links above returned HTTP 200 on 2026-11-05; page contents were not read line by line. The Antimatter Dimensions original release year remains UNVERIFIED; its [Steam listing](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/) gives a 2022 Steam release and lists Hevipelle among its developers. The Melvor Idle Steam listing confirms the 2021 release date and Games by Malcs as developer.
 
 ## Common failures
 

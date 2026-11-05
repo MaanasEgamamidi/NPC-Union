@@ -42,8 +42,8 @@ Facts about free and open art and 3D asset sites. Each entry says whether it was
 
 ## Quaternius
 
-- Commonly reported as CC0 low-poly 3D models. Licence and site URL: UNVERIFIED, not fetched on 2026-11-05.
-- last_verified: not checked
+- Quaternius Asset License v1.0 permits commercial projects without attribution but restricts standalone redistribution. Check the licence applicable when the asset was obtained; changes are not retroactive. Source: https://quaternius.com/license.html.
+- last_verified: 2026-11-05
 
 ## Licence quick reference
 

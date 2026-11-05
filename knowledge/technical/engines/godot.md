@@ -32,7 +32,7 @@ MIT licence, no royalties or fees (https://godotengine.org/license/). Ship the l
 
 ## Support policy
 
-Godot has no "LTS" label. The release policy page (https://docs.godotengine.org/en/stable/about/release_policy.html) describes which minor branches get patch releases. Exact support windows per branch: UNVERIFIED today, open that page.
+Godot describes the previous stable branch of a major release as long-term supported. Stable branches are supported at least until the next stable branch receives its first patch; subsequent maintenance is best effort. Only the latest patch in a minor series is supported. Check the branch table: https://docs.godotengine.org/en/stable/about/release_policy.html.
 
 ## Renderers (rendering methods)
 

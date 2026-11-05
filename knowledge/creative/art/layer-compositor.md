@@ -46,7 +46,7 @@ PNG stores straight alpha. Convert to premultiplied only at the point the engine
 - If the camera starts centred and moves both ways, split the margin across both sides.
 - Planes with scroll factor below 1.0 need canvas width of at least `screen_w + scroll x travel_px` unless they tile.
 
-Godot 4 exposes per-layer scroll scale through Parallax2D (added in 4.3, UNVERIFIED); older projects use ParallaxBackground and ParallaxLayer.
+Godot 4 exposes per-layer scroll scale through [Parallax2D](https://docs.godotengine.org/en/stable/classes/class_parallax2d.html), introduced in [4.3](https://godotengine.org/article/parallax-progress-report/); older projects use ParallaxBackground and ParallaxLayer.
 
 ## Shadows, AO and spill
 

@@ -59,5 +59,5 @@ Notes: Beat Saber was in early access from 2018 and fully released in 2019. Rhyt
 ## Sources
 
 - Wikipedia articles for each reference game listed above (links checked 2026-11-05).
-- StepMania source and documentation for judge window values: https://github.com/stepmania/stepmania (UNVERIFIED this session).
+- StepMania source and documentation for judge window values: https://github.com/stepmania/stepmania/blob/5_1-new/src/Player.cpp (default timing windows; configurable in the source).
 - osu! wiki on hit windows and Overall Difficulty: https://osu.ppy.sh/wiki/en/Beatmap/Overall_difficulty (link checked 2026-11-05; window values not re-read).

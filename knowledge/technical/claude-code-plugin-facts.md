@@ -1,7 +1,7 @@
 ---
 title: Claude Code plugin facts
 source: https://code.claude.com/docs
-last_verified: 2026-11-04
+last_verified: 2026-11-05
 owner: agent-tooling-engineer
 ---
 
@@ -9,7 +9,7 @@ owner: agent-tooling-engineer
 
 Facts used when building plugins, subagents, skills, and hooks for NPC Union. Each item below the first heading was checked against https://code.claude.com/docs on 2026-11-04 (see `docs/BUILD_BRIEF.md` section 3). Anything marked UNVERIFIED has not been checked and must be confirmed in the docs before anyone depends on it.
 
-## Verified (last_verified: 2026-11-04)
+## Verified (last_verified: 2026-11-05)
 
 - Plugin `agents/` is scanned recursively. Subfolders become part of the agent ID: `agents/creative/art/sprite-artist.md` registers as `npc-union:creative:art:sprite-artist`.
 - A subagent can spawn subagents up to three layers below the main conversation. Steward to division lead to specialist is valid; a fourth layer is not.
@@ -27,9 +27,9 @@ Facts used when building plugins, subagents, skills, and hooks for NPC Union. Ea
 
 ## UNVERIFIED (check before relying on these)
 
-- UNVERIFIED: exact hook event names and the JSON shape each hook receives on stdin. Read the hooks page of https://code.claude.com/docs before writing a hook script.
-- UNVERIFIED: whether `${CLAUDE_PLUGIN_ROOT}` is also expanded inside `hooks.json` command strings and `.mcp.json` at the plugin level.
-- UNVERIFIED: hook exit code semantics (which code blocks an action and how stderr is surfaced).
+- Hook event names and event-specific JSON input schemas are documented at https://code.claude.com/docs/en/hooks. Command hooks receive the JSON on stdin.
+- `${CLAUDE_PLUGIN_ROOT}` resolves in hook `command` and `args` and in MCP server fields; the supported fields depend on transport. See https://code.claude.com/docs/en/plugins-reference.
+- Exit 2 can block an action, but its effect and where stderr appears depend on the event; consult the per-event table at https://code.claude.com/docs/en/hooks.
 - UNVERIFIED: the token cost of a 200-character description, and so how many agents fit under the 15,000-token warning. Measure rather than estimate.
 - UNVERIFIED: precedence when a plugin agent and a project or user agent share a name.
 
