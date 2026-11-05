@@ -2,12 +2,12 @@
 
 ## Claude-Code-Game-Studios
 
-Some agents, skills, and workflow ideas are adapted from [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios), used under the MIT License. Files substantially based on it carry `adapted_from: Claude-Code-Game-Studios/<path>` in their frontmatter.
+Some agents, skills, and workflow ideas are adapted from [Donchitos/Claude-Code-Game-Studios](https://github.com/Donchitos/Claude-Code-Game-Studios), used under the MIT License (licence text checked 2026-11-05). Files substantially based on it carry `adapted_from: Claude-Code-Game-Studios/<path>` in their frontmatter.
 
 ```
 MIT License
 
-Copyright (c) Donchitos and Claude-Code-Game-Studios contributors
+Copyright (c) 2026 Donchitos
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -28,7 +28,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-UNVERIFIED: the exact copyright line above should be copied from that repository's LICENSE file before release.
 
 ## Inspirations, not affiliated
 
