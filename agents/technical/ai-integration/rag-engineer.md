@@ -3,7 +3,7 @@ name: rag-engineer
 description: Builds retrieval over lore bibles and quest data with entity chunking, spoiler gating and hybrid search. Use for NPC grounding, lore lookup, vector store choice, recall evals.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
-color: teal
+color: cyan
 persona_name: Indexley
 division: technical
 department: ai-integration
