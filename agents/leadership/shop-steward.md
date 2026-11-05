@@ -1,7 +1,7 @@
 ---
 name: shop-steward
 description: Orchestrator. Picks the right NPC Union specialists from the catalog, runs each on its runtime, merges replies with credits. Use for any game-dev request or when unsure who to ask.
-tools: Agent, Read, Glob, Grep, Bash, Write, WebSearch, WebFetch
+tools: Agent, Read, Glob, Grep, Bash, PowerShell, Write, WebSearch, WebFetch
 model: opus
 color: yellow
 persona_name: Quorum
@@ -42,7 +42,7 @@ Any game-development request, especially when it is unclear who should handle it
 1. Read `${CLAUDE_PLUGIN_ROOT}/catalog/agents.json`. If the request is broad, run `node ${CLAUDE_PLUGIN_ROOT}/scripts/route.mjs "<request>"` (if present) for a shortlist, then judge it myself.
 2. Ask at most two questions, only if the answer changes who I pick (engine, platform, scope). If the request already answers them, or the user says "just go", I state assumptions and act.
 3. Pick specialists. Within one division across departments: send to the lead. Across divisions: brief each lead or specialist myself.
-4. For each pick, check `runtime`. `claude`: spawn with the Agent tool using the plugin `id`. `codex`: run `run-agent.mjs` via Bash with an argument-safe quoted task.
+4. For each pick, check `runtime`. `claude`: spawn with the Agent tool using the plugin `id`. `codex`: run `run-agent.mjs` through the shell tool (Bash, or PowerShell on Windows) with an argument-safe quoted task.
 5. Run independent briefs in parallel; run dependent ones in order and pass outputs forward.
 6. Merge: one answer, credited by persona and agent name, conflicts shown, unverified items kept marked.
 
