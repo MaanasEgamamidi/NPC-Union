@@ -1,4 +1,4 @@
-Status: IN PROGRESS (stopped at deadline, see below)
+Status: STOPPED AT DEADLINE (not DONE)
 
 # Stream C: technical division
 
@@ -20,25 +20,66 @@ ai-integration (C2): ai-integration-architect Switchyard, llm-npc-engineer Murmu
 platform-tools (C3): mcp-specialist Stdio, agent-tooling-engineer Harness, game-security-engineer Deadbolt
 asset-scouts (C3): itch-scout Rummage, unity-store-scout Haggle, unreal-fab-scout Dowser, godot-asset-scout Forage, open-asset-scout Gleaner, audio-asset-scout Earwig, asset-license-auditor Notary
 
-## Done
+## Done (exists and passes the validator, 2026-11-05T11:04Z)
 
-- Branch created from `main`.
-- Verified 2026-11-05 on https://godotengine.org/download/archive/ : Godot 4.7.2-stable (18 Aug 2026), 4.8-beta2 (29 Oct 2026), 3.6.3-stable (22 Aug 2026).
+- agents/technical/programming/technical-director.md
+- agents/technical/programming/gameplay-programmer.md
+- agents/technical/programming/engine-programmer.md
+- agents/technical/programming/graphics-programmer.md
+- agents/technical/programming/tools-programmer.md
+- agents/technical/programming/technical-artist.md
+- agents/technical/programming/performance-engineer.md
+- agents/technical/programming/build-engineer.md
+- agents/technical/programming/save-systems-engineer.md
+- agents/technical/engines/godot-specialist.md
+- agents/technical/engines/unity-specialist.md
+- agents/technical/engines/roblox-specialist.md
+- agents/technical/engines/bevy-specialist.md
 
-## In progress
+## Written but failing validation
 
-Drafting batches running for programming (two batches) and engines (two batches). Files are committed as they arrive.
+- none
 
-## Not done
 
-See the list at the bottom, updated at each push.
+## Not done (in this session's scope)
+
+- agents/technical/programming/physics-programmer.md
+- agents/technical/programming/ui-programmer.md
+- agents/technical/engines/web-engine-specialist.md
+- agents/technical/engines/unreal-specialist.md
+- agents/technical/engines/gamemaker-specialist.md
+
+## Not done (moved to other sessions)
+
+- technical/multiplayer: 5 agents, reassigned (C2: multiplayer, ai-integration; C3: platform-tools, asset-scouts). None written here.
+- technical/ai-integration: 8 agents, reassigned (C2: multiplayer, ai-integration; C3: platform-tools, asset-scouts). None written here.
+- technical/platform-tools: 3 agents, reassigned (C2: multiplayer, ai-integration; C3: platform-tools, asset-scouts). None written here.
+- technical/asset-scouts: 7 agents, reassigned (C2: multiplayer, ai-integration; C3: platform-tools, asset-scouts). None written here.
+
+## Validator (stream c, non-strict, at stop)
+
+` / Node.js v22.23.4`
+
+Strict mode fails until C2 and C3 add their departments. This session's goal (strict PASS for all of stream C) cannot be met by this session alone after the scope change.
+
+## Not done: review step
+
+Section 8 item 4 (read 10 random agents end to end and fix generic text) was only partly done: performance-engineer and godot-specialist read in full, bevy knowledge checked. Next session should do the side-by-side voice review across programming and engines.
 
 ## Decisions
 
-- Reference repo Claude-Code-Game-Studios (MIT) cloned outside the repo for adaptation. Files based on it carry `adapted_from`.
+- Reference repo Claude-Code-Game-Studios (MIT) used for adaptation; files based on it carry `adapted_from`.
+- Persona names above were assigned up front to avoid collisions inside stream C.
 
 ## Needs local verification
 
+- knowledge/technical/engines/bevy.md: 4 UNVERIFIED item(s); search the file for UNVERIFIED.
+- knowledge/technical/engines/godot.md: 4 UNVERIFIED item(s); search the file for UNVERIFIED.
+- knowledge/technical/engines/roblox.md: 6 UNVERIFIED item(s); search the file for UNVERIFIED.
+- knowledge/technical/engines/unity.md: 5 UNVERIFIED item(s); search the file for UNVERIFIED.
+
+- Batch drafting reports (if written) were in the session scratchpad and are not in the repo.
+
 ## Requests to other streams
 
-- Stream A: roster unchanged so far.
+- Stream A: no roster changes requested.
