@@ -1,0 +1,23 @@
+name: Wrong or outdated fact
+description: An agent or knowledge file says something incorrect or stale.
+labels: [accuracy]
+body:
+  - type: input
+    id: file
+    attributes:
+      label: File or agent ID
+      placeholder: npc-union:technical:engines:godot-specialist
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: The incorrect text
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: The correct information, with a source link
+    validations:
+      required: true

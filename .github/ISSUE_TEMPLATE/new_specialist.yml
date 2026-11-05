@@ -1,0 +1,22 @@
+name: New specialist request
+description: Suggest an agent for a niche the roster does not cover.
+labels: [new-specialist]
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: What existing agents get wrong or miss
+      description: Name the agents you tried.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources a specialist should know
+      description: Docs, databases, standards, books.
