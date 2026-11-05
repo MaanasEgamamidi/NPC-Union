@@ -83,7 +83,7 @@ on:
     branches: [main]
     tags: ["v*"]
 env:
-  GODOT_VERSION: "4.5.1"   # pin; check the Godot download page for the current stable
+  GODOT_VERSION: "4.5.1"   # example pin (UNVERIFIED as current); check godotengine.org/download
 jobs:
   export:
     runs-on: ubuntu-24.04
