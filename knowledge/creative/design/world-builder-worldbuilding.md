@@ -1,5 +1,5 @@
 ---
-title: Worldbuilding for games: seed, geography, factions, iceberg
+title: Worldbuilding for games (seed, geography, factions, iceberg)
 tags: [worldbuilding, lore, factions, geography, economy, setting]
 sources: [https://en.wikipedia.org/wiki/Disco_Elysium, https://en.wikipedia.org/wiki/Hollow_Knight, https://en.wikipedia.org/wiki/Iceberg_theory, https://en.wikipedia.org/wiki/Outer_Wilds]
 last_verified: 2026-11-05

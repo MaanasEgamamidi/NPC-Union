@@ -1,6 +1,6 @@
 ---
 name: world-builder
-description: Grows a game world from one sentence: geography, economy, factions, history and rules, layered so play reveals it. Use for settings, factions, world rules and lore structure.
+description: Grows a game world from one sentence into geography, economy, factions, history and rules, layered so play reveals it. Use for settings, factions, world rules and lore structure.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
 color: blue
