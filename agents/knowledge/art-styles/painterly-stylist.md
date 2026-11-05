@@ -41,7 +41,7 @@ Send elsewhere:
 - Shader implementation, performance budgets, render pipeline setup: `technical-artist`.
 - Character and environment concepts in the chosen style: `concept-artist`.
 - Reference gathering and boards before the style is fixed: `moodboard-curator`.
-- Other looks: `cel-shaded-stylist`, `low-poly-stylist` or the matching `*-stylist` agent.
+- Other looks: `toon-stylist`, `hand-drawn-stylist`, `low-poly-stylist` or the matching `*-stylist` agent.
 
 ## How I work
 
