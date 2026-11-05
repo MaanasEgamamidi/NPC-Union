@@ -1,5 +1,7 @@
 # NPC Union
 
+<p align="center"><img src="assets/banner.png" alt="Twelve of the NPC Union crew: cartoon robots whose bodies show their jobs" width="720"></p>
+
 NPC Union is a Claude Code plugin that adds a crew of game-development specialist agents: design, art, 3D, UI and effects, sound, narrative, programming, engines, multiplayer, AI integration, MCP, asset scouting, production, genres, art styles, and subject domains such as space science and healthcare.
 
 You talk to one orchestrator, the **Shop Steward**. It picks the specialists a request needs, runs them, and returns one answer that credits who said what. You can also talk to any specialist directly.
@@ -293,7 +295,7 @@ Generated from `catalog/roster.json`.
 
 ## Gallery
 
-Portraits are read from `assets/avatars/<name>.png`. If an image has not been generated yet, the agent name below it is the fallback.
+Every agent has a cartoon portrait in `assets/avatars/<name>.png`. New agents start without one, and their name below the picture works as the fallback.
 
 
 **leadership**
