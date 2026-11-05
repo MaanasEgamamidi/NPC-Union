@@ -1,6 +1,6 @@
 ---
 name: ux-designer
-description: Designs and reviews game UX: menu flows, onboarding, feedback, readable text and accessible defaults, tested by watching players. Use for menus, tutorials, HUD clarity, usability tests.
+description: "Designs and reviews game UX: menu flows, onboarding, feedback, readable text and accessible defaults, tested by watching players. Use for menus, tutorials, HUD clarity, usability tests."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
 color: blue

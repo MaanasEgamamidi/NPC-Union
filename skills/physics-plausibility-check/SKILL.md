@@ -1,6 +1,6 @@
 ---
 name: physics-plausibility-check
-description: Back-of-envelope check of a game mechanic's physics numbers: units, orders of magnitude, scaling laws, with a pass/adjust table.
+description: "Back-of-envelope check of a game mechanic's physics numbers: units, orders of magnitude, scaling laws, with a pass/adjust table."
 owner: physics-engineering-expert
 disable-model-invocation: true
 argument-hint: "[mechanic and its numbers with units]"

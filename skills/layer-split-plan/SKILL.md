@@ -1,6 +1,6 @@
 ---
 name: layer-split-plan
-description: Plans how to split one flat image into game layers: depth bands, cut types, inpaint margins, alpha settings and a JSON export manifest.
+description: "Plans how to split one flat image into game layers: depth bands, cut types, inpaint margins, alpha settings and a JSON export manifest."
 owner: layer-compositor
 disable-model-invocation: true
 argument-hint: "[image path or description, engine, camera travel in px]"

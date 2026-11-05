@@ -1,6 +1,6 @@
 ---
 name: matchmaking-engineer
-description: Designs skill rating and matchmaking rules: Elo, Glicko-2, OpenSkill, queue widening, parties, backfill, low population. Use for MMR, queue time vs fairness, Open Match.
+description: "Designs skill rating and matchmaking rules: Elo, Glicko-2, OpenSkill, queue widening, parties, backfill, low population. Use for MMR, queue time vs fairness, Open Match."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
 color: cyan

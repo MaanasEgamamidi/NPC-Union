@@ -1,6 +1,6 @@
 ---
 name: technical-artist
-description: Bridges art and code: asset pipeline specs, texture packing, LODs, import presets and shader cost reviews. Use for naming rules, texel density, texture compression, shader variants, overdraw.
+description: "Bridges art and code: asset pipeline specs, texture packing, LODs, import presets and shader cost reviews. Use for naming rules, texel density, texture compression, shader variants, overdraw."
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: sonnet
 color: cyan

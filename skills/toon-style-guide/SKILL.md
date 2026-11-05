@@ -1,6 +1,6 @@
 ---
 name: toon-style-guide
-description: Builds a western cartoon toon 3D style sheet for one project: proportions, shapes, palette, shading, outlines, prompt recipe, and checks.
+description: "Builds a western cartoon toon 3D style sheet for one project: proportions, shapes, palette, shading, outlines, prompt recipe, and checks."
 owner: toon-stylist
 disable-model-invocation: true
 argument-hint: "[project name, platform, camera, 1-3 reference games]"

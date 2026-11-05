@@ -1,6 +1,6 @@
 ---
 name: anime-cel-style-guide
-description: Produces an anime cel-shaded style sheet for a project: tones, outlines, face normals, palette pairs, frame holds, and image prompts.
+description: "Produces an anime cel-shaded style sheet for a project: tones, outlines, face normals, palette pairs, frame holds, and image prompts."
 owner: anime-cel-stylist
 disable-model-invocation: true
 argument-hint: "[project name, 2D or 3D, camera, platform, 1-3 reference games]"

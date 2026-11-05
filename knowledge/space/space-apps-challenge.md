@@ -1,5 +1,5 @@
 ---
-title: NASA International Space Apps Challenge: history, rules, judging, and game-relevant winners
+title: "NASA International Space Apps Challenge: history, rules, judging, and game-relevant winners"
 tags: [space-apps, nasa, hackathon, judging, awards, game-jam, open-data]
 sources:
   - https://www.spaceappschallenge.org/

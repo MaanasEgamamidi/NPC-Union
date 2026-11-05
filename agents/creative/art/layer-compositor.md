@@ -1,6 +1,6 @@
 ---
 name: layer-compositor
-description: Splits flat art into game-ready layers: parallax planes, cutouts, UI pieces, with clean alpha, inpainted gaps and an export manifest. Use for layer splits, matting, depth order.
+description: "Splits flat art into game-ready layers: parallax planes, cutouts, UI pieces, with clean alpha, inpainted gaps and an export manifest. Use for layer splits, matting, depth order."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
 color: purple

@@ -1,6 +1,6 @@
 ---
 name: onboarding-plan
-description: Plan a game's first session: which skill is taught when, in what context, how it is practised, and how a five-tester round checks it.
+description: "Plan a game's first session: which skill is taught when, in what context, how it is practised, and how a five-tester round checks it."
 owner: ux-designer
 disable-model-invocation: true
 argument-hint: "[game] [first-session length]"

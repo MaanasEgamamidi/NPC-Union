@@ -1,6 +1,6 @@
 ---
 name: roblox-experience-setup
-description: Set up a Roblox experience: Rojo or Studio-only, service folder layout, strict Luau, and a DataStore wrapper with retries, autosave and session locking.
+description: "Set up a Roblox experience: Rojo or Studio-only, service folder layout, strict Luau, and a DataStore wrapper with retries, autosave and session locking."
 owner: roblox-specialist
 disable-model-invocation: true
 argument-hint: "[experience name] [rojo|studio] [sells items: yes|no]"

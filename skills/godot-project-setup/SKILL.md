@@ -1,6 +1,6 @@
 ---
 name: godot-project-setup
-description: Sets up a new Godot 4 project: version, renderer, GDScript or C#, folders, autoloads, export presets and web caveats. Use when starting a Godot project.
+description: "Sets up a new Godot 4 project: version, renderer, GDScript or C#, folders, autoloads, export presets and web caveats. Use when starting a Godot project."
 owner: godot-specialist
 disable-model-invocation: true
 argument-hint: "[game type, target platforms, preferred language]"

@@ -1,6 +1,6 @@
 ---
 name: audio-mix-bible
-description: Writes a game's audio direction document: loudness targets, bus tree, ducking, voice limits, middleware choice, and asset naming. Use at audio kickoff or before a mix pass.
+description: "Writes a game's audio direction document: loudness targets, bus tree, ducking, voice limits, middleware choice, and asset naming. Use at audio kickoff or before a mix pass."
 owner: audio-director
 disable-model-invocation: true
 argument-hint: "[platforms, engine, genre, team size]"

@@ -1,6 +1,6 @@
 ---
 name: ps1-retro-stylist
-description: Defines and checks PS1-era retro 3D looks: affine warp, vertex jitter, low-res textures, dithering. Use for PS1 style sheets, retro shader specs, texture budgets, and image prompts.
+description: "Defines and checks PS1-era retro 3D looks: affine warp, vertex jitter, low-res textures, dithering. Use for PS1 style sheets, retro shader specs, texture budgets, and image prompts."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
 color: purple

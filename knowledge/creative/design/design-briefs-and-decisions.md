@@ -1,7 +1,7 @@
 ---
 title: Design briefs, pillars, scope cuts and decision records
 tags: [design, brief, pillars, moscow, scope, adr, decision-log]
-sources: [https://www.agilebusiness.org/?p=1907, https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions.html, https://adr.github.io/, https://www.gamedeveloper.com/design/video-one-page-designs, https://gdcvault.com/play/1024176/Finding-Duskers-Innovation-Through-Better]
+sources: ["https://www.agilebusiness.org/?p=1907", "https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions.html", "https://adr.github.io/", "https://www.gamedeveloper.com/design/video-one-page-designs", "https://gdcvault.com/play/1024176/Finding-Duskers-Innovation-Through-Better"]
 last_verified: 2026-11-05
 ---
 

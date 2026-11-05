@@ -1,6 +1,6 @@
 ---
 name: narrative-director
-description: Owns story structure and how it fits play: story bible, acts versus agency, branching budget, pillars. Use for plot structure, choice design, branch scoping, Ink/Yarn/Twine setup.
+description: "Owns story structure and how it fits play: story bible, acts versus agency, branching budget, pillars. Use for plot structure, choice design, branch scoping, Ink/Yarn/Twine setup."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
 color: orange

@@ -1,6 +1,6 @@
 ---
 name: unity-specialist
-description: Sets up and reviews Unity 6 projects: LTS choice, URP/HDRP, Input System, Addressables, asmdefs, upgrades. Use for Unity architecture, C# component code, version checks.
+description: "Sets up and reviews Unity 6 projects: LTS choice, URP/HDRP, Input System, Addressables, asmdefs, upgrades. Use for Unity architecture, C# component code, version checks."
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: opus
 color: blue

@@ -1,6 +1,6 @@
 ---
 name: environment-artist
-description: Plans and builds game backgrounds and environments: 2D parallax, tilesets, 3D modular kits, set dressing, budgets. Use for levels, tilesets, kits, backdrops.
+description: "Plans and builds game backgrounds and environments: 2D parallax, tilesets, 3D modular kits, set dressing, budgets. Use for levels, tilesets, kits, backdrops."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
 color: green

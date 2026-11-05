@@ -1,6 +1,6 @@
 ---
 name: gameplay-system-implement
-description: Turn a gameplay design spec into code: transition table, tunable data asset, implementation and headless tests. Use when a mechanic spec is ready to build.
+description: "Turn a gameplay design spec into code: transition table, tunable data asset, implementation and headless tests. Use when a mechanic spec is ready to build."
 owner: gameplay-programmer
 disable-model-invocation: true
 argument-hint: "[path to design spec or mechanic name]"

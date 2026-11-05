@@ -1,6 +1,6 @@
 ---
 name: save-format-design
-description: Design a save format: header, versioned schema, slots, atomic write sequence, load fallback, and cloud sync conflict rules.
+description: "Design a save format: header, versioned schema, slots, atomic write sequence, load fallback, and cloud sync conflict rules."
 owner: save-systems-engineer
 disable-model-invocation: true
 argument-hint: "[engine, platforms, cloud sync yes/no, what must persist]"

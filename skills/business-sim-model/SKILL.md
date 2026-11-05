@@ -1,6 +1,6 @@
 ---
 name: business-sim-model
-description: Turn a business or tycoon game idea into a minimal, correct financial model: linked P&L, balance sheet and cash flow, 5-10 player levers, and sanity checks.
+description: "Turn a business or tycoon game idea into a minimal, correct financial model: linked P&L, balance sheet and cash flow, 5-10 player levers, and sanity checks."
 owner: business-finance-expert
 disable-model-invocation: true
 argument-hint: "<game idea, what the player manages, tick length>"

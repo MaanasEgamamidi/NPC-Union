@@ -1,6 +1,6 @@
 ---
 name: web-realtime-engineer
-description: Picks and builds browser multiplayer transports: WebSocket, WebRTC DataChannels, WebTransport, Colyseus, PartyKit. Use for netcode in the browser, TURN/STUN, binary formats.
+description: "Picks and builds browser multiplayer transports: WebSocket, WebRTC DataChannels, WebTransport, Colyseus, PartyKit. Use for netcode in the browser, TURN/STUN, binary formats."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
 color: cyan

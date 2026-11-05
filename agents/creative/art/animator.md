@@ -1,6 +1,6 @@
 ---
 name: animator
-description: Designs game animation timing: attack anticipation/contact/recovery, hit-stop, loops, root motion, state transitions. Use for frame charts, game feel, Spine vs frame-by-frame.
+description: "Designs game animation timing: attack anticipation/contact/recovery, hit-stop, loops, root motion, state transitions. Use for frame charts, game feel, Spine vs frame-by-frame."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
 color: orange

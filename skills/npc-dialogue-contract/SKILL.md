@@ -1,6 +1,6 @@
 ---
 name: npc-dialogue-contract
-description: Writes the contract between an LLM-driven NPC and game code: persona, memory tiers, tool schema, latency budget, fallbacks and injection tests.
+description: "Writes the contract between an LLM-driven NPC and game code: persona, memory tiers, tool schema, latency budget, fallbacks and injection tests."
 owner: llm-npc-engineer
 disable-model-invocation: true
 argument-hint: "[NPC name and role, engine, inference location]"

@@ -1,6 +1,6 @@
 ---
 name: unity-project-setup
-description: Sets up a new Unity 6 project: LTS pick, URP or HDRP, Input System, Addressables, asmdefs, .gitignore and LFS, CI hint. Use when starting a Unity project.
+description: "Sets up a new Unity 6 project: LTS pick, URP or HDRP, Input System, Addressables, asmdefs, .gitignore and LFS, CI hint. Use when starting a Unity project."
 owner: unity-specialist
 disable-model-invocation: true
 argument-hint: "[game type, platforms, team size]"

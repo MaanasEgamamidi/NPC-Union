@@ -1,6 +1,6 @@
 ---
 name: animation-timing-chart
-description: Builds a frame timing chart for a game move or cycle: startup/active/recovery, holds, events, hit-stop, and state transitions, ready for art and code.
+description: "Builds a frame timing chart for a game move or cycle: startup/active/recovery, holds, events, hit-stop, and state transitions, ready for art and code."
 owner: animator
 disable-model-invocation: true
 argument-hint: "[move or cycle, fps, engine, 2D skeletal | frame-by-frame | 3D]"

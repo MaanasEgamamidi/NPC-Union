@@ -1,6 +1,6 @@
 ---
 name: technical-director
-description: Owns technical direction: engine, language and backend choices as ADRs, risk register, cross-system contracts, budgets. Use for stack decisions, architecture reviews, technical risk.
+description: "Owns technical direction: engine, language and backend choices as ADRs, risk register, cross-system contracts, budgets. Use for stack decisions, architecture reviews, technical risk."
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: opus
 color: blue

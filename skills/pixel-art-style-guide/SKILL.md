@@ -1,6 +1,6 @@
 ---
 name: pixel-art-style-guide
-description: Builds a pixel art style sheet for a project: resolution, scale, palette, sprite sizes, shading rules, engine settings, and prompt recipe.
+description: "Builds a pixel art style sheet for a project: resolution, scale, palette, sprite sizes, shading rules, engine settings, and prompt recipe."
 owner: pixel-art-stylist
 disable-model-invocation: true
 argument-hint: "[project name, engine, target screens, camera, reference games]"

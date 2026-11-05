@@ -1,6 +1,6 @@
 ---
 name: game-feel-pass
-description: Measured game-feel pass: input buffering, coyote time, hit-stop, camera shake and latency, with values in ms and frames. Use before playtests or when controls feel off.
+description: "Measured game-feel pass: input buffering, coyote time, hit-stop, camera shake and latency, with values in ms and frames. Use before playtests or when controls feel off."
 owner: gameplay-programmer
 disable-model-invocation: true
 argument-hint: "[mechanic or build to tune, e.g. 'player jump and melee']"

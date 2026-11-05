@@ -29,10 +29,19 @@ function parse(path) {
   const match = text.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
   if (!match) return null;
   const fields = {};
+  const yamlProblems = [];
   for (const line of match[1].split("\n")) {
     const kv = line.match(/^([A-Za-z][\w-]*):\s*(.*)$/);
     if (!kv) continue;
     let value = kv[2].trim();
+    // Claude Code parses frontmatter as YAML and silently drops every field when it fails.
+    // Catch the common breakers in unquoted plain scalars.
+    if (value && !/^["'[{|>]/.test(value) && (/: /.test(value) || / #/.test(value) || /^[*&!%@`]/.test(value))) {
+      yamlProblems.push(`${kv[1]} must be quoted: an unquoted value with ": ", " #", or a leading YAML symbol breaks the frontmatter`);
+    }
+    if (value.startsWith("[") && /:\/\//.test(value) && /\[\s*[^"'\s]|,\s*[^"'\s]/.test(value)) {
+      yamlProblems.push(`${kv[1]} list items containing URLs must be quoted`);
+    }
     if (value.startsWith("[") && value.endsWith("]")) {
       value = value.slice(1, -1).split(",").map((s) => s.trim()).filter(Boolean);
     } else {
@@ -40,7 +49,7 @@ function parse(path) {
     }
     fields[kv[1]] = value;
   }
-  return { fields, body: match[2] };
+  return { fields, body: match[2], yamlProblems };
 }
 
 function walk(dir, out = []) {
@@ -76,7 +85,8 @@ for (const path of agentFiles) {
   const file = relative(ROOT, path).replace(/\\/g, "/");
   const parsed = parse(path);
   if (!parsed) { err(file, "missing or malformed frontmatter"); continue; }
-  const { fields, body } = parsed;
+  const { fields, body, yamlProblems } = parsed;
+  for (const p of yamlProblems) err(file, p);
   const name = fields.name;
   const spec = expected.get(name);
   if (stream && spec && spec.stream !== stream) continue;
@@ -160,7 +170,8 @@ for (const skill of onDisk) {
   if (!existsSync(join(ROOT, path))) { err(path, "missing SKILL.md"); continue; }
   const parsed = parse(join(ROOT, path));
   if (!parsed) { err(path, "missing or malformed frontmatter"); continue; }
-  const { fields, body } = parsed;
+  const { fields, body, yamlProblems } = parsed;
+  for (const p of yamlProblems) err(path, p);
   const ownerSpec = expected.get(fields.owner);
   if (stream && ownerSpec && ownerSpec.stream !== stream) continue;
   if (stream && !ownerSpec && stream !== "a") continue;

@@ -1,6 +1,6 @@
 ---
 name: orbit-sim-spec
-description: Turns a space game concept into an orbit simulation spec: model, scale, integrator, precision, time warp, constants, test numbers, performance budget.
+description: "Turns a space game concept into an orbit simulation spec: model, scale, integrator, precision, time warp, constants, test numbers, performance budget."
 owner: orbital-mechanics-expert
 disable-model-invocation: true
 argument-hint: "<game concept, engine, real or invented system>"

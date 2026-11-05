@@ -1,6 +1,6 @@
 ---
 name: blockout-spec
-description: Turn a beat chart into a measured greybox spec: metrics sheet, per-space dimensions, gates, loops, sightline checks and a playtest plan.
+description: "Turn a beat chart into a measured greybox spec: metrics sheet, per-space dimensions, gates, loops, sightline checks and a playtest plan."
 owner: level-designer
 disable-model-invocation: true
 argument-hint: "[beat chart path or level name] [engine]"

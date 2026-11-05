@@ -1,6 +1,6 @@
 ---
 name: system-spec
-description: Write a formula-complete spec for one game system: variable table, output range, tuning knobs, interaction matrix and feedback loops.
+description: "Write a formula-complete spec for one game system: variable table, output range, tuning knobs, interaction matrix and feedback loops."
 owner: systems-designer
 disable-model-invocation: true
 argument-hint: "[system name] [player goal]"

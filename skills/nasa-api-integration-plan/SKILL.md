@@ -1,6 +1,6 @@
 ---
 name: nasa-api-integration-plan
-description: Turns a chosen NASA API into an integration plan: server-side key, cache and rate budget, offline snapshot, attribution, failure modes and a test query.
+description: "Turns a chosen NASA API into an integration plan: server-side key, cache and rate budget, offline snapshot, attribution, failure modes and a test query."
 owner: nasa-data-specialist
 disable-model-invocation: true
 argument-hint: "<API or endpoint, game platform, expected players>"

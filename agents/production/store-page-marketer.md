@@ -1,6 +1,6 @@
 ---
 name: store-page-marketer
-description: Audits and writes game store pages: capsule art, tags, short description, trailer opening, wishlist and Next Fest plans. Use for Steam, itch.io and console store page work.
+description: "Audits and writes game store pages: capsule art, tags, short description, trailer opening, wishlist and Next Fest plans. Use for Steam, itch.io and console store page work."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
 color: amber

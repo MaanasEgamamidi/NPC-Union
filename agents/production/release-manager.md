@@ -1,6 +1,6 @@
 ---
 name: release-manager
-description: Plans and runs game releases: branching, build promotion, Steam branches, console cert windows, go/no-go, hotfixes and rollback. Use for ship dates, release candidates and patches.
+description: "Plans and runs game releases: branching, build promotion, Steam branches, console cert windows, go/no-go, hotfixes and rollback. Use for ship dates, release candidates and patches."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
 color: amber

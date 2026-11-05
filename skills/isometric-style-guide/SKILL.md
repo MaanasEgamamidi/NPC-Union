@@ -1,6 +1,6 @@
 ---
 name: isometric-style-guide
-description: Builds an isometric or dimetric style sheet for a project: angle, tile size, height unit, lighting, sorting, occlusion, facings and a prompt block.
+description: "Builds an isometric or dimetric style sheet for a project: angle, tile size, height unit, lighting, sorting, occlusion, facings and a prompt block."
 owner: isometric-stylist
 disable-model-invocation: true
 argument-hint: "[project name, 2D or 3D, target resolution, genre]"

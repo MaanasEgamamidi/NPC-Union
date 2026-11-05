@@ -1,6 +1,6 @@
 ---
 name: matchmaking-rules-design
-description: Writes a rating model and queue ruleset for one game mode: widening schedule, party, backfill and low-population rules, plus telemetry thresholds.
+description: "Writes a rating model and queue ruleset for one game mode: widening schedule, party, backfill and low-population rules, plus telemetry thresholds."
 owner: matchmaking-engineer
 disable-model-invocation: true
 argument-hint: "[mode name, team format, concurrent players at peak and trough]"

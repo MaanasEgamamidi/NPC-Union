@@ -1,6 +1,6 @@
 ---
 name: store-page-audit
-description: Run a prioritized audit of a Steam, itch.io or console store page: assets, tags, copy, trailer opening, wishlist and Next Fest plan.
+description: "Run a prioritized audit of a Steam, itch.io or console store page: assets, tags, copy, trailer opening, wishlist and Next Fest plan."
 owner: store-page-marketer
 disable-model-invocation: true
 argument-hint: "[store page URL or asset folder, store, launch date]"
