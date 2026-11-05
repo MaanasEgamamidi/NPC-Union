@@ -1,0 +1,44 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate agents and skills
+        run: node scripts/validate.mjs
+      - name: Tests
+        run: node --test tests/*.test.mjs
+      - name: Catalog is fresh
+        run: node scripts/build-catalog.mjs --check
+      - name: Knowledge index is fresh
+        run: node scripts/build-index.mjs --check
+      - name: Installer round trip
+        run: |
+          T=$(mktemp -d)
+          ./install.sh --project "$T"
+          test -f "$T/.claude/agents/npc-union/leadership/shop-steward.md"
+          ! grep -rq 'CLAUDE_PLUGIN_ROOT' "$T/.claude/agents/npc-union"
+          ./install.sh --uninstall --project "$T"
+          test ! -d "$T/.claude/npc-union"
+      - name: Claude plugin validate (if the CLI installs)
+        continue-on-error: true
+        run: |
+          npm install -g @anthropic-ai/claude-code && claude plugin validate .
+  windows-installer:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Installer round trip (PowerShell)
+        shell: pwsh
+        run: |
+          $t = Join-Path $env:RUNNER_TEMP "npc"; New-Item -ItemType Directory -Force $t | Out-Null
+          ./install.ps1 -Project $t
+          if (-not (Test-Path "$t/.claude/agents/npc-union/leadership/shop-steward.md")) { throw "agent missing" }
+          ./install.ps1 -Project $t -Uninstall
+          if (Test-Path "$t/.claude/npc-union") { throw "uninstall failed" }
