@@ -23,7 +23,7 @@ To try your changes, load the clone as a local plugin in Claude Code, or run `./
 ## Adding a specialist
 
 1. Run `/npc-union:new-specialist <topic>`. It asks narrowing questions, researches with citations, and writes the agent, its skills, knowledge files, and roster entry.
-2. Or write it by hand from `templates/agent.md` and `templates/skill.md`.
+2. Or write it by hand from `templates/agent.md` and `templates/skill.md`, following [docs/AGENT-SCHEMA.md](docs/AGENT-SCHEMA.md).
 3. Put the file at `agents/<division>/<department>/<name>.md`. The plugin ID becomes `npc-union:<division>:<department>:<name>`.
 4. Add the agent to `catalog/roster.json`, then regenerate the catalog with `node scripts/build-catalog.mjs`.
 5. Run `node scripts/validate.mjs --strict` and fix every failure.

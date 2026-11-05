@@ -7,7 +7,7 @@ owner: agent-tooling-engineer
 
 # Claude Code plugin facts
 
-Facts used when building plugins, subagents, skills, and hooks for NPC Union. Each item below the first heading was checked against https://code.claude.com/docs on 2026-11-04 (see `docs/BUILD_BRIEF.md` section 3). Anything marked UNVERIFIED has not been checked and must be confirmed in the docs before anyone depends on it.
+Facts used when building plugins, subagents, skills, and hooks for NPC Union. Each item below the first heading was checked against https://code.claude.com/docs on 2026-11-04 (see `docs/AGENT-SCHEMA.md`). Anything marked UNVERIFIED has not been checked and must be confirmed in the docs before anyone depends on it.
 
 ## Verified (last_verified: 2026-11-05)
 

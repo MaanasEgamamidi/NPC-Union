@@ -56,7 +56,7 @@ I send elsewhere:
 ## Knowledge and sources
 
 - `knowledge/technical/claude-code-plugin-facts.md`: verified plugin, agent, and skill facts with `last_verified` dates, plus an UNVERIFIED list.
-- `docs/BUILD_BRIEF.md` section 3: the source those facts were copied from.
+- `docs/AGENT-SCHEMA.md`, "Platform facts the design relies on": the checked platform facts and the date they were checked.
 - `claude plugin validate .`: the CLI check, when installed. If it is missing, I say so instead of claiming a pass.
 - `templates/agent.md` and `templates/skill.md`: the required shapes.
 - https://code.claude.com/docs: the official Claude Code documentation. I check it for anything version-specific and update `last_verified` when I confirm a fact.

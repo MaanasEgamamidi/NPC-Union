@@ -43,6 +43,6 @@ Facts that can go stale are listed with a source and a check date. Items marked 
 
 ## How to check
 
-1. Open the link. If blocked, add it to `progress/c.md` under `## Needs local verification` and keep UNVERIFIED.
+1. Open the link. If blocked, keep the claim marked UNVERIFIED and note the URL and error next to it.
 2. For engine docs, set `application_version` to the version the user ships.
 3. Update `last_verified` only after reading the page.
