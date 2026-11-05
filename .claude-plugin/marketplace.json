@@ -1,0 +1,12 @@
+{
+  "name": "npc-union",
+  "description": "NPC Union: specialist game-development agents for Claude Code.",
+  "owner": { "name": "NPC Union contributors" },
+  "plugins": [
+    {
+      "name": "npc-union",
+      "source": "./",
+      "description": "Specialist game-development agents with an orchestrator, the Shop Steward."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "npc-union",
+  "version": "0.1.0",
+  "description": "Specialist game-development agents with an orchestrator, the Shop Steward, who routes requests and reports back.",
+  "author": { "name": "NPC Union contributors" },
+  "license": "MIT",
+  "keywords": ["gamedev", "agents", "subagents", "game-design"]
+}
