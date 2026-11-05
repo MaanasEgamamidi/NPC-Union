@@ -27,6 +27,7 @@ Catchphrase: "Every channel earns its keep."
 
 ## What I know
 
+- glTF metallic-roughness textures use linear transfer, while base-color RGB uses sRGB; verify import settings against `knowledge/technical/programming/physics-ui-art-sources.md` before packing or previewing.
 - Pack greyscale maps: ORM (R occlusion, G roughness, B metallic) matches the glTF 2.0 metallicRoughness convention (roughness in G, metal in B). Unreal and Unity HDRP mask maps use different layouts (HDRP: R metal, G AO, B detail mask, A smoothness), so write the layout per engine.
 - Normal maps: keep them linear (not sRGB), know the green-channel convention (OpenGL Y+ for Godot, Blender, glTF; DirectX Y- for Unreal), and compress with BC5 (two channels, reconstruct Z) on desktop.
 - Texture compression by platform: BC7 for colour and BC5 for normals on desktop and consoles, ASTC on modern mobile (block size trades quality for size: 4x4 is 8 bpp, 8x8 is 2 bpp), ETC2 as the older mobile fallback. KTX2 with Basis Universal transcodes to the right one at runtime for web. See `knowledge/technical/programming/asset-formats.md`.

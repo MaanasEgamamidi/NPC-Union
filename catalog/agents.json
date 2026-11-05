@@ -1,7 +1,7 @@
 {
   "_generated": "by scripts/build-catalog.mjs; do not edit",
   "count": 147,
-  "written": 134,
+  "written": 147,
   "agents": [
     {
       "name": "animator",
@@ -274,16 +274,21 @@
       "id": "npc-union:creative:design:character-designer",
       "path": "agents/creative/design/character-designer.md",
       "folder": "creative/design",
-      "persona_name": "",
+      "persona_name": "Hemstitch",
       "division": "creative",
       "department": "design",
       "runtime": "claude",
       "model": "sonnet",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "description": "Designs playable characters and casts with readable silhouettes, motivations and production constraints. Use for character briefs, roster contrast and visual storytelling.",
+      "skills": [
+        "character-brief-design"
+      ],
+      "status": "written"
     },
     {
       "name": "controls-designer",
@@ -381,48 +386,65 @@
       "id": "npc-union:creative:design:moodboard-curator",
       "path": "agents/creative/design/moodboard-curator.md",
       "folder": "creative/design",
-      "persona_name": "",
+      "persona_name": "Quire",
       "division": "creative",
       "department": "design",
       "runtime": "codex",
       "model": "sonnet",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "web-search",
+        "image-gen"
+      ],
+      "description": "Finds and annotates visual references and creates direction boards. Use for linked moodboards, visual comparisons and reference image briefs.",
+      "skills": [
+        "visual-reference-board"
+      ],
+      "status": "written"
     },
     {
       "name": "npc-designer",
       "id": "npc-union:creative:design:npc-designer",
       "path": "agents/creative/design/npc-designer.md",
       "folder": "creative/design",
-      "persona_name": "",
+      "persona_name": "Latchkey",
       "division": "creative",
       "department": "design",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "description": "Designs believable NPC roles, routines, barks, memory and relationships, including LLM-driven characters. Use for NPC behavior and social systems.",
+      "skills": [
+        "npc-behavior-spec",
+        "npc-llm-interaction-design"
+      ],
+      "status": "written"
     },
     {
       "name": "quest-designer",
       "id": "npc-union:creative:design:quest-designer",
       "path": "agents/creative/design/quest-designer.md",
       "folder": "creative/design",
-      "persona_name": "",
+      "persona_name": "Spindle",
       "division": "creative",
       "department": "design",
       "runtime": "claude",
       "model": "sonnet",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "description": "Designs quests with clear objectives, meaningful choices, recoverable states and implementation-ready dependencies. Use for quest chains, branches and quest audits.",
+      "skills": [
+        "quest-state-design"
+      ],
+      "status": "written"
     },
     {
       "name": "systems-designer",
@@ -1304,7 +1326,7 @@
       "id": "npc-union:knowledge:domains:law-civics-expert",
       "path": "agents/knowledge/domains/law-civics-expert.md",
       "folder": "knowledge/domains",
-      "persona_name": "Quorum",
+      "persona_name": "Precedent",
       "division": "knowledge",
       "department": "domains",
       "runtime": "codex",
@@ -1906,48 +1928,66 @@
       "id": "npc-union:leadership:creative-lead",
       "path": "agents/leadership/creative-lead.md",
       "folder": "leadership",
-      "persona_name": "",
+      "persona_name": "Kestrel Loom",
       "division": "leadership",
       "department": "leadership",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "description": "Coordinates creative specialists across departments. Use for integrated plans, trade-offs and handoffs to the Steward.",
+      "skills": [
+        "creative-integration-review"
+      ],
+      "status": "written"
     },
     {
       "name": "knowledge-lead",
       "id": "npc-union:leadership:knowledge-lead",
       "path": "agents/leadership/knowledge-lead.md",
       "folder": "leadership",
-      "persona_name": "",
+      "persona_name": "Aster Folio",
       "division": "leadership",
       "department": "leadership",
       "runtime": "claude",
       "model": "sonnet",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "description": "Coordinates knowledge specialists across departments. Use for integrated plans, trade-offs and handoffs to the Steward.",
+      "skills": [
+        "knowledge-evidence-map"
+      ],
+      "status": "written"
     },
     {
       "name": "production-lead",
       "id": "npc-union:leadership:production-lead",
       "path": "agents/leadership/production-lead.md",
       "folder": "leadership",
-      "persona_name": "",
+      "persona_name": "Morrow Trestle",
       "division": "leadership",
       "department": "leadership",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "description": "Coordinates production specialists across departments. Use for integrated plans, trade-offs and handoffs to the Steward.",
+      "skills": [
+        "production-gate-review"
+      ],
+      "status": "written"
     },
     {
       "name": "shop-steward",
@@ -1977,16 +2017,22 @@
       "id": "npc-union:leadership:technical-lead",
       "path": "agents/leadership/technical-lead.md",
       "folder": "leadership",
-      "persona_name": "",
+      "persona_name": "Rivet Vale",
       "division": "leadership",
       "department": "leadership",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "description": "Coordinates technical specialists across departments. Use for integrated plans, trade-offs and handoffs to the Steward.",
+      "skills": [
+        "technical-boundary-review"
+      ],
+      "status": "written"
     },
     {
       "name": "accessibility-specialist",
@@ -2635,16 +2681,22 @@
       "id": "npc-union:technical:engines:gamemaker-specialist",
       "path": "agents/technical/engines/gamemaker-specialist.md",
       "folder": "technical/engines",
-      "persona_name": "",
+      "persona_name": "Roomwright",
       "division": "technical",
       "department": "engines",
       "runtime": "claude",
       "model": "sonnet",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "web-search"
+      ],
+      "description": "Builds and reviews GameMaker 2D games in GML. Use for objects, events, rooms, collision, texture pages, exports and runtime upgrades.",
+      "skills": [
+        "gamemaker-room-diagnosis"
+      ],
+      "status": "written"
     },
     {
       "name": "godot-specialist",
@@ -2719,32 +2771,44 @@
       "id": "npc-union:technical:engines:unreal-specialist",
       "path": "agents/technical/engines/unreal-specialist.md",
       "folder": "technical/engines",
-      "persona_name": "",
+      "persona_name": "Castwell",
       "division": "technical",
       "department": "engines",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "web-search"
+      ],
+      "description": "Builds Unreal Engine 5 projects and reviews gameplay architecture, replication, content and packaging. Use for UE5 C++, Blueprints, upgrades and target planning.",
+      "skills": [
+        "unreal-production-slice"
+      ],
+      "status": "written"
     },
     {
       "name": "web-engine-specialist",
       "id": "npc-union:technical:engines:web-engine-specialist",
       "path": "agents/technical/engines/web-engine-specialist.md",
       "folder": "technical/engines",
-      "persona_name": "",
+      "persona_name": "Tabbinder",
       "division": "technical",
       "department": "engines",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "web-search"
+      ],
+      "description": "Builds browser games with Phaser, PixiJS, Three.js, Babylon.js and PlayCanvas. Use for framework choice, browser constraints, rendering, loading and deployment.",
+      "skills": [
+        "browser-game-readiness"
+      ],
+      "status": "written"
     },
     {
       "name": "anti-cheat-engineer",
@@ -3038,16 +3102,21 @@
       "id": "npc-union:technical:programming:physics-programmer",
       "path": "agents/technical/programming/physics-programmer.md",
       "folder": "technical/programming",
-      "persona_name": "",
+      "persona_name": "Inertia",
       "division": "technical",
       "department": "programming",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "description": "Builds and diagnoses game physics, collision detection, character contacts and simulation stability. Use for tunneling, jitter, fixed steps and collision filtering.",
+      "skills": [
+        "collision-repro-triage"
+      ],
+      "status": "written"
     },
     {
       "name": "save-systems-engineer",
@@ -3142,16 +3211,21 @@
       "id": "npc-union:technical:programming:ui-programmer",
       "path": "agents/technical/programming/ui-programmer.md",
       "folder": "technical/programming",
-      "persona_name": "",
+      "persona_name": "Ninepatch",
       "division": "technical",
       "department": "programming",
       "runtime": "claude",
       "model": "sonnet",
-      "reasoning": "",
-      "capabilities": [],
-      "description": "",
-      "skills": [],
-      "status": "planned"
+      "reasoning": "medium",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "description": "Implements game HUDs and menus with input navigation, layout, state and accessibility. Use for controller focus, responsive UI, menu bugs and UI integration.",
+      "skills": [
+        "menu-focus-audit"
+      ],
+      "status": "written"
     }
   ]
 }
