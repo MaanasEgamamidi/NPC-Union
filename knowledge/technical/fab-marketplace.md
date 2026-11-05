@@ -8,7 +8,7 @@ last_verified: 2026-11-05
 
 last_verified: 2026-11-05
 
-Verification note: the Fab licence summary was fetched on 2026-11-05 at https://www.fab.com/eula?lang=en%5C. The summary says the full EULA is binding; check it and the individual listing before relying on terms. Other unchecked facts remain marked UNVERIFIED.
+Verification note: the Fab licence summary was fetched on 2026-11-05 at https://www.fab.com/eula?lang=en. The summary says the full EULA is binding; check it and the individual listing before relying on terms. Other unchecked facts remain marked UNVERIFIED.
 
 ## What Fab is
 
@@ -21,8 +21,8 @@ Verification note: the Fab licence summary was fetched on 2026-11-05 at https://
 
 | Licence | What to record | Status |
 |---|---|---|
-| Fab Standard License | Commercial use is allowed subject to its terms; check the tier and full EULA | Licence summary: https://www.fab.com/eula?lang=en%5C |
-| Personal tier of Standard License | Commercial use is permitted; Personal and Professional grant the same scope of rights | Licence summary: https://www.fab.com/eula?lang=en%5C |
+| Fab Standard License | Commercial use is allowed subject to its terms; check the tier and full EULA | Licence summary: https://www.fab.com/eula?lang=en |
+| Personal tier of Standard License | Commercial use is permitted; Personal and Professional grant the same scope of rights | Licence summary: https://www.fab.com/eula?lang=en |
 | Creative Commons (CC BY, CC BY-SA, CC0 and similar) | Copy the exact CC variant and the attribution text required | UNVERIFIED |
 | "Unreal Engine only" restriction | Some content, largely legacy Marketplace and Epic-produced content, may only be used in Unreal Engine projects | UNVERIFIED |
 
@@ -41,7 +41,7 @@ Verification note: the Fab licence summary was fetched on 2026-11-05 at https://
 ## Sources
 
 - Fab home: https://www.fab.com (not fetched 2026-11-05)
-- Fab licence summary: https://www.fab.com/eula?lang=en%5C (fetched 2026-11-05; full EULA governs)
+- Fab licence summary: https://www.fab.com/eula?lang=en (fetched 2026-11-05; full EULA governs)
 
 ## How to re-verify
 

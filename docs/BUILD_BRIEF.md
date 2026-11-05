@@ -92,7 +92,7 @@ reasoning: medium                # low | medium | high, Codex effort
 
 **Skill schema:** see `templates/skill.md`. A skill is a repeatable procedure with inputs, steps, an output template, and a done check, not a restatement of the agent.
 
-**Robot look:** chunky, friendly 3D-toy robots under one studio lighting setup, each with a body that shows its job (a sprite artist has a pixel-grid face and paint arm, an audio designer has dish ears and a waveform chest). Each wears a small round enamel union pin. The pin colour shows the division: creative = coral, technical = teal, production = amber, knowledge = violet, leadership = gold. The `## Who I am` section must describe the robot well enough to generate a portrait. Portraits are generated later by the Local session to `assets/avatars/<name>.png`, so **do not create images yourself.**
+**Robot look:** chunky, friendly cartoon robots, each with a body that shows its job (a sprite artist has a pixel-grid face and paint arm, an audio designer has dish ears and a waveform chest). Each wears a small round enamel union pin. The pin colour shows the division: creative = coral, technical = teal, production = amber, knowledge = violet, leadership = gold. The `## Who I am` section must describe the robot well enough to generate a portrait. Portraits are generated later by the Local session to `assets/avatars/<name>.png`, so **do not create images yourself.**
 
 **The union theme** is seasoning. Departments are "locals", and the odd joke about breaks and grievances is fine. Don't let it make anything harder to read.
 
