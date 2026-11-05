@@ -1,0 +1,29 @@
+{
+  "_format": "Each entry is name:runtime:model. Path is agents/<folder>/<name>.md. Plugin ID is npc-union:<folder with / as :>:<name>.",
+  "streams": {
+    "a": {
+      "leadership": ["shop-steward:claude:opus", "creative-lead:claude:opus", "technical-lead:claude:opus", "production-lead:claude:opus", "knowledge-lead:claude:sonnet"],
+      "production": ["producer:claude:sonnet", "prototyper:claude:sonnet", "qa-lead:claude:sonnet", "qa-tester:claude:sonnet", "playtest-analyst:claude:sonnet", "accessibility-specialist:claude:sonnet", "release-manager:claude:sonnet", "live-ops-designer:claude:sonnet", "analytics-engineer:claude:sonnet", "community-manager:codex:sonnet", "store-page-marketer:codex:sonnet", "monetization-designer:claude:sonnet", "game-legal-advisor:codex:opus"]
+    },
+    "b": {
+      "creative/design": ["brief-keeper:claude:sonnet", "game-designer:claude:opus", "controls-designer:claude:sonnet", "world-builder:claude:opus", "character-designer:claude:sonnet", "moodboard-curator:codex:sonnet", "level-designer:claude:sonnet", "systems-designer:claude:opus", "economy-designer:claude:sonnet", "ux-designer:claude:sonnet", "npc-designer:claude:opus", "quest-designer:claude:sonnet"],
+      "creative/art": ["art-director:claude:opus", "concept-artist:codex:sonnet", "sprite-artist:codex:sonnet", "anime-artist:codex:sonnet", "pose-artist:codex:sonnet", "animator:claude:sonnet", "vector-artist:codex:sonnet", "texture-artist:codex:sonnet", "layer-compositor:codex:sonnet", "environment-artist:codex:sonnet", "modeler-3d:codex:sonnet"],
+      "creative/screens-effects": ["logo-designer:codex:sonnet", "title-screen-designer:codex:sonnet", "game-ui-artist:codex:sonnet", "shader-artist:claude:opus", "vfx-artist:claude:sonnet", "video-director:codex:sonnet"],
+      "creative/sound": ["audio-director:claude:sonnet", "composer:claude:sonnet", "sfx-designer:claude:sonnet", "chiptune-synthesist:claude:sonnet", "voice-director:claude:sonnet"],
+      "creative/narrative": ["narrative-director:claude:opus", "dialogue-writer:claude:opus", "lore-keeper:claude:sonnet", "localization-lead:claude:sonnet"]
+    },
+    "c": {
+      "technical/programming": ["technical-director:claude:opus", "gameplay-programmer:claude:opus", "engine-programmer:claude:opus", "graphics-programmer:claude:opus", "physics-programmer:claude:opus", "ui-programmer:claude:sonnet", "tools-programmer:claude:sonnet", "technical-artist:claude:sonnet", "performance-engineer:claude:opus", "build-engineer:claude:sonnet", "save-systems-engineer:claude:sonnet"],
+      "technical/engines": ["web-engine-specialist:claude:opus", "godot-specialist:claude:opus", "unity-specialist:claude:opus", "unreal-specialist:claude:opus", "gamemaker-specialist:claude:sonnet", "roblox-specialist:claude:sonnet", "bevy-specialist:claude:sonnet"],
+      "technical/multiplayer": ["netcode-architect:claude:opus", "multiplayer-backend-engineer:claude:opus", "web-realtime-engineer:claude:opus", "matchmaking-engineer:claude:sonnet", "anti-cheat-engineer:claude:opus"],
+      "technical/ai-integration": ["ai-integration-architect:claude:opus", "llm-npc-engineer:claude:opus", "game-ai-engineer:claude:opus", "on-device-ai-engineer:claude:opus", "prompt-engineer:claude:opus", "rag-engineer:claude:sonnet", "ai-cost-safety-engineer:claude:opus", "procedural-generation-engineer:claude:opus"],
+      "technical/platform-tools": ["mcp-specialist:claude:opus", "agent-tooling-engineer:claude:sonnet", "game-security-engineer:claude:opus"],
+      "technical/asset-scouts": ["itch-scout:codex:sonnet", "unity-store-scout:codex:sonnet", "unreal-fab-scout:codex:sonnet", "godot-asset-scout:codex:sonnet", "open-asset-scout:codex:sonnet", "audio-asset-scout:codex:sonnet", "asset-license-auditor:codex:opus"]
+    },
+    "d": {
+      "knowledge/genres": ["shooter-expert:claude:sonnet", "battle-royale-expert:claude:sonnet", "platformer-expert:claude:sonnet", "metroidvania-expert:claude:sonnet", "rpg-expert:claude:sonnet", "roguelike-expert:claude:sonnet", "strategy-expert:claude:sonnet", "city-builder-expert:claude:sonnet", "survival-crafting-expert:claude:sonnet", "puzzle-expert:claude:sonnet", "racing-expert:claude:sonnet", "fighting-expert:claude:sonnet", "horror-expert:claude:sonnet", "rhythm-expert:claude:sonnet", "visual-novel-expert:claude:sonnet", "mmo-expert:claude:sonnet", "sports-game-expert:claude:sonnet", "tower-defense-expert:claude:sonnet", "idle-incremental-expert:claude:sonnet", "party-game-expert:claude:sonnet"],
+      "knowledge/art-styles": ["pixel-art-stylist:codex:sonnet", "low-poly-stylist:codex:sonnet", "voxel-stylist:codex:sonnet", "hand-drawn-stylist:codex:sonnet", "anime-cel-stylist:codex:sonnet", "photoreal-stylist:codex:sonnet", "neon-vector-stylist:codex:sonnet", "toon-stylist:codex:sonnet", "ps1-retro-stylist:codex:sonnet", "paper-craft-stylist:codex:sonnet", "painterly-stylist:codex:sonnet", "isometric-stylist:codex:sonnet", "monochrome-noir-stylist:codex:sonnet"],
+      "knowledge/domains": ["nasa-data-specialist:codex:opus", "space-science-expert:codex:opus", "orbital-mechanics-expert:claude:opus", "space-apps-specialist:codex:opus", "healthcare-expert:codex:opus", "business-finance-expert:codex:opus", "education-expert:codex:opus", "climate-earth-expert:codex:opus", "law-civics-expert:codex:opus", "history-expert:codex:opus", "defense-strategy-expert:codex:opus", "sports-science-expert:codex:sonnet", "agriculture-food-expert:codex:sonnet", "cybersecurity-expert:codex:opus", "biology-ecology-expert:codex:opus", "physics-engineering-expert:codex:opus", "urban-planning-expert:codex:sonnet"]
+    }
+  }
+}
