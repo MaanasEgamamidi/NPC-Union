@@ -89,11 +89,11 @@ Assumptions: 3 devs, 18-month schedule, Steam launch, Switch port only after rev
 | Licence and cost at our revenue (15) | 3 (check current Unity plan thresholds on unity.com/pricing) | 5 (MIT) |
 | 2D tooling and iteration speed (20) | 4 | 5 |
 | Co-op netcode options (20) | 4 | 3 |
-| **Weighted total** | **4.35** | **3.85** |
+| **Weighted total** | **4.30** | **3.75** |
 
 Reversal cost: switching engines after month 4 is roughly 8-12 engineer-weeks for a 2D game this size (porting gameplay code, re-authoring scenes). Before month 2 it is about 2.
 
-Decision (Proposed): Unity, because the console weight dominates. If you drop Switch from the plan, re-run with that weight at 5 and Godot wins on cost and 2D iteration.
+Decision (Proposed): Unity, because the console weight dominates. If you drop Switch from the plan, set that weight to 0 and renormalise: Godot 4.19 vs Unity 4.13, a near tie that licence cost and 2D iteration break toward Godot.
 
 Spike before Accepted: 3 days, "Can we get a 2-player online lobby with our chosen netcode package running on both engines?" Hand engine facts to unity-specialist (Awake) and godot-specialist (Arbor) to confirm current versions; netcode to netcode-architect (Jitter).
 
