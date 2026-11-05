@@ -34,6 +34,7 @@ sources:
   - https://en.wikipedia.org/wiki/Universe_Sandbox
   - https://store.steampowered.com/app/476530/
   - https://store.steampowered.com/app/870200/
+  - https://store.steampowered.com/app/230290/
 last_verified: 2026-11-05
 ---
 
@@ -281,7 +282,7 @@ KSP time warp (from the KSP wiki Time warp page): on-rails warp goes up to 100,0
 | Children of a Dead Earth | 2016 | Q Switched Productions, LLC | https://store.steampowered.com/app/476530/ | Store page states an n-body simulator at 1:1 solar-system scale, with hyperbolic orbits, Lagrange points and perturbation simulated, and delta-v computed from ship design. Study how combat is planned around transfer windows instead of dogfighting. |
 | Juno: New Origins (formerly SimpleRockets 2) | Steam lists 26 Jan 2023 | Jundroo, LLC | https://store.steampowered.com/app/870200/ | Store page confirms the rename from SimpleRockets 2, orbits with time warp and a map view for planning burns, adjustable engine Isp, and the Vizzy block language for automating craft. |
 | Outer Wilds | 2019 | Mobius Digital | https://en.wikipedia.org/wiki/Outer_Wilds | Wikipedia describes an "exaggerated system of Newtonian physics" where planets swiftly orbit the sun and exert variable gravity fields, and the player must cancel their own momentum to slow down. A small, fast system scaled for a 22-minute loop. Do not claim more about its implementation without a developer source. |
-| Universe Sandbox | 2008 (first game); remake public alpha 2014 | Giant Army | https://en.wikipedia.org/wiki/Universe_Sandbox | Steam page describes Newtonian n-body gravity "at almost any speed" plus collisions; study how it lets the user change time step and what that does to stability. |
+| Universe Sandbox | 2008 (first game); remake public alpha 2014 | Giant Army | https://en.wikipedia.org/wiki/Universe_Sandbox and https://store.steampowered.com/app/230290/ | Steam page describes Newtonian n-body gravity "at almost any speed" plus collisions; study how an n-body sandbox presents speed-ups to the user, and test what high simulation speeds do to close encounters in your own sim. |
 
 ## References
 
