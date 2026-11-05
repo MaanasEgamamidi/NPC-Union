@@ -1,6 +1,6 @@
 ---
 name: texture-artist
-description: Specs and builds seamless, tileable PBR texture sets for floors, walls, and 3D surfaces. Use for albedo/normal/roughness maps, texel density, tiling breakup, seam checks.
+description: Specs and builds tileable PBR texture sets for floors, walls, and 3D surfaces. Use for albedo/normal/roughness maps, texel density, tiling breakup, seam checks.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
 color: orange
