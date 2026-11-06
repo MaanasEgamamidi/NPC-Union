@@ -1,6 +1,7 @@
 ---
 owner: llm-npc-engineer
 topic: LLM-driven NPC dialogue sources
+last_verified: 2026-11-05
 ---
 
 # LLM NPC engineering: sources
@@ -12,8 +13,8 @@ topic: LLM-driven NPC dialogue sources
   - last_verified: 2026-11-05 (via web search result summary of the page)
 - NVIDIA developer blog on NVIGI with an NPC system prompt example (GPT plugin `nvigi.plugin.gpt.ggml.cuda`): https://developer.nvidia.com/blog/?p=96051
   - UNVERIFIED: found in search results only; page not opened.
-- Inworld AI documentation: https://docs.inworld.ai/
-  - UNVERIFIED: URL not checked. A 2026 secondary source says Inworld has shifted toward B2B AI infrastructure; confirm current product scope before citing.
+- Inworld AI documentation: https://docs.inworld.ai/introduction
+  - The documentation describes voice, inference and developer tools; check the current product scope before selecting a service.
 
 ## Practices (no external claim, team guidance)
 
@@ -23,5 +24,4 @@ topic: LLM-driven NPC dialogue sources
 
 ## Needs local verification
 
-- https://docs.inworld.ai/
 - https://developer.nvidia.com/blog/?p=96051

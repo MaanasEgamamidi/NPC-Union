@@ -42,8 +42,8 @@ Rule: third-party crates pin one Bevy minor. Check the crate's `bevy` dependency
 
 ## Not verified today
 
-- GitHub releases page (https://github.com/bevyengine/bevy/releases) returned 403 from this environment: UNVERIFIED.
-- Specific API renames in 0.20: read from the 0.19 to 0.20 guide; not summarised here (UNVERIFIED).
+- GitHub releases: https://github.com/bevyengine/bevy/releases (fetched 2026-11-05).
+- The [0.19 to 0.20 migration guide](https://bevy.org/learn/migration-guides/0-19-to-0-20/) lists API renames; for example, `MeshAabb::compute_aabb` became `get_aabb`.
 
 ## How to re-check
 

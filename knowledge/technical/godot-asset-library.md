@@ -11,7 +11,7 @@ last_verified: 2026-11-05
 ## Godot Asset Library
 
 - URL: https://godotengine.org/asset-library/asset
-- Free assets only. Each entry declares one licence from a fixed list.
+- Free assets only ([Godot documentation](https://docs.godotengine.org/en/latest/community/asset_library/what_is_assetlib.html)). Each entry declares one licence from a fixed list.
 - Licence options seen in the filter on 2026-11-05: MIT, MPL-2.0, GPLv3, GPLv2, LGPLv3, LGPLv2.1, LGPLv2, AGPLv3, EUPL-1.2, Apache-2.0, CC0, CC-BY-4.0, CC-BY-3.0, CC-BY-SA-4.0, CC-BY-SA-3.0, BSD-2-Clause, BSD-3-Clause, BSL-1.0, ISC, Unlicense, Zlib, Proprietary (see LICENSE file).
 - The licence filter's form field is named `cost`. The "License" sort option is `sort=cost`.
 - Godot version filter: 2.0, 2.1, 2.2, 3.0 to 3.6, 4.0 to 4.7, Unknown, Custom build.

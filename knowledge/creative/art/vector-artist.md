@@ -7,7 +7,7 @@ last_verified: 2026-11-05
 
 # Neon vector art for games
 
-All source links below are UNVERIFIED (not fetched in this session). Check tool flags against the installed version before quoting them.
+Source links other than the individually cited CLI references remain UNVERIFIED. Check tool flags against the installed version before quoting them.
 
 ## Stroke width at target resolution
 
@@ -63,9 +63,9 @@ All source links below are UNVERIFIED (not fetched in this session). Check tool 
 
 | Tool | Command | Status |
 |---|---|---|
-| resvg | `resvg -w 128 in.svg out@2x.png` | UNVERIFIED |
-| Inkscape 1.x | `inkscape in.svg --export-type=png --export-filename=out@2x.png --export-width=128` | UNVERIFIED |
-| SVGO | `svgo in.svg -o out.svg` | UNVERIFIED |
+| resvg | `resvg -w 128 in.svg out@2x.png` | [CLI source](https://github.com/linebender/resvg/blob/main/crates/resvg/src/main.rs) |
+| Inkscape 1.x | `inkscape in.svg --export-type=png --export-filename=out@2x.png --export-width=128` | [CLI guide](https://wiki.inkscape.org/wiki/Using_the_Command_Line), [export actions](https://wiki.inkscape.org/wiki/Action) |
+| SVGO | `svgo in.svg -o out.svg` | [CLI documentation](https://github.com/svg/svgo) |
 
 - Export every scale from the SVG; never resize a PNG.
 - Naming: `name.png`, `name@2x.png`, `name@3x.png`.

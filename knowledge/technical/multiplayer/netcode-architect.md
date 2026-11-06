@@ -1,6 +1,7 @@
 ---
 owner: netcode-architect
 topic: Netcode models, libraries, and reference material
+last_verified: 2026-11-05
 ---
 
 # Netcode architect knowledge
@@ -21,24 +22,24 @@ Version-sensitive facts for netcode decisions. Re-check each link before quoting
 
 ## Unity Netcode for GameObjects
 
-- Official documentation home. Source: https://docs-multiplayer.unity3d.com/ UNVERIFIED (not fetched this session; current version and prediction support must be checked before quoting)
+- Official documentation home. Source: https://docs.unity.com/en-us/engine/6000.6/manual/multiplayer (check the version and prediction support for the package in use)
 
 ## Mirror (Unity)
 
-- Official documentation. Source: https://mirror-networking.gitbook.io/docs UNVERIFIED (not fetched this session)
+- Official documentation. Source: https://mirror-networking.gitbook.io/docs
 
 ## Godot high-level multiplayer
 
-- High-level multiplayer API (RPCs, MultiplayerSpawner, MultiplayerSynchronizer). Source: https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html UNVERIFIED (not fetched this session; confirm node names and whether any prediction support exists for the 4.x minor version in use)
+- High-level multiplayer API (RPCs, MultiplayerSpawner, MultiplayerSynchronizer). Source: https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html (check prediction support for the 4.x minor version in use)
 
 ## Rollback
 
-- GGPO rollback networking SDK, MIT licensed source on GitHub. Source: https://github.com/pond3r/ggpo UNVERIFIED (not fetched this session; licence stated from memory)
+- GGPO rollback networking SDK, MIT licensed source on GitHub. Source: https://github.com/pond3r/ggpo
 
 ## Reference articles on prediction, interpolation, lag compensation
 
 - Valve, Source Multiplayer Networking (interpolation delay, input prediction, lag compensation). Source: https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking UNVERIFIED (not fetched this session)
-- Glenn Fiedler, Gaffer On Games articles on snapshot interpolation and state synchronisation. Source: https://gafferongames.com/ UNVERIFIED (not fetched this session)
+- Glenn Fiedler, Gaffer On Games articles on snapshot interpolation and state synchronisation. Source: https://gafferongames.com/
 
 ## How to check
 

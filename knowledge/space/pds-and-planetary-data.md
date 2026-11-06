@@ -41,7 +41,7 @@ The node descriptions in the right column are generic; read each node site for w
 
 - PDS4: XML labels validated against schemas; products identified by LID/LIDVID URNs (`urn:nasa:pds:<bundle>:<collection>:<product>`), as seen in the API result above.
 - PDS3: older ODL "keyword = value" labels, attached to the file or in a detached `.LBL`; many `.IMG` files are raw binary described by the label.
-- Read the label first: it gives byte order, sample type (e.g. signed 16-bit), scaling factor/offset, and map projection. Pull standards from https://pds.nasa.gov/datastandards/about/ (page returned HTTP 200 but its content was not read: UNVERIFIED).
+- Read the label first: it gives byte order, sample type (e.g. signed 16-bit), scaling factor/offset, and map projection. Check the applicable label and [PDS standards](https://pds.nasa.gov/datastandards/about/); not every label necessarily contains every field.
 
 ## Solar System Treks (verified on trek.nasa.gov, page last updated January 22, 2026)
 
@@ -68,7 +68,7 @@ The node descriptions in the right column are generic; read each node site for w
 
 ## Licensing
 
-NASA-produced data is generally not copyrighted in the US, but this was not confirmed per product in this session (UNVERIFIED). Some PDS holdings come from partner agencies (e.g. ESA, JAXA), and the PDS search page notes results include data from other agencies. Check each product's label, node page and `knowledge/space/nasa-media-and-usage.md` before shipping, and credit the mission and instrument team.
+[NASA's media guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/) say NASA images and specified media generally are not subject to US copyright; this does not establish the rights of every dataset. Product-specific rights remain UNVERIFIED. Some PDS holdings come from partner agencies (e.g. ESA, JAXA), and the PDS search page notes results include data from other agencies. Check each product's label, node page and `knowledge/space/nasa-media-and-usage.md` before shipping, and credit the mission and instrument team.
 
 ## Pitfalls
 

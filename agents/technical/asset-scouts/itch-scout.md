@@ -83,7 +83,7 @@ A markdown table with columns Asset, URL, Price, Licence, Commercial use, Attrib
 
 Ran as a Claude subagent (WebFetch only). Checked 2026-11-05.
 
-Search URLs: https://itch.io/game-assets/free, https://itch.io/game-assets/tag-16x16, https://itch.io/game-assets/tag-tileset. Chained URL https://itch.io/game-assets/free/tag-16x16 is UNVERIFIED; fetch it and compare before using its results.
+Search URLs: https://itch.io/game-assets/free, https://itch.io/game-assets/tag-16x16, https://itch.io/game-assets/tag-tileset. Chained URL https://itch.io/game-assets/free/tag-16x16 lists free game assets tagged 16x16; fetch it again for current results.
 
 | Asset | URL | Price | Licence | Commercial use | Attribution | Notes |
 |---|---|---|---|---|---|---|

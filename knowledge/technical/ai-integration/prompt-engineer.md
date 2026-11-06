@@ -1,6 +1,7 @@
 ---
 owner: prompt-engineer
 topic: Prompt structure, caching, structured outputs, injection, and evals for game LLM features
+last_verified: 2026-11-05
 ---
 
 # Prompt engineering knowledge
@@ -26,17 +27,17 @@ last_verified: 2026-11-05
 - Strict mode is enabled with `"strict": true` in the `json_schema` response format.
 - Examples set `additionalProperties: false` on every object and list every property in `required`.
 - Fields that may be empty stay in `required` and allow `null` in the type, for example `"type": ["string", "null"]`.
-- The page has a supported-schemas section with nesting and property-count limits. UNVERIFIED: those limits were not read in this check. Fetch the section before relying on a specific number.
+- The supported-schemas section permits up to 5,000 object properties total and 10 nesting levels; check the linked guide for other limits and model-specific constraints.
 
 ## Prompt injection
 
-- OWASP Top 10 for Large Language Model Applications, LLM01 Prompt Injection: https://genai.owasp.org/llmrisk/llm01-prompt-injection/ UNVERIFIED (not fetched in this session).
-- Anthropic guidance on mitigating jailbreaks and prompt injections: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks UNVERIFIED (not fetched in this session; path may have moved).
+- OWASP Top 10 for Large Language Model Applications, LLM01 Prompt Injection: https://genai.owasp.org/llmrisk/llm01-prompt-injection/.
+- Anthropic guidance on mitigating jailbreaks and prompt injections: https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks.
 
 ## Evals
 
-- Anthropic guide to defining success criteria and building evaluations: https://platform.claude.com/docs/en/test-and-evaluate/develop-tests UNVERIFIED (not fetched in this session; path may have moved).
-- OpenAI evals guide: https://developers.openai.com/api/docs/guides/evals UNVERIFIED (not fetched in this session).
+- Anthropic guide to defining success criteria and building evaluations: https://platform.claude.com/docs/en/test-and-evaluate/develop-tests.
+- OpenAI evals guide: https://developers.openai.com/api/docs/guides/evals.
 
 ## House practice (not externally sourced)
 

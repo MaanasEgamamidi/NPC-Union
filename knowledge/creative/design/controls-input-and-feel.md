@@ -35,7 +35,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_A
 
 ## Touch targets
 - Android: at least 48dp x 48dp. https://developer.android.com/guide/topics/ui/accessibility/apps
-- Apple HIG 44 x 44 pt: widely cited by secondary sources; primary page not checked here. UNVERIFIED.
+- Apple recommends controls at least 44 x 44 points: [UI Design Dos and Don?ts](https://developer.apple.com/design/tips/).
 
 ## Dead zone maths
 - Axial: zero each axis below threshold; causes snapping to cardinals.

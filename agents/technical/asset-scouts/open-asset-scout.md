@@ -64,7 +64,7 @@ Limits: without Codex live web search I cannot browse current listings. In that 
 ## Knowledge and sources
 
 - `knowledge/technical/open-asset-sources.md`: site list, licence facts, and verification dates.
-- OpenGameArt.org: https://opengameart.org (its "Art search" filters by art type and licence; filter details UNVERIFIED this session).
+- OpenGameArt.org: https://opengameart.org/art-search-advanced (filters include art type and licence).
 - Kenney: https://kenney.nl/assets and licence notes at https://kenney.nl/support.
 - Poly Haven: https://polyhaven.com and https://polyhaven.com/license.
 - ambientCG: https://ambientcg.com and https://docs.ambientcg.com/license/.
@@ -90,7 +90,7 @@ A table with columns: Asset, URL, Price, Licence, Commercial use, Attribution li
 |---|---|---|---|---|---|---|
 | Grass PBR material | ambientCG search "Grass": https://ambientcg.com | Free | CC0 1.0 | Yes | Not required | Pick a specific material page and confirm. UNVERIFIED asset |
 | Outdoor sky HDRI | Poly Haven HDRIs: https://polyhaven.com/hdris | Free | CC0 | Yes | Not required | Choose by time of day. UNVERIFIED asset |
-| Low-poly nature pack | Kenney assets: https://kenney.nl/assets | Free (donation optional, UNVERIFIED) | CC0 | Yes | Optional: "Kenney" | Do not use Kenney logo |
+| Low-poly nature pack | Kenney assets: https://kenney.nl/assets | Free (donation optional; [example asset page](https://kenney.nl/assets/platformer-art-requests)) | CC0 | Yes | Optional: "Kenney" | Do not use Kenney logo |
 | Low-poly trees (alternative) | https://quaternius.com/ | Check the specific pack | Check the applicable licence | QAL permits commercial projects | Not required under QAL | QAL restricts standalone redistribution; confirm the pack terms |
 
 Flags: no share-alike or NC assets in this set. I have not opened individual asset pages this session, so specific asset names and URLs are left out rather than guessed. If you later want an OpenGameArt pack that is CC-BY-SA, I will send it to `asset-license-auditor` before you ship. "Free to download is not free to ship. Show me the licence."

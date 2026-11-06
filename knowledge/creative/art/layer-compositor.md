@@ -16,7 +16,7 @@ All sources above are UNVERIFIED in this session (not fetched). Engine setting n
 | Straight (unassociated) | Full colour, independent of alpha | `out = src * a + dst * (1 - a)` | Treated as premultiplied: bright, over-saturated edges |
 | Premultiplied (associated) | Colour already multiplied by alpha | `out = src + dst * (1 - a)` | Treated as straight: dark fringes |
 
-Source for formulas: Alpha compositing (Wikipedia), UNVERIFIED.
+Source: [Alpha compositing](https://en.wikipedia.org/wiki/Alpha_compositing). These RGB expressions assume an opaque destination; for a translucent destination include its alpha and track output alpha.
 
 PNG stores straight alpha. Convert to premultiplied only at the point the engine or shader expects it.
 

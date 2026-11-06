@@ -14,13 +14,13 @@ Black and white, high contrast, and at most one accent colour. Value does all th
 | Game | Link | What to study |
 |------|------|---------------|
 | Limbo (Playdead, 2010) | https://en.wikipedia.org/wiki/Limbo_(video_game) | Greyscale side-on world with film grain and lighting. Study how black silhouettes on a lighter, foggy background carry all gameplay reads, and how depth comes from atmospheric lightening of far layers. |
-| Inside (Playdead, 2016) | https://en.wikipedia.org/wiki/Inside_(video_game) | Mostly monochromatic environment. Study restrained near-greys with soft volumetric light. The player character's red shirt as the single colour cue is UNVERIFIED against the page. |
+| Inside (Playdead, 2016) | https://en.wikipedia.org/wiki/Inside_(video_game) | Mostly monochromatic environment. Study restrained near-greys with soft volumetric light. The player character wears a [red shirt](https://media.gdcvault.com/gdc2017/GameNarrativeReview/John%20Myres_GDCNarrativeContest2016.pdf), a prominent colour cue. |
 | MadWorld (PlatinumGames, 2009) | https://en.wikipedia.org/wiki/MadWorld | High-contrast black and white with red, used for blood. Study the hard ink look and how one accent with one meaning (violence) stays legible in fast combat. |
 | Return of the Obra Dinn (Lucas Pope, 2018) | https://en.wikipedia.org/wiki/Return_of_the_Obra_Dinn | First-person 3D in a 1-bit dithered style that mimics early Macintosh games. Study dither stability under camera motion and edge lines for readability at 1 bit. |
 | Ghost of Tsushima (Sucker Punch, 2020) | https://en.wikipedia.org/wiki/Ghost_of_Tsushima | Kurosawa mode: a black-and-white filter with film grain and adjusted audio. Study what breaks when a colour game is desaturated after the fact, such as cues that relied on hue. |
 | The Saboteur (Pandemic Studios, 2009) | https://en.wikipedia.org/wiki/The_Saboteur | Occupied areas are black and white, with exceptions such as irises, city lights, blood and resistance symbols. Study colour as a gameplay state (occupied versus liberated) rather than decoration. |
-| World of Horror (Paweł Koźmiński, 2020 early access) | https://en.wikipedia.org/wiki/World_of_Horror | 1-bit pixel art made in Microsoft Paint. Study how hatching and pattern fills replace tone at very low resolution. Release year detail UNVERIFIED. |
-| Minit (2018) | https://en.wikipedia.org/wiki/Minit_(video_game) | Small black-and-white pixel adventure. The black-and-white description is UNVERIFIED against the page text. Study pure 2-tone sprites with no dither. |
+| World of Horror (Paweł Koźmiński, 2020 early access) | https://en.wikipedia.org/wiki/World_of_Horror | 1-bit pixel art made in Microsoft Paint. Study how hatching and pattern fills replace tone at very low resolution. [Steam](https://store.steampowered.com/app/913740/WORLD_OF_HORROR/) lists its early access release as February 20, 2020. |
+| Minit (2018) | https://en.wikipedia.org/wiki/Minit_(video_game) | Small black-and-white pixel adventure. The [developers describe](https://store.steampowered.com/app/1503530/minit_fun_racer) the black-and-white aesthetic. Study pure 2-tone sprites with no dither. |
 
 ## Palette rules
 

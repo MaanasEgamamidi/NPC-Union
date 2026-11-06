@@ -16,7 +16,7 @@ All links below returned HTTP 200 on 2026-11-05. Descriptions of what to study a
 | Game | Link | What to study |
 |---|---|---|
 | The Legend of Zelda: The Wind Waker | https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_The_Wind_Waker | Huge heads and eyes on small bodies; flat color blocks; stylized effects (smoke, water) drawn as graphic shapes. Sits on the border with cel shading, so take its shapes, not its hard shadows. |
-| Team Fortress 2 | https://en.wikipedia.org/wiki/Team_Fortress_2 | Class silhouettes readable at distance; warm vs cool team colors; painted, illustrative look with rim lighting. Valve published an NPAR 2007 paper, "Illustrative Rendering in Team Fortress 2" (UNVERIFIED: not re-checked this session). |
+| Team Fortress 2 | https://en.wikipedia.org/wiki/Team_Fortress_2 | Class silhouettes readable at distance; warm vs cool team colors; painted, illustrative look with rim lighting. Valve published the NPAR 2007 paper [Illustrative Rendering in Team Fortress 2](https://steamcdn-a.akamaihd.net/apps/valve/2007/NPAR07_IllustrativeRenderingInTeamFortress2.pdf). |
 | Overwatch | https://en.wikipedia.org/wiki/Overwatch_(video_game) | Hero silhouettes each with one dominant shape; hand-painted-feeling PBR with high saturation; clean, uncluttered environments that frame characters. |
 | Fortnite | https://en.wikipedia.org/wiki/Fortnite | Stylized proportions that survive many skins; saturated biomes; soft, chunky building pieces readable mid-fight. |
 | Ratchet & Clank: Rift Apart | https://en.wikipedia.org/wiki/Ratchet_%26_Clank:_Rift_Apart | Feature-animation-style toon at high fidelity: fur, rounded forms, exaggerated faces, squash and stretch in animation. |

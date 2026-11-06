@@ -44,7 +44,7 @@ Pitfalls: freezing input during hit-stop; recovery with no cancel window; enemy 
 | Foot plant must be exact | Physics or character controller owns movement |
 | Single-player or animation is replicated | Networked movement needs server authority |
 
-Engine settings differ by version (for Unity, the Animator "Apply Root Motion" option; for Godot, AnimationTree root motion track). UNVERIFIED for current versions, check the linked docs.
+Engine settings differ by version: Unity exposes the Animator "Apply Root Motion" option ([Unity API](https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnAnimatorMove.html)); Godot AnimationTree can select a root motion track ([Godot documentation](https://docs.godotengine.org/en/stable/tutorials/animation/animation_tree.html)).
 
 ## State machine transition rules
 
@@ -70,7 +70,7 @@ Hybrid: skeletal body with swapped image attachments for hands, faces, and smear
 
 ## Sources
 
-All UNVERIFIED (not fetched in this session):
+Spine and DragonBones links UNVERIFIED; the Unity and Godot documentation above was checked on 2026-11-05:
 - Spine user guide: http://esotericsoftware.com/spine-user-guide
 - DragonBones GitHub organization: https://github.com/DragonBones
 - Unity Manual, root motion: https://docs.unity3d.com/Manual/RootMotion.html

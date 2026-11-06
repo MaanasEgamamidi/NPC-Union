@@ -62,14 +62,14 @@ From https://docs.godotengine.org/en/stable/tutorials/scripting/c_sharp/index.ht
 
 ## Breaking-change hotspots for 4.6 to 4.7 (from the official migration guide)
 
-Source: https://docs.godotengine.org/en/stable/tutorials/migrating/upgrading_to_godot_4.7.html (not re-fetched today: UNVERIFIED, re-check before quoting)
+Source: https://docs.godotengine.org/en/stable/tutorials/migrating/upgrading_to_godot_4.7.html
 - Overrides of methods with a typed return now inherit that return type; add an explicit `return`.
 - `RichTextLabel.ImageUpdateMask.UPDATE_WIDTH_IN_PERCENT` renamed `UPDATE_WIDTH_UNIT`.
 - Mouse and keyboard `InputEvent.device` IDs are now `InputEvent.DEVICE_ID_MOUSE` / `DEVICE_ID_KEYBOARD` instead of 0.
 - Jolt `WorldBoundaryShape3D` plane sign flipped compared to 4.6.
 - `AudioStreamPlayer2D/3D.area_mask` default changed from layer 1 to 0.
 - New projects default stretch mode `canvas_items`, aspect `expand`.
-Earlier: 4.6 made Jolt the default 3D physics for new projects and D3D12 the default on Windows (UNVERIFIED today).
+Earlier: 4.6 made Jolt the default 3D physics for new projects and D3D12 the default on Windows for new projects. [Godot 4.6 release notes](https://godotengine.org/releases/4.6/).
 
 ## How to re-check
 

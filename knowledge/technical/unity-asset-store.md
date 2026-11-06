@@ -45,7 +45,7 @@ Facts below were checked by WebFetch on 2026-11-05 unless marked UNVERIFIED. Re-
 - Top categories on the search page: 2D, 3D, Add-Ons, Audio, Templates, Tools, VFX.
 - Store front menu also lists: SDKs, Verified Solutions, Sale.
 - Search page facets seen: Price, Rating, Publisher, Release Date, plus sale facets "New release discount" and "On sale".
-- Sort control seen: "Sort by: Relevance". Other sort options: UNVERIFIED (page did not render the dropdown list).
+- [Unity's Asset Store guide](https://docs.unity.com/en-us/engine/6000.3/manual/assets-and-media/asset-store/downloads/asset-packages-purchase) lists sorting by relevance, popularity, rating, publish or update date, name, and price.
 - Free assets: store front links "Top free assets" and "Top Free Assets". A dedicated free-only filter toggle: UNVERIFIED (Price facet may cover it).
 - Unity version filter and render pipeline (Built-in, URP, HDRP) filter: UNVERIFIED as search facets on 2026-11-05. Read compatibility from each asset page instead.
 

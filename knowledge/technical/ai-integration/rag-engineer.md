@@ -1,6 +1,7 @@
 ---
 title: Retrieval for games, sources
 owner: rag-engineer
+last_verified: 2026-11-05
 ---
 
 # Retrieval for games: sources
@@ -15,9 +16,9 @@ Sources behind the claims in the `rag-engineer` agent. Re-check before quoting a
 ## Vector stores
 
 - sqlite-vec, a vector search extension for SQLite. https://github.com/asg017/sqlite-vec
-  - UNVERIFIED (GitHub blocked from this environment). Check current API, index types, and platform builds, including console targets.
+  - Description checked against the [project documentation](https://github.com/asg017/sqlite-vec/blob/main/site/index.md). Check current API, index types, and platform builds, including console targets, before use.
 - FAISS, a library for similarity search and clustering of dense vectors, with flat (exact), IVF and HNSW indexes. https://github.com/facebookresearch/faiss
-  - UNVERIFIED (GitHub blocked from this environment).
+  - [Faiss index documentation](https://github.com/facebookresearch/faiss/wiki/Faiss-indexes) describes flat, IVF and HNSW indexes.
 
 ## Evaluation and baselines
 
@@ -28,8 +29,7 @@ Sources behind the claims in the `rag-engineer` agent. Re-check before quoting a
 
 ## Fusion
 
-- Cormack, Clarke and Buettcher, "Reciprocal Rank Fusion outperforms Condorcet and individual Rank Learning Methods", SIGIR 2009. Source of RRF and the k=60 constant.
-  - UNVERIFIED: no link checked. Find the ACM DL or author-hosted copy before citing a URL.
+- Cormack, Clarke and Buettcher, ["Reciprocal Rank Fusion outperforms Condorcet and individual Rank Learning Methods"](https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf), SIGIR 2009. The paper used k=60, fixed during a pilot investigation.
 
 ## Practice notes (no external source, team heuristics)
 

@@ -56,5 +56,5 @@ Note: the Wikipedia links above returned HTTP 200 on 2026-11-05; page contents w
 
 - Wikipedia, Incremental game: https://en.wikipedia.org/wiki/Incremental_game
 - Wikipedia pages for each game in the table above.
-- break_infinity.js (big-number library used in incremental games): https://github.com/Patashu/break_infinity.js UNVERIFIED
+- break_infinity.js (big-number library used in incremental games): https://github.com/Patashu/break_infinity.js
 - Cookie Clicker Wiki, heavenly chips and prestige formula: https://cookieclicker.fandom.com/wiki/Heavenly_Chips UNVERIFIED

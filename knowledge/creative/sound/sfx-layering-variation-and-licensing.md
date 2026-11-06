@@ -19,7 +19,7 @@ last_verified: 2026-11-05
 
 # SFX layering, variation, loudness and library licensing
 
-Working notes for the sfx-designer. Numbers here are craft heuristics, not standards, unless a source is named. Links were not opened in the session that wrote this file; claims that depend on them are marked UNVERIFIED until checked.
+Working notes for the sfx-designer. Numbers here are craft heuristics, not standards, unless a source is named. Claims that could not be checked remain marked UNVERIFIED.
 
 ## Layering
 
@@ -36,8 +36,8 @@ Working notes for the sfx-designer. Numbers here are craft heuristics, not stand
 - Pure random selection repeats the previous file with probability 1/N (25 percent for a 4-file pool). Use shuffle or "avoid last N".
 - Middleware and engine support:
   - Wwise Random Containers have an option to avoid repeating the last played items. Exact setting name: UNVERIFIED, check https://www.audiokinetic.com/library/.
-  - FMOD Studio multi instruments play a playlist with randomization, and instrument properties can be randomized with modulators. Exact names: UNVERIFIED, check https://www.fmod.com/docs/.
-  - Godot 4 has `AudioStreamRandomizer` with random pitch, random volume and a no-repeat playback mode. Property names: UNVERIFIED for the current version, check the class reference.
+  - FMOD Studio multi instruments select items from a playlist, with shuffle as the default; Random modulators modify properties. See the [FMOD 2.04 glossary](https://www.fmod.com/docs/2.04/studio/glossary.html).
+  - Godot 4 has `AudioStreamRandomizer` with `random_pitch`, `random_volume_offset_db`, and `playback_mode`; `PLAYBACK_RANDOM_NO_REPEATS` avoids consecutive repeats when possible. See the [class reference](https://docs.godotengine.org/en/stable/classes/class_audiostreamrandomizer.html).
   - Valve Source engine soundscripts support `rndwave` to pick randomly from a list of files (https://developer.valvesoftware.com/wiki/Soundscripts). UNVERIFIED in this session.
 - Limit instances of the same event (start at 3 to 6 voices) and add a retrigger cooldown of about 30 to 50 ms for rapid sounds. Many identical starts within a few milliseconds comb-filter.
 
@@ -60,7 +60,7 @@ Working notes for the sfx-designer. Numbers here are craft heuristics, not stand
 ## Licensing (Freesound and Creative Commons)
 
 - Freesound sets the licence per uploaded sound, not per pack or user. A pack can mix licences.
-- Licences seen on Freesound: CC0 (no conditions), CC BY (credit the author), CC BY-NC (no commercial use). Older uploads may carry earlier CC versions or the retired Sampling+ licence. Exact current list: UNVERIFIED, check https://freesound.org/help/faq/.
+- Freesound lists CC0, Attribution, and Attribution Noncommercial as upload licence options; older sounds can carry the retired Sampling+ licence. Check the individual sound and its licence terms. [Freesound FAQ](https://freesound.org/help/faq/).
 - CC BY attribution normally needs the author name, the title or link, the licence and a link to it, and a note if you changed it. Check the deed for the version on the sound page.
 - CC BY-NC sounds are not safe for a commercial game. Replace them before release. For edge cases (free game with ads, paid DLC, trailers), send to game-legal-advisor.
 - Commercial libraries have their own EULAs. Common restrictions include no redistribution of raw files (a problem for moddable games that ship loose audio) and limits on use in other sound libraries. Read each EULA.
@@ -68,4 +68,4 @@ Working notes for the sfx-designer. Numbers here are craft heuristics, not stand
 
 ## Needs local verification
 
-All links above were listed from memory and not opened in this session. Check each, confirm the setting names and licence lists, and update `last_verified`.
+Recheck version-specific settings and individual licence terms before use.

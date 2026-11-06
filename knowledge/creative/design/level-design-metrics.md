@@ -50,7 +50,7 @@ Fan-compiled transcripts at theportalwiki.com (wording may differ slightly from 
 
 ## Half-Life 2 (care with claims)
 
-Ravenholm is built around the gravity gun with scarce ammunition and saw blades as improvised weapons (Wikipedia, Ravenholm). Specific developer commentary node wording for Ravenholm was not found: UNVERIFIED; check the Combine OverWiki commentary pages before quoting.
+Ravenholm is built around the gravity gun with scarce ammunition and saw blades as improvised weapons (Wikipedia, Ravenholm). [Transcribed developer commentary](https://www.combineoverwiki.net/wiki/Developer_commentary/Half-Life_2) describes gravity-gun physics as central to Ravenholm and identifies saw blades among its objects.
 
 ## Breath of the Wild systemic layout
 

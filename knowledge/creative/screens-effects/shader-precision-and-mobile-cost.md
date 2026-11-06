@@ -21,9 +21,9 @@ Reference notes for `shader-artist`. Sources were not fetched in the session tha
 | 32-bit float (`highp`, `float`, `f32`) | 23 | v x 2^-23 | about 131,072 s (about 36 h) |
 | 16-bit float (`half`, `f16`, typical `mediump`) | 10 | v x 2^-10 | 16 s |
 
-The arithmetic above follows from IEEE 754 formats. What `mediump` actually maps to is implementation-defined: GLSL ES gives a minimum (relative precision of about 2^-10 for `mediump` float); the GPU may use full precision instead. Check section 4.5 "Precision and Precision Qualifiers" of the GLSL ES 3.00 spec. UNVERIFIED: exact section number and table values; fetch the PDF to confirm.
+The arithmetic above follows from IEEE 754 formats. What `mediump` actually maps to is implementation-defined: GLSL ES gives a minimum (relative precision of about 2^-10 for `mediump` float); the GPU may use full precision instead. See [GLSL ES 3.00 specification section 4.5.1](https://registry.khronos.org/OpenGL/specs/es/3.0/GLSL_ES_Specification_3.00.pdf) for the range and precision table.
 
-- GLSL ES fragment shaders: in GLSL ES 1.00 there is no default float precision in the fragment language, so a precision statement is required. UNVERIFIED for GLSL ES 3.00 wording; check the spec.
+- GLSL ES 3.00 fragment shaders have no default precision for floating-point types: each float, vector, or matrix declaration needs a precision qualifier or a previously declared default. [GLSL ES 3.00 specification, section 4.5.4](https://registry.khronos.org/OpenGL/specs/es/3.0/GLSL_ES_Specification_3.00.pdf).
 - Multiplying time by a frequency f multiplies the absolute phase error by f. A term `sin(t * 50.0)` needs about 50x more headroom than `sin(t)`.
 
 ## Time wrapping
@@ -31,7 +31,7 @@ The arithmetic above follows from IEEE 754 formats. What `mediump` actually maps
 - Wrap on the CPU in double precision and pass the wrapped value as a uniform.
 - Choose a loop length L. For each periodic term `sin(2π k t / L)`, require integer k. Then `t mod L` is seamless for every term at once.
 - For noise that must loop, sample the noise along a circle (2D noise for a 1D loop, 4D noise for a looping 2D field) instead of translating it linearly with time.
-- Godot exposes `TIME` in shaders and has a project setting that rolls time over after a set number of seconds. UNVERIFIED: the setting name (believed to be under `rendering/limits/time/`) and its default; check the Godot docs for the project's version.
+- Godot exposes `TIME` in shaders. In [Godot 4.2](https://docs.godotengine.org/en/4.2/classes/class_projectsettings.html), `rendering/limits/time/time_rollover_secs` defaults to 3,600 seconds; check the project version.
 - Unity exposes `_Time` (with `.y` as seconds) to shaders. UNVERIFIED: whether it resets on scene load in the project's version; check the Unity manual for built-in shader variables.
 
 ## Porting differences
@@ -43,12 +43,12 @@ The arithmetic above follows from IEEE 754 formats. What `mediump` actually maps
 | Matrix multiply | `M * v` | `mul(M, v)` with row/column conventions to check | `M * v` |
 | Framebuffer / texture origin | Bottom-left (OpenGL) | Top-left (Direct3D) | Top-left (WebGPU) |
 
-UNVERIFIED: WGSL float `%` definition; confirm in the WGSL spec section on arithmetic expressions. HLSL `fmod` sign behaviour; confirm on Microsoft Learn.
+[WGSL](https://www.w3.org/TR/WGSL/#arithmetic-expr) defines remainder as `x - y * trunc(x / y)` within its specified domain. [Microsoft](https://learn.microsoft.com/en-us/visualstudio/designers/shader-designer-nodes?view=visualstudio) describes HLSL `fmod` remainder as having the sign of x.
 
 ## Hash functions
 
 - `fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453)` depends on `sin` precision at large arguments and gives different or patterned results across GPUs and at half precision.
-- Jarzynski and Olano, "Hash Functions for GPU Rendering", Journal of Computer Graphics Techniques, 2020, compares GPU hashes and recommends PCG-style integer hashes for quality and speed. UNVERIFIED: the exact JCGT URL above; confirm it points to this paper.
+- Jarzynski and Olano, "Hash Functions for GPU Rendering", Journal of Computer Graphics Techniques, 2020, compares GPU hashes and recommends PCG-style integer hashes for quality and speed. [Paper](https://jcgt.org/published/0009/03/02/paper.pdf).
 
 ## Overdraw and fill cost
 

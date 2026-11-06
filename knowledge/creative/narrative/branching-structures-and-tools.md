@@ -27,24 +27,24 @@ Owner: narrative-director. Only the Emily Short post was fetched on 2026-11-05. 
 ## Talks and terms
 
 - **Ludonarrative dissonance:** term from Clint Hocking's 2007 blog post critiquing BioShock on his "Click Nothing" blog. The original Typepad URL now redirects to a hosting provider page, so the source could not be checked. UNVERIFIED (link dead; do not cite as a live source).
-- **Dynamic dialogue via fuzzy pattern matching:** Elan Ruskin, Valve, GDC 2012, about the Left 4 Dead response system. On GDC Vault. UNVERIFIED (not fetched this session).
-- **"What Happened Here? Environmental Storytelling":** Harvey Smith and Matthias Worch, GDC 2010. On GDC Vault. UNVERIFIED (not fetched this session).
+- **Dynamic dialogue via fuzzy pattern matching:** Elan Ruskin, Valve, GDC 2012, about the Left 4 Dead response system. Source: https://gdcvault.com/play/1015946/AI-driven-Dynamic-Dialog-through
+- **"What Happened Here? Environmental Storytelling":** Harvey Smith and Matthias Worch, GDC 2010. Source: https://gdcvault.com/play/1012696/What-Happened-Here-Environmental
 
 ## Example games (details to keep exact)
 
-- **Telltale's The Walking Dead (2012):** on-screen notices such as "Clementine will remember that." after key choices. UNVERIFIED (not fetched this session, widely documented).
+- **Telltale's The Walking Dead (2012):** on-screen notices such as "Clementine will remember that" provide explicit feedback about decisions. Source: https://media.gdcvault.com/gdc2017/GameNarrativeReview/Nikhil_Kashyap_GameNarrativeReview.pdf
 - **Fallout 4 (2015):** main plot is the search for the player's kidnapped son, Shaun; commonly cited for the open-world urgency conflict. Critique framing is opinion, not a source.
 - **Hades (Supergiant, 2020):** story progresses through repeated escape attempts and returns to the hub after death.
 - **Disco Elysium (ZA/UM, 2019):** skills speak as voices in dialogue.
-- **Yarn Spinner users:** Night in the Woods, A Short Hike, DREDGE. UNVERIFIED (the Yarn Spinner site lists showcase games; not fetched this session).
-- **Ink users:** inkle's 80 Days and Heaven's Vault. UNVERIFIED (not fetched this session).
+- **Yarn Spinner users:** Night in the Woods, A Short Hike, DREDGE. Source: https://docs.yarnspinner.dev/
+- **Ink users:** inkle's 80 Days and Heaven's Vault. Source: https://github.com/inkle/ink-library
 
 ## Tools
 
-- **Ink (inkle):** open-source scripting language for interactive narrative, MIT licence. Core concepts: knots, stitches, diverts, choices, weave with gathers, tunnels, variables, LIST. Inky is the editor; a Unity integration package exists. Check the docs for the version pinned by the project. Licence and integration details UNVERIFIED this session.
+- **Ink (inkle):** open-source scripting language for interactive narrative, MIT licence. Core concepts: knots, stitches, diverts, choices, weave with gathers, tunnels, variables, LIST. Inky is the editor; a Unity integration package exists. Check the docs for the version pinned by the project. Sources: https://github.com/inkle/ink and https://github.com/inkle/ink-unity-integration.
 - **Yarn Spinner:** node-based dialogue language with commands such as `<<set>>` and `<<if>>`, and line ID tags for localisation. Version 3 adds features for choosing content by condition; confirm exact syntax in the docs before use. UNVERIFIED this session.
-- **Twine 2:** browser and desktop tool for hypertext stories. Story formats include Harlowe (default), SugarCube, Snowman and Chapbook. SugarCube has a built-in save system. UNVERIFIED this session.
-- **articy:draft:** commercial narrative design database for flows, characters, variables and VO metadata, with engine importers. Pricing changes; check the site. UNVERIFIED this session.
+- **Twine 2:** browser and desktop tool for hypertext stories. Story formats include Harlowe (default), SugarCube, Snowman and Chapbook. Sources: https://twinery.org/ and https://twinery.org/cookbook/terms/terms_storyformats.html
+- **articy:draft:** commercial narrative design tool with dialogue flows and dedicated Unity and Unreal importers. Pricing changes; check the site. Source: https://www.articy.com/en/articydraft/feature-list/
 
 ## Working heuristics (house rules, not sourced)
 

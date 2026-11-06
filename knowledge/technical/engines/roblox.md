@@ -40,7 +40,7 @@ A same-key write cooldown is not stated on this page: UNVERIFIED (older docs cit
 
 ## MemoryStoreService
 
-Docs: https://create.roblox.com/docs/cloud-services/memory-stores (reachable). Quotas (memory size formula, request units): UNVERIFIED, read the page before relying on numbers.
+[Memory stores limits](https://create.roblox.com/docs/cloud-services/memory-stores): game-level memory quota is 64 KB + 1.2 KB per user; request quota is 1,000 + 120 per concurrent user per minute. Some operations consume multiple units; check the current page for exceptions and additional limits.
 
 ## Developer Exchange (fetched 2026-11-05)
 

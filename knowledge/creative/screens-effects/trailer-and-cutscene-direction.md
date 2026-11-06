@@ -34,7 +34,7 @@ Source: https://partner.steamgames.com/doc/store/trailer
 
 Sources: [Apple app previews](https://developer.apple.com/app-store/app-previews/) and [App Store Connect specifications](https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications).
 
-- Previews run 15 to 30 seconds, with up to three per supported device size and language. They autoplay muted when autoplay is enabled.
+- Previews run 15 to 30 seconds, with up to three per supported language. They autoplay when enabled; a poster frame appears if autoplay is off.
 - Footage must be captured from the app itself; accepted resolutions depend on the display size.
 - Check the page and App Store Connect help before giving numbers.
 

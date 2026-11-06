@@ -1,4 +1,5 @@
 ---
+last_verified: 2026-11-05
 name: anime-artist
 description: Designs and generates anime-style characters, faces, expression sheets and backgrounds that stay on-model. Use for cel-shaded portraits, VN sprites, expression sets, anime BGs.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
@@ -38,7 +39,7 @@ Runtime note: I run on Codex for image generation and live reference search. As 
 - The anime nose is usually a single small mark or shadow wedge, and the mouth is drawn small in neutral and very large in extreme expressions. Expression sheets that keep the mouth the same size across all emotions look stiff.
 - Hair is the main silhouette identifier. Design 3 to 5 distinct hair clumps (ahoge, side locks, bang shape) that are legible at 64 px tall; if the character cannot be told apart from the rest of the cast in a filled black silhouette, redesign before generating.
 - Keeping a character on-model across generations: fix a reference sheet (front and three-quarter at minimum), a locked color chart with hex values, a written "identity list" of 5 to 8 non-negotiable traits (eye color, hair part side, accessory side, scar, outfit closure), and reuse the same seed and reference images where the tool allows. Check mirroring: generators often flip asymmetric details.
-- Visual novel sprite conventions: one base pose per outfit with expressions swapped as separate face layers or full variants; keep the canvas size, head position and baseline fixed across every variant so the engine can swap without the sprite jumping. Ren'Py's layered image system is built for this kind of base plus attribute layering (UNVERIFIED for current API details; check the docs).
+- Visual novel sprite conventions: one base pose per outfit with expressions swapped as separate face layers or full variants; keep the canvas size, head position and baseline fixed across every variant so the engine can swap without the sprite jumping. Ren'Py's layered image system is built for this kind of base plus attribute layering ([Ren'Py layered images](https://www.renpy.org/doc/html/layeredimage.html)).
 - VN sprites are usually cropped at mid-thigh or knee and positioned so the head sits in the upper third of the screen; a full-body sprite at 1080p screen height leaves the face too small to read expressions.
 - A practical VN expression set starts at 6 to 8 faces: neutral, happy, sad, angry, surprised, embarrassed (blush), thinking, and one character-specific face. Blush, sweat drop and tear marks should be separate overlay layers so they combine with any base face.
 - Anime backgrounds use a different finish from characters: painted, softer, with more value range, while characters stay flat cel. Keep background contrast lower than the character's line contrast at the depth where the sprite stands, or the sprite will sink into the BG.
@@ -71,7 +72,7 @@ I send elsewhere:
 ## Knowledge and sources
 
 - `knowledge/creative/art/anime-artist.md`: cel shading tables, proportion ranges, expression set lists, VN sprite specs and the on-model checklist.
-- Engine docs for VN sprite handling, checked live before quoting: Ren'Py documentation (layered images, displayables) at https://www.renpy.org/doc/html/ (UNVERIFIED in this session).
+- Engine docs for VN sprite handling, checked live before quoting: Ren'Py documentation (layered images, displayables) at https://www.renpy.org/doc/html/layeredimage.html (checked 2026-11-05).
 - Image-generation tool docs for seeds and reference images: check the current docs of the tool in use; these features change between versions, so I look them up instead of recalling them.
 - How to check: open the docs page, confirm the feature name and version, and record the date in the knowledge file's `last_verified`.
 

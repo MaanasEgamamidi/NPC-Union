@@ -145,4 +145,4 @@ Game use: a dose budget that rises faster in transit than on the surface, with s
 
 - Fact sheet: open https://nssdc.gsfc.nasa.gov/planetary/factsheet/ and compare the "Last Updated" footer to 18 March 2025. If it changed, re-copy the table.
 - Missions: open each mission page, read its "last updated" date and newest news item, and update section 5 with the date you read it.
-- Enceladus atmosphere and Pluto atmosphere composition require further checking (UNVERIFIED).
+- Enceladus has a localized water-vapor atmosphere associated with its plume; NASA reports carbon dioxide and a nitrogen/carbon monoxide component. Pluto has a tenuous atmosphere of nitrogen, methane and carbon monoxide. [NASA JPL](https://www.jpl.nasa.gov/news/cassini-finds-an-active-watery-world-at-saturns-enceladus/), [NASA](https://science.nasa.gov/wp-content/uploads/2024/02/rtg-study-d-99657-final-report-june-2017-export-marking-updated1.pdf).

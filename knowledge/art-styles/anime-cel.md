@@ -20,7 +20,7 @@ Flat bands of light and shadow, controlled ink lines, and motion timed like hand
 | The Legend of Zelda: The Wind Waker (Nintendo, 2002) | https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_The_Wind_Waker | Early cel-shading on limited hardware; big readable shapes, expressive oversized eyes, stylized VFX shapes (smoke, water) drawn as flat forms. |
 | Hi-Fi Rush (Tango Gameworks, 2023) | https://en.wikipedia.org/wiki/Hi-Fi_Rush | Cel look with comic-style accents at action game frame rates; animation and VFX synced to music beats; halftone and speed-line accents. |
 
-Talk: "GuiltyGearXrd's Art Style: The X Factor Between 2D and 3D", GDC 2015, https://www.gdcvault.com/play/1022031/GuiltyGearXrd-s-Art-Style-The (title verified on GDC Vault; talk contents summarized from memory, UNVERIFIED in detail).
+Talk: "GuiltyGearXrd's Art Style: The X Factor Between 2D and 3D", GDC 2015. The [presentation slides](https://www.ggxrd.com/Motomura_Junya_GuiltyGearXrd.pdf) document vertex-normal editing and per-vertex shading thresholds.
 
 ## Palette rules
 

@@ -7,10 +7,10 @@ last_verified: 2026-11-05
 
 # Pose artist reference
 
-Sources (all UNVERIFIED, not fetched on 2026-11-05; check before quoting settings):
-- ControlNet repository: https://github.com/lllyasviel/ControlNet (UNVERIFIED)
-- OpenPose repository and keypoint docs: https://github.com/CMU-Perceptual-Computing-Lab/openpose (UNVERIFIED)
-- Hugging Face Diffusers ControlNet guide: https://huggingface.co/docs/diffusers/using-diffusers/controlnet (UNVERIFIED)
+Sources (check the model and version before quoting settings):
+- ControlNet repository: https://github.com/lllyasviel/ControlNet
+- OpenPose repository and keypoint docs: https://github.com/CMU-Perceptual-Computing-Lab/openpose
+- Hugging Face Diffusers ControlNet guide: https://huggingface.co/docs/diffusers/using-diffusers/controlnet
 
 ## Pose readability checklist
 

@@ -1,6 +1,7 @@
 ---
 owner: on-device-ai-engineer
 topic: On-device model inference in games
+last_verified: 2026-11-05
 ---
 
 # On-device AI: knowledge
@@ -20,8 +21,7 @@ topic: On-device model inference in games
 
 ## ONNX Runtime execution providers
 
-- Provider list and per-platform availability. UNVERIFIED: not checked this session.
-  - Source: https://onnxruntime.ai/docs/execution-providers/ (UNVERIFIED)
+- Provider list and per-platform availability: https://onnxruntime.ai/docs/execution-providers/ . Check the provider-specific page for the target platform.
 
 ## Open-weight model licences
 

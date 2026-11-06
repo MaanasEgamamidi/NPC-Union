@@ -1,7 +1,7 @@
 ---
 title: Store page specs and policies
 tags: [steam, itch-io, capsule-art, next-fest, store-page]
-sources: [https://partner.steamgames.com/doc/store/assets, https://partner.steamgames.com/doc/store/tags, https://itch.io/docs/creators]
+sources: [https://partner.steamgames.com/doc/store/assets, https://partner.steamgames.com/doc/store/tags, https://itch.io/docs/creators/faq]
 last_verified: 2026-11-05
 ---
 

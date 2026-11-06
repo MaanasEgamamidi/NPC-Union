@@ -42,7 +42,7 @@ The Godot interactive and synchronized stream documentation and 4.3 release note
 
 ## Middleware terms (UNVERIFIED wording, check FMOD and Audiokinetic docs)
 
-- FMOD Studio: loop regions, transition markers, destination markers, transition regions, quantization on transitions.
+- FMOD Studio: loop regions, transition markers, destination markers, transition regions, quantization on transitions. See [FMOD authoring events](https://www.fmod.com/docs/2.04/studio/authoring-events.html).
 - Wwise: Music Segments with entry and exit cues; pre-entry (pickup) and post-exit (tail) regions; Music Playlist and Music Switch containers; transition matrix.
 
 ## Layering and resequencing

@@ -1,6 +1,7 @@
 ---
 title: AI cost and safety for runtime game features
 owner: ai-cost-safety-engineer
+last_verified: 2026-11-05
 ---
 
 # AI cost and safety: sources
@@ -18,7 +19,7 @@ Prices are deliberately not stored here. Model prices and rate limits change oft
 - COPPA rule amendments: published in the Federal Register April 22, 2025, effective June 23, 2025, with general compliance required by April 22, 2026.
   - Source (secondary, law firm summary): https://www.ashurstperkinscoie.com/en/insights/ftc-finally-publishes-amended-coppa-rule-compliance-deadlines-set/
   - last_verified: 2026-11-05
-  - Primary FTC rule page: https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa (UNVERIFIED)
+  - Primary FTC rule page: https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa
 
 ## General privacy
 
@@ -26,16 +27,16 @@ Prices are deliberately not stored here. Model prices and rate limits change oft
 
 ## Age ratings
 
-- ESRB ratings guide, including interactive elements such as "Users Interact": https://www.esrb.org/ratings-guide/ (UNVERIFIED)
-- PEGI: https://pegi.info/ (UNVERIFIED)
-- IARC (digital storefront rating system): https://www.globalratings.com/ (UNVERIFIED)
+- ESRB ratings guide, including interactive elements such as "Users Interact": https://www.esrb.org/ratings-guide/
+- PEGI: https://pegi.info/
+- IARC (digital storefront rating system): https://www.globalratings.com/
 
 ## Provider documentation (check current pages, never recall prices)
 
-- Anthropic pricing: https://www.anthropic.com/pricing (UNVERIFIED)
-- Anthropic prompt caching docs: https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching (UNVERIFIED)
-- OpenAI moderation guide: https://platform.openai.com/docs/guides/moderation (UNVERIFIED)
+- Anthropic pricing: https://claude.com/pricing
+- Anthropic prompt caching docs: https://platform.claude.com/docs/en/build-with-claude/prompt-caching
+- OpenAI moderation guide: https://developers.openai.com/api/docs/guides/moderation
 
 ## Needs local verification
 
-All links marked UNVERIFIED above, plus the exact current wording of the Steam Content Survey AI section.
+The GDPR link marked UNVERIFIED above, plus the exact current wording of the Steam Content Survey AI section.

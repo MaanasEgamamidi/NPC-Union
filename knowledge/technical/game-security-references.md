@@ -1,7 +1,10 @@
-# Game security references
-
-Owner: game-security-engineer
+---
+title: Game security references
+owner: game-security-engineer
 last_verified: 2026-11-05
+---
+
+# Game security references
 
 Verification method: each link marked "verified" returned HTTP 200 on 2026-11-05. Content was not re-read in full; check the live page before quoting a ranking, version, or API field. Links marked UNVERIFIED were not checked.
 
@@ -11,7 +14,7 @@ Verification method: each link marked "verified" returned HTTP 200 on 2026-11-05
 - OWASP API Security Project: https://owasp.org/www-project-api-security/ (verified, last_verified: 2026-11-05). API-specific risks, including broken object-level authorization. Use for game service endpoints.
 - OWASP Mobile Top 10: https://owasp.org/www-project-mobile-top-10/ (verified, last_verified: 2026-11-05). Mobile client risks, including insecure storage and hardcoded secrets.
 - OWASP Secrets Management Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html (verified, last_verified: 2026-11-05). Storage, rotation, and CI handling of secrets.
-- OWASP Threat Modeling Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html (UNVERIFIED). Process reference for the `game-threat-model` skill.
+- OWASP Threat Modeling Cheat Sheet: https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html (verified, last_verified: 2026-11-05). Process reference for the `game-threat-model` skill.
 
 ## AI agents and MCP tools
 

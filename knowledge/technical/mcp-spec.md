@@ -14,7 +14,7 @@ Facts below were read from the live spec pages on 2026-11-05 unless marked UNVER
 
 - The current specification revision is `2026-07-28`. The spec index links its schema at `schema/2026-07-28/schema.ts`. Source: https://modelcontextprotocol.io/specification and https://github.com/modelcontextprotocol/specification/blob/main/schema/2026-07-28/schema.ts
 - The TypeScript schema is the authoritative source for protocol requirements. Source: https://modelcontextprotocol.io/specification
-- Earlier dated revisions include 2024-11-05, 2025-03-26, 2025-06-18 and 2025-11-25. UNVERIFIED (from memory, not re-checked on 2026-11-05).
+- Earlier dated revisions include 2024-11-05, 2025-03-26, 2025-06-18 and 2025-11-25. Source: https://ruby.sdk.modelcontextprotocol.io/protocol-versions/
 
 ## Base protocol
 
@@ -38,7 +38,7 @@ Facts below were read from the live spec pages on 2026-11-05 unless marked UNVER
 ## Features
 
 - Server features: Resources (context and data), Prompts (templated messages and workflows for users), Tools (functions for the model to execute). Source: https://modelcontextprotocol.io/specification
-- Client features listed on the 2026-07-28 index: Elicitation (server-initiated requests for more information from users). Sampling and Roots are not listed on that index page; their status in 2026-07-28 is UNVERIFIED. Source: https://modelcontextprotocol.io/specification
+- Client features: Elicitation requests more information from users. Sampling and Roots are deprecated as of 2026-07-28; the specification advises new implementations not to adopt them. Sources: https://modelcontextprotocol.io/specification/2026-07-28/client/sampling and https://modelcontextprotocol.io/specification/2026-07-28/client/roots
 - Optional extensions, opt-in and negotiated by both sides: Tasks (long-running operations with polling, mid-flight input, durable handles), Skills over MCP, MCP Apps (inline interactive UI). Source: https://modelcontextprotocol.io/specification and https://modelcontextprotocol.io/extensions/overview
 
 ## Security

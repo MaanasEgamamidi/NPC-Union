@@ -12,6 +12,6 @@ Facts here change with platform versions or policies. Check each against the sou
 - Console certification (Xbox Requirements, Sony TRC, Nintendo lotcheck) includes rules on controller disconnect, suspend/resume and save data handling. Exact wording and numbering are under NDA. UNVERIFIED.
 - Steam Deck Verified criteria include default controller support and a controller-accessible way to enter text. Check the current [compatibility checklist](https://partner.steamgames.com/doc/steamhardware/compat).
 - Unity exposes `OnApplicationFocus` and `OnApplicationPause` for focus and suspend handling; behavior differs per platform and version. UNVERIFIED for the project's engine version.
-- .NET `ToUpper()` and `ToLower()` without a culture use the current culture, so tr-TR maps "i" to "İ". Use invariant culture or ordinal comparison for identifiers. Behavior confirmed in .NET docs as of training; recheck: UNVERIFIED.
+- .NET `ToUpper()` and `ToLower()` without a culture use the current culture, so tr-TR maps "i" to "İ". Use invariant culture or ordinal comparison for identifiers. [Microsoft documents current-culture casing and ordinal comparisons](https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper).
 - Number parsing with the current culture reads "1,5" as 1.5 in de-DE and fails or misreads in en-US. UNVERIFIED for each engine's default.
 - German and Finnish text expansion of 30 to 40 percent over English is an industry rule of thumb, not a standard. UNVERIFIED.

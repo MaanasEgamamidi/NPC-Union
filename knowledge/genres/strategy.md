@@ -55,6 +55,6 @@ Observe the state (map, resources, enemy), decide on a plan with trade-offs, act
 
 ## Sources
 
-- English Wikipedia pages listed in the reference table. Six links returned HTTP 200 on 2026-11-05. The Total War: Warhammer II link was rate limited (HTTP 429) and is UNVERIFIED. Page contents were not read.
+- English Wikipedia pages listed in the reference table. The Total War: Warhammer II page was fetched on 2026-11-05; other page contents were not rechecked.
 - Release years and developers are from prior knowledge and should be rechecked against the Wikipedia pages: UNVERIFIED.
-- Into the Breach 8x8 grid size: from prior knowledge, UNVERIFIED.
+- Into the Breach combat uses an [8x8 grid](https://www.gameinformer.com/games/into_the_breach/b/pc/archive/2018/02/26/game-informer-review-into-the-breach).

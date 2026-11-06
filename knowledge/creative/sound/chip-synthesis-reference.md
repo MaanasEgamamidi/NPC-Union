@@ -19,7 +19,7 @@ last_verified: 2026-11-05
 
 # Chip synthesis reference for retro game SFX
 
-Used by `chiptune-synthesist`. On 2026-11-05 the NESdev Wiki returned a bot check page to this environment and GitHub returned 403, so the NES and jsfxr claims below are from recall and marked UNVERIFIED until a local session checks them against the pages listed in `sources`. Check the linked page before quoting a number to a user.
+Used by `chiptune-synthesist`. NESdev pages remain blocked to direct fetching in this environment; some details below were checked against search-indexed source text. Check the linked page before quoting a number to a user.
 
 ## NES 2A03 APU
 
@@ -31,12 +31,12 @@ Used by `chiptune-synthesist`. On 2026-11-05 the NESdev Wiki returned a bot chec
 | DMC | 1-bit delta samples | 7-bit output level | Used for drums and voice clips |
 
 - Pulse frequency: `f = fCPU / (16 * (t + 1))`. Triangle: `f = fCPU / (32 * (t + 1))`. NTSC fCPU is about 1.789773 MHz; PAL is about 1.662607 MHz. UNVERIFIED.
-- Pulse timer values below 8 mute the channel. The sweep unit also mutes the channel when its target period passes $7FF. UNVERIFIED.
+- Pulse timer values below 8 mute the channel. The sweep unit also mutes the channel when its target period exceeds $7FF. [NESdev sweep](https://www.nesdev.org/wiki/APU_Sweep).
 - Pulse 1 sweep negate uses ones' complement, pulse 2 uses two's complement, so the same downward sweep differs by one timer step. UNVERIFIED.
 - 75% duty is the 25% waveform inverted. Heard alone, they sound the same.
-- Noise short mode (mode bit set) produces a short repeating sequence with a metallic pitched tone. UNVERIFIED for the exact sequence lengths (often quoted as 93 or 31 steps).
-- The mixer is nonlinear. A commonly quoted approximation is `pulse_out = 95.88 / (8128 / (pulse1 + pulse2) + 100)` with a separate curve for triangle, noise and DMC. UNVERIFIED.
-- Famicom cartridges could add expansion audio chips; the NES cartridge slot did not route that audio. Konami's VRC6 in the Japanese release of Castlevania III (Akumajou Densetsu) added two pulse channels and a sawtooth. UNVERIFIED for channel details.
+- Noise short mode (mode bit set) produces a 93- or 31-step repeating sequence, depending on the shift register state. [NESdev noise](https://www.nesdev.org/wiki/APU_Noise).
+- The mixer is nonlinear. An approximation is `pulse_out = 95.88 / (8128 / (pulse1 + pulse2) + 100)` with a separate curve for triangle, noise and DMC. [NESdev mixer](https://www.nesdev.org/wiki/APU_Mixer).
+- Famicom cartridges could add expansion audio chips; the NES cartridge slot did not route that audio. Konami's VRC6 in the Japanese release of Castlevania III (Akumajou Densetsu) added two pulse channels and a sawtooth. [NESdev VRC6 audio](https://www.nesdev.org/wiki/VRC6_audio).
 
 ## Game Boy (DMG) for comparison
 

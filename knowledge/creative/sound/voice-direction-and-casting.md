@@ -61,7 +61,7 @@ Pattern: `VO_<area>_<speaker>_<ID>_<lang>_t<take>.wav`. Drop the take suffix on 
 ## Unions and AI voices
 
 - SAG-AFTRA members ratified a new Interactive Media Agreement in July 2025, ending the video game strike that began in 2024 over AI protections. Law-firm summaries describe requirements for separate, written, reasonably specific consent before a performer's digital replica is created or used, disclosure rules, and usage reporting. Sources: the Davis+Gilbert and Frankfurt Kurnit links above. Exact terms, exceptions, and dates are UNVERIFIED against the agreement text; read the agreement on sagaftra.org before relying on any of them.
-- Session length limits for vocally stressful work exist in SAG-AFTRA terms. Exact hours are UNVERIFIED.
+- Under SAG-AFTRA's [Tiered-Budget Independent Interactive Media Agreement](https://www.sagaftra.org/sites/default/files/Tiered-Budget%20Independent%20Interactive%20Media%20Agreement%20FAQs.pdf), vocally stressful sessions are capped at two hours. Check the specific agreement governing the production.
 - UK performers: check Equity UK guidance. No specific Equity terms are stated here; UNVERIFIED.
 - Temp TTS for timing is common. Tag every temp file `TEMP_TTS_` so it cannot ship.
 - Cloning a real voice, or training a model on recordings, needs written consent from the performer and a contract check by game-legal-advisor. This file is not legal advice.

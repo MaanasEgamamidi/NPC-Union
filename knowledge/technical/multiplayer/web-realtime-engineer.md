@@ -2,6 +2,7 @@
 title: Browser realtime transports for games
 owner: web-realtime-engineer
 last_reviewed: 2026-11-05
+last_verified: 2026-11-05
 ---
 
 # Browser realtime transports for games
@@ -16,13 +17,12 @@ Reference facts for `web-realtime-engineer`. Re-check anything version-sensitive
   Source: https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel (last_verified: 2026-11-05)
 - **DataChannel backpressure**: `bufferedAmount`, `bufferedAmountLowThreshold` and the `bufferedamountlow` event.
   Source: https://developer.mozilla.org/en-US/docs/Web/API/RTCDataChannel/bufferedAmountLowThreshold (last_verified: 2026-11-05)
-- **DataChannel message size**: about 16 KiB is the commonly cited cross-browser safe size. UNVERIFIED against a current primary source; treat as a planning number.
+- **DataChannel message size**: keep messages moderately small; large messages can block other channels when message interleaving is unavailable. If SDP omits `max-message-size`, the default is 64 KiB; check the negotiated limit and test target browsers. Source: https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Using_data_channels
 - **WebTransport**: HTTP/3 over QUIC, reliable streams plus unreliable datagrams, no ICE or SDP. `datagrams.maxDatagramSize` gives the current limit.
   Source: https://developer.mozilla.org/en-US/docs/Web/API/WebTransport_API (last_verified: 2026-11-05)
   Source: https://developer.mozilla.org/en-US/docs/Web/API/WebTransport/datagrams (last_verified: 2026-11-05)
-- **WebTransport in Safari**: a secondary source reports WebTransport reached Baseline when Safari 26.4 shipped support in March 2026, and that support depends on the OS version. The exact Safari version and WKWebView status are UNVERIFIED against Apple release notes or caniuse (caniuse returned HTTP 406 to our fetch).
-  Source: https://webrtc.ventures/2026/04/webtransport-is-now-baseline-what-it-means-for-real-time-media/ (last_verified: 2026-11-05)
-  Source: https://caniuse.com/webtransport (UNVERIFIED, blocked from this environment)
+- **WebTransport in Safari**: Safari 26.4 added WebTransport support in March 2026. WKWebView availability is UNVERIFIED; test the target OS and embedded browser.
+  Source: https://webkit.org/blog/17862/webkit-features-for-safari-26-4/ (last_verified: 2026-11-05)
 
 ## Frameworks and hosting
 
@@ -38,11 +38,11 @@ Reference facts for `web-realtime-engineer`. Re-check anything version-sensitive
 ## Server-side WebRTC libraries
 
 - **geckos.io**: client-server UDP-style messaging for Node over WebRTC DataChannels.
-  Source: https://github.com/geckosio/geckos.io (UNVERIFIED, GitHub returned 403 to our fetch)
+  Source: https://github.com/geckosio/geckos.io (last_verified: 2026-11-05)
 - **Pion WebRTC** (Go).
-  Source: https://github.com/pion/webrtc (UNVERIFIED, GitHub returned 403 to our fetch)
+  Source: https://github.com/pion/webrtc (last_verified: 2026-11-05)
 - **node-datachannel** (Node bindings to libdatachannel).
-  Source: https://github.com/murat-dogan/node-datachannel (UNVERIFIED, GitHub returned 403 to our fetch)
+  Source: https://github.com/murat-dogan/node-datachannel (last_verified: 2026-11-05)
 
 ## Needs checking before use
 

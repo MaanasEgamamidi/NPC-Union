@@ -48,11 +48,10 @@ Misc: `tag-royalty-free`, `tag-asset-pack`, `tag-modular`.
 
 Time window: `last-day`, `last-7-days`, `last-30-days`.
 
-Each tag is used as https://itch.io/game-assets/<tag>, for example https://itch.io/game-assets/tag-pixel-art.
+Each tag is used as https://itch.io/game-assets/<tag>, for example https://itch.io/game-assets/tag-pixel-art. Chaining segments can combine filters: https://itch.io/game-assets/free/tag-pixel-art displays free game assets tagged Pixel Art.
 
 ## UNVERIFIED
 
-- Chaining segments can combine filters: https://itch.io/game-assets/free/tag-pixel-art displays free game assets tagged Pixel Art.
 - Free-text search at https://itch.io/search?q=<terms> covers all itch content, not only assets. UNVERIFIED.
 - Download counts are not public on asset pages; ratings and rating counts are shown when the creator allows it. UNVERIFIED.
 

@@ -1,6 +1,9 @@
-# Audio asset sources
-
+---
+title: Audio asset sources
 last_verified: 2026-11-05
+---
+
+# Audio asset sources
 
 Facts for finding game SFX and music. Items marked UNVERIFIED were not checked on the date above.
 
@@ -23,22 +26,22 @@ Facts for finding game SFX and music. Items marked UNVERIFIED were not checked o
 - Licences page: https://incompetech.com/music/royalty-free/licenses/ (checked 2026-11-05)
 - Free under Creative Commons with credit. The site generates the credit text.
 - Paid Standard License for use without attribution. Price was not shown on the licences page.
-- Exact CC version: UNVERIFIED.
+- The [FAQ](https://incompetech.com/music/royalty-free/faq.html) gives CC BY 4.0 attribution; check the specific track.
 
 ## OpenGameArt
 
 - URL: https://opengameart.org
-- Licence listed per submission. Common ones include CC0, CC-BY, CC-BY-SA, GPL, OGA-BY. UNVERIFIED on 2026-11-05.
+- Licence listed per submission. The [FAQ](https://opengameart.org/node/5571) discusses CC0, CC-BY, CC-BY-SA, GPL and OGA-BY.
 - Share-alike and GPL may add duties to your release; send to asset-license-auditor.
 
 ## Sonniss GDC bundles
 
-- URL: https://sonniss.com (UNVERIFIED on 2026-11-05)
+- URL: https://sonniss.com
 - Yearly free bundles have been royalty-free for commercial use. Current year terms: UNVERIFIED, read the licence shipped with the download.
 
 ## itch.io audio packs
 
-- URL: https://itch.io/game-assets/tag-sound-effects (UNVERIFIED on 2026-11-05)
+- URL: https://itch.io/game-assets/tag-sound-effects
 - Licence set by each creator on the pack page. No licence text means do not use until the creator confirms in writing.
 
 ## YouTube Audio Library

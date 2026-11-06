@@ -17,7 +17,7 @@ Working tables for environment-artist. Engine setting names change between versi
 | 47-tile blob | 8, corners only when both edges set | 47 | Organic ground, cliffs, water edges | Sheet layout differs per tool |
 | Corner-only (dual grid style) | 4 corners | 16 | Smooth blends with fewer tiles | Needs a half-tile offset layer |
 
-Engine names (UNVERIFIED, check version docs): Godot 4 TileSet terrains offer "Match Corners and Sides", "Match Corners", "Match Sides"; Unity uses Rule Tile from the 2D Tilemap Extras package.
+Engine names (check version docs): Godot 4 TileSet terrains offer "Match Corners and Sides", "Match Corners", "Match Sides"; Unity offers Rule Tile in the 2D Tilemap Extras package. [Godot](https://docs.godotengine.org/en/stable/classes/class_tileset.html), [Unity](https://docs.unity3d.com/Packages/com.unity.2d.tilemap.extras@latest/).
 
 ## Tile and resolution fit
 

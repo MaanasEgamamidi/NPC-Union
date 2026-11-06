@@ -61,5 +61,5 @@ last_verified: 2026-11-05
 
 - Wikipedia pages listed in the Reference games table (all seven URLs returned HTTP 200 on 2026-11-05).
 - Official developer patch notes and blogs for version-specific numbers; check dates before quoting.
-- Old School RuneScape poll threshold (70% in early rules) has changed over time: UNVERIFIED for current value.
-- Endwalker (2021) launch queues and temporary halt of digital sales: from memory, UNVERIFIED.
+- Old School RuneScape used a 75% threshold in 2017; a 2026 official poll refers to a 70% threshold. See the [2017 poll](https://oldschool.runescape.com/polls/2017/1335) and [2026 poll](https://oldschool.runescape.com/polls/2026/1719).
+- Endwalker launched on December 7, 2021; congestion led to a temporary suspension of digital sales to new players. [Square Enix announcement](https://na.finalfantasyxiv.com/lodestone/topics/detail/9a6bed5c06ae511c363ece5ead0a98a3986554a2).

@@ -31,7 +31,7 @@ Version string format: `6000.3.28f1` = Unity 6.3, patch 28, final build 1. `b` =
 - Unity 6.0 LTS: "supported through October 2026" (so at or past its end now; a patch was still published 2026-11-03).
 - Update releases: "Supported until the next release is published."
 - Enterprise and Industry get an extra year on LTS.
-Whether 6.7 will be an LTS: UNVERIFIED (not stated on the support page today).
+Unity describes 6.7 as an upcoming LTS in its [render pipeline strategy](https://discussions.unity.com/t/render-pipelines-strategy-for-2026/1710004/1); check availability and support dates before planning an upgrade.
 
 ## Licence tiers (https://unity.com/products/pricing-updates, 2026-11-05)
 
@@ -41,7 +41,7 @@ Whether 6.7 will be an LTS: UNVERIFIED (not stated on the support page today).
 | Pro | required above $200,000; range $200,001 to $24,999,999, effective 1 Jan 2025 |
 | Enterprise | $25,000,000 USD and over in total finances in the most recent 12 months; see https://unity.com/pages/license-compliance |
 
-Seat prices: UNVERIFIED today, check https://unity.com/products.
+Unity Pro: $210 per seat per month on the annual plan paid monthly, as listed on [Unity's product page](https://unity.com/products/unity-pro); check current prices and payment terms for other plans.
 
 Runtime Fee: cancelled as of 12 September 2024, effective immediately; it will not apply to games made with Unity 6 or any other version (pricing-updates page).
 
@@ -49,7 +49,7 @@ Runtime Fee: cancelled as of 12 September 2024, effective immediately; it will n
 
 - URP: default for new cross-platform projects, mobile, web, Switch-class hardware.
 - HDRP: high-end PC and current consoles only; no mobile or web.
-- Built-in Render Pipeline: legacy. Its deprecation status in 6.5+ is UNVERIFIED today; check the release notes for your line.
+- Built-in Render Pipeline: deprecated in Unity 6.5, with support planned through the Unity 6.7 LTS lifecycle. See the [Unity 6.5 upgrade guide](https://docs.unity.com/en-us/engine/6000.6/manual/upgrade-guides/upgrade-guide-unity65).
 - Pipelines are not interchangeable at runtime; materials and shaders need conversion.
 
 ## How to re-check
@@ -57,4 +57,4 @@ Runtime Fee: cancelled as of 12 September 2024, effective immediately; it will n
 1. Release API above, or https://unity.com/releases/editor/archive, for the latest patch per line.
 2. https://unity.com/releases/unity-6/support for LTS end dates.
 3. https://unity.com/products/pricing-updates and https://unity.com/products for tiers.
-4. Upgrade guides: https://docs.unity3d.com/6000.3/Documentation/Manual/upgrade-guides.html (swap the version in the URL; UNVERIFIED today).
+4. Upgrade guides: https://docs.unity3d.com/6000.0/Documentation/Manual/UpgradeGuides.html (check the guide for the target version).

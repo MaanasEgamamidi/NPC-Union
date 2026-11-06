@@ -41,14 +41,14 @@ All requests below were run on 2026-11-05 unless marked UNVERIFIED.
 | NeoWs lookup | `https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=DEMO_KEY` | 200, 121 KB | Adds `designation`, `orbital_data`; `close_approach_data` had 282 entries (1900 to 2200, Earth, Venus, "Merc"). |
 | NeoWs browse | `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY` | 200, 323 KB | `page: {size:20, total_elements:62825, total_pages:3142}`. |
 | DONKI | `https://api.nasa.gov/DONKI/CME?startDate=2017-01-03&endDate=2017-01-03&api_key=DEMO_KEY` (catalog example) | listed; not called (UNVERIFIED) | Catalog: CME, CMEAnalysis, GST, IPS, FLR, SEP, MPC, RBE, HSS, WSAEnlilSimulations, notifications; default window 30 days before current UTC date. |
-| EPIC | `https://api.nasa.gov/EPIC/api/natural/images?api_key=DEMO_KEY` | listed; not called (UNVERIFIED) | Catalog: per image `image, date, caption, centroid_coordinates, dscovr_j2000_position, lunar_j2000_position, sun_j2000_position, attitude_quaternions`. Archive PNG path `EPIC/archive/natural/YYYY/MM/DD/png/<image>.png`. |
-| InSight weather | `https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0` | listed; not called (UNVERIFIED) | Catalog page "Last Updated: 3/30/2021", warns of significant missing data. Treat as historical only. |
+| EPIC | `https://api.nasa.gov/EPIC/api/natural/images?api_key=DEMO_KEY` | endpoint returned 404 on 2026-11-05; availability UNVERIFIED | Catalog: per image `image, date, caption, centroid_coordinates, dscovr_j2000_position, lunar_j2000_position, sun_j2000_position, attitude_quaternions`. Archive PNG path `EPIC/archive/natural/YYYY/MM/DD/png/<image>.png`. |
+| InSight weather | `https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0` | returned historical JSON on 2026-11-05 | Catalog page "Last Updated: 3/30/2021", warns of significant missing data. Treat as historical only. |
 | TechTransfer | `https://api.nasa.gov/techtransfer/patent/?engine&api_key=DEMO_KEY` | listed; not called (UNVERIFIED) | patent, patent_issued, software, spinoff searches. |
 | SSD/CNEOS | see `knowledge/space/jpl-ssd-apis.md` | listed | CAD, Fireball, Mission Design, NHATS, Scout, Sentry on ssd-api.jpl.nasa.gov. |
 | Exoplanet | see `knowledge/space/exoplanet-archive.md` | listed | |
 | GIBS | see `knowledge/space/earthdata.md` | tested 200 | |
 | TLE API | `http://tle.ivanstanojevic.me/api/tle` | listed; not called (UNVERIFIED) | Third-party service fed from CelesTrak, per catalog. |
-| Trek WMTS | `https://api.nasa.gov/mars-wmts/catalog/` | listed; not called (UNVERIFIED) | WMTS tiles for Moon, Mars, Vesta. |
+| Trek WMTS | `https://api.nasa.gov/mars-wmts/catalog/` | Mars catalog opened on 2026-11-05 | Mars WMTS layer catalog; Moon and Vesta endpoints were not tested (UNVERIFIED). |
 
 ## NeoWs fields and pitfalls
 

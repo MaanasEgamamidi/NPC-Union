@@ -53,15 +53,15 @@ For hospital management sims, emergency and triage games, outbreak and pandemic 
 | MIMIC-IV (https://physionet.org/content/mimiciv/3.1/) | PhysioNet / MIT | Credentialed access only | "PhysioNet Credentialed Health Data License 1.5.0" plus DUA; CITI "Data or Specimens Only Research" training | CSV | Versioned | Real de-identified ICU data. Not shippable in a game; use only for offline calibration if your team is credentialed |
 | Synthea (https://synthetichealth.github.io/synthea/) | MITRE | Download samples or run the Java generator | Apache License 2.0 (README) | FHIR R4/STU3/DSTU2, C-CDA, CSV, Bulk FHIR ndjson | Ongoing development | Synthetic: realistic in pattern, not in individual detail. CSV export is off by default (`exporter.csv.export = true`) |
 | HL7 FHIR (https://hl7.org/fhir/) | HL7 | Specification | FHIR licensed under CC0 (https://hl7.org/fhir/license.html) | JSON/XML resources | R5 (5.0.0) listed as current published version | Synthea exports R4; check which release your tools expect |
-| LOINC | Regenstrief Institute | Download after account | Licence page blocked in this environment: UNVERIFIED | | | Lab and observation codes; only needed if you display lab tests by code |
+| [LOINC](https://cdn.loinc.org/start) | Regenstrief Institute | Download after [free registration](https://loinc.org/file-access/download-id/476512/) | Free commercial and noncommercial use, subject to attribution and other licence conditions | | | Lab and observation codes; only needed if you display lab tests by code |
 
 ## Standards and expert sources
 
 - Classifications: ICD-11 for diagnoses (cite as WHO requires), SNOMED CT for clinical terms, RxNorm for US drug names, FHIR for record structure.
 - Regulatory: FDA De Novo database record DEN200026 (EndeavorRx, "digital therapeutic software for attention deficit hyperactivity disorder", decision date 06/15/2020). Use the FDA databases, not press coverage, to check device status.
 - Triage systems (START for mass casualty, five-level ED acuity scales such as ESI, the Manchester Triage System): look up current official handbooks before quoting criteria. UNVERIFIED in this file.
-- Privacy: US HIPAA applies to covered entities and business associates; EU GDPR treats health data as a special category. Source pages not fetched here: UNVERIFIED, route to `game-legal-advisor`.
-- Media guidance on suicide and self-harm (WHO and national bodies): not fetched here, UNVERIFIED; the general rules (no method detail, signpost help) are widely adopted.
+- Privacy: US HIPAA rules apply to covered entities and business associates; EU GDPR treats health data as a special category. [HHS](https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html), [European Commission](https://commission.europa.eu/law/law-topic/data-protection/information-individuals_en). Route applicability to `game-legal-advisor`.
+- [WHO guidance](https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/self-harm-and-suicide/responsible-and-deglamorized-media-reporting) recommends avoiding explicit descriptions of suicide methods and providing information on where to seek help. Check current national guidance too.
 
 ## Accuracy vs fun
 
@@ -82,7 +82,7 @@ Fun levers that are also accurate: limited beds and boarding, staff fatigue and 
 
 ## What games get wrong
 
-- Television and games often show high CPR success. A 1996 NEJM study of US medical dramas found 75% of TV patients survived the immediate arrest and 67% appeared to survive to discharge (abstract seen via search, full paper not fetched: UNVERIFIED).
+- A 1996 study of three US television programs found 75% of depicted CPR patients survived the immediate arrest and 67% appeared to survive to hospital discharge. [Diem et al., NEJM, abstract at PubMed](https://pubmed.ncbi.nlm.nih.gov/8628340/).
 - Pathogen sims can be read as forecasts. In January 2020 Ndemic reminded players that Plague Inc. "was not on par with any scientific model" and pointed them to WHO (Wikipedia, Plague Inc.).
 - Hospital sims tend to drop discharge and boarding, so flow problems vanish. Speak generally; no single game is named here.
 - Health claims slip into marketing ("reduces stress", "trains doctors") without evidence. EndeavorRx shows the real path: trials and FDA authorization.

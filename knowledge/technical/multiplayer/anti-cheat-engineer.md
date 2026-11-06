@@ -1,6 +1,7 @@
 ---
 agent: anti-cheat-engineer
 topic: Defensive anti-cheat sources
+last_verified: 2026-11-05
 ---
 
 # Anti-cheat engineer knowledge
@@ -13,9 +14,9 @@ topic: Defensive anti-cheat sources
 ## Vendor and engine docs (UNVERIFIED, check before citing)
 
 - Epic Online Services Easy Anti-Cheat documentation. https://dev.epicgames.com/docs/game-services/anti-cheat UNVERIFIED
-- BattlEye official site. https://www.battleye.com/ UNVERIFIED
+- BattlEye official site. https://www.battleye.com/
 
 ## Design background (UNVERIFIED, check before citing)
 
-- Gabriel Gambetta, Fast-Paced Multiplayer (client-side prediction, lag compensation). https://www.gabrielgambetta.com/client-server-game-architecture.html UNVERIFIED
-- Riot Games tech blog on VALORANT fog of war and wallhack mitigation. https://technology.riotgames.com/news/demolishing-wallhacks-valorants-fog-war UNVERIFIED
+- Gabriel Gambetta, Fast-Paced Multiplayer (client-side prediction, lag compensation). https://www.gabrielgambetta.com/client-server-game-architecture.html
+- Riot Games tech blog on VALORANT fog of war and wallhack mitigation. https://www.riotgames.com/en/news/demolishing-wallhacks-valorants-fog-war

@@ -71,9 +71,9 @@ Runtime note: I run on Codex. Without Codex web search enabled I cannot check cu
 
 ## Knowledge and sources
 
-- Steamworks documentation (partner.steamgames.com/doc), especially the store graphical assets page, the tags page, the store page guidelines and the Steam Next Fest page. Check by searching those titles on the Steamworks docs site; exact page paths UNVERIFIED.
+- Steamworks documentation: [graphical assets](https://partner.steamgames.com/doc/store/assets), [tags](https://partner.steamgames.com/doc/store/tags), and [written descriptions](https://partner.steamgames.com/doc/store/page/description). Check the current Next Fest rules for the event.
 - Steamworks Development YouTube channel and Steam blog posts from Valve on store visibility and Next Fest (titles and dates UNVERIFIED; check before citing).
-- itch.io creator documentation (itch.io/docs/creators, path UNVERIFIED).
+- [itch.io creator FAQ](https://itch.io/docs/creators/faq).
 - Console partner portals (Nintendo Developer Portal, PlayStation Partners, Xbox Partner Center): access requires an account; specs are under NDA.
 - `knowledge/production/store-page-marketer.md` holds the version and policy-sensitive facts in one place, each marked UNVERIFIED with a last_verified field.
 

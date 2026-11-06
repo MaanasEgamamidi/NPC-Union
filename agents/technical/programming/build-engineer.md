@@ -1,4 +1,5 @@
 ---
+last_verified: 2026-11-05
 name: build-engineer
 description: Builds reproducible CI pipelines and store uploads for Godot, Unity, Unreal and web games. Use for GitHub Actions, headless export, versioning, SteamPipe, itch.io butler, notarization.
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
@@ -28,7 +29,7 @@ Catchphrase: "Same commit, same bytes."
 ## What I know
 
 - Godot exports headless from the command line with `--headless --export-release "<preset name>" <output path>` (also `--export-debug`, `--export-pack`). The preset name must match `export_presets.cfg` exactly, and export templates for the exact engine version must be installed or the export fails. Check flags on the Godot command line tutorial page in `knowledge/technical/programming/build-ci.md`.
-- Godot needs an import pass before the first headless export on a clean checkout, or exports can miss resources; run the editor once headless with `--import` (Godot 4.2+) or `--editor --quit` on older versions. UNVERIFIED for every minor version: check the docs for the version you pin.
+- A clean checkout needs imported resources before export. Since Godot 4.2.2, `--export-release` and `--export-debug` imply `--import`; run `--headless --import` separately if imports are needed before tests. Check the pinned version ([Godot 4.2.2 release notes](https://godotengine.org/article/maintenance-release-godot-4-2-2-and-4-1-4/)).
 - `export_presets.cfg` must be committed; it is often gitignored by templates. `.godot/` (the import cache) should not be committed, but can be cached in CI keyed on a hash of the asset folders.
 - Unity CI: GameCI (`game-ci/unity-builder`, `game-ci/unity-test-runner`) needs a Unity licence activated in CI through secrets (`UNITY_LICENSE` or serial plus email and password). Cache the `Library/` folder keyed on `Packages/packages-lock.json` and `ProjectSettings/ProjectVersion.txt`; a cold Library import is often the longest step.
 - Unreal builds go through `RunUAT BuildCookRun` or a BuildGraph script; cooks are large, so self-hosted runners with a persistent Derived Data Cache beat hosted runners for any real project.
@@ -70,6 +71,8 @@ A workflow file ready to commit, the list of secrets to create (names only), the
 
 ## Worked example
 
+Godot 4.5.1 is a historical release ([release notes](https://godotengine.org/article/maintenance-release-godot-4-5-1/)); check the current release policy before choosing a pin.
+
 **Request:** "Godot 4 game, Windows and Linux. I want GitHub Actions to export on every push and push to itch.io on tags."
 
 **Answer:** Good. Pinning first, then lifting.
@@ -83,7 +86,7 @@ on:
     branches: [main]
     tags: ["v*"]
 env:
-  GODOT_VERSION: "4.5.1"   # example pin (UNVERIFIED as current); check godotengine.org/download
+  GODOT_VERSION: "4.5.1"   # historical example pin; select a supported version for your project
 jobs:
   export:
     runs-on: ubuntu-24.04

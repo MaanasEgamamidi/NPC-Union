@@ -24,8 +24,8 @@ CLDR defines six plural categories: zero, one, two, few, many, other. Cardinal e
 |---|---|---|
 | English | one, other | |
 | German | one, other | |
-| French | one, many, other | 0 and 1 are "one". "many" applies to some large round numbers in recent CLDR versions (UNVERIFIED: confirm the version and rule in the chart). |
-| Portuguese (Brazil) | one, many, other | 0 and 1 are "one" for pt. "many" status UNVERIFIED, confirm in chart. |
+| French | one, many, other | In [CLDR 49](https://www.unicode.org/cldr/charts/49/supplemental/language_plural_rules.html), 0 and 1 are "one"; "many" includes 1,000,000 and certain compact forms. Check the chart for the complete rule. |
+| Portuguese (Brazil) | one, many, other | In [CLDR 49](https://www.unicode.org/cldr/charts/49/supplemental/language_plural_rules.html), 0 and 1 are "one" for pt; "many" includes 1,000,000 and certain compact forms. Check the chart for the complete rule. |
 | Russian, Polish | one, few, many, other | Plus "other" for decimals. |
 | Arabic | zero, one, two, few, many, other | All six. |
 | Japanese, Chinese, Korean, Thai | other | No plural inflection. |

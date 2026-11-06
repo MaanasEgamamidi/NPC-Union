@@ -66,4 +66,4 @@ Write per-culture phonotactic rules (allowed sounds, syllable shapes, endings, b
 ## Real examples of in-world unreliable sources
 
 - The Elder Scrolls games include many in-game books with in-world authors whose accounts disagree, which lets the series keep conflicting histories. General pattern well known; no specific book claims made here.
-- Destiny (2014) placed most of its lore in Grimoire cards read outside the game on Bungie's site and companion app. Detail from memory: UNVERIFIED.
+- Destiny (2014) used Grimoire cards accessible through Bungie's website and companion app; those features were removed after Destiny 2 launched. [Destinypedia](https://www.destinypedia.com/Grimoire).

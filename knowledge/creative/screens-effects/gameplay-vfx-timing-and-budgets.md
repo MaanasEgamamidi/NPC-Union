@@ -47,7 +47,7 @@ Reference for the vfx-artist agent. Links were not fetched in the session that w
 
 ## Screen shake
 
-- Trauma model: trauma value 0 to 1, add per event, decay over time, amplitude driven by trauma squared or cubed through smooth noise. Presented by Squirrel Eiserloh, GDC 2016, "Math for Game Programmers: Juicing Your Cameras With Math". The GDC Vault link is not listed here because it was not checked (UNVERIFIED).
+- Trauma model: trauma value 0 to 1, add per event, decay over time, amplitude driven by trauma squared or cubed through smooth noise. Presented by Squirrel Eiserloh, GDC 2016, "Math for Game Programmers: Juicing Your Cameras With Math". Source: https://media.gdcvault.com/gdc2016/Presentations/Eiserloh_Squirrel_JuicingYourCameras.pdf
 - Always expose a shake intensity setting. Game Accessibility Guidelines recommend letting players reduce or turn off screen shake and similar motion effects (check wording on the site).
 
 ## Flash safety

@@ -55,7 +55,7 @@ All seven Wikipedia links returned HTTP 200 on 2026-11-05.
 ## Sources
 
 - English Wikipedia pages for each reference game (links above, checked 2026-11-05).
-- Itay Keren, "Scroll Back: The Theory and Practice of Cameras in Side-Scrollers", GDC 2015 (GDC Vault, URL UNVERIFIED).
+- Itay Keren, ["Scroll Back: The Theory and Practice of Cameras in Side-Scrollers"](https://media.gdcvault.com/gdc2015/presentations/Keren_Itay_ScrollBack.pdf), GDC 2015.
 - Derek Yu, "Spelunky" (Boss Fight Books, 2016), on room-template generation.
 - Maddy Thorson's public notes on Celeste's forgiveness mechanics (coyote time, jump buffering, corner correction); exact post URL UNVERIFIED.
 - Koichi Hayashida's interview on kishotenketsu level structure in Super Mario 3D Land (Game Developer / Gamasutra, 2012; URL UNVERIFIED).

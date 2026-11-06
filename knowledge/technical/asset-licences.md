@@ -13,13 +13,13 @@ Facts the asset-license-auditor relies on. Each line says whether it was checked
 ## Identifiers and tooling
 
 - SPDX licence list: https://spdx.org/licenses/ . VERIFIED 2026-11-05: version 3.29.0 dated 2026-09-16. Confirmed identifiers: `CC-BY-4.0`, `CC-BY-SA-4.0`, `CC-BY-NC-4.0`, `CC0-1.0`, `OFL-1.1`, `MIT`, `Apache-2.0`, `GPL-3.0-only`, `LGPL-3.0-only`.
-- REUSE: https://reuse.software . VERIFIED 2026-11-05: an FSFE initiative with three steps: choose and provide licences, add copyright and licensing information to each file, confirm compliance. The `reuse lint` command checks REUSE compliance: https://reuse.readthedocs.io/en/stable/man/reuse-lint.html. The `LICENSES/` folder convention is UNVERIFIED from that page.
+- REUSE: https://reuse.software . VERIFIED 2026-11-05: an FSFE initiative with three steps: choose and provide licences, add copyright and licensing information to each file, confirm compliance. The `reuse lint` command checks REUSE compliance: https://reuse.readthedocs.io/en/stable/man/reuse-lint.html. The [REUSE tool](https://github.com/fsfe/reuse-tool) places licence texts in `LICENSES/`.
 
 ## Creative Commons
 
 - Licence index: https://creativecommons.org/licenses/ .
-- BY: attribution required. BY-SA: adaptations must carry the same licence (share-alike). NC: no commercial use, which rules out a paid game and is risky for a free game with ads or IAP. ND: no adaptations, so recolouring, cropping or re-rigging an ND asset is a breach. UNVERIFIED wording; read the deed and legal code for the exact version used.
-- CC0 is a waiver plus fallback licence, not the same as public domain status. Public domain depends on jurisdiction and date. UNVERIFIED.
+- BY requires attribution. BY-SA requires shared adaptations to use the same or a compatible licence. NC limits use to noncommercial purposes. ND 4.0 permits private adaptation but not sharing adapted material; whether a modification is an adaptation depends on applicable law. Read the exact licence version. [Creative Commons](https://creativecommons.org/faq/).
+- CC0 dedicates rights to the public domain to the extent possible and includes a fallback licence where a waiver is ineffective. Other rights can still apply. [Creative Commons](https://creativecommons.org/cc-and-nfts/).
 - BY-SA art inside a game: whether the whole game counts as an adaptation is a legal question. Escalate to game-legal-advisor.
 
 ## Code licences
@@ -29,14 +29,14 @@ Facts the asset-license-auditor relies on. Each line says whether it was checked
 
 ## Fonts
 
-- SIL Open Font License 1.1 (`OFL-1.1`) allows embedding and bundling in software but does not allow selling the font file by itself. Reserved Font Names limit renaming of modified versions. UNVERIFIED; check https://openfontlicense.org (UNVERIFIED URL).
+- SIL Open Font License 1.1 (`OFL-1.1`) allows embedding and bundling in software but prohibits selling the font by itself. Reserved Font Names restrict the names of modified versions. Preserve copyright and licence information. [SIL FAQ](https://openfontlicense.org/ofl-faq/).
 
 ## Stores and marketplaces
 
-- Unity Asset Store: governed by the Unity Asset Store EULA, standard seat-based licence. UNVERIFIED; check the EULA on assetstore.unity.com and record the date.
-- Fab (Epic): Fab licence tiers (standard and professional) differ from the old Unreal Marketplace terms. UNVERIFIED; check the licence on fab.com.
+- Unity Asset Store: under the [standard EULA](https://unity.com/legal/as-terms), extension assets are per-seat; other assets have different entity-based terms. Check the asset for non-standard terms.
+- Fab Standard License: Personal and Professional pricing tiers grant the same scope of rights; Reference-Only gives referenced content rather than source format. Check the specific asset licence. [Fab](https://www.fab.com/eula).
 - itch.io: each creator sets their own terms on the asset page. There is no single itch licence. UNVERIFIED; archive the asset page.
-- Steam: content survey asks developers to disclose AI-generated content. UNVERIFIED; check Steamworks documentation before release.
+- Steam's content survey asks about generative AI used in development or in the product. [Steamworks](https://partner.steamgames.com/doc/gettingstarted/contentsurvey).
 
 ## Evidence practice
 
