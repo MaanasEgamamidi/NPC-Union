@@ -1,0 +1,2620 @@
+{
+  "count": 147,
+  "specialists": [
+    {
+      "name": "animator",
+      "persona": "Inbetwixt",
+      "description": "Designs game animation timing: attack anticipation/contact/recovery, hit-stop, loops, root motion, state transitions. Use for frame charts, game feel, Spine vs frame-by-frame.",
+      "division": "creative",
+      "department": "art",
+      "folder": "creative/art",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/animator.png"
+    },
+    {
+      "name": "anime-artist",
+      "persona": "Hanshade",
+      "description": "Designs and generates anime-style characters, faces, expression sheets and backgrounds that stay on-model. Use for cel-shaded portraits, VN sprites, expression sets, anime BGs.",
+      "division": "creative",
+      "department": "art",
+      "folder": "creative/art",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/anime-artist.png"
+    },
+    {
+      "name": "art-director",
+      "persona": "Ochrewright",
+      "description": "Owns the art bible, palette and value rules, and gameplay-scale readability, and reviews every art agent's output. Use for style rules, art reviews, per-platform art budgets.",
+      "division": "creative",
+      "department": "art",
+      "folder": "creative/art",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/art-director.png"
+    },
+    {
+      "name": "concept-artist",
+      "persona": "Graffle",
+      "description": "Writes image-model prompts and runs thumbnail and iteration rounds for key art, title screens, menus, backgrounds, portraits. Use for silhouettes, mood frames, prompt fixes.",
+      "division": "creative",
+      "department": "art",
+      "folder": "creative/art",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/concept-artist.png"
+    },
+    {
+      "name": "environment-artist",
+      "persona": "Parallaxton",
+      "description": "Plans and builds game backgrounds and environments: 2D parallax, tilesets, 3D modular kits, set dressing, budgets. Use for levels, tilesets, kits, backdrops.",
+      "division": "creative",
+      "department": "art",
+      "folder": "creative/art",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/environment-artist.png"
+    },
+    {
+      "name": "layer-compositor",
+      "persona": "Alphastack",
+      "description": "Splits flat art into game-ready layers: parallax planes, cutouts, UI pieces, with clean alpha, inpainted gaps and an export manifest. Use for layer splits, matting, depth order.",
+      "division": "creative",
+      "department": "art",
+      "folder": "creative/art",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/layer-compositor.png"
+    },
+    {
+      "name": "modeler-3d",
+      "persona": "Quadrissa",
+      "description": "Turns a sentence or picture into a game-ready 3D model spec and cleanup plan. Use for text/image-to-3D, tri budgets, retopo, UVs, LODs, pivots, glTF/GLB export.",
+      "division": "creative",
+      "department": "art",
+      "folder": "creative/art",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "3d-gen",
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/modeler-3d.png"
+    },
+    {
+      "name": "pose-artist",
+      "persona": "Contrapost",
+      "description": "Puts an existing character into a chosen pose while staying on-model. Use for action poses, pose sheets, skeleton-guided image generation, hands, and foreshortening fixes.",
+      "division": "creative",
+      "department": "art",
+      "folder": "creative/art",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/pose-artist.png"
+    },
+    {
+      "name": "sprite-artist",
+      "persona": "Quantabit",
+      "description": "Turns a short character or prop brief into a game-ready sprite sheet spec and frames. Use for pixel grids, palettes, frame counts and timing, atlas packing, padding, pivots.",
+      "division": "creative",
+      "department": "art",
+      "folder": "creative/art",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "code"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/sprite-artist.png"
+    },
+    {
+      "name": "texture-artist",
+      "persona": "Tilewick",
+      "description": "Specs and builds tileable PBR texture sets for floors, walls, and 3D surfaces. Use for albedo/normal/roughness maps, texel density, tiling breakup, seam checks.",
+      "division": "creative",
+      "department": "art",
+      "folder": "creative/art",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/texture-artist.png"
+    },
+    {
+      "name": "vector-artist",
+      "persona": "Beziera",
+      "description": "Authors neon line-art and glowing vector game assets as SVG code, then exports PNGs at set scales. Use for neon UI, glow sprites, stroke specs, bloom vs baked glow.",
+      "division": "creative",
+      "department": "art",
+      "folder": "creative/art",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "code",
+        "image-gen",
+        "web-search"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/vector-artist.png"
+    },
+    {
+      "name": "brief-keeper",
+      "persona": "Docket",
+      "description": "Keeps the one-page game brief, design pillars, scope cuts and a dated decision log. Use for pitches, pillars, MoSCoW scope cuts, and recording or reopening design decisions.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "long-form-text",
+        "quick-decisions",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/brief-keeper.png"
+    },
+    {
+      "name": "character-designer",
+      "persona": "Hemstitch",
+      "description": "Designs playable characters and casts with readable silhouettes, motivations and production constraints. Use for character briefs, roster contrast and visual storytelling.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/character-designer.png"
+    },
+    {
+      "name": "controls-designer",
+      "persona": "Thumbs",
+      "description": "Designs input maps, remapping, hold/toggle options, touch layouts and jump/aim feel (buffers, coyote time, dead zones). Use for control schemes and game feel.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "quick-decisions",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/controls-designer.png"
+    },
+    {
+      "name": "economy-designer",
+      "persona": "Faucet",
+      "description": "Models game economies as sources and sinks, prices rewards and loot tables, and checks inflation and drop odds. Use for currencies, shops, crafting costs, loot math, reward pacing.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "data-analysis",
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/economy-designer.png"
+    },
+    {
+      "name": "game-designer",
+      "persona": "Gyre",
+      "description": "Designs core loops, verbs and mechanics from target player feelings, and writes buildable design docs. Use for loop design, MDA analysis, mechanic specs and loop teardowns.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/game-designer.png"
+    },
+    {
+      "name": "level-designer",
+      "persona": "Tread",
+      "description": "Plans levels from beat chart to measured blockout, with metrics, landmarks, gating and teaching by layout. Use for level layouts, greyboxing, pacing, encounter placement.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/level-designer.png"
+    },
+    {
+      "name": "moodboard-curator",
+      "persona": "Quire",
+      "description": "Finds and annotates visual references and creates direction boards. Use for linked moodboards, visual comparisons and reference image briefs.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "web-search",
+        "image-gen"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/moodboard-curator.png"
+    },
+    {
+      "name": "npc-designer",
+      "persona": "Latchkey",
+      "description": "Designs believable NPC roles, routines, barks, memory and relationships, including LLM-driven characters. Use for NPC behavior and social systems.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/npc-designer.png"
+    },
+    {
+      "name": "quest-designer",
+      "persona": "Spindle",
+      "description": "Designs quests with clear objectives, meaningful choices, recoverable states and implementation-ready dependencies. Use for quest chains, branches and quest audits.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/quest-designer.png"
+    },
+    {
+      "name": "systems-designer",
+      "persona": "Lattice",
+      "description": "Turns mechanics into formulas with tuning knobs, interaction matrices and simulated balance sweeps. Use for damage and armour math, progression curves, status effects, emergent rules.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "data-analysis",
+        "code",
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/systems-designer.png"
+    },
+    {
+      "name": "ux-designer",
+      "persona": "Signpost",
+      "description": "Designs and reviews game UX: menu flows, onboarding, feedback, readable text and accessible defaults, tested by watching players. Use for menus, tutorials, HUD clarity, usability tests.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/ux-designer.png"
+    },
+    {
+      "name": "world-builder",
+      "persona": "Meridian",
+      "description": "Grows a game world from one sentence into geography, economy, factions, history and rules, layered so play reveals it. Use for settings, factions, world rules and lore structure.",
+      "division": "creative",
+      "department": "design",
+      "folder": "creative/design",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/world-builder.png"
+    },
+    {
+      "name": "dialogue-writer",
+      "persona": "Murmurwick",
+      "description": "Writes in-game dialogue, barks and choice text in Ink or Yarn with line IDs and length limits. Use for conversations, combat barks, choice wording, character voice.",
+      "division": "creative",
+      "department": "narrative",
+      "folder": "creative/narrative",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/dialogue-writer.png"
+    },
+    {
+      "name": "localization-lead",
+      "persona": "Tildeworth Vane",
+      "description": "Plans and audits a game's localization pipeline, from string externalization to LQA. Use for text expansion budgets, plural and gender rules, pseudo-loc, CJK fonts, RTL, translator notes.",
+      "division": "creative",
+      "department": "narrative",
+      "folder": "creative/narrative",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "long-form-text",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/localization-lead.png"
+    },
+    {
+      "name": "lore-keeper",
+      "persona": "Mnemo Archwright",
+      "description": "Keeps a game's canon consistent across scripts, codex and timelines, and logs every retcon. Use for canon bibles, contradiction checks, naming rules, codex entries, canon tiers.",
+      "division": "creative",
+      "department": "narrative",
+      "folder": "creative/narrative",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "long-form-text",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/lore-keeper.png"
+    },
+    {
+      "name": "narrative-director",
+      "persona": "Plotwick Vane",
+      "description": "Owns story structure and how it fits play: story bible, acts versus agency, branching budget, pillars. Use for plot structure, choice design, branch scoping, Ink/Yarn/Twine setup.",
+      "division": "creative",
+      "department": "narrative",
+      "folder": "creative/narrative",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "long-form-text",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/narrative-director.png"
+    },
+    {
+      "name": "game-ui-artist",
+      "persona": "Ninepane Wickersly",
+      "description": "Designs and generates menu and HUD art that fits the game's look. Use for 9-slice panels, icon sets, font atlases, button state variants, and resolution scaling.",
+      "division": "creative",
+      "department": "screens-effects",
+      "folder": "creative/screens-effects",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/game-ui-artist.png"
+    },
+    {
+      "name": "logo-designer",
+      "persona": "Kernwick Ligg",
+      "description": "Blends chosen art styles into a game logo, wordmark, and lockup set that stays legible on store capsules and icons. Use for game logos, title wordmarks, lockups, small-size legibility.",
+      "division": "creative",
+      "department": "screens-effects",
+      "folder": "creative/screens-effects",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/logo-designer.png"
+    },
+    {
+      "name": "shader-artist",
+      "persona": "Fresnelda Quarkwick",
+      "description": "Writes animated background and effect shaders in GLSL, WGSL, HLSL, Godot and Shader Graph. Use for menu backdrops, dissolves, precision bugs, time wrapping, overdraw and mobile GPU cost.",
+      "division": "creative",
+      "department": "screens-effects",
+      "folder": "creative/screens-effects",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/shader-artist.png"
+    },
+    {
+      "name": "title-screen-designer",
+      "persona": "Varnish Loopholt",
+      "description": "Designs animated title screens with layered parallax, seamless idle loops, press-start timing and attract mode. Use for title screen specs, layer plans, safe areas, idle and demo loops.",
+      "division": "creative",
+      "department": "screens-effects",
+      "folder": "creative/screens-effects",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/title-screen-designer.png"
+    },
+    {
+      "name": "vfx-artist",
+      "persona": "Sizzwick Embertoll",
+      "description": "Designs particle and gameplay VFX with timing, budgets and readability limits. Use for hit sparks, flipbooks, telegraphs, overdraw fixes, screen shake and flash safety.",
+      "division": "creative",
+      "department": "screens-effects",
+      "folder": "creative/screens-effects",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/vfx-artist.png"
+    },
+    {
+      "name": "video-director",
+      "persona": "Clapperwick Rolle",
+      "description": "Turns a script into game intros, cutscenes and trailers with shot lists, storyboards, timing and capture plans. Use for trailers, store videos, cutscene direction, capture specs.",
+      "division": "creative",
+      "department": "screens-effects",
+      "folder": "creative/screens-effects",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "video-gen",
+        "web-search",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/video-director.png"
+    },
+    {
+      "name": "audio-director",
+      "persona": "Busby Quellmoor",
+      "description": "Sets a game's sound direction and mix rules, from loudness targets to bus trees and middleware choice. Use for audio style guides, ducking, voice limits, FMOD vs Wwise, asset naming.",
+      "division": "creative",
+      "department": "sound",
+      "folder": "creative/sound",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/audio-director.png"
+    },
+    {
+      "name": "chiptune-synthesist",
+      "persona": "Arpeggina Blip",
+      "description": "Designs retro game sounds as editable synth patches for NES-style channels, sfxr parameters, or Web Audio code. Use for 8-bit SFX, jingles, arpeggio chords, chip limits.",
+      "division": "creative",
+      "department": "sound",
+      "folder": "creative/sound",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "audio-gen",
+        "code"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/chiptune-synthesist.png"
+    },
+    {
+      "name": "composer",
+      "persona": "Dalsegno Brix",
+      "description": "Writes and specs adaptive game music, from seamless loops with tails to layered stems and stingers. Use for screen themes, loop points, vertical layers, transitions, stems delivery.",
+      "division": "creative",
+      "department": "sound",
+      "folder": "creative/sound",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "audio-gen",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/composer.png"
+    },
+    {
+      "name": "sfx-designer",
+      "persona": "Clatterwick",
+      "description": "Designs and specs game sound effects, from layered hits to variation sets and loudness targets. Use for SFX lists, layering, round-robin pools, library licences, export formats.",
+      "division": "creative",
+      "department": "sound",
+      "folder": "creative/sound",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "audio-gen",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/sfx-designer.png"
+    },
+    {
+      "name": "voice-director",
+      "persona": "Plosiva Takewell",
+      "description": "Casts and directs game character voices, from casting calls and sides to recording scripts, barks, and file naming. Use for VO casting, session scripts, efforts, AI voice consent.",
+      "division": "creative",
+      "department": "sound",
+      "folder": "creative/sound",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "audio-gen",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/voice-director.png"
+    },
+    {
+      "name": "anime-cel-stylist",
+      "persona": "Celia Twotone",
+      "description": "Defines and checks anime cel-shaded looks for 2D and 3D games. Use for toon ramps, face normals, outlines, frame holds, palettes, and anime image prompts.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/anime-cel-stylist.png"
+    },
+    {
+      "name": "hand-drawn-stylist",
+      "persona": "Inkwell Scribbet",
+      "description": "Defines and polices a hand-drawn 2D look (frame-by-frame, inked, sketchy) for a game. Use for line weight rules, boil, frame budgets, ink and paint palettes, and art direction prompts.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/hand-drawn-stylist.png"
+    },
+    {
+      "name": "isometric-stylist",
+      "persona": "Diametra Tilewright",
+      "description": "Sets projection, tile, camera and depth-sort rules for isometric and dimetric games. Use for tile grids, ortho camera angles, sprite facings, occlusion and iso style sheets.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/isometric-stylist.png"
+    },
+    {
+      "name": "low-poly-stylist",
+      "persona": "Facetta Trigby",
+      "description": "Defines and polices flat-shaded faceted low poly art direction for 3D games. Use for low poly style sheets, poly budgets, facet palettes, flat-shading setup, and style prompts.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/low-poly-stylist.png"
+    },
+    {
+      "name": "monochrome-noir-stylist",
+      "persona": "Lampwick Umbral",
+      "description": "Defines monochrome and noir art direction for games, from value scales to a single accent colour. Use for black-and-white looks, noir lighting, 1-bit dithering, or accent colour rules.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/monochrome-noir-stylist.png"
+    },
+    {
+      "name": "neon-vector-stylist",
+      "persona": "Glowrie Vectra",
+      "description": "Art-style specialist for neon vector and glowing wireframe looks rooted in vector-display arcade games. Use for glow line art, bloom tuning, neon palettes, vector-style prompts.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/neon-vector-stylist.png"
+    },
+    {
+      "name": "painterly-stylist",
+      "persona": "Impasta Brushford",
+      "description": "Defines painterly game art (oil, watercolor, gouache) in 2D and 3D, from palette to stroke shaders. Use for painted looks, hand-painted textures, brush post filters, style sheets.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/painterly-stylist.png"
+    },
+    {
+      "name": "paper-craft-stylist",
+      "persona": "Foldwick Snips",
+      "description": "Defines and checks papercraft and cutout art (paper, cardboard, felt, craft materials) for games. Use for style sheets, material rules, prompt recipes and reviews of craft-look art.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/paper-craft-stylist.png"
+    },
+    {
+      "name": "photoreal-stylist",
+      "persona": "Albedo Truegrain",
+      "description": "Defines and polices a photorealistic PBR look, from albedo ranges to photogrammetry. Use for realistic art direction, PBR material checks, scan cleanup plans, and style sheets.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/photoreal-stylist.png"
+    },
+    {
+      "name": "pixel-art-stylist",
+      "persona": "Nibbleplot",
+      "description": "Defines and polices a pixel art look for a game, from palette and grid to camera scaling. Use for pixel art style guides, palette limits, sprite scale, or crisp pixel rendering.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/pixel-art-stylist.png"
+    },
+    {
+      "name": "ps1-retro-stylist",
+      "persona": "Wobbletex",
+      "description": "Defines and checks PS1-era retro 3D looks: affine warp, vertex jitter, low-res textures, dithering. Use for PS1 style sheets, retro shader specs, texture budgets, and image prompts.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/ps1-retro-stylist.png"
+    },
+    {
+      "name": "toon-stylist",
+      "persona": "Bumble Squashworth",
+      "description": "Defines and checks western cartoon toon 3D art direction, from proportions to palettes and shaders. Use for toon style sheets, chunky stylized 3D, toon prompt recipes, or style drift reviews.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/toon-stylist.png"
+    },
+    {
+      "name": "voxel-stylist",
+      "persona": "Voxanne Brickle",
+      "description": "Defines and checks voxel art direction, from voxel budgets and palettes to meshing and AO. Use for voxel style sheets, MagicaVoxel kits, voxel image prompts, or grid consistency reviews.",
+      "division": "knowledge",
+      "department": "art-styles",
+      "folder": "knowledge/art-styles",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "image-gen",
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/voxel-stylist.png"
+    },
+    {
+      "name": "agriculture-food-expert",
+      "persona": "Furrow",
+      "description": "Grounds farming, crop, livestock, soil, food-system and cooking mechanics in real agronomy and food data. Use for farming sims, cooking games, crop growth, supply chains.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "web-search",
+        "research",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/agriculture-food-expert.png"
+    },
+    {
+      "name": "biology-ecology-expert",
+      "persona": "Trophic",
+      "description": "Makes creature, ecosystem, evolution and genetics mechanics biologically sound and playable. Use for food webs, population models, evolution sims, species data, disease spread.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "data-analysis",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/biology-ecology-expert.png"
+    },
+    {
+      "name": "business-finance-expert",
+      "persona": "Margin",
+      "description": "Keeps business, tycoon and trading sims financially correct and fun. Use for P&L and cash models, pricing, supply chains, markets, real economic data, and financial-literacy games.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "data-analysis",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/business-finance-expert.png"
+    },
+    {
+      "name": "climate-earth-expert",
+      "persona": "Isobar",
+      "description": "Turns climate, weather, ocean, geology and natural-hazard science into accurate game data and mechanics. Use for climate sims, weather systems, quakes, floods, sea level.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "data-analysis",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/climate-earth-expert.png"
+    },
+    {
+      "name": "cybersecurity-expert",
+      "persona": "Honeypot",
+      "description": "Makes hacking and security content in games believable and safe, mapped to MITRE ATT&CK and real defense practice. Use for hacking mechanics, CTF puzzles, SOC sims, security training games.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/cybersecurity-expert.png"
+    },
+    {
+      "name": "defense-strategy-expert",
+      "persona": "Sandtable",
+      "description": "Grounds war and strategy games in real logistics, command, and wargaming practice, with sensitivity checks. Use for wargame models, conflict data, military realism, and weapon-licensing risk.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "data-analysis",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/defense-strategy-expert.png"
+    },
+    {
+      "name": "education-expert",
+      "persona": "Scaffold",
+      "description": "Turns curriculum goals into game mechanics that teach and assess, with child privacy and classroom limits in view. Use for learning games, standards alignment, COPPA/FERPA questions.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/education-expert.png"
+    },
+    {
+      "name": "healthcare-expert",
+      "persona": "Triage",
+      "description": "Medical, nursing, public health and epidemiology advisor for games. Use for hospital sims, triage and outbreak mechanics, health data sources, and medical-claim risk checks.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "long-form-text",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/healthcare-expert.png"
+    },
+    {
+      "name": "history-expert",
+      "persona": "Palimpsest",
+      "description": "Checks historical settings for anachronism, finds primary sources, and flags sensitive history. Use for period games, maps and borders, daily life, war logistics, atrocity depiction.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/history-expert.png"
+    },
+    {
+      "name": "law-civics-expert",
+      "persona": "Precedent",
+      "description": "Makes courtroom, government, and civics game content accurate and fair. Use for legal procedure, how laws pass, voting systems, legal data APIs, and civics games for schools.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "long-form-text",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/law-civics-expert.png"
+    },
+    {
+      "name": "nasa-data-specialist",
+      "persona": "Downlink",
+      "description": "Finds, checks and wires real NASA and space datasets and APIs into games. Use for picking an API, keys, rate limits, caching, offline snapshots, media rules, and data pitfalls.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "data-analysis",
+        "code"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/nasa-data-specialist.png"
+    },
+    {
+      "name": "orbital-mechanics-expert",
+      "persona": "Periapsis",
+      "description": "Turns spaceflight physics into game-ready orbit sims: Kepler, patched conics, n-body, integrators, precision, time warp, delta-v. Use for space game physics specs and checks.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/orbital-mechanics-expert.png"
+    },
+    {
+      "name": "physics-engineering-expert",
+      "persona": "Tolerance",
+      "description": "Checks real-world physics and engineering in games: structures, materials, aero, heat, circuits, units. Use for bridge builders, vehicle or machine sims, and plausibility checks of numbers.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/physics-engineering-expert.png"
+    },
+    {
+      "name": "space-apps-specialist",
+      "persona": "Countdown",
+      "description": "Expert on the NASA Space Apps Challenge: rules, judging, awards, past winners, and scoping a game for a two-day build. Use for Space Apps pitches, submissions, and challenge picks.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "quick-decisions",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/space-apps-specialist.png"
+    },
+    {
+      "name": "space-science-expert",
+      "persona": "Parsec",
+      "description": "Makes space content in games accurate and still fun, from planets and stars to real missions and vacuum physics. Use for fact-checking space scripts, codex entries, and level premises.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/space-science-expert.png"
+    },
+    {
+      "name": "sports-science-expert",
+      "persona": "Lactate",
+      "description": "Exercise physiology, sports analytics and athlete modelling for games. Use for manager sims, fatigue, form and injury models, exergame design, and sports data licensing.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "web-search",
+        "research",
+        "data-analysis",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/sports-science-expert.png"
+    },
+    {
+      "name": "urban-planning-expert",
+      "persona": "Setback",
+      "description": "Brings real zoning, land use, transport, traffic, housing and city budget behaviour to city-builders and civic games. Use for rules audits, traffic models, OSM, GTFS and census data.",
+      "division": "knowledge",
+      "department": "domains",
+      "folder": "knowledge/domains",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "web-search",
+        "research",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/urban-planning-expert.png"
+    },
+    {
+      "name": "battle-royale-expert",
+      "persona": "Stormring Odetta",
+      "description": "Reviews battle royale designs for shrinking-zone pacing, drop and loot flow, and last-one-standing tension. Use for BR loop audits, zone tuning, and scope checks.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/battle-royale-expert.png"
+    },
+    {
+      "name": "city-builder-expert",
+      "persona": "Zoning Halvard",
+      "description": "Reviews city-builder and colony-sim designs for loop, demand, coverage, and flow problems. Use for zoning, services, production chains, traffic, and settlement pacing.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/city-builder-expert.png"
+    },
+    {
+      "name": "fighting-expert",
+      "persona": "Framedata Sunniva",
+      "description": "Reviews fighting game designs for frame data, neutral, combos, netcode and roster scope. Use for 1v1 fighters, platform fighters, move lists and balance passes.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/fighting-expert.png"
+    },
+    {
+      "name": "horror-expert",
+      "persona": "Dreadlamp Ottoline",
+      "description": "Horror game specialist who audits dread pacing, threat design, and player vulnerability against genre references. Use for horror loops, tension curves, and monster AI.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/horror-expert.png"
+    },
+    {
+      "name": "idle-incremental-expert",
+      "persona": "Tickrate Prudence",
+      "description": "Reviews idle and incremental game designs for loop, pacing, prestige, and offline progress. Use for idle game teardowns, growth curves, and prestige layer checks.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/idle-incremental-expert.png"
+    },
+    {
+      "name": "metroidvania-expert",
+      "persona": "Backtrack Isolde",
+      "description": "Reviews metroidvania designs for ability gating, map readability, backtracking cost, and pacing. Use for world graphs, lock-and-key audits, and genre teardowns.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/metroidvania-expert.png"
+    },
+    {
+      "name": "mmo-expert",
+      "persona": "Raidclock Gunnar",
+      "description": "Reviews MMO designs for loop health, social structure, economy sinks, and live-ops scope. Use for MMO teardowns, raid and guild design, and persistent-world checks.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/mmo-expert.png"
+    },
+    {
+      "name": "party-game-expert",
+      "persona": "Confetta Brix",
+      "description": "Reviews local and online party game designs for pacing, readability, join-in friction and fairness between skill levels. Use for party game loops, minigames and couch play.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/party-game-expert.png"
+    },
+    {
+      "name": "platformer-expert",
+      "persona": "Ledgegrab Pell",
+      "description": "Reviews platformer designs for jump feel, level teaching, camera, death cost, and scope. Use for jump tuning, level flow critique, or checking a platformer pitch.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/platformer-expert.png"
+    },
+    {
+      "name": "puzzle-expert",
+      "persona": "Eureka Thistlewood",
+      "description": "Reviews puzzle designs for clear rules, fair aha moments, teaching order and difficulty curve. Use for puzzle mechanics, level sequencing, hint systems, solvability checks.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/puzzle-expert.png"
+    },
+    {
+      "name": "racing-expert",
+      "persona": "Apex Corvalis",
+      "description": "Reviews racing game designs for handling feel, track flow, AI pacing, and progression. Use for arcade, kart, sim, and combat racer design questions.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/racing-expert.png"
+    },
+    {
+      "name": "rhythm-expert",
+      "persona": "Metronoma Kesh",
+      "description": "Rhythm game specialist who audits timing, charting, input latency, and music-gameplay sync. Use for rhythm designs, chart reviews, and timing-window tuning.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/rhythm-expert.png"
+    },
+    {
+      "name": "roguelike-expert",
+      "persona": "Permadeth Quill",
+      "description": "Roguelike and roguelite design expert for run structure, meta-progression, build variety and death pacing. Use for roguelike loop reviews, teardowns and scoping.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/roguelike-expert.png"
+    },
+    {
+      "name": "rpg-expert",
+      "persona": "Statsheet Barnaby",
+      "description": "Role-playing game genre expert who audits progression, builds, quests and party systems against proven RPGs. Use for RPG loop teardowns, stat curves and quest scope checks.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/rpg-expert.png"
+    },
+    {
+      "name": "shooter-expert",
+      "persona": "Hitscan Marlowe",
+      "description": "Reviews shooter designs (FPS, TPS, arena, tactical, hero, extraction) against the genre's loop and pitfalls. Use for gunfeel, TTK, maps, modes, and shooter scope checks.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/shooter-expert.png"
+    },
+    {
+      "name": "sports-game-expert",
+      "persona": "Boxscore Delphine",
+      "description": "Reviews sports game designs for loop, feel, modes, and licensing scope. Use for sim vs arcade calls, career and franchise modes, and sports controls.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/sports-game-expert.png"
+    },
+    {
+      "name": "strategy-expert",
+      "persona": "Fogwar Ambrose",
+      "description": "Strategy genre expert for RTS, 4X, tactics, and grand strategy loops, pacing, and balance. Use for strategy design reviews, teardowns, and scope checks.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/strategy-expert.png"
+    },
+    {
+      "name": "survival-crafting-expert",
+      "persona": "Tinderbox Maribel",
+      "description": "Reviews survival-crafting designs for loop, needs, recipe trees, and progression gates. Use for survival game pitches, crafting trees, base building, and needs tuning.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/survival-crafting-expert.png"
+    },
+    {
+      "name": "tower-defense-expert",
+      "persona": "Chokepoint Wendell",
+      "description": "Tower-defense genre expert who audits paths, waves, tower roles, and economy. Use for TD design reviews, wave tuning, maze rules, and reference picks.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/tower-defense-expert.png"
+    },
+    {
+      "name": "visual-novel-expert",
+      "persona": "Branchline Elodie",
+      "description": "Reviews visual novel and narrative adventure designs for branching structure, route pacing, choice weight, and reader UX. Use for VN scope, flowcharts, and route reviews.",
+      "division": "knowledge",
+      "department": "genres",
+      "folder": "knowledge/genres",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/visual-novel-expert.png"
+    },
+    {
+      "name": "creative-lead",
+      "persona": "Kestrel Loom",
+      "description": "Coordinates creative specialists across departments. Use for integrated plans, trade-offs and handoffs to the Steward.",
+      "division": "leadership",
+      "department": "leadership",
+      "folder": "leadership",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/creative-lead.png"
+    },
+    {
+      "name": "knowledge-lead",
+      "persona": "Aster Folio",
+      "description": "Coordinates knowledge specialists across departments. Use for integrated plans, trade-offs and handoffs to the Steward.",
+      "division": "leadership",
+      "department": "leadership",
+      "folder": "leadership",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/knowledge-lead.png"
+    },
+    {
+      "name": "production-lead",
+      "persona": "Morrow Trestle",
+      "description": "Coordinates production specialists across departments. Use for integrated plans, trade-offs and handoffs to the Steward.",
+      "division": "leadership",
+      "department": "leadership",
+      "folder": "leadership",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/production-lead.png"
+    },
+    {
+      "name": "shop-steward",
+      "persona": "Quorum",
+      "description": "Orchestrator. Picks the right NPC Union specialists from the catalog, runs each on its runtime, merges replies with credits. Use for any game-dev request or when unsure who to ask.",
+      "division": "leadership",
+      "department": "leadership",
+      "folder": "leadership",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "quick-decisions",
+        "long-form-text"
+      ],
+      "isMaster": true,
+      "avatar": "../assets/avatars/shop-steward.png"
+    },
+    {
+      "name": "technical-lead",
+      "persona": "Rivet Vale",
+      "description": "Coordinates technical specialists across departments. Use for integrated plans, trade-offs and handoffs to the Steward.",
+      "division": "leadership",
+      "department": "leadership",
+      "folder": "leadership",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/technical-lead.png"
+    },
+    {
+      "name": "accessibility-specialist",
+      "persona": "Contrastine Avel",
+      "description": "Audits and designs game accessibility for subtitles, remapping, color, motor, cognitive and sensory needs against GAG and XAG. Use for a11y audits, options menus and cert prep.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/accessibility-specialist.png"
+    },
+    {
+      "name": "analytics-engineer",
+      "persona": "Funnelgrim Oaks",
+      "description": "Designs game telemetry, from event taxonomies and schemas to retention, funnel and A/B test definitions with consent built in. Use for tracking plans, KPI definitions and experiment reviews.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "data-analysis",
+        "research",
+        "code",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/analytics-engineer.png"
+    },
+    {
+      "name": "community-manager",
+      "persona": "Megaphonia Drift",
+      "description": "Runs player-facing comms for Discord, Steam forums, patch notes, crisis statements, moderation and feedback loops. Use for patch notes, incident posts, mod policy or sentiment triage.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "web-search",
+        "long-form-text",
+        "research",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/community-manager.png"
+    },
+    {
+      "name": "game-legal-advisor",
+      "persona": "Clausewright Ember",
+      "description": "Legal information, not legal advice, on game asset and code licences, engine EULAs, trademarks, age ratings and child privacy. Use for licence audits, rating prep and contract red flags.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/game-legal-advisor.png"
+    },
+    {
+      "name": "live-ops-designer",
+      "persona": "Cadence Rotorwick",
+      "description": "Plans live-game season cadence, event calendars, battle pass structure and retention levers without burning out players or the team. Use for season plans, event slates and pass tuning.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/live-ops-designer.png"
+    },
+    {
+      "name": "monetization-designer",
+      "persona": "Tallycoil Vane",
+      "description": "Designs fair monetization for games, from premium and DLC to F2P, cosmetics and battle passes. Use for pricing reviews, loot box law risk, regional pricing and dark-pattern audits.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "data-analysis",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/monetization-designer.png"
+    },
+    {
+      "name": "playtest-analyst",
+      "persona": "Murmur Talloway",
+      "description": "Plans and analyzes game playtests, separating what players did from what they said. Use for test scripts, think-aloud sessions, surveys, observation logs, and findings reports.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/playtest-analyst.png"
+    },
+    {
+      "name": "producer",
+      "persona": "Ledgerline Vosk",
+      "description": "Game producer who turns a pitch into milestones, a risk register, a cut list and a vertical slice plan. Use for scope checks, schedules, milestone gates and deciding what to cut.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/producer.png"
+    },
+    {
+      "name": "prototyper",
+      "persona": "Tinkerjolt Quill",
+      "description": "Builds throwaway paper and greybox prototypes that answer one design question fast. Use for find-the-fun sprints, greybox builds, kill criteria, and go or no-go calls on a mechanic.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "code",
+        "quick-decisions",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/prototyper.png"
+    },
+    {
+      "name": "qa-lead",
+      "persona": "Regressa Hollowmark",
+      "description": "Owns test strategy, bug severity and priority rules, regression matrices and certification readiness. Use for test plans, bug triage, cert prep, and go/no-go quality calls.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "data-analysis",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/qa-lead.png"
+    },
+    {
+      "name": "qa-tester",
+      "persona": "Smudgeprobe Kettle",
+      "description": "Hands-on QA tester who runs exploratory charters and writes bugs devs can reproduce first try. Use for repro steps, bug reports, edge cases like save/load, alt-tab, controller loss, locale.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/qa-tester.png"
+    },
+    {
+      "name": "release-manager",
+      "persona": "Shipwright Bramblecog",
+      "description": "Plans and runs game releases: branching, build promotion, Steam branches, console cert windows, go/no-go, hotfixes and rollback. Use for ship dates, release candidates and patches.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/release-manager.png"
+    },
+    {
+      "name": "store-page-marketer",
+      "persona": "Wishlist Wrenna",
+      "description": "Audits and writes game store pages: capsule art, tags, short description, trailer opening, wishlist and Next Fest plans. Use for Steam, itch.io and console store page work.",
+      "division": "production",
+      "department": "production",
+      "folder": "production",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "web-search",
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/store-page-marketer.png"
+    },
+    {
+      "name": "ai-cost-safety-engineer",
+      "persona": "Ledgerlock",
+      "description": "Models cost per player-hour for runtime LLM features and designs quotas, proxies, moderation, and rating and privacy compliance. Use for in-game AI budgets, API keys, Steam AI disclosure.",
+      "division": "technical",
+      "department": "ai-integration",
+      "folder": "technical/ai-integration",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "data-analysis",
+        "code",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/ai-cost-safety-engineer.png"
+    },
+    {
+      "name": "ai-integration-architect",
+      "persona": "Conduitra",
+      "description": "Decides where generative AI belongs in a game: runtime or dev-time, cloud or on-device, latency, fallbacks, store disclosure. Use for AI feature plans and routing to AI specialists.",
+      "division": "technical",
+      "department": "ai-integration",
+      "folder": "technical/ai-integration",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "long-form-text",
+        "code",
+        "web-search"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/ai-integration-architect.png"
+    },
+    {
+      "name": "game-ai-engineer",
+      "persona": "Brancholm",
+      "description": "Designs classic game AI: FSMs, behavior trees, utility, GOAP, HTN, navmesh, steering, perception, director AI. Use for NPC behavior that must read clearly and play fair.",
+      "division": "technical",
+      "department": "ai-integration",
+      "folder": "technical/ai-integration",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/game-ai-engineer.png"
+    },
+    {
+      "name": "llm-npc-engineer",
+      "persona": "Murmurine",
+      "description": "Designs LLM-driven NPC dialogue with memory, tool calls for game actions, streaming TTS, and jailbreak resistance. Use for AI NPC chat, barks, persona prompts, latency budgets.",
+      "division": "technical",
+      "department": "ai-integration",
+      "folder": "technical/ai-integration",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/llm-npc-engineer.png"
+    },
+    {
+      "name": "on-device-ai-engineer",
+      "persona": "Quantelle",
+      "description": "Plans and ships local model inference inside games. Use for GGUF quantization, ONNX Runtime, Unity Inference Engine, VRAM and CPU budgets, model licences, download size.",
+      "division": "technical",
+      "department": "ai-integration",
+      "folder": "technical/ai-integration",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "data-analysis",
+        "web-search"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/on-device-ai-engineer.png"
+    },
+    {
+      "name": "procedural-generation-engineer",
+      "persona": "Seedmarrow",
+      "description": "Designs seeded, validated procedural content: noise, WFC, grammars, room-template dungeons, UE PCG. Use for level gen, determinism bugs, playability checks, authored/generated mixes.",
+      "division": "technical",
+      "department": "ai-integration",
+      "folder": "technical/ai-integration",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/procedural-generation-engineer.png"
+    },
+    {
+      "name": "prompt-engineer",
+      "persona": "Phrasewick",
+      "description": "Writes, versions, and regression-tests prompts for in-game and pipeline LLM features. Use for system prompts, JSON schemas, few-shot sets, caching, evals, and player-text injection.",
+      "division": "technical",
+      "department": "ai-integration",
+      "folder": "technical/ai-integration",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "long-form-text",
+        "data-analysis",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/prompt-engineer.png"
+    },
+    {
+      "name": "rag-engineer",
+      "persona": "Indexley",
+      "description": "Builds retrieval over lore bibles and quest data with entity chunking, spoiler gating and hybrid search. Use for NPC grounding, lore lookup, vector store choice, recall evals.",
+      "division": "technical",
+      "department": "ai-integration",
+      "folder": "technical/ai-integration",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "code",
+        "research",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/rag-engineer.png"
+    },
+    {
+      "name": "asset-license-auditor",
+      "persona": "Clausewell Marrow",
+      "description": "Audits a game's third-party assets and code into a dated licence inventory with evidence. Use for licence checks, credits, CC/GPL/OFL questions, or pre-release asset review.",
+      "division": "technical",
+      "department": "asset-scouts",
+      "folder": "technical/asset-scouts",
+      "model": "opus",
+      "runtime": "codex",
+      "reasoning": "high",
+      "capabilities": [
+        "web-search",
+        "research",
+        "data-analysis"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/asset-license-auditor.png"
+    },
+    {
+      "name": "audio-asset-scout",
+      "persona": "Hushwick Ambry",
+      "description": "Finds sound effects and music for games and reports licence, price, and commercial-use terms per file. Use for SFX hunts, music beds, and free or cheap audio sourcing.",
+      "division": "technical",
+      "department": "asset-scouts",
+      "folder": "technical/asset-scouts",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/audio-asset-scout.png"
+    },
+    {
+      "name": "godot-asset-scout",
+      "persona": "Nodewell Fennimore",
+      "description": "Finds Godot addons and assets on the Asset Library, Asset Store and GitHub, with licence, price and version fit. Use for \"is there a Godot plugin for X\" or addon shortlists.",
+      "division": "technical",
+      "department": "asset-scouts",
+      "folder": "technical/asset-scouts",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/godot-asset-scout.png"
+    },
+    {
+      "name": "itch-scout",
+      "persona": "Jamjar Tumbleweed",
+      "description": "Finds game assets on itch.io and reports price, licence and commercial-use terms quoted from each page. Use for sprites, tilesets, fonts, packs sold or shared on itch.io.",
+      "division": "technical",
+      "department": "asset-scouts",
+      "folder": "technical/asset-scouts",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/itch-scout.png"
+    },
+    {
+      "name": "open-asset-scout",
+      "persona": "Commonsby Larch",
+      "description": "Finds free and open 2D art, textures, HDRIs and 3D models, and reports licence, price and commercial-use terms for each. Use for CC0 or Creative Commons asset hunts for games.",
+      "division": "technical",
+      "department": "asset-scouts",
+      "folder": "technical/asset-scouts",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/open-asset-scout.png"
+    },
+    {
+      "name": "unity-store-scout",
+      "persona": "Cratewright Ollo",
+      "description": "Finds Unity Asset Store assets and reports price, licence, seats, commercial use, Unity versions, pipelines and update date. Use for sourcing Unity assets, tools or templates.",
+      "division": "technical",
+      "department": "asset-scouts",
+      "folder": "technical/asset-scouts",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/unity-store-scout.png"
+    },
+    {
+      "name": "unreal-fab-scout",
+      "persona": "Brassroute Kilner",
+      "description": "Finds Unreal-ready assets on Fab and reports licence, price tier, commercial-use terms, UE versions and formats per asset. Use for Fab, Megascans or Sketchfab asset hunts.",
+      "division": "technical",
+      "department": "asset-scouts",
+      "folder": "technical/asset-scouts",
+      "model": "sonnet",
+      "runtime": "codex",
+      "reasoning": "medium",
+      "capabilities": [
+        "web-search",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/unreal-fab-scout.png"
+    },
+    {
+      "name": "bevy-specialist",
+      "persona": "Archie",
+      "description": "Builds and reviews Bevy (Rust ECS) games, pinned to the project's Bevy version. Use for systems, schedules, plugins, assets, avian/rapier physics, WASM builds, compile times, upgrades.",
+      "division": "technical",
+      "department": "engines",
+      "folder": "technical/engines",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/bevy-specialist.png"
+    },
+    {
+      "name": "gamemaker-specialist",
+      "persona": "Roomwright",
+      "description": "Builds and reviews GameMaker 2D games in GML. Use for objects, events, rooms, collision, texture pages, exports and runtime upgrades.",
+      "division": "technical",
+      "department": "engines",
+      "folder": "technical/engines",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "web-search"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/gamemaker-specialist.png"
+    },
+    {
+      "name": "godot-specialist",
+      "persona": "Arbor",
+      "description": "Designs Godot 4 projects, scene trees, typed GDScript and exports, checking the current version first. Use for Godot setup, node architecture, signals, upgrades, web export.",
+      "division": "technical",
+      "department": "engines",
+      "folder": "technical/engines",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "web-search"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/godot-specialist.png"
+    },
+    {
+      "name": "roblox-specialist",
+      "persona": "Studs",
+      "description": "Builds and audits Roblox experiences in strict Luau with a server-authoritative design. Use for remotes, DataStores, MemoryStore, Rojo/Wally, monetization, DevEx, policy and age-rating.",
+      "division": "technical",
+      "department": "engines",
+      "folder": "technical/engines",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/roblox-specialist.png"
+    },
+    {
+      "name": "unity-specialist",
+      "persona": "Awake",
+      "description": "Sets up and reviews Unity 6 projects: LTS choice, URP/HDRP, Input System, Addressables, asmdefs, upgrades. Use for Unity architecture, C# component code, version checks.",
+      "division": "technical",
+      "department": "engines",
+      "folder": "technical/engines",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "web-search"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/unity-specialist.png"
+    },
+    {
+      "name": "unreal-specialist",
+      "persona": "Castwell",
+      "description": "Builds Unreal Engine 5 projects and reviews gameplay architecture, replication, content and packaging. Use for UE5 C++, Blueprints, upgrades and target planning.",
+      "division": "technical",
+      "department": "engines",
+      "folder": "technical/engines",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "web-search"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/unreal-specialist.png"
+    },
+    {
+      "name": "web-engine-specialist",
+      "persona": "Tabbinder",
+      "description": "Builds browser games with Phaser, PixiJS, Three.js, Babylon.js and PlayCanvas. Use for framework choice, browser constraints, rendering, loading and deployment.",
+      "division": "technical",
+      "department": "engines",
+      "folder": "technical/engines",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "web-search"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/web-engine-specialist.png"
+    },
+    {
+      "name": "anti-cheat-engineer",
+      "persona": "Vetchstone",
+      "description": "Designs defensive anti-cheat with server validation, interest management, replay review and detection stats. Use for cheat threat models, client AC tradeoffs, ban waves.",
+      "division": "technical",
+      "department": "multiplayer",
+      "folder": "technical/multiplayer",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "research",
+        "code",
+        "data-analysis",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/anti-cheat-engineer.png"
+    },
+    {
+      "name": "matchmaking-engineer",
+      "persona": "Glickerby",
+      "description": "Designs skill rating and matchmaking rules: Elo, Glicko-2, OpenSkill, queue widening, parties, backfill, low population. Use for MMR, queue time vs fairness, Open Match.",
+      "division": "technical",
+      "department": "multiplayer",
+      "folder": "technical/multiplayer",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "data-analysis",
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/matchmaking-engineer.png"
+    },
+    {
+      "name": "multiplayer-backend-engineer",
+      "persona": "Shardwell",
+      "description": "Plans dedicated server fleets, session and lobby services, persistence, and region placement. Use for Agones, GameLift, Edgegap, PlayFab servers, Nakama, scaling and hosting cost.",
+      "division": "technical",
+      "department": "multiplayer",
+      "folder": "technical/multiplayer",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "data-analysis",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/multiplayer-backend-engineer.png"
+    },
+    {
+      "name": "netcode-architect",
+      "persona": "Rollbeck",
+      "description": "Designs multiplayer netcode: authority, prediction, rollback, interpolation, lag compensation, tick and bandwidth budgets, library choice. Use for any networked game design.",
+      "division": "technical",
+      "department": "multiplayer",
+      "folder": "technical/multiplayer",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "long-form-text",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/netcode-architect.png"
+    },
+    {
+      "name": "web-realtime-engineer",
+      "persona": "Packetmoss",
+      "description": "Picks and builds browser multiplayer transports: WebSocket, WebRTC DataChannels, WebTransport, Colyseus, PartyKit. Use for netcode in the browser, TURN/STUN, binary formats.",
+      "division": "technical",
+      "department": "multiplayer",
+      "folder": "technical/multiplayer",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "web-search"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/web-realtime-engineer.png"
+    },
+    {
+      "name": "agent-tooling-engineer",
+      "persona": "Rivetta Harness",
+      "description": "Builds Claude Code plugins, subagents, hooks, skills, and tool harnesses for game teams. Use for agent frontmatter, skill design, plugin layout, and context-budget checks.",
+      "division": "technical",
+      "department": "platform-tools",
+      "folder": "technical/platform-tools",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/agent-tooling-engineer.png"
+    },
+    {
+      "name": "game-security-engineer",
+      "persona": "Padlock Ferrante",
+      "description": "Secures game backends, APIs, save files, secrets, builds, and AI/MCP tool surfaces. Use for threat models and security reviews of game services, economies, and agent tools.",
+      "division": "technical",
+      "department": "platform-tools",
+      "folder": "technical/platform-tools",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/game-security-engineer.png"
+    },
+    {
+      "name": "mcp-specialist",
+      "persona": "Quillon Spec",
+      "description": "Designs, builds and reviews Model Context Protocol servers and clients against the current spec revision. Use for MCP tool design, transports, version upgrades and spec questions.",
+      "division": "technical",
+      "department": "platform-tools",
+      "folder": "technical/platform-tools",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "web-search"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/mcp-specialist.png"
+    },
+    {
+      "name": "build-engineer",
+      "persona": "Gantry",
+      "description": "Builds reproducible CI pipelines and store uploads for Godot, Unity, Unreal and web games. Use for GitHub Actions, headless export, versioning, SteamPipe, itch.io butler, notarization.",
+      "division": "technical",
+      "department": "programming",
+      "folder": "technical/programming",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/build-engineer.png"
+    },
+    {
+      "name": "engine-programmer",
+      "persona": "Crankshaft",
+      "description": "Designs and builds engine-level systems: job systems, ECS, allocators, asset streaming, memory and threading models. Use for core runtime architecture and hot-loop performance.",
+      "division": "technical",
+      "department": "programming",
+      "folder": "technical/programming",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/engine-programmer.png"
+    },
+    {
+      "name": "gameplay-programmer",
+      "persona": "Juke",
+      "description": "Turns design specs into gameplay code: state machines, tunable data, tests, input buffering, coyote time, hit-stop. Use for player controllers, combat, mechanics, game feel.",
+      "division": "technical",
+      "department": "programming",
+      "folder": "technical/programming",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/gameplay-programmer.png"
+    },
+    {
+      "name": "graphics-programmer",
+      "persona": "Fresnel",
+      "description": "Plans and builds rendering: forward, deferred or forward+ pipelines, pass budgets, API choice incl. WebGPU, shader ports across languages. Use for render architecture, GPU cost, shaders.",
+      "division": "technical",
+      "department": "programming",
+      "folder": "technical/programming",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/graphics-programmer.png"
+    },
+    {
+      "name": "performance-engineer",
+      "persona": "Sixteen",
+      "description": "Reads profiler captures, names the bound (CPU, GPU, memory, IO) with numbers, and sets frame budgets. Use for stutter, low FPS, hitches, memory growth, perf regressions.",
+      "division": "technical",
+      "department": "programming",
+      "folder": "technical/programming",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "data-analysis",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/performance-engineer.png"
+    },
+    {
+      "name": "physics-programmer",
+      "persona": "Inertia",
+      "description": "Builds and diagnoses game physics, collision detection, character contacts and simulation stability. Use for tunneling, jitter, fixed steps and collision filtering.",
+      "division": "technical",
+      "department": "programming",
+      "folder": "technical/programming",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/physics-programmer.png"
+    },
+    {
+      "name": "save-systems-engineer",
+      "persona": "Keepsake",
+      "description": "Designs versioned, corruption-safe save formats with migrations, atomic writes and cloud sync rules. Use for save schemas, slots, Steam Cloud, save migration tests, corrupted saves.",
+      "division": "technical",
+      "department": "programming",
+      "folder": "technical/programming",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/save-systems-engineer.png"
+    },
+    {
+      "name": "technical-artist",
+      "persona": "Swizzle",
+      "description": "Bridges art and code: asset pipeline specs, texture packing, LODs, import presets and shader cost reviews. Use for naming rules, texel density, texture compression, shader variants, overdraw.",
+      "division": "technical",
+      "department": "programming",
+      "folder": "technical/programming",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/technical-artist.png"
+    },
+    {
+      "name": "technical-director",
+      "persona": "Keystone",
+      "description": "Owns technical direction: engine, language and backend choices as ADRs, risk register, cross-system contracts, budgets. Use for stack decisions, architecture reviews, technical risk.",
+      "division": "technical",
+      "department": "programming",
+      "folder": "technical/programming",
+      "model": "opus",
+      "runtime": "claude",
+      "reasoning": "high",
+      "capabilities": [
+        "code",
+        "research",
+        "long-form-text"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/technical-director.png"
+    },
+    {
+      "name": "tools-programmer",
+      "persona": "Jig",
+      "description": "Scopes and builds in-editor tools for Unity, Godot, Unreal and web editors, with undo, validation and docs. Use for custom inspectors, editor windows, batch tools, content validators.",
+      "division": "technical",
+      "department": "programming",
+      "folder": "technical/programming",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/tools-programmer.png"
+    },
+    {
+      "name": "ui-programmer",
+      "persona": "Ninepatch",
+      "description": "Implements game HUDs and menus with input navigation, layout, state and accessibility. Use for controller focus, responsive UI, menu bugs and UI integration.",
+      "division": "technical",
+      "department": "programming",
+      "folder": "technical/programming",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "code",
+        "research"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/ui-programmer.png"
+    }
+  ]
+}
