@@ -1,8 +1,9 @@
-// Site shell: switches between the specialist gallery and the 3D office,
-// filters the roster, and shows a turntable 3D preview for each specialist.
+// Site shell: switches between the specialist gallery, the team builder and the
+// 3D office, filters the roster, and shows a turntable 3D preview per specialist.
 import * as THREE from "three";
 import { buildCharacter, getPalette, animateCharacter } from "./character.js";
 import { createOffice } from "./office.js";
+import { currentWinner, citation } from "./eotm.js";
 
 const $ = (sel) => document.querySelector(sel);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -12,36 +13,78 @@ let office = null;
 let activeDivision = "all";
 let query = "";
 
+// A portrait that fails to load (a new agent has no art yet) gets a neutral placeholder instead of a broken-image icon.
+const PLACEHOLDER = "data:image/svg+xml," + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2ec4b6"/><stop offset="1" stop-color="#9d7bff"/></linearGradient></defs><rect width="64" height="64" rx="12" fill="url(#g)"/><rect x="16" y="20" width="32" height="26" rx="7" fill="#0b1016" opacity=".85"/><circle cx="26" cy="32" r="3.5" fill="#f5b93a"/><circle cx="38" cy="32" r="3.5" fill="#f5b93a"/><rect x="26" y="39" width="12" height="2.5" rx="1.2" fill="#f5b93a"/></svg>');
+document.addEventListener("error", (e) => {
+  const img = e.target;
+  if (img instanceof HTMLImageElement && !img.dataset.fallback) { img.dataset.fallback = "1"; img.src = PLACEHOLDER; }
+}, true);
+
 // ---------- data ----------
 const res = await fetch("./specialists.json");
 specialists = (await res.json()).specialists;
 const byName = new Map(specialists.map((s) => [s.name, s]));
+let presets = [];
+try { presets = (await (await fetch("../catalog/teams.json")).json()).presets ?? []; } catch { /* presets are optional */ }
 
 const divisions = [...new Set(specialists.map((s) => s.division))].sort();
-const divSelect = $("#division");
-divSelect.innerHTML = `<option value="all">All divisions (${specialists.length})</option>` +
-  divisions.map((d) => `<option value="${esc(d)}">${esc(prettyDiv(d))} (${specialists.filter((s) => s.division === d).length})</option>`).join("");
-$("#conn").textContent = `${specialists.length} specialists online`;
-$("#st-total").textContent = specialists.length;
-
 function prettyDiv(d) {
   return d.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
+const divOptions = `<option value="all">All divisions (${specialists.length})</option>` +
+  divisions.map((d) => `<option value="${esc(d)}">${esc(prettyDiv(d))} (${specialists.filter((s) => s.division === d).length})</option>`).join("");
+$("#division").innerHTML = divOptions;
+$("#asm-division").innerHTML = divOptions;
+$("#conn").textContent = `${specialists.length} specialists online`;
+$("#st-total").textContent = specialists.length;
+
+// ---------- the assembled team ----------
+// Kept in localStorage so it survives reloads. The page cannot write into a
+// project folder, so the team leaves through a copyable command or team.json.
+const TEAM_KEY = "npc-union:team";
+let team = new Set();
+try { team = new Set(JSON.parse(localStorage.getItem(TEAM_KEY) || "[]").filter((n) => byName.has(n))); } catch { /* private mode */ }
+
+function saveTeam() {
+  try { localStorage.setItem(TEAM_KEY, JSON.stringify([...team])); } catch { /* ignore */ }
+  const badge = $("#team-badge");
+  badge.textContent = team.size;
+  badge.classList.toggle("zero", team.size === 0);
+  office?.setTeam([...team]);
+  renderTeamPanel();
+  syncPickStates();
+}
+function toggleTeam(name, force) {
+  const on = force ?? !team.has(name);
+  on ? team.add(name) : team.delete(name);
+  saveTeam();
+}
+const teamCommand = () => (team.size ? `/npc-union:team set ${[...team].join(",")}` : "/npc-union:team clear");
+function toast(text) {
+  const t = document.createElement("div");
+  t.className = "toast";
+  t.textContent = text;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2200);
+}
 
 // ---------- gallery ----------
-function renderChips() {
+function renderChips(target, current) {
   const chips = [["all", "All"], ...divisions.map((d) => [d, prettyDiv(d)])];
-  $("#chips").innerHTML = chips.map(([k, label]) =>
-    `<button class="chip ${activeDivision === k ? "on" : ""}" data-div="${esc(k)}">${esc(label)}</button>`).join("");
+  target.innerHTML = chips.map(([k, label]) =>
+    `<button class="chip ${current === k ? "on" : ""}" data-div="${esc(k)}">${esc(label)}</button>`).join("");
 }
+
+const matches = (s, q, div) => {
+  if (div !== "all" && s.division !== div) return false;
+  if (!q) return true;
+  return [s.name, s.persona, s.description, s.department, ...s.capabilities].join(" ").toLowerCase().includes(q);
+};
 
 function renderGrid() {
   const q = query.trim().toLowerCase();
-  const list = specialists.filter((s) => {
-    if (activeDivision !== "all" && s.division !== activeDivision) return false;
-    if (!q) return true;
-    return [s.name, s.persona, s.description, s.department, ...s.capabilities].join(" ").toLowerCase().includes(q);
-  });
+  const list = specialists.filter((s) => matches(s, q, activeDivision));
   $("#grid").innerHTML = list.map((s) => `
     <article class="card">
       <div class="card-top">
@@ -60,35 +103,143 @@ function renderGrid() {
       </div>
       <div class="card-actions">
         <button class="btn" data-action="view" data-name="${esc(s.name)}">View 3D</button>
-        <button class="btn primary" data-action="office" data-name="${esc(s.name)}">In the office</button>
+        <button class="btn primary" data-action="office" data-name="${esc(s.name)}">Office</button>
+        <button class="btn add" data-action="team" data-name="${esc(s.name)}" title="Add to your team">${team.has(s.name) ? "✓ On team" : "+ Team"}</button>
       </div>
     </article>`).join("") || `<p style="color:var(--muted)">No specialists match that search.</p>`;
 }
 
 $("#search").addEventListener("input", (e) => { query = e.target.value; renderGrid(); });
-divSelect.addEventListener("change", (e) => { activeDivision = e.target.value; renderChips(); renderGrid(); });
+$("#division").addEventListener("change", (e) => { activeDivision = e.target.value; renderChips($("#chips"), activeDivision); renderGrid(); });
 $("#chips").addEventListener("click", (e) => {
   const b = e.target.closest("[data-div]");
   if (!b) return;
   activeDivision = b.dataset.div;
-  divSelect.value = activeDivision;
-  renderChips(); renderGrid();
+  $("#division").value = activeDivision;
+  renderChips($("#chips"), activeDivision); renderGrid();
 });
 $("#grid").addEventListener("click", (e) => {
   const b = e.target.closest("[data-action]");
   if (!b) return;
   const name = b.dataset.name;
   if (b.dataset.action === "view") openModal(name);
+  else if (b.dataset.action === "team") { toggleTeam(name); b.textContent = team.has(name) ? "✓ On team" : "+ Team"; }
   else goToOffice(name);
 });
 
+// ---------- employee of the month banner ----------
+const winner = currentWinner(specialists);
+$("#eotm").innerHTML = `
+  <img src="${esc(winner.spec.avatar)}" alt="${esc(winner.spec.persona)} portrait" />
+  <div>
+    <div class="kicker">Employee of the Month · ${esc(winner.label)}</div>
+    <h3>${esc(winner.spec.persona)}</h3>
+    <p>Cited for: ${esc(citation(winner.spec))}.</p>
+  </div>
+  <span class="go">Meet ${esc(winner.spec.persona)} →</span>`;
+$("#eotm").addEventListener("click", () => openModal(winner.spec.name, winner.label));
+
+// ---------- assemble team ----------
+let asmDivision = "all";
+let asmQuery = "";
+let asmOnly = false;
+
+function renderPresets() {
+  $("#presets").innerHTML = presets.map((p) =>
+    `<button class="preset" data-preset="${esc(p.id)}"><b>${esc(p.label)} · ${p.members.length}</b><small>${esc(p.blurb)}</small></button>`).join("");
+}
+
+function renderPickGrid() {
+  const q = asmQuery.trim().toLowerCase();
+  const list = specialists.filter((s) => matches(s, q, asmDivision) && (!asmOnly || team.has(s.name)));
+  $("#asm-grid").innerHTML = list.map((s) => `
+    <button class="pick ${team.has(s.name) ? "on" : ""}" data-name="${esc(s.name)}" title="${esc(s.description)}">
+      <img src="${esc(s.avatar)}" alt="" loading="lazy" />
+      <span class="t"><b>${esc(s.persona)}</b><small>${esc(s.name)}</small></span>
+      <span class="tick">✓</span>
+    </button>`).join("") || `<p style="color:var(--muted)">No specialists match.</p>`;
+}
+
+function syncPickStates() {
+  if (asmOnly) { renderPickGrid(); return; }
+  document.querySelectorAll("#asm-grid .pick").forEach((el) => el.classList.toggle("on", team.has(el.dataset.name)));
+}
+
+function renderTeamPanel() {
+  $("#tp-count").textContent = team.size;
+  const members = [...team].map((n) => byName.get(n)).filter(Boolean);
+  $("#tp-members").innerHTML = members.length
+    ? members.map((s) => `
+      <div class="member">
+        <img src="${esc(s.avatar)}" alt="" />
+        <span class="n">${esc(s.persona)}<small>${esc(s.name)}</small></span>
+        <button data-remove="${esc(s.name)}" title="Remove from team" aria-label="Remove ${esc(s.persona)}">✕</button>
+      </div>`).join("")
+    : `<div class="empty">Nobody yet. Pick specialists on the left, or start from a preset above.</div>`;
+  const claude = members.filter((s) => s.runtime === "claude").length;
+  const codex = members.length - claude;
+  $("#tp-mix").innerHTML = members.length
+    ? `<span class="tag">${claude} on Claude</span><span class="tag">${codex} on Codex</span>`
+    : "";
+  $("#tp-cmd").textContent = teamCommand();
+}
+
+$("#asm-search").addEventListener("input", (e) => { asmQuery = e.target.value; renderPickGrid(); });
+$("#asm-division").addEventListener("change", (e) => { asmDivision = e.target.value; renderChips($("#asm-chips"), asmDivision); renderPickGrid(); });
+$("#asm-chips").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-div]");
+  if (!b) return;
+  asmDivision = b.dataset.div;
+  $("#asm-division").value = asmDivision;
+  renderChips($("#asm-chips"), asmDivision); renderPickGrid();
+});
+$("#asm-only").addEventListener("click", (e) => {
+  asmOnly = !asmOnly;
+  e.currentTarget.classList.toggle("primary", asmOnly);
+  renderPickGrid();
+});
+$("#asm-grid").addEventListener("click", (e) => {
+  const b = e.target.closest(".pick");
+  if (b) toggleTeam(b.dataset.name);
+});
+$("#presets").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-preset]");
+  if (!b) return;
+  const p = presets.find((x) => x.id === b.dataset.preset);
+  if (!p) return;
+  team = new Set(p.members.filter((n) => byName.has(n)));
+  saveTeam();
+  toast(`${p.label}: ${team.size} specialists on your team`);
+});
+$("#tp-members").addEventListener("click", (e) => {
+  const b = e.target.closest("[data-remove]");
+  if (b) toggleTeam(b.dataset.remove, false);
+});
+$("#tp-clear").addEventListener("click", () => { team.clear(); saveTeam(); });
+$("#tp-copy").addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(teamCommand()); toast("Command copied. Paste it into Claude Code."); }
+  catch { toast("Copy failed. Select the command and copy it by hand."); }
+});
+$("#tp-download").addEventListener("click", () => {
+  const body = JSON.stringify({ version: 1, name: "My team", policy: "strict", members: [...team] }, null, 2) + "\n";
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([body], { type: "application/json" }));
+  a.download = "team.json";
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast("Saved. Put it at .npc-union/team.json in your project.");
+});
+$("#tp-office").addEventListener("click", () => showScreen("office"));
+
 // ---------- tabs / routing ----------
+const SCREENS = ["gallery", "assemble", "office"];
 function showScreen(id) {
   document.querySelectorAll(".screen").forEach((s) => s.classList.toggle("active", s.id === id));
   document.querySelectorAll(".tab").forEach((t) => t.classList.toggle("active", t.dataset.screen === id));
   if (id === "office") {
     ensureOffice();
-    office.start();
+    // ?record hands the clock to scripts/record-office.mjs, which steps the simulation itself.
+    if (!new URLSearchParams(location.search).has("record")) office.start();
     requestAnimationFrame(() => office.resize());
   } else if (office) {
     office.stop();
@@ -112,6 +263,7 @@ function ensureOffice() {
     feedEl: $("#feed"),
     panel: $("#panel"),
     specialists,
+    random: new URLSearchParams(location.search).has("seed") ? seeded(Number(new URLSearchParams(location.search).get("seed")) || 1) : undefined,
     onStats: ({ working, jobs, reports, total }) => {
       $("#st-working").textContent = working;
       $("#st-jobs").textContent = jobs;
@@ -126,7 +278,11 @@ function ensureOffice() {
     onSelect: (name) => {
       document.querySelectorAll(".team-row").forEach((r) => r.classList.toggle("sel", r.dataset.name === name));
     },
+    onProfile: (name, label) => openModal(name, label),
+    initialTeam: [...team],
   });
+  window.__office = office; // used by scripts/record-office.mjs
+  $("#team-toggle").addEventListener("click", () => document.querySelector(".hud-team").classList.toggle("collapsed"));
   $("#team-list").addEventListener("click", (e) => {
     const row = e.target.closest(".team-row");
     if (row) office.focusByName(row.dataset.name);
@@ -135,8 +291,19 @@ function ensureOffice() {
   $("#btn-zoom-out").onclick = () => office.zoom?.(1.25);
   $("#btn-overview").onclick = () => office.overview();
   $("#p-close").onclick = () => office.overview();
-  $("#p-profile").onclick = () => openModal($("#p-persona").textContent ? currentPanelName() : null);
+  $("#p-profile").onclick = () => openModal(currentPanelName());
   window.addEventListener("resize", () => office?.resize());
+}
+
+// Small seeded generator so ?seed=N gives the same office day every time.
+function seeded(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
 }
 
 function currentPanelName() {
@@ -145,12 +312,15 @@ function currentPanelName() {
 
 // ---------- detail modal with turntable ----------
 let preview = null;
-function openModal(name) {
+function openModal(name, awardLabel) {
   const s = byName.get(name);
   if (!s) return;
   $("#m-persona").textContent = s.persona;
   $("#m-name").textContent = s.name;
   $("#m-desc").textContent = s.description;
+  const badge = $("#m-badge");
+  badge.hidden = !awardLabel;
+  badge.textContent = awardLabel ? `★ Employee of the Month · ${awardLabel}` : "";
   $("#m-meta").innerHTML = [
     `<span class="tag">${esc(prettyDiv(s.division))}</span>`,
     `<span class="tag">${esc(s.department)}</span>`,
@@ -160,6 +330,10 @@ function openModal(name) {
   ].join("");
   $("#m-caps").innerHTML = s.capabilities.map((c) => `<span class="tag">${esc(c)}</span>`).join("");
   $("#m-office").onclick = () => goToOffice(s.name);
+  const teamBtn = $("#m-team");
+  const paint = () => { teamBtn.textContent = team.has(s.name) ? "✓ On your team" : "Add to team"; };
+  teamBtn.onclick = () => { toggleTeam(s.name); paint(); renderGrid(); };
+  paint();
   $("#modal").classList.add("open");
   startPreview(s);
 }
@@ -202,7 +376,7 @@ function startPreview(s) {
   scene.add(disc);
   const ring = new THREE.Mesh(new THREE.RingGeometry(1.18, 1.22, 64), new THREE.MeshBasicMaterial({ color: 0xf5b93a, transparent: true, opacity: 0.6 }));
   ring.rotation.x = -Math.PI / 2;
-  ring.position.y = 0.005;
+  ring.position.y = 0.02;
   scene.add(ring);
 
   const figure = buildCharacter(s, null);
@@ -217,7 +391,7 @@ function startPreview(s) {
     preview.figure = fresh;
   });
 
-  const state = { yaw: 0.6, pitch: 0.12, dist: 6.8, dragging: false, lx: 0, ly: 0, spin: true, running: true, figure, canvas };
+  const state = { yaw: 0.6, pitch: 0.12, dist: 7.6, dragging: false, lx: 0, ly: 0, spin: true, running: true, figure, canvas };
   const fit = () => {
     const w = host.clientWidth, h = host.clientHeight;
     renderer.setSize(w, h, false);
@@ -225,7 +399,7 @@ function startPreview(s) {
     cam.updateProjectionMatrix();
   };
   const place = () => {
-    const tgt = new THREE.Vector3(0, 1.25, 0);
+    const tgt = new THREE.Vector3(0, 1.5, 0);
     cam.position.set(
       tgt.x + state.dist * Math.cos(state.pitch) * Math.sin(state.yaw),
       tgt.y + state.dist * Math.sin(state.pitch),
@@ -270,7 +444,12 @@ function startPreview(s) {
 }
 
 // ---------- boot ----------
-renderChips();
+renderChips($("#chips"), activeDivision);
+renderChips($("#asm-chips"), asmDivision);
 renderGrid();
+renderPresets();
+renderPickGrid();
+saveTeam();
+await document.fonts?.ready; // plaques and labels are drawn with the web fonts
 const start = (location.hash || "#gallery").slice(1);
-showScreen(start === "office" ? "office" : "gallery");
+showScreen(SCREENS.includes(start) ? start : "gallery");

@@ -273,9 +273,9 @@ export function animateCharacter(root, pose, t, dt, opts = {}) {
 
   if (pose === "walk") {
     const s = Math.sin(t * 9);
-    target.legSwing = s * 0.55;
-    target.armLx = -s * 0.5;
-    target.armRx = s * 0.5;
+    target.legSwing = s * 0.7;
+    target.armLx = -s * 0.65;
+    target.armRx = s * 0.65;
     target.bodyBob = Math.abs(Math.cos(t * 9)) * 0.03;
   } else if (pose === "sit" || pose === "type" || pose === "talk" || pose === "think" || pose === "idle") {
     target.legsSit = 1;
