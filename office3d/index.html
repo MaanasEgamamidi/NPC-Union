@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NPC Union · Specialist Office</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1016;
+      --panel: #121a24;
+      --panel-2: #172231;
+      --line: #223247;
+      --text: #e8eef7;
+      --muted: #8d9bb0;
+      --accent: #f5b93a;
+      --teal: #2ec4b6;
+      --rose: #ff6b8a;
+      --violet: #9d7bff;
+      --radius: 14px;
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+      font-family: Inter, system-ui, sans-serif; overflow: hidden; }
+    h1, h2, h3, h4 { font-family: "Space Grotesk", Inter, sans-serif; margin: 0; letter-spacing: -0.01em; }
+    button, select, input { font: inherit; color: inherit; }
+    button { cursor: pointer; }
+
+    /* ---------- top bar ---------- */
+    .topbar { position: fixed; inset: 0 0 auto 0; height: 58px; display: flex; align-items: center; gap: 18px;
+      padding: 0 20px; background: rgba(11,16,22,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); z-index: 20; }
+    .brand { display: flex; align-items: center; gap: 10px; font-family: "Space Grotesk", sans-serif; font-weight: 700; }
+    .brand-mark { width: 26px; height: 26px; border-radius: 8px; background: conic-gradient(var(--accent), var(--teal), var(--violet), var(--accent)); }
+    .tabs { display: flex; gap: 4px; background: var(--panel); padding: 4px; border-radius: 999px; border: 1px solid var(--line); }
+    .tab { border: 0; background: transparent; padding: 7px 16px; border-radius: 999px; color: var(--muted); font-weight: 600; }
+    .tab.active { background: var(--accent); color: #1a1405; }
+    .topbar .spacer { flex: 1; }
+    .live-dot { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+    .live-dot::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 10px var(--teal); }
+
+    main { position: fixed; inset: 58px 0 0 0; }
+    section.screen { position: absolute; inset: 0; display: none; }
+    section.screen.active { display: block; }
+
+    /* ---------- gallery ---------- */
+    #gallery { overflow: auto; padding: 28px 28px 60px; background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(245,185,58,.10), transparent 60%),
+      radial-gradient(900px 500px at 110% 0%, rgba(46,196,182,.10), transparent 60%), var(--bg); }
+    .hero { margin-bottom: 22px; }
+    .hero h1 { font-size: 34px; }
+    .hero p { color: var(--muted); margin: 6px 0 0; max-width: 620px; line-height: 1.5; }
+    .toolbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
+    .search { flex: 1; min-width: 220px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; outline: none; }
+    .search:focus, select:focus { border-color: var(--accent); }
+    select { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+    .chip { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 5px 12px; font-size: 12px; color: var(--muted); }
+    .chip.on { border-color: var(--teal); color: var(--text); background: rgba(46,196,182,.12); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .card { background: linear-gradient(180deg, var(--panel-2), var(--panel)); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 16px; display: flex; flex-direction: column; gap: 10px; transition: transform .18s, border-color .18s, box-shadow .18s; text-align: left; }
+    .card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 14px 30px rgba(0,0,0,.35); }
+    .card-top { display: flex; gap: 12px; align-items: center; }
+    .avatar { width: 64px; height: 64px; border-radius: 14px; object-fit: cover; background: #0e1520; border: 1px solid var(--line); flex: none; }
+    .card h3 { font-size: 17px; }
+    .card .id { font-size: 12px; color: var(--muted); font-family: ui-monospace, Consolas, monospace; }
+    .card .desc { font-size: 13px; color: #b9c6d8; line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin: 0; min-height: 56px; }
+    .meta { display: flex; gap: 6px; flex-wrap: wrap; }
+    .tag { font-size: 11px; padding: 3px 8px; border-radius: 6px; background: #0d141e; border: 1px solid var(--line); color: var(--muted); }
+    .tag.model { color: var(--accent); border-color: rgba(245,185,58,.4); }
+    .card-actions { display: flex; gap: 8px; margin-top: auto; }
+    .btn { border: 1px solid var(--line); background: var(--panel); border-radius: 9px; padding: 8px 12px; font-weight: 600; font-size: 13px; }
+    .btn:hover { border-color: var(--teal); }
+    .btn.primary { background: var(--accent); color: #1a1405; border-color: transparent; }
+    .btn.primary:hover { filter: brightness(1.06); }
+    .btn.ghost { background: transparent; }
+
+    /* ---------- office ---------- */
+    #office { background: #080c12; }
+    #scene { position: absolute; inset: 0; }
+    #scene canvas { display: block; width: 100%; height: 100%; }
+    .labels { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .label { position: absolute; transform: translate(-50%, -100%); white-space: nowrap; font-size: 12px; font-weight: 600;
+      padding: 4px 9px; border-radius: 999px; background: rgba(10,14,20,.82); border: 1px solid var(--c, var(--teal)); color: var(--text);
+      box-shadow: 0 6px 18px rgba(0,0,0,.4); }
+    .label small { color: var(--muted); font-weight: 500; margin-left: 4px; }
+    .hud { position: absolute; z-index: 5; }
+    .hud-stats { top: 14px; left: 14px; display: flex; gap: 10px; }
+    .stat { background: rgba(14,20,30,.85); border: 1px solid var(--line); border-radius: 12px; padding: 9px 14px; min-width: 96px; backdrop-filter: blur(8px); }
+    .stat b { display: block; font-family: "Space Grotesk", sans-serif; font-size: 20px; }
+    .stat span { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+    .hud-team { left: 14px; top: 96px; bottom: 14px; width: 250px; background: #101824; border: 1px solid var(--line);
+      border-radius: var(--radius); display: flex; flex-direction: column; overflow: hidden; }
+    .hud-team h4 { margin: 0; padding: 12px 14px; font-size: 13px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; color: var(--muted); }
+    .team-list { overflow: auto; padding: 6px; flex: 1; }
+    .team-row { width: 100%; display: flex; gap: 9px; align-items: center; background: transparent; border: 0; padding: 7px 8px; border-radius: 10px; text-align: left; }
+    .team-row:hover, .team-row.sel { background: rgba(46,196,182,.12); }
+    .team-row img { width: 30px; height: 30px; border-radius: 8px; object-fit: cover; }
+    .team-row .n { flex: 1; min-width: 0; font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .team-row .n small { display: block; color: var(--muted); font-weight: 500; font-size: 11px; }
+    .pill { font-size: 11px; padding: 3px 8px; border-radius: 999px; white-space: nowrap; border: 1px solid; display: inline-block; }
+    .s-working { color: var(--teal); border-color: rgba(46,196,182,.5); }
+    .s-talking { color: var(--violet); border-color: rgba(157,123,255,.5); }
+    .s-walking { color: var(--accent); border-color: rgba(245,185,58,.5); }
+    .s-reporting { color: var(--rose); border-color: rgba(255,107,138,.5); }
+    .s-thinking { color: #7fb8ff; border-color: rgba(127,184,255,.5); }
+    .s-idle { color: var(--muted); border-color: var(--line); }
+
+    .hud-controls { right: 14px; bottom: 14px; display: flex; gap: 8px; }
+    .hud-controls .btn { background: rgba(14,20,30,.88); backdrop-filter: blur(8px); min-width: 40px; }
+    .hud-hint { left: 282px; bottom: 18px; font-size: 12px; color: var(--muted); background: rgba(14,20,30,.7); padding: 6px 10px; border-radius: 8px; }
+
+    .panel { position: absolute; top: 14px; right: 14px; bottom: 14px; width: 340px; z-index: 6; background: rgba(14,20,30,.94);
+      border: 1px solid var(--line); border-radius: var(--radius); backdrop-filter: blur(10px); transform: translateX(120%); transition: transform .35s ease;
+      display: flex; flex-direction: column; overflow: hidden; }
+    .panel.open { transform: none; }
+    .panel-head { padding: 16px; display: flex; gap: 12px; align-items: center; border-bottom: 1px solid var(--line); }
+    .panel-head img { width: 56px; height: 56px; border-radius: 14px; object-fit: cover; }
+    .panel-body { padding: 14px 16px; overflow: auto; flex: 1; display: flex; flex-direction: column; gap: 14px; }
+    .panel-body p { margin: 0; color: #b9c6d8; font-size: 13px; line-height: 1.5; }
+    .kv { display: grid; grid-template-columns: 90px 1fr; gap: 6px 10px; font-size: 13px; }
+    .kv span { color: var(--muted); }
+    .task { background: #0d141e; border: 1px solid var(--line); border-radius: 12px; padding: 12px; font-size: 13px; line-height: 1.45; }
+    .log { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 12.5px; }
+    .log li { display: flex; gap: 8px; color: #b9c6d8; }
+    .log time { color: var(--muted); font-family: ui-monospace, Consolas, monospace; min-width: 52px; }
+    .feed { position: absolute; right: 370px; top: 96px; width: 300px; z-index: 4; pointer-events: none; display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+    .feed .msg { background: rgba(14,20,30,.88); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; font-size: 12.5px; animation: fadein .4s ease; max-width: 100%; }
+    .feed .msg b { color: var(--accent); }
+    @keyframes fadein { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+    /* ---------- modal ---------- */
+    .modal { position: fixed; inset: 0; background: rgba(4,7,11,.7); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 50; padding: 20px; }
+    .modal.open { display: flex; }
+    .modal-card { width: min(920px, 100%); max-height: 100%; overflow: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 20px;
+      display: grid; grid-template-columns: 1fr 1fr; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+    .modal-view { position: relative; min-height: 420px; background: radial-gradient(circle at 50% 30%, #1b2a3d, #0a1019); }
+    .modal-view canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .modal-view .hint { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-size: 12px; color: var(--muted); }
+    .modal-info { padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+    .modal-info .x { align-self: flex-end; }
+    .modal-info h2 { font-size: 26px; }
+    .modal-info p { color: #b9c6d8; font-size: 14px; line-height: 1.55; margin: 0; }
+    @media (max-width: 760px) {
+      .modal-card { grid-template-columns: 1fr; }
+      .hud-team { width: 200px; }
+      .hud-hint { display: none; }
+      .panel { width: auto; left: 10px; right: 10px; top: auto; height: 62%; }
+      .feed { display: none; }
+      .hud-stats .stat { min-width: 70px; padding: 7px 9px; }
+    }
+    @media (max-width: 520px) { .tab { padding: 6px 10px; } .live-dot { display: none; } }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark"></span>NPC Union</div>
+    <nav class="tabs">
+      <button class="tab active" data-screen="gallery">Specialists</button>
+      <button class="tab" data-screen="office">3D Office</button>
+    </nav>
+    <div class="spacer"></div>
+    <div class="live-dot" id="conn">147 specialists online</div>
+  </header>
+
+  <main>
+    <!-- GALLERY -->
+    <section id="gallery" class="screen active">
+      <div class="hero">
+        <h1>Meet the specialists</h1>
+        <p>Every agent in the union, with its portrait, role and model. Open one to see its 3D figure, or send it to the office to watch it work.</p>
+      </div>
+      <div class="toolbar">
+        <input id="search" class="search" type="search" placeholder="Search by name, persona, or skill…" />
+        <select id="division"></select>
+      </div>
+      <div class="chips" id="chips"></div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <!-- OFFICE -->
+    <section id="office" class="screen">
+      <div id="scene"></div>
+      <div class="labels" id="labels"></div>
+
+      <div class="hud hud-stats">
+        <div class="stat"><b id="st-working">0</b><span>Working</span></div>
+        <div class="stat"><b id="st-jobs">0</b><span>Active jobs</span></div>
+        <div class="stat"><b id="st-reports">0</b><span>Reports</span></div>
+        <div class="stat"><b id="st-total">0</b><span>Specialists</span></div>
+      </div>
+
+      <aside class="hud hud-team">
+        <h4><span>Team on the floor</span><span id="team-count"></span></h4>
+        <div class="team-list" id="team-list"></div>
+      </aside>
+
+      <div class="hud hud-hint">Drag to orbit · Scroll to zoom · Click an agent to focus</div>
+      <div class="feed" id="feed"></div>
+
+      <div class="hud hud-controls">
+        <button class="btn" id="btn-zoom-in" title="Zoom in">+</button>
+        <button class="btn" id="btn-zoom-out" title="Zoom out">−</button>
+        <button class="btn" id="btn-overview" title="Back to overview">Overview</button>
+      </div>
+
+      <aside class="panel" id="panel">
+        <div class="panel-head">
+          <img id="p-img" alt="" />
+          <div style="flex:1;min-width:0">
+            <h3 id="p-persona"></h3>
+            <div class="tag" id="p-name" style="margin-top:6px;display:inline-block"></div>
+          </div>
+          <button class="btn ghost" id="p-close" title="Close">✕</button>
+        </div>
+        <div class="panel-body">
+          <div><span class="pill" id="p-status"></span></div>
+          <div class="task" id="p-task"></div>
+          <div class="kv">
+            <span>Division</span><div id="p-div"></div>
+            <span>Department</span><div id="p-dept"></div>
+            <span>Model</span><div id="p-model"></div>
+            <span>Runtime</span><div id="p-runtime"></div>
+          </div>
+          <p id="p-desc"></p>
+          <div class="meta" id="p-caps"></div>
+          <div>
+            <h4 style="font-size:13px;color:var(--muted);margin:0 0 8px">Activity</h4>
+            <ul class="log" id="p-log"></ul>
+          </div>
+          <button class="btn" id="p-profile">Open full profile</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- DETAIL MODAL -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-view" id="m-view">
+        <div class="hint">Drag to rotate · Scroll to zoom</div>
+      </div>
+      <div class="modal-info">
+        <button class="btn ghost x" id="m-close">Close ✕</button>
+        <div>
+          <h2 id="m-persona"></h2>
+          <div id="m-name" style="color:var(--muted);font-family:ui-monospace,Consolas,monospace;font-size:13px"></div>
+        </div>
+        <div class="meta" id="m-meta"></div>
+        <p id="m-desc"></p>
+        <div class="meta" id="m-caps"></div>
+        <div style="display:flex;gap:8px;margin-top:auto">
+          <button class="btn primary" id="m-office">Find in office</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
