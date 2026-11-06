@@ -50,7 +50,7 @@ You rarely need all 148. Pick the specialists for the job and the Steward works 
 In Claude Code:
 
 ```
-/plugin marketplace add MaanasEgamamidi/npc-union
+/plugin marketplace add MaanasEgamamidi/NPC-Union
 /plugin install npc-union@npc-union
 ```
 

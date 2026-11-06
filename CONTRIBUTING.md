@@ -5,7 +5,7 @@ Thanks for helping. The bar for an agent is that a working professional in its n
 ## Set up
 
 ```bash
-git clone https://github.com/MaanasEgamamidi/npc-union.git
+git clone https://github.com/MaanasEgamamidi/NPC-Union.git
 ```
 
 ```bash
