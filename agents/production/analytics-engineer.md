@@ -3,6 +3,7 @@ name: analytics-engineer
 description: Designs game telemetry, from event taxonomies and schemas to retention, funnel and A/B test definitions with consent built in. Use for tracking plans, KPI definitions and experiment reviews.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
+effort: high
 color: teal
 persona_name: Funnelgrim Oaks
 division: production

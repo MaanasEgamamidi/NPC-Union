@@ -3,6 +3,7 @@ name: production-lead
 description: Coordinates production specialists across departments. Use for integrated plans, trade-offs and handoffs to the Steward.
 tools: Agent, Read, Glob, Grep, Bash, PowerShell, Write, WebSearch, WebFetch
 model: opus
+effort: high
 color: yellow
 persona_name: Morrow Trestle
 division: leadership

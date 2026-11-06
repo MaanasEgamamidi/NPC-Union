@@ -3,6 +3,7 @@ name: systems-designer
 description: Turns mechanics into formulas with tuning knobs, interaction matrices and simulated balance sweeps. Use for damage and armour math, progression curves, status effects, emergent rules.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch, Bash
 model: opus
+effort: high
 color: blue
 persona_name: Lattice
 division: creative

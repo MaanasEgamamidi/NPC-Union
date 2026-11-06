@@ -3,6 +3,7 @@ name: multiplayer-backend-engineer
 description: Plans dedicated server fleets, session and lobby services, persistence, and region placement. Use for Agones, GameLift, Edgegap, PlayFab servers, Nakama, scaling and hosting cost.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Shardwell
 division: technical

@@ -3,6 +3,7 @@ name: npc-designer
 description: Designs believable NPC roles, routines, barks, memory and relationships, including LLM-driven characters. Use for NPC behavior and social systems.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: blue
 persona_name: Latchkey
 division: creative

@@ -3,6 +3,7 @@ name: audio-asset-scout
 description: Finds sound effects and music for games and reports licence, price, and commercial-use terms per file. Use for SFX hunts, music beds, and free or cheap audio sourcing.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
+effort: low
 color: teal
 persona_name: Hushwick Ambry
 division: technical

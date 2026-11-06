@@ -4,6 +4,7 @@ name: itch-scout
 description: Finds game assets on itch.io and reports price, licence and commercial-use terms quoted from each page. Use for sprites, tilesets, fonts, packs sold or shared on itch.io.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
+effort: low
 color: teal
 persona_name: Jamjar Tumbleweed
 division: technical

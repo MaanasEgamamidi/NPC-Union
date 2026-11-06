@@ -104,6 +104,9 @@ for (const path of agentFiles) {
   if (!["claude", "codex"].includes(fields.runtime)) err(file, `runtime must be claude or codex, got ${fields.runtime}`);
   if (!["low", "medium", "high"].includes(fields.reasoning)) err(file, `reasoning must be low, medium or high`);
 
+  if (fields.effort !== undefined && !["low", "medium", "high", "xhigh", "max"].includes(fields.effort)) err(file, `effort must be low, medium, high, xhigh or max, got ${fields.effort}`);
+  if (fields.effort !== undefined && ["codex"].includes(fields.runtime) && fields.effort !== fields.reasoning) warn(file, "effort differs from reasoning; Codex uses reasoning, Claude fallback uses effort");
+
   const caps = Array.isArray(fields.capabilities) ? fields.capabilities : [];
   for (const cap of caps) if (!CAPABILITIES.has(cap)) err(file, `unknown capability ${cap}`);
   if (fields.runtime === "codex" && !caps.some((c) => ["web-search", "image-gen"].includes(c))) err(file, "codex runtime needs web-search or image-gen in capabilities");

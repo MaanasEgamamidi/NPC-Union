@@ -3,6 +3,7 @@ name: game-legal-advisor
 description: Legal information, not legal advice, on game asset and code licences, engine EULAs, trademarks, age ratings and child privacy. Use for licence audits, rating prep and contract red flags.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: amber
 persona_name: Clausewright Ember
 division: production

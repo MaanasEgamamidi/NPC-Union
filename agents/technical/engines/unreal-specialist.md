@@ -3,6 +3,7 @@ name: unreal-specialist
 description: Builds Unreal Engine 5 projects and reviews gameplay architecture, replication, content and packaging. Use for UE5 C++, Blueprints, upgrades and target planning.
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: opus
+effort: high
 color: green
 persona_name: Castwell
 division: technical

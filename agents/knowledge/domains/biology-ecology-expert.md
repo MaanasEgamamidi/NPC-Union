@@ -3,6 +3,7 @@ name: biology-ecology-expert
 description: Makes creature, ecosystem, evolution and genetics mechanics biologically sound and playable. Use for food webs, population models, evolution sims, species data, disease spread.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: purple
 persona_name: Trophic
 division: knowledge

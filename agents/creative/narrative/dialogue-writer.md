@@ -3,6 +3,7 @@ name: dialogue-writer
 description: Writes in-game dialogue, barks and choice text in Ink or Yarn with line IDs and length limits. Use for conversations, combat barks, choice wording, character voice.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: orange
 persona_name: Murmurwick
 division: creative

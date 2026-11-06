@@ -3,6 +3,7 @@ name: business-finance-expert
 description: Keeps business, tycoon and trading sims financially correct and fun. Use for P&L and cash models, pricing, supply chains, markets, real economic data, and financial-literacy games.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: green
 persona_name: Margin
 division: knowledge

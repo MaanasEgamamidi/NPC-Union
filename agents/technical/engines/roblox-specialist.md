@@ -3,6 +3,7 @@ name: roblox-specialist
 description: Builds and audits Roblox experiences in strict Luau with a server-authoritative design. Use for remotes, DataStores, MemoryStore, Rojo/Wally, monetization, DevEx, policy and age-rating.
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: sonnet
+effort: high
 color: red
 persona_name: Studs
 division: technical

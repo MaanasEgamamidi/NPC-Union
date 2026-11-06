@@ -3,6 +3,7 @@ name: gamemaker-specialist
 description: Builds and reviews GameMaker 2D games in GML. Use for objects, events, rooms, collision, texture pages, exports and runtime upgrades.
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: sonnet
+effort: high
 color: green
 persona_name: Roomwright
 division: technical

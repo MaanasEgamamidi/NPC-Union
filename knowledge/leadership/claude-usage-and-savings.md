@@ -48,7 +48,16 @@ Facts the budget keeper relies on for Claude Code. Each line was read from the l
 - Idle compaction and prompt suggestions use tokens in the background. `idleCompaction: false` (v2.1.290 or later) and turning prompt suggestions off stop them.
 - Thinking cannot be turned off on Opus 5.5, Sonnet 5.5, Haiku 5.5 or the Fable models. Lower the effort level instead. `MAX_THINKING_TOKENS` only applies to models with a fixed thinking budget.
 
-## UNVERIFIED
+## Prompt cache prices
 
-- The price multipliers for cache reads and writes were not read on this pass. Check https://platform.claude.com/docs/en/about-claude/pricing before quoting them.
-- The exact weekly or 5-hour allowance per plan. Anthropic does not publish it, so use `/usage`.
+Read from https://platform.claude.com/docs/en/about-claude/pricing on 2026-11-05, relative to the base input price:
+
+- 5-minute cache write: 1.25x. 1-hour cache write: 2x (for example Sonnet 5.5 is $2 base, $2.50 for a 5-minute write and $4 for a 1-hour write per million tokens).
+- Cache read: 0.1x on most models, 0.05x on Opus 5.5 and Sonnet 5.5, 0.025x on Fable 5.1 and Mythos 5.1.
+- So a cache miss that re-writes a large context costs 12.5x to 50x more per token than reading it from cache, depending on the model. This is why model switches and idle gaps matter more than prompt length.
+- Per million tokens on the Anthropic API: Opus 5.5 $4 input and $20 output, Sonnet 5.5 $2 and $10, Haiku 5.5 $0.10 and $0.50 for prompts up to 100,000 tokens. Output costs 5x input on all three, so long thinking is the expensive part of a turn.
+- Those are API list prices. Subscription plans do not bill per token, so use them only to compare options against each other.
+
+## Not published
+
+- The absolute weekly or 5-hour allowance per plan. Anthropic's support article gives no figures, so the answer is always `/usage`, not a number from memory.

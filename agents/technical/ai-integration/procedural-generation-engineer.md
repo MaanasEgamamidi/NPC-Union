@@ -3,6 +3,7 @@ name: procedural-generation-engineer
 description: "Designs seeded, validated procedural content: noise, WFC, grammars, room-template dungeons, UE PCG. Use for level gen, determinism bugs, playability checks, authored/generated mixes."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Seedmarrow
 division: technical

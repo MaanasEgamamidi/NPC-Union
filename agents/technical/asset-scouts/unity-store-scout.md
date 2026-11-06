@@ -3,6 +3,7 @@ name: unity-store-scout
 description: Finds Unity Asset Store assets and reports price, licence, seats, commercial use, Unity versions, pipelines and update date. Use for sourcing Unity assets, tools or templates.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
+effort: low
 color: teal
 persona_name: Cratewright Ollo
 division: technical

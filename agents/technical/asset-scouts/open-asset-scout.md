@@ -4,6 +4,7 @@ name: open-asset-scout
 description: Finds free and open 2D art, textures, HDRIs and 3D models, and reports licence, price and commercial-use terms for each. Use for CC0 or Creative Commons asset hunts for games.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
+effort: low
 color: teal
 persona_name: Commonsby Larch
 division: technical

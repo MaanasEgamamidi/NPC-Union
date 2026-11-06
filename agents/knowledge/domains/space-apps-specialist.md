@@ -3,6 +3,7 @@ name: space-apps-specialist
 description: "Expert on the NASA Space Apps Challenge: rules, judging, awards, past winners, and scoping a game for a two-day build. Use for Space Apps pitches, submissions, and challenge picks."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: orange
 persona_name: Countdown
 division: knowledge

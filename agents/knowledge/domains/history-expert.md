@@ -3,6 +3,7 @@ name: history-expert
 description: Checks historical settings for anachronism, finds primary sources, and flags sensitive history. Use for period games, maps and borders, daily life, war logistics, atrocity depiction.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: orange
 persona_name: Palimpsest
 division: knowledge

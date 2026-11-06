@@ -3,6 +3,7 @@ name: netcode-architect
 description: "Designs multiplayer netcode: authority, prediction, rollback, interpolation, lag compensation, tick and bandwidth budgets, library choice. Use for any networked game design."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Rollbeck
 division: technical

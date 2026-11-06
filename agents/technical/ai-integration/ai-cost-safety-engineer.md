@@ -3,6 +3,7 @@ name: ai-cost-safety-engineer
 description: Models cost per player-hour for runtime LLM features and designs quotas, proxies, moderation, and rating and privacy compliance. Use for in-game AI budgets, API keys, Steam AI disclosure.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Ledgerlock
 division: technical

@@ -43,6 +43,10 @@ reasoning: medium                # low, medium or high: Codex reasoning effort
 ---
 ```
 
+### Effort
+
+`effort` is optional and is the Claude Code subagent field (`low`, `medium`, `high`, `xhigh` or `max`, depending on the model). Claude Code applies it while the agent runs. Leave it out when `reasoning` is `medium`: that matches the default on Sonnet 5.5 and Opus 5.5, and leaving it unset lets the user's own `/effort` choice save tokens. Set it, equal to `reasoning`, when an agent needs more or less than that. `CLAUDE_CODE_EFFORT_LEVEL`, if set, overrides it. `reasoning` stays the Codex effort and only takes `low`, `medium` or `high`. Ask `budget-keeper` for a second opinion on levels.
+
 ### Capabilities
 
 List only what the agent really needs: `web-search`, `image-gen`, `research`, `long-form-text`, `code`, `quick-decisions`, `data-analysis`, `audio-gen`, `video-gen`, `3d-gen`.

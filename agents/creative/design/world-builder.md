@@ -3,6 +3,7 @@ name: world-builder
 description: Grows a game world from one sentence into geography, economy, factions, history and rules, layered so play reveals it. Use for settings, factions, world rules and lore structure.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: blue
 persona_name: Meridian
 division: creative

@@ -3,6 +3,7 @@ name: anti-cheat-engineer
 description: Designs defensive anti-cheat with server validation, interest management, replay review and detection stats. Use for cheat threat models, client AC tradeoffs, ban waves.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Vetchstone
 division: technical
