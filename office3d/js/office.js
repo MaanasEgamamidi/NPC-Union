@@ -3,6 +3,7 @@
 // reports back), and handles camera focus, picking and labels.
 import * as THREE from "three";
 import { buildCharacter, getPalette, animateCharacter, faceToward } from "./character.js";
+import { recentWinners, citation } from "./eotm.js";
 
 const CELL = 0.5;            // pathfinding grid size (world units)
 const POD_W = 2.2;           // horizontal spacing of desk pods
@@ -11,7 +12,9 @@ const MARGIN = 1.0;          // inner margin of each zone
 const ZONE_GAP = 3.0;        // walkable street between zones
 const MAX_ROW_W = 62;        // wrap zones into rows after this width
 const MAX_JOBS = 3;
-const WALK_SPEED = 2.2;
+const WALK_SPEED = 4.6;       // world units per second (was 2.2)
+const STRIDE = 2.1;           // distance covered by one full leg cycle, so feet match the ground speed
+const WALL_H = 4.0;
 
 const ACCENTS = [
   0xf5b93a, 0x2ec4b6, 0x9d7bff, 0xff6b8a, 0x7fb8ff, 0x8bd450, 0xffa15c, 0x4fd1ff,
@@ -48,7 +51,8 @@ function prettyLabel(dept) {
 }
 
 // ---------------------------------------------------------------------------
-export function createOffice({ container, labelsEl, feedEl, panel, specialists, onStats, onTeam, onSelect }) {
+export function createOffice({ container, labelsEl, feedEl, panel, specialists, onStats, onTeam, onSelect, onProfile, random, initialTeam }) {
+  const rand = random ?? Math.random; // a seeded generator makes recordings repeatable
   // ----- renderer / scene -----
   const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -63,7 +67,9 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
   scene.background = new THREE.Color(0x0b1017);
   scene.fog = new THREE.Fog(0x0b1017, 110, 260);
 
-  const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 600);
+  // A near plane of 1 (not 0.1) keeps depth precision high enough that thin
+  // layers such as rugs, plaques and window glass never z-fight at overview range.
+  const camera = new THREE.PerspectiveCamera(42, 1, 1, 500);
 
   scene.add(new THREE.HemisphereLight(0xfff1dc, 0x2a2118, 1.25));
   const sun = new THREE.DirectionalLight(0xffe2b8, 1.7);
@@ -105,53 +111,85 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     return { key, members, w, h, pods, cols, rows, accent: ACCENTS[(i * 5) % ACCENTS.length], label: prettyLabel(key) };
   });
 
-  // Shelf-pack the zones.
-  let cx = 0, cz = 0, rowH = 0;
-  for (const sh of shapes) {
-    if (cx > 0 && cx + sh.w > MAX_ROW_W) { cx = 0; cz += rowH + ZONE_GAP; rowH = 0; }
-    zones.push({ ...sh, x0: cx, z0: cz });
-    cx += sh.w + ZONE_GAP;
-    rowH = Math.max(rowH, sh.h);
+  // Shelf-pack the departments into rows, then drop Headquarters into the middle
+  // row at the point that balances the row, so the Steward sits at the heart of
+  // the floor and every reporter has roughly the same walk.
+  const hqShape = shapes.find((s) => s.key === hqKey);
+  const rowsOfShapes = [];
+  {
+    let row = { items: [], w: 0 };
+    for (const sh of shapes) {
+      if (sh === hqShape) continue;
+      if (row.items.length && row.w + sh.w > MAX_ROW_W) { rowsOfShapes.push(row); row = { items: [], w: 0 }; }
+      row.items.push(sh);
+      row.w += sh.w + ZONE_GAP;
+    }
+    rowsOfShapes.push(row);
   }
-  const totalW = Math.max(...zones.map((z) => z.x0 + z.w));
-  const totalH = Math.max(...zones.map((z) => z.z0 + z.h));
-  // Centre the whole plan on the origin.
-  for (const z of zones) { z.x0 -= totalW / 2; z.z0 -= totalH / 2; }
-  const plan = { minX: -totalW / 2 - 4, maxX: totalW / 2 + 4, minZ: -totalH / 2 - 4, maxZ: totalH / 2 + 4 };
+  const midRow = rowsOfShapes[Math.floor((rowsOfShapes.length - 1) / 2)];
+  {
+    let best = 0, bestGap = Infinity;
+    for (let i = 0; i <= midRow.items.length; i++) {
+      const left = midRow.items.slice(0, i).reduce((s, z) => s + z.w + ZONE_GAP, 0);
+      const right = midRow.items.slice(i).reduce((s, z) => s + z.w + ZONE_GAP, 0);
+      const gap = Math.abs(left - right);
+      if (gap < bestGap) { bestGap = gap; best = i; }
+    }
+    midRow.items.splice(best, 0, hqShape);
+    midRow.w += hqShape.w + ZONE_GAP;
+  }
+  let packZ = 0;
+  for (const row of rowsOfShapes) {
+    const rowH = Math.max(...row.items.map((s) => s.h));
+    let x = -(row.w - ZONE_GAP) / 2;
+    for (const sh of row.items) {
+      // Headquarters is centred vertically in its row; departments hang from the top.
+      const z0 = sh === hqShape ? packZ + (rowH - sh.h) / 2 : packZ;
+      zones.push({ ...sh, x0: x, z0 });
+      x += sh.w + ZONE_GAP;
+    }
+    packZ += rowH + ZONE_GAP;
+  }
+  {
+    const minX = Math.min(...zones.map((z) => z.x0)), maxX = Math.max(...zones.map((z) => z.x0 + z.w));
+    const minZ = Math.min(...zones.map((z) => z.z0)), maxZ = Math.max(...zones.map((z) => z.z0 + z.h));
+    const ox = (minX + maxX) / 2, oz = (minZ + maxZ) / 2;
+    for (const z of zones) { z.x0 -= ox; z.z0 -= oz; }
+  }
+  const spanX = Math.max(...zones.map((z) => z.x0 + z.w)) - Math.min(...zones.map((z) => z.x0));
+  const spanZ = Math.max(...zones.map((z) => z.z0 + z.h)) - Math.min(...zones.map((z) => z.z0));
+  const plan = { minX: -spanX / 2 - 4, maxX: spanX / 2 + 4, minZ: -spanZ / 2 - 4, maxZ: spanZ / 2 + 4 };
 
   // ----- floor & decor -----
-  const floorMat = new THREE.MeshStandardMaterial({ color: 0x3b3128, roughness: 0.95 });
+  // One continuous plank floor. No grid helper: its lines sat 2 mm above the
+  // floor and flickered into black-and-white squares at overview distance.
+  const plankTex = (() => {
+    const c = document.createElement("canvas");
+    c.width = c.height = 512;
+    const g = c.getContext("2d");
+    const rows = 8;
+    for (let r = 0; r < rows; r++) {
+      const shade = 52 + ((r * 37) % 9) * 2;
+      g.fillStyle = `rgb(${shade + 8},${shade - 2},${shade - 14})`;
+      g.fillRect(0, (r * 512) / rows, 512, 512 / rows);
+      g.fillStyle = "rgba(0,0,0,0.28)";
+      g.fillRect(0, (r * 512) / rows, 512, 2);
+      const off = (r * 173) % 512;
+      g.fillRect(off, (r * 512) / rows, 2, 512 / rows);
+    }
+    const t = new THREE.CanvasTexture(c);
+    t.wrapS = t.wrapT = THREE.RepeatWrapping;
+    t.colorSpace = THREE.SRGBColorSpace;
+    t.anisotropy = 8;
+    t.repeat.set((plan.maxX - plan.minX) / 6, (plan.maxZ - plan.minZ) / 6);
+    return t;
+  })();
+  const floorMat = new THREE.MeshStandardMaterial({ map: plankTex, roughness: 0.9 });
   const floor = new THREE.Mesh(new THREE.PlaneGeometry(plan.maxX - plan.minX, plan.maxZ - plan.minZ), floorMat);
   floor.rotation.x = -Math.PI / 2;
   floor.position.set((plan.minX + plan.maxX) / 2, 0, (plan.minZ + plan.maxZ) / 2);
   floor.receiveShadow = true;
   scene.add(floor);
-
-  const grid = new THREE.GridHelper(Math.max(plan.maxX - plan.minX, plan.maxZ - plan.minZ), 80, 0x2b3a52, 0x20293a);
-  grid.material.transparent = true;
-  grid.material.opacity = 0.35;
-  grid.position.set((plan.minX + plan.maxX) / 2, 0.01, (plan.minZ + plan.maxZ) / 2);
-  scene.add(grid);
-
-  const labelCanvas = (text, color) => {
-    const c = document.createElement("canvas");
-    c.width = 1024; c.height = 160;
-    const g = c.getContext("2d");
-    g.fillStyle = "rgba(10,14,20,0.0)";
-    g.clearRect(0, 0, c.width, c.height);
-    g.fillStyle = "rgba(12,18,28,0.82)";
-    g.roundRect(8, 26, c.width - 16, 110, 24);
-    g.fill();
-    g.fillStyle = "#" + color.toString(16).padStart(6, "0");
-    g.fillRect(8, 26, 14, 110);
-    g.fillStyle = "#e8eef7";
-    g.font = "600 64px Space Grotesk, Inter, sans-serif";
-    g.textBaseline = "middle";
-    g.fillText(text.toUpperCase(), 52, 82);
-    const tex = new THREE.CanvasTexture(c);
-    tex.colorSpace = THREE.SRGBColorSpace;
-    return tex;
-  };
 
   const boxMat = (c, r = 0.7, m = 0.05) => new THREE.MeshStandardMaterial({ color: c, roughness: r, metalness: m });
   const woodMat = boxMat(0x6b4a2e, 0.55);
@@ -163,21 +201,14 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     // zone floor tint
     const tile = new THREE.Mesh(
       new THREE.PlaneGeometry(z.w, z.h),
-      new THREE.MeshStandardMaterial({ color: new THREE.Color(z.accent).multiplyScalar(0.16), roughness: 1 }),
+      new THREE.MeshStandardMaterial({ color: new THREE.Color(z.accent).multiplyScalar(0.2), roughness: 1, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 }),
     );
     tile.rotation.x = -Math.PI / 2;
-    tile.position.set(z.x0 + z.w / 2, 0.012, z.z0 + z.h / 2);
+    tile.position.set(z.x0 + z.w / 2, 0.04, z.z0 + z.h / 2);
     tile.receiveShadow = true;
     scene.add(tile);
-
-    // zone sign
-    const sign = new THREE.Mesh(
-      new THREE.PlaneGeometry(Math.min(z.w, 9), 1.4),
-      new THREE.MeshBasicMaterial({ map: labelCanvas(z.label, z.accent), transparent: true, depthWrite: false }),
-    );
-    sign.rotation.x = -Math.PI / 2;
-    sign.position.set(z.x0 + z.w / 2, 0.03, z.z0 + 0.8);
-    scene.add(sign);
+    // Zone names are HTML overlays (see updateLabels), so they stay sharp and
+    // readable from any camera angle instead of being painted on the floor.
 
     // low planters in the zone corners for character
     const planter = (x, zz) => {
@@ -296,38 +327,131 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
   }
 
   // ----- office dressing: walls, windows, props, break area -----
-  const wallH = 3.2, wallT = 0.3;
+  const wallH = WALL_H, wallT = 0.3;
   const wallMat = boxMat(0xd8d2c4, 0.9);
   const trimMat = boxMat(0x6b5843, 0.6);
-  const windowMat = new THREE.MeshBasicMaterial({ color: 0xa8dcff });
   const frameMat = boxMat(0x2d2a26, 0.5);
   const bookColors = [0xc0392b, 0x2e86c1, 0xf1c40f, 0x27ae60, 0x8e44ad, 0xe67e22];
 
-  function wall(x, z, sx, sz, facing) {
+  // Rotation that turns a plane (normal +z) to face into the room from each wall.
+  const FACING_YAW = { north: 0, south: Math.PI, west: Math.PI / 2, east: -Math.PI / 2 };
+  const FACING_DIR = { north: [0, 1], south: [0, -1], west: [1, 0], east: [-1, 0] };
+
+  // A window is ONE solid frame box with the glass set clearly in front of its
+  // face, so there are never two surfaces at the same depth.
+  const glassMat = new THREE.MeshBasicMaterial({ color: 0xa8dcff, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1 });
+  function windowAt(px, pz, facing) {
+    const g = new THREE.Group();
+    const frame = new THREE.Mesh(new THREE.BoxGeometry(2.9, 1.8, 0.16), frameMat);
+    const glass = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 1.5), glassMat);
+    glass.position.z = 0.085;
+    g.add(frame, glass);
+    g.position.set(px, 2.2, pz);
+    g.rotation.y = FACING_YAW[facing];
+    scene.add(g);
+  }
+
+  function wall(x, z, sx, sz, facing, { windows = true } = {}) {
     addBox(sx, wallH, sz, x, wallH / 2, z, wallMat);
-    addBox(sx + 0.02, 0.12, sz + 0.02, x, 0.9, z, trimMat, { cast: false }); // wainscot cap rail
+    addBox(sx + 0.06, 0.12, sz + 0.06, x, 0.9, z, trimMat, { cast: false }); // wainscot cap rail
+    if (!windows) return;
     const long = Math.max(sx, sz);
     const alongX = sx >= sz;
+    const dir = FACING_DIR[facing];
     for (let s = -long / 2 + 3; s < long / 2 - 2; s += 7) {
-      const win = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 1.5), windowMat);
-      const frame = new THREE.Mesh(new THREE.PlaneGeometry(2.8, 1.7), frameMat);
-      const off = facing === "north" || facing === "south" ? 0.17 : 0.17;
-      const dir = facing === "north" ? [0, 1] : facing === "south" ? [0, -1] : facing === "west" ? [1, 0] : [-1, 0];
-      const px = alongX ? x + s : x + dir[0] * off;
-      const pz = alongX ? z + dir[1] * off : z + s;
-      win.position.set(px, 1.9, pz);
-      frame.position.set(px, 1.9, pz - 0.002 * dir[1] * 0 + dir[1] * 0.001);
-      win.rotation.y = facing === "north" ? 0 : facing === "south" ? Math.PI : facing === "west" ? Math.PI / 2 : -Math.PI / 2;
-      frame.rotation.y = win.rotation.y;
-      scene.add(win, frame);
+      windowAt(alongX ? x + s : x + dir[0] * 0.15, alongX ? z + dir[1] * 0.15 : z + s, facing);
     }
   }
   const wallsW = plan.maxX - plan.minX, wallsD = plan.maxZ - plan.minZ;
   const pcx2 = (plan.minX + plan.maxX) / 2, pcz2 = (plan.minZ + plan.maxZ) / 2;
-  wall(pcx2, plan.minZ, wallsW, wallT, "north");
+  wall(pcx2, plan.minZ, wallsW, wallT, "north", { windows: false }); // the north wall hosts the Hall of Fame
   wall(pcx2, plan.maxZ, wallsW, wallT, "south");
   wall(plan.minX, pcz2, wallT, wallsD, "west");
   wall(plan.maxX, pcz2, wallT, wallsD, "east");
+
+  // ----- Employee of the Month hall of fame -----
+  // Thirteen framed portraits along the north wall: this month's winner in the
+  // centre (bigger, gold), the twelve previous winners either side. Click one to
+  // open that specialist's profile.
+  const plaques = [];
+  const winners = recentWinners(specialists);
+  const goldMat = new THREE.MeshStandardMaterial({ color: 0xc9962b, roughness: 0.35, metalness: 0.75 });
+  const goldGlowMat = new THREE.MeshStandardMaterial({ color: 0xf5b93a, roughness: 0.3, metalness: 0.7, emissive: 0x7a5410, emissiveIntensity: 0.8 });
+
+  function plaqueTexture(w, spec, label, current) {
+    const c = document.createElement("canvas");
+    c.width = 512; c.height = 640;
+    const g = c.getContext("2d");
+    const paint = (img) => {
+      g.clearRect(0, 0, c.width, c.height);
+      const grad = g.createLinearGradient(0, 0, 0, c.height);
+      grad.addColorStop(0, "#16233a"); grad.addColorStop(1, "#0b1220");
+      g.fillStyle = grad; g.fillRect(0, 0, c.width, c.height);
+      // portrait
+      g.fillStyle = "#0e1520"; g.fillRect(36, 96, 440, 380);
+      if (img) {
+        const s = Math.min(img.width, img.height);
+        g.drawImage(img, (img.width - s) / 2, (img.height - s) / 2, s, s, 36, 96, 440, 380);
+      }
+      g.strokeStyle = "#f5b93a"; g.lineWidth = 6; g.strokeRect(36, 96, 440, 380);
+      // header ribbon
+      g.fillStyle = current ? "#f5b93a" : "#c9962b";
+      g.fillRect(0, 0, c.width, 76);
+      g.fillStyle = "#1a1405"; g.textAlign = "center"; g.textBaseline = "middle";
+      g.font = "700 38px Space Grotesk, Inter, sans-serif";
+      g.fillText("EMPLOYEE OF THE MONTH", c.width / 2, 40);
+      // name plate
+      g.fillStyle = "#f4f7fb";
+      g.font = "700 60px Space Grotesk, Inter, sans-serif";
+      let size = 60;
+      while (g.measureText(spec.persona).width > 460 && size > 30) { size -= 4; g.font = `700 ${size}px Space Grotesk, Inter, sans-serif`; }
+      g.fillText(spec.persona, c.width / 2, 524);
+      g.fillStyle = "#f5b93a";
+      g.font = "600 34px Inter, sans-serif";
+      g.fillText(label.toUpperCase() + (current ? "  ·  NOW" : ""), c.width / 2, 590);
+    };
+    paint(null);
+    const tex = new THREE.CanvasTexture(c);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    tex.anisotropy = 8;
+    const img = new Image();
+    img.onload = () => { paint(img); tex.needsUpdate = true; };
+    img.src = spec.avatar;
+    // Webfonts may still be loading at build time; repaint once they are ready.
+    document.fonts?.ready.then(() => { paint(img.complete && img.naturalWidth ? img : null); tex.needsUpdate = true; });
+    return tex;
+  }
+
+  {
+    const n = winners.length;                      // 13, oldest first, current last
+    const order = [];                              // current in the middle, others fanned out
+    const cur = winners[n - 1];
+    const past = winners.slice(0, n - 1);
+    const half = past.length / 2;
+    order.push(...past.slice(0, half), cur, ...past.slice(half));
+    const span = Math.min(wallsW - 12, 74);
+    const step = span / (n - 1);
+    const mid = (n - 1) / 2;
+    order.forEach((win, i) => {
+      const big = win.current;
+      const pw = big ? 3.5 : 2.4, ph = pw * 1.25;
+      const px = pcx2 + (i - mid) * step;
+      const pz = plan.minZ + 0.15 + 0.08; // back of the frame sinks 0.02 into the wall
+      const g = new THREE.Group();
+      const frame = new THREE.Mesh(new THREE.BoxGeometry(pw + 0.34, ph + 0.34, 0.2), big ? goldGlowMat : goldMat);
+      const face = new THREE.Mesh(
+        new THREE.PlaneGeometry(pw, ph),
+        new THREE.MeshBasicMaterial({ map: plaqueTexture(pw, win.spec, win.label, big), polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1 }),
+      );
+      face.position.z = 0.108;
+      face.userData.plaque = { name: win.spec.name, label: win.label, current: big };
+      g.add(frame, face);
+      g.position.set(px, big ? 2.15 : 2.35, pz);
+      frame.castShadow = true;
+      scene.add(g);
+      plaques.push({ group: g, face, win });
+    });
+  }
 
   // bookshelf with coloured spines (blocks the walkway it stands on)
   function bookshelf(x, z, alongZ) {
@@ -349,8 +473,8 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     addBox(w + 0.06, 1.3, d + 0.06, x, 1.6, z, boxMat(0x9aa3ad, 0.4, 0.4), { cast: false });
     addBox(w, 1.2, d, x, 1.6, z, boxMat(0xf5f7fa, 0.3), { cast: false });
     // scribbles
-    addBox(alongZ ? 0.09 : 1.2, 0.04, alongZ ? 0.9 : 0.09, x, 1.9, z, boxMat(0x2e86c1, 0.5), { cast: false });
-    addBox(alongZ ? 0.09 : 0.7, 0.04, alongZ ? 0.5 : 0.09, x, 1.45, z, boxMat(0xc0392b, 0.5), { cast: false });
+    addBox(alongZ ? 0.12 : 1.2, 0.04, alongZ ? 0.9 : 0.12, x, 1.9, z, boxMat(0x2e86c1, 0.5), { cast: false });
+    addBox(alongZ ? 0.12 : 0.7, 0.04, alongZ ? 0.5 : 0.12, x, 1.45, z, boxMat(0xc0392b, 0.5), { cast: false });
   }
 
   function waterCooler(x, z) {
@@ -488,7 +612,7 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
       spec, root, seat, zone, accent,
       pose: "idle", status: "idle", busy: false, job: null,
       path: [], onArrive: null, speech: "", speechUntil: 0,
-      log: [], lookYaw: null, nextThink: 2 + Math.random() * 12, phase: Math.random() * 10,
+      log: [], lookYaw: null, nextThink: 2 + rand() * 12, phase: rand() * 10,
     };
     agentByName.set(spec.name, rec);
     byName.set(spec.name, rec);
@@ -549,7 +673,8 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
   const camState = { target: new THREE.Vector3(0, 0, 0), yaw: 0.0, pitch: 0.95, dist: 90 };
   const overviewState = () => {
     const span = Math.max(plan.maxX - plan.minX, plan.maxZ - plan.minZ);
-    return { target: new THREE.Vector3((plan.minX + plan.maxX) / 2 - span * 0.1, 0, (plan.minZ + plan.maxZ) / 2), yaw: 0.0, pitch: 0.95, dist: span * 0.95 };
+    // Headquarters now sits at the plan's centre, so the overview looks straight at it.
+    return { target: new THREE.Vector3((plan.minX + plan.maxX) / 2, 0, (plan.minZ + plan.maxZ) / 2 + 2), yaw: 0.0, pitch: 0.95, dist: span * 0.92 };
   };
   let anim = null;       // tween between two camera states
   let followAgent = null; // agent the camera tracks when focused
@@ -621,8 +746,9 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     el.innerHTML = html;
     feedEl.prepend(el);
     while (feedEl.children.length > 5) feedEl.lastChild.remove();
-    setTimeout(() => el.remove(), 9000);
+    feedItems.push({ el, until: clock + 9 }); // expires on simulation time, so recordings stay in step
   }
+  const feedItems = [];
 
   function walkTo(rec, x, z, onArrive) {
     const path = findPath(rec.root.position.x, rec.root.position.z, x, z);
@@ -633,20 +759,34 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     return true;
   }
 
+  // The user's assembled team. When set, only these specialists are given work,
+  // mirroring how the Steward behaves when a team is active.
+  let team = null; // Set<string> | null
   function startJob() {
-    const candidates = zones.filter((z) => z.key !== hqKey && z.seats?.some((s) => !s.rec?.busy && !s.rec?.isMaster));
-    if (!candidates.length) return;
-    const zone = candidates[Math.floor(Math.random() * candidates.length)];
-    const free = zone.seats.map((s) => agentByName.get(s.spec.name)).filter((r) => r && !r.busy);
-    if (free.length < 2) return;
-    const reporter = free[Math.floor(Math.random() * free.length)];
-    const partner = reporter.partners.find((p) => !p.busy) ?? free.find((r) => r !== reporter);
-    const others = free.filter((r) => r !== reporter && r !== partner).sort(() => Math.random() - 0.5).slice(0, Math.random() < 0.5 ? 1 : 2);
-    const crew = [reporter, partner, ...others].filter(Boolean);
+    let zone, crew, reporter, partner;
+    if (team && team.size) {
+      const pool = agents.filter((a) => team.has(a.spec.name) && !a.busy && !a.isMaster);
+      if (!pool.length) return;
+      const shuffled = pool.slice().sort(() => rand() - 0.5);
+      crew = shuffled.slice(0, Math.min(shuffled.length, 2 + Math.floor(rand() * 2)));
+      reporter = crew[0];
+      partner = crew[1];
+      zone = reporter.zone;
+    } else {
+      const candidates = zones.filter((z) => z.key !== hqKey && z.seats?.some((s) => !s.rec?.busy && !s.rec?.isMaster));
+      if (!candidates.length) return;
+      zone = candidates[Math.floor(rand() * candidates.length)];
+      const free = zone.seats.map((s) => agentByName.get(s.spec.name)).filter((r) => r && !r.busy);
+      if (free.length < 2) return;
+      reporter = free[Math.floor(rand() * free.length)];
+      partner = reporter.partners.find((p) => !p.busy) ?? free.find((r) => r !== reporter);
+      const others = free.filter((r) => r !== reporter && r !== partner).sort(() => rand() - 0.5).slice(0, rand() < 0.5 ? 1 : 2);
+      crew = [reporter, partner, ...others].filter(Boolean);
+    }
     const topic = `${zone.label} · ${pick(TOPICS, hashStr(zone.key) + jobSeq)}`;
     const job = {
       id: ++jobSeq, zone, topic, crew, reporter, partner,
-      phase: "work", t: 0, workDur: 7 + Math.random() * 4, talkTimer: 0, speaker: 0,
+      phase: "work", t: 0, workDur: 5 + rand() * 3, talkTimer: 0, speaker: 0,
     };
     crew.forEach((r) => { r.busy = true; r.job = job; });
     jobs.push(job);
@@ -674,7 +814,7 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
         const speaker = job.speaker ? job.partner : job.reporter;
         const other = job.speaker ? job.reporter : job.partner;
         const lines = ["Can you check the spec?", "Looks good, one more pass.", "Sending the draft now.", "Agreed, I'll update it.", "Found a gap in the brief.", "Nice, that reads clearly."];
-        speaker.speech = lines[Math.floor(Math.random() * lines.length)];
+        speaker.speech = lines[Math.floor(rand() * lines.length)];
         speaker.speechUntil = clock + 2.4;
         note(speaker, `Talking with ${other.spec.persona}`);
       }
@@ -688,13 +828,13 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
           job.t = 0;
           rep.pose = "report";
           rep.speech = `${job.topic}: done`;
-          rep.speechUntil = clock + 3.4;
+          rep.speechUntil = clock + 2.8;
           faceToward(rep.root, masterSeat.x, masterSeat.z);
         });
         if (!ok) { job.phase = "report"; job.t = 0; }
       }
     } else if (job.phase === "report") {
-      if (job.t > 3.4) {
+      if (job.t > 2.8) {
         job.phase = "back";
         walkTo(rep, rep.seat.x, rep.seat.z, () => { rep.pose = "type"; rep.root.rotation.y = rep.seat.yaw; finishJob(job); });
       }
@@ -708,6 +848,7 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
       const dx = next.x - root.position.x, dz = next.z - root.position.z;
       const d = Math.hypot(dx, dz);
       const step = WALK_SPEED * dt;
+      a.walkDist = (a.walkDist ?? 0) + Math.min(d, step); // drives the leg cycle, so feet never skate
       if (d <= step) {
         root.position.x = next.x; root.position.z = next.z;
         a.path.shift();
@@ -721,10 +862,10 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
         const targetYaw = Math.atan2(dx, dz);
         let diff = targetYaw - root.rotation.y;
         diff = Math.atan2(Math.sin(diff), Math.cos(diff));
-        root.rotation.y += diff * Math.min(1, dt * 8);
+        root.rotation.y += diff * Math.min(1, dt * 12);
       }
       a.pose = "walk";
-      animateCharacter(root, "walk", t + a.phase, dt);
+      animateCharacter(root, "walk", (a.walkDist * (Math.PI * 2)) / STRIDE / 9, dt);
       return;
     }
 
@@ -744,8 +885,8 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     } else {
       pose = "idle";
       if (clock > a.nextThink) {
-        a.nextThink = clock + 8 + Math.random() * 14;
-        if (Math.random() < 0.35) { a.thinkUntil = clock + 3.5; }
+        a.nextThink = clock + 8 + rand() * 14;
+        if (rand() < 0.35) { a.thinkUntil = clock + 3.5; }
       }
       if (a.thinkUntil > clock) pose = "think";
     }
@@ -780,20 +921,47 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     return el;
   }
 
+  // Zone names: HTML overlays pinned to the top edge of each zone.
+  const zoneLabels = zones.map((z) => {
+    const el = document.createElement("div");
+    el.className = "zone-label";
+    el.style.setProperty("--c", "#" + z.accent.toString(16).padStart(6, "0"));
+    el.textContent = z.label;
+    labelsEl.appendChild(el);
+    return { z, el };
+  });
+
   function updateLabels() {
     const w = container.clientWidth, h = container.clientHeight;
     const v = new THREE.Vector3();
     const showing = new Set();
-    for (const a of agents) {
-      const active = a.busy || a.isMaster || a === focusedAgent || a === hoverAgent;
-      if (!active) continue;
+
+    for (const { z, el } of zoneLabels) {
+      v.set(z.x0 + z.w / 2, 0.2, z.z0 - 0.5).project(camera);
+      const sx = (v.x * 0.5 + 0.5) * w, sy = (-v.y * 0.5 + 0.5) * h;
+      const hidden = v.z > 1 || sx < -120 || sx > w + 120 || sy < -30 || sy > h + 30 || camState.dist < 18;
+      el.style.display = hidden ? "none" : "";
+      if (!hidden) { el.style.left = sx + "px"; el.style.top = sy + "px"; }
+    }
+
+    // Agent labels: most important first; a label that would overlap one already
+    // placed is skipped, so clusters of busy agents stay legible.
+    const rank = (a) => (a === focusedAgent ? 0 : a === hoverAgent ? 1 : a.isMaster ? 2 : a.job?.reporter === a ? 3 : a.pose === "talk" ? 4 : 5);
+    const candidates = agents.filter((a) => a.busy || a.isMaster || a === focusedAgent || a === hoverAgent).sort((a, b) => rank(a) - rank(b));
+    const placed = [];
+    for (const a of candidates) {
       v.set(a.root.position.x, a.root.position.y + 2.15, a.root.position.z).project(camera);
       if (v.z > 1 || v.z < -1) continue;
       const sx = (v.x * 0.5 + 0.5) * w, sy = (-v.y * 0.5 + 0.5) * h;
       if (sx < -80 || sx > w + 80 || sy < -40 || sy > h + 40) continue;
-      const el = getLabel(a);
       const st = STATUS[a.pose] ?? STATUS.idle;
-      const speech = a.speechUntil > clock && a.speech ? `<div style="font-weight:500;color:#b9c6d8;margin-top:3px">${escapeHtml(a.speech)}</div>` : "";
+      const speaking = a.speechUntil > clock && a.speech;
+      const boxW = (a.spec.persona.length + st.label.length) * 8.2 + 34, boxH = speaking ? 52 : 28;
+      const rect = { x0: sx - boxW / 2 - 4, x1: sx + boxW / 2 + 4, y0: sy - boxH - 4, y1: sy + 4 };
+      if (rank(a) > 1 && placed.some((p) => rect.x0 < p.x1 && rect.x1 > p.x0 && rect.y0 < p.y1 && rect.y1 > p.y0)) continue;
+      placed.push(rect);
+      const el = getLabel(a);
+      const speech = speaking ? `<div class="say">${escapeHtml(a.speech)}</div>` : "";
       const html = `${escapeHtml(a.spec.persona)} <small>${st.label}</small>${speech}`;
       if (el.dataset.html !== html) { el.innerHTML = html; el.dataset.html = html; }
       el.style.left = sx + "px";
@@ -879,12 +1047,15 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
       return;
     }
     hoverAgent = pickAt(e);
-    el.style.cursor = hoverAgent ? "pointer" : "grab";
+    hoverPlaque = hoverAgent ? null : pickPlaque(e);
+    el.style.cursor = hoverAgent || hoverPlaque ? "pointer" : "grab";
   });
   el.addEventListener("pointerup", (e) => {
     if (drag && !drag.moved) {
       const rec = pickAt(e);
+      const plaque = rec ? null : pickPlaque(e);
       if (rec) focus(rec);
+      else if (plaque) onProfile?.(plaque.name, plaque.label);
       else if (focusedAgent) overview();
     }
     drag = null;
@@ -894,6 +1065,15 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     camState.dist = clamp(camState.dist * (1 + e.deltaY * 0.0012), 3.5, 200);
     anim = null;
   }, { passive: false });
+
+  let hoverPlaque = null;
+  function pickPlaque(e) {
+    const r = el.getBoundingClientRect();
+    ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+    ray.setFromCamera(ndc, camera);
+    const hit = ray.intersectObjects(plaques.map((p) => p.face), false)[0];
+    return hit ? hit.object.userData.plaque : null;
+  }
 
   function pickAt(e) {
     const r = el.getBoundingClientRect();
@@ -923,6 +1103,12 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     raf = requestAnimationFrame(frame);
     const dt = Math.min(0.05, (now - last) / 1000 || 0.016);
     last = now;
+    advance(dt);
+  }
+
+  // One simulation + render step. The live loop calls it with real frame times;
+  // the recorder calls it with a fixed dt so a GIF is identical on every run.
+  function advance(dt) {
     clock += dt;
     resize();
 
@@ -930,10 +1116,14 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     nextJobAt -= dt;
     if (nextJobAt <= 0 && jobs.length < MAX_JOBS) {
       startJob();
-      nextJobAt = 2.2 + Math.random() * 2.6;
+      nextJobAt = 2.2 + rand() * 2.6;
     }
+    for (let i = feedItems.length - 1; i >= 0; i--) if (feedItems[i].until < clock) { feedItems[i].el.remove(); feedItems.splice(i, 1); }
     for (const job of [...jobs]) updateJob(job, dt);
-    for (const a of agents) updateAgent(a, dt, clock);
+    for (const a of agents) {
+      updateAgent(a, dt, clock);
+      if (a.ring?.visible) a.ring.position.set(a.root.position.x, 0.07, a.root.position.z);
+    }
 
     // camera tween / follow
     if (anim) {
@@ -989,6 +1179,22 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     cancelAnimationFrame(raf);
   }
 
+  // Restrict work to an assembled team (names), or pass null / [] for everyone.
+  function setTeam(names) {
+    team = names && names.length ? new Set(names) : null;
+    for (const a of agents) {
+      a.ring ??= (() => {
+        const m = new THREE.Mesh(new THREE.RingGeometry(0.42, 0.52, 32), new THREE.MeshBasicMaterial({ color: 0xf5b93a, transparent: true, opacity: 0.9, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -4, polygonOffsetUnits: -4 }));
+        m.rotation.x = -Math.PI / 2;
+        m.visible = false;
+        scene.add(m);
+        return m;
+      })();
+      a.ring.visible = !!team?.has(a.spec.name);
+    }
+  }
+  setTeam(initialTeam); // before the priming jobs below, so even the first assignments respect the team
+
   // Prime the board so the office is not empty on first view.
   for (let i = 0; i < 2; i++) startJob();
 
@@ -1011,6 +1217,11 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     },
     stats: () => ({ total: agents.length, zones: zones.length, jobs: jobs.length }),
     resize,
+    // Restrict work to an assembled team (names), or pass null / [] for everyone.
+    setTeam,
+    // Deterministic stepping for the recorder (see scripts/record-office.mjs).
+    step: advance,
+    handles: () => ({ agents, jobs, masterRec, zones, plan, camState, plaques, tweenTo, THREE }),
   };
 }
 

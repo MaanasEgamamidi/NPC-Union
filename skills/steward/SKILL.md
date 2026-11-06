@@ -15,7 +15,8 @@ The request. Pass it on unchanged.
 
 1. Spawn the subagent `npc-union:leadership:shop-steward` (or `shop-steward` when installed by script) with the full request and any files the user named.
 2. Return the Steward's reply unchanged.
-3. For a whole session with the Steward, tell the user: `claude --agent npc-union:leadership:shop-steward`.
+3. If a team is active (`node ${CLAUDE_PLUGIN_ROOT}/scripts/team.mjs show` lists members), tell the Steward in the request so it uses only those agents and asks before using anyone else.
+4. For a whole session with the Steward, tell the user: `claude --agent npc-union:leadership:shop-steward`.
 
 ## Output
 

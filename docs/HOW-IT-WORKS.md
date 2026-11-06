@@ -31,6 +31,7 @@ The plugin scans `agents/` recursively, and subfolders become part of the ID: `a
 | `/npc-union:talk <agent>` | Talk to one specialist directly, in character |
 | `/npc-union:route` | Ask which agents should handle something, without running them |
 | `/npc-union:build-pipeline <idea>` | Get a written run order from [PIPELINE.md](PIPELINE.md) for a specific game |
+| `/npc-union:team set a,b,c` | Assemble a team. The Steward then uses only those agents and asks before using anyone else |
 
 ## Routing
 
@@ -39,6 +40,17 @@ The plugin scans `agents/` recursively, and subfolders become part of the ID: `a
 3. If it crosses departments, the Steward asks the relevant division lead for a plan, or has the lead run its specialists and report back.
 4. Knowledge agents (genre, art style, domain) join as reviewers whenever a project names a genre, a style, or a real-world subject.
 5. For whole projects, the Steward follows the phases and gates in [PIPELINE.md](PIPELINE.md).
+
+## Teams
+
+You do not have to run all of the union on every job. Assemble a team, either in the Assemble Team tab of the 3D site (`office3d/`) or with `/npc-union:team set a,b,c`, and the Steward works from that short list.
+
+- The team is stored in your project at `.npc-union/team.json`. With no file, every agent is available.
+- With a team active, the Steward routes only to team members, and briefs them directly. It goes through a division lead only when the lead is on the team.
+- If the work needs someone outside the team, the Steward stops, names the agent and the reason, and asks you. A yes covers that agent for that task only.
+- Subagents cannot ask you questions. Every brief carries the team list and the rule "do not spawn anyone outside it; report NEED <agent> instead", so a lead hands the question back to the Steward.
+- `node scripts/team.mjs check <agent>` answers `in-team`, `no-team` or `outside-team`, so the rule is checked by a script, not by memory.
+- Starter teams live in `catalog/teams.json` (`node scripts/team.mjs presets`).
 
 ## Runtimes
 

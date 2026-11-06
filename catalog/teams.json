@@ -1,0 +1,59 @@
+{
+  "_format": "Starter teams for the Assemble Team tab and `scripts/team.mjs preset <id>`. Every member must be an agent name from catalog/agents.json (tests/team.test.mjs checks this).",
+  "presets": [
+    {
+      "id": "solo-dev-starter",
+      "label": "Solo dev starter",
+      "blurb": "Five specialists for one person with an idea and a weekend.",
+      "members": ["game-designer", "gameplay-programmer", "prototyper", "qa-tester", "producer"]
+    },
+    {
+      "id": "pixel-platformer",
+      "label": "Pixel-art platformer",
+      "blurb": "Tight controls, hand-placed levels, chiptune audio, built in Godot.",
+      "members": ["game-designer", "level-designer", "platformer-expert", "pixel-art-stylist", "sprite-artist", "animator", "chiptune-synthesist", "sfx-designer", "gameplay-programmer", "godot-specialist", "qa-tester"]
+    },
+    {
+      "id": "multiplayer-shooter",
+      "label": "Multiplayer shooter",
+      "blurb": "Netcode, backend, matchmaking and anti-cheat around a core shooter loop.",
+      "members": ["game-designer", "shooter-expert", "level-designer", "netcode-architect", "multiplayer-backend-engineer", "anti-cheat-engineer", "matchmaking-engineer", "gameplay-programmer", "performance-engineer", "sfx-designer", "qa-lead"]
+    },
+    {
+      "id": "narrative-rpg",
+      "label": "Narrative RPG",
+      "blurb": "World, quests, dialogue and score for a story-first game.",
+      "members": ["narrative-director", "dialogue-writer", "lore-keeper", "quest-designer", "rpg-expert", "character-designer", "world-builder", "npc-designer", "composer", "localization-lead"]
+    },
+    {
+      "id": "nasa-space-apps",
+      "label": "NASA Space Apps hackathon",
+      "blurb": "Real mission data turned into a playable, explainable prototype.",
+      "members": ["space-apps-specialist", "nasa-data-specialist", "space-science-expert", "orbital-mechanics-expert", "game-designer", "web-engine-specialist", "ux-designer", "prototyper", "education-expert", "producer"]
+    },
+    {
+      "id": "ai-npcs",
+      "label": "AI-powered NPCs",
+      "blurb": "LLM characters with memory, guardrails and a cost ceiling.",
+      "members": ["llm-npc-engineer", "ai-integration-architect", "prompt-engineer", "rag-engineer", "ai-cost-safety-engineer", "game-ai-engineer", "npc-designer", "game-security-engineer"]
+    },
+    {
+      "id": "art-pipeline",
+      "label": "Art pipeline",
+      "blurb": "From moodboard to in-engine assets with one art bible.",
+      "members": ["art-director", "moodboard-curator", "concept-artist", "sprite-artist", "texture-artist", "layer-compositor", "vfx-artist", "technical-artist"]
+    },
+    {
+      "id": "asset-hunt",
+      "label": "Asset shopping trip",
+      "blurb": "Find free and paid assets across the stores, then clear the licences.",
+      "members": ["itch-scout", "open-asset-scout", "godot-asset-scout", "unity-store-scout", "audio-asset-scout", "asset-license-auditor"]
+    },
+    {
+      "id": "launch-week",
+      "label": "Launch week",
+      "blurb": "Store page, patch notes, legal, community and a clean release build.",
+      "members": ["release-manager", "store-page-marketer", "community-manager", "qa-lead", "game-legal-advisor", "analytics-engineer", "logo-designer", "title-screen-designer", "producer"]
+    }
+  ]
+}
