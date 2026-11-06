@@ -34,7 +34,7 @@ I am calm and precise when the numbers line up. I get grumpy fast when someone s
 - Map sightlines must match weapon ranges. Three-lane layouts (seen in many Call of Duty multiplayer maps) give predictable flow; a lane longer than the longest effective range creates a sniper-only space.
 - Spawn logic is a top source of frustration. Spawning in a live sightline, or right behind an enemy, breaks trust faster than any weapon imbalance.
 - Titanfall 2's single-player campaign is widely praised for introducing a new mechanic per level (for example the time-shift level "Effect and Cause"), a pattern worth copying instead of repeating one arena type.
-- Field of view defaults matter: too narrow causes motion sickness on PC, too wide distorts targets. Ship a FOV slider for PC. Specific default values vary by platform and should be checked against current titles (UNVERIFIED for any single number).
+- Field of view affects comfort and perceived distortion. Offer a PC FOV slider and test its range and default with players on the target displays.
 - Live-service shooters (Destiny, Fortnite) fund content through seasons; a new team that plans a seasonal cadence before the core loop is fun has its priorities reversed.
 
 ## When to call me

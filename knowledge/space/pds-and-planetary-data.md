@@ -2,19 +2,19 @@
 title: NASA Planetary Data System (PDS), Solar System Treks, and DEMs for game terrain
 tags: [space, pds, planetary-data, dem, heightmap, terrain, mars, moon]
 sources:
-  - https://pds.nasa.gov/
-  - https://pds.nasa.gov/services/search/
-  - https://pds.mcp.nasa.gov/api/search/1/products
-  - https://trek.nasa.gov/
-  - https://trek.nasa.gov/tiles/apidoc/
-  - https://docs.unity3d.com/2019.4/Documentation/Manual/terrain-OtherSettings.html
-  - https://naif.jpl.nasa.gov/
+  - "https://pds.nasa.gov/"
+  - "https://pds.nasa.gov/services/search/"
+  - "https://pds.mcp.nasa.gov/api/search/1/products"
+  - "https://trek.nasa.gov/"
+  - "https://trek.nasa.gov/tiles/apidoc/"
+  - "https://docs.unity3d.com/2019.4/Documentation/Manual/terrain-OtherSettings.html"
+  - "https://naif.jpl.nasa.gov/"
 last_verified: 2026-11-05
 ---
 
 # NASA Planetary Data System and game-ready planetary data
 
-Research for this file was cut short by a deadline. Items marked UNVERIFIED were not loaded this session and must be checked before an agent quotes them.
+Open the linked sources and product labels before quoting details or using data.
 
 ## PDS nodes (links taken from the pds.nasa.gov home page, 2026-11-05)
 
@@ -28,20 +28,19 @@ Research for this file was cut short by a deadline. Items marked UNVERIFIED were
 | Ring-Moon Systems | https://pds-rings.seti.org/ | rings and satellites |
 | Small Bodies | https://pds-smallbodies.astro.umd.edu/ (also pdssbn.astro.umd.edu, sbn.psi.edu) | asteroids, comets, dust (Dawn, OSIRIS-REx, New Horizons KEM links) |
 
-The node descriptions in the right column are generic; read each node site for what it holds (UNVERIFIED in detail).
+The node descriptions in the right column are starting points; read each node site for its current holdings.
 
 ## Searching PDS
 
-- Keyword search page: https://pds.nasa.gov/services/search/. It points to a new interface at https://pds.mcp.nasa.gov/portal/search (UNVERIFIED, not loaded) and lists a "Search API (beta)" for programmatic PDS4 search.
+- Start at the [PDS search page](https://pds.nasa.gov/services/search/) and follow its current links to the search interface and API.
 - Search API, tested 2026-11-05: `GET https://pds.mcp.nasa.gov/api/search/1/products?q=<query>&limit=N` with `Accept: application/json`. A query `lid eq "urn:nasa:pds:lro_lola_rdr"` returned `"hits":1`. The response has `summary` (hits, properties) and per-product fields such as `lid`, `lidvid`, `ops:Data_File_Info.ops:file_ref`, `ops:Harvest_Info.ops:node_name`.
-- Pitfall seen: `q=title like "LOLA"` returned 156,204 hits, so a loose `like` filter did not narrow results the way you'd expect. Prefer exact `lid eq` queries or check the API docs (UNVERIFIED) for the query grammar.
+- Pitfall seen: `q=title like "LOLA"` returned 156,204 hits, so a loose `like` filter did not narrow results the way you'd expect. Check the current API documentation for query grammar and test filters against known products.
 - Only PDS4 products are indexed by the Search API (per the search page). Older PDS3 data sets are reached through the node sites.
 
-## PDS4 vs PDS3 (general knowledge, UNVERIFIED this session)
+## PDS4 vs PDS3
 
-- PDS4: XML labels validated against schemas; products identified by LID/LIDVID URNs (`urn:nasa:pds:<bundle>:<collection>:<product>`), as seen in the API result above.
-- PDS3: older ODL "keyword = value" labels, attached to the file or in a detached `.LBL`; many `.IMG` files are raw binary described by the label.
-- Read the label first: it gives byte order, sample type (e.g. signed 16-bit), scaling factor/offset, and map projection. Check the applicable label and [PDS standards](https://pds.nasa.gov/datastandards/about/); not every label necessarily contains every field.
+- Consult the [PDS standards](https://pds.nasa.gov/datastandards/about/) for the applicable PDS3 or PDS4 label format and identifiers.
+- Read each product label for its data layout, byte order, sample type, scaling and projection where provided; confirm missing fields in the product documentation.
 
 ## Solar System Treks (verified on trek.nasa.gov, page last updated January 22, 2026)
 
@@ -49,12 +48,9 @@ The node descriptions in the right column are generic; read each node site for w
 - Tools: elevation profiles from a DEM with CSV export, sun-angle calculator, distance tool, VR flyovers, 3D printing (whole-globe print files for Bennu, Ceres, Ryugu, Vesta).
 - The [WMTS Layer Services](https://trek.nasa.gov/tiles/apidoc/) page links body-specific services. The [Vesta service](https://trek.nasa.gov/tiles/apidoc/trekAPI.html?body=vesta) documents OGC RESTful WMTS requests and tile URL templates; check the relevant body and layer before streaming tiles.
 
-## Game-ready products to check (all UNVERIFIED this session)
+## Game-ready products to check
 
-- Moon: LRO LOLA global DEMs (Geosciences node, LRO page linked from PDS home); LRO WAC mosaics.
-- Mars: MGS MOLA global DEM (MEGDR); HiRISE DTMs for small areas at high resolution; CTX DEMs.
-- USGS Astrogeology search (https://astrogeology.usgs.gov/search returned HTTP 200; contents not read) hosts many of these as GeoTIFF/ISIS cube downloads. "Map-a-Planet" is UNVERIFIED.
-- Formats you will meet: PDS3 `.IMG` + `.LBL`, PDS4 `.xml` + binary, GeoTIFF, ISIS `.cub` (cube), JPEG2000 for large HiRISE products.
+- Search the [PDS nodes](https://pds.nasa.gov/) and [USGS Astrogeology](https://astrogeology.usgs.gov/search) for lunar and Martian elevation models and imagery. Inspect each product page for coverage, resolution, format and download options.
 
 ## DEM to game heightmap
 
@@ -68,7 +64,7 @@ The node descriptions in the right column are generic; read each node site for w
 
 ## Licensing
 
-[NASA's media guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/) say NASA images and specified media generally are not subject to US copyright; this does not establish the rights of every dataset. Product-specific rights remain UNVERIFIED. Some PDS holdings come from partner agencies (e.g. ESA, JAXA), and the PDS search page notes results include data from other agencies. Check each product's label, node page and `knowledge/space/nasa-media-and-usage.md` before shipping, and credit the mission and instrument team.
+[NASA's media guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/) say NASA images and specified media generally are not subject to US copyright; this does not establish the rights of every dataset. Product-specific rights must be checked. Some PDS holdings come from partner agencies (e.g. ESA, JAXA), and the PDS search page notes results include data from other agencies. Check each product's label, node page and `knowledge/space/nasa-media-and-usage.md` before shipping, and credit the mission and instrument team.
 
 ## Pitfalls
 
@@ -89,4 +85,4 @@ The node descriptions in the right column are generic; read each node site for w
 1. Reload pds.nasa.gov and confirm node URLs.
 2. Re-run the Search API `lid eq` query above.
 3. Open trek.nasa.gov, follow "WMTS Layer Services", and record real layer endpoints into this file.
-4. Clear every UNVERIFIED line by loading its source.
+4. Open the product documentation and verify its metadata and rights before use.

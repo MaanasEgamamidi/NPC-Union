@@ -2,22 +2,22 @@
 title: JPL Solar System Dynamics and CNEOS APIs (Horizons, SBDB, CAD, Sentry, Fireball, Scout, NHATS)
 tags: [space, jpl, horizons, asteroids, ephemeris, cneos, spice]
 sources:
-  - https://ssd-api.jpl.nasa.gov/
-  - https://ssd-api.jpl.nasa.gov/doc/horizons.html
-  - https://ssd-api.jpl.nasa.gov/doc/sbdb.html
-  - https://ssd-api.jpl.nasa.gov/doc/sbdb_query.html
-  - https://ssd-api.jpl.nasa.gov/doc/sbdb_filter.html
-  - https://ssd-api.jpl.nasa.gov/doc/cad.html
-  - https://ssd-api.jpl.nasa.gov/doc/sentry.html
-  - https://ssd-api.jpl.nasa.gov/doc/fireball.html
-  - https://ssd-api.jpl.nasa.gov/doc/scout.html
-  - https://ssd-api.jpl.nasa.gov/doc/nhats.html
-  - https://ssd.jpl.nasa.gov/horizons/manual.html
-  - https://ssd.jpl.nasa.gov/planets/eph_export.html
-  - https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/
-  - https://ssd.jpl.nasa.gov/planets/approx_pos.html
-  - https://naif.jpl.nasa.gov/naif/toolkit.html
-  - https://cneos.jpl.nasa.gov/
+  - "https://ssd-api.jpl.nasa.gov/"
+  - "https://ssd-api.jpl.nasa.gov/doc/horizons.html"
+  - "https://ssd-api.jpl.nasa.gov/doc/sbdb.html"
+  - "https://ssd-api.jpl.nasa.gov/doc/sbdb_query.html"
+  - "https://ssd-api.jpl.nasa.gov/doc/sbdb_filter.html"
+  - "https://ssd-api.jpl.nasa.gov/doc/cad.html"
+  - "https://ssd-api.jpl.nasa.gov/doc/sentry.html"
+  - "https://ssd-api.jpl.nasa.gov/doc/fireball.html"
+  - "https://ssd-api.jpl.nasa.gov/doc/scout.html"
+  - "https://ssd-api.jpl.nasa.gov/doc/nhats.html"
+  - "https://ssd.jpl.nasa.gov/horizons/manual.html"
+  - "https://ssd.jpl.nasa.gov/planets/eph_export.html"
+  - "https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/"
+  - "https://ssd.jpl.nasa.gov/planets/approx_pos.html"
+  - "https://naif.jpl.nasa.gov/naif/toolkit.html"
+  - "https://cneos.jpl.nasa.gov/"
 last_verified: 2026-11-05
 ---
 
@@ -81,7 +81,7 @@ CNEOS human pages: https://cneos.jpl.nasa.gov/ (with `/ca/`, `/sentry/`, `/fireb
 
 ## Precision path: DE ephemerides and SPICE
 
-- DE440 (ICRF 3.0, 1549 to 2650) and DE441 (-13200 to 17191, no lunar core damping) are Chebyshev files in TDB; planets agree within 1 m (export page). Kernels at https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/ (`de440s.bsp` 31.2 MB, `de440.bsp` 114.3 MB, `de441.bsp` 3.08 GB). A `de442.bsp` dated 2026-07-15 is listed there but the export page does not describe it yet (UNVERIFIED what changed).
+- DE440 (ICRF 3.0, 1549 to 2650) and DE441 (-13200 to 17191, no lunar core damping) are Chebyshev files in TDB; planets agree within 1 m (export page). Kernels at https://ssd.jpl.nasa.gov/ftp/eph/planets/bsp/ (`de440s.bsp` 31.2 MB, `de440.bsp` 114.3 MB, `de441.bsp` 3.08 GB). For newer kernels, check JPL's current ephemeris documentation and release notes for coverage and changes before choosing a file.
 - NAIF SPICE Toolkit (https://naif.jpl.nasa.gov/naif/toolkit.html): current version N0067, released 2022-01-03; C, Fortran, IDL, MATLAB, JNI alpha; third-party Python wrappers use the C toolkit. Use it to read kernels offline for many times, frames, and spacecraft geometry.
 - For games that need "roughly right" planets, JPL's Approximate Positions page gives Keplerian elements and rates for 1800-2050 and 3000 BC-3000 AD.
 

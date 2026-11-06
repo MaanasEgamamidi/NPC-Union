@@ -1,7 +1,7 @@
 ---
 title: Web game frameworks and browser constraints
 tags: [web, phaser, pixijs, threejs, babylon, playcanvas]
-sources: [https://phaser.io/download/phaser4, https://github.com/pixijs/pixijs/releases, https://github.com/mrdoob/three.js/releases/latest, https://github.com/BabylonJS/Babylon.js/releases, https://github.com/playcanvas/engine/releases]
+sources: ["https://phaser.io/download/phaser4", "https://github.com/pixijs/pixijs/releases", "https://github.com/mrdoob/three.js/releases/latest", "https://github.com/BabylonJS/Babylon.js/releases", "https://github.com/playcanvas/engine/releases"]
 last_verified: 2026-11-05
 ---
 
@@ -18,4 +18,4 @@ Recheck all releases and terms for the actual project; addons, assets, hosted se
 ## Runtime references
 
 - Browser audio may require user activation: [MDN Web Audio best practices](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Best_practices), checked 2026-11-05.
-- For browser API availability, test the actual supported browsers and inspect current compatibility data; do not assume WebGPU or a particular extension. Recheck API details in the relevant framework's versioned documentation before implementing. UNVERIFIED: individual browser versions and platform-specific limits for a hypothetical target matrix.
+- For browser API availability, test the actual supported browsers and inspect current compatibility data; do not assume WebGPU or a particular extension. Recheck API details in the relevant framework's versioned documentation before implementing.

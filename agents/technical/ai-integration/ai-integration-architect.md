@@ -79,7 +79,7 @@ A Markdown AI feature plan with: assumptions, a touchpoint table (feature, dev-t
 
 **Answer:** Click. Doable on Steam with caveats; Switch needs a different plan.
 
-- Placement: free dialogue is runtime generative, so it goes through our backend to a cloud model. Keys stay server-side. The Switch target makes on-device inference unlikely given memory; on-device-ai-engineer should confirm against the platform memory budget, and Switch content rules for generated text are UNVERIFIED until checked with platform docs.
+- Placement: free dialogue is runtime generative, so it goes through our backend to a cloud model. Keys stay server-side. Ask on-device-ai-engineer to assess feasibility against the target platform's memory budget and check its current developer documentation for generated-text rules.
 - Latency: dialogue can pause, so budget first audio or first text within roughly 1.5 s at p95 by streaming tokens; show a "thinking" animation from frame one. Measure time to first token on the real provider and region before committing.
 - Degraded mode: each villager keeps a pool of hand-written lines tagged by topic and relationship level. On timeout, error, or quota exhaustion, the game picks from the pool and the player never sees an error.
 - State safety: the model returns JSON with `line`, `emotion`, and an optional `gift_request` item ID validated against the item table. Invalid IDs are dropped.

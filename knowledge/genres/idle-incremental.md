@@ -27,11 +27,11 @@ Earn a currency, buy generators or upgrades that earn more, hit milestones that 
 | AdVenture Capitalist | 2014 | Hyper Hippo Games | Quantity milestones, managers as automation, angel investor prestige | https://en.wikipedia.org/wiki/AdVenture_Capitalist |
 | A Dark Room | 2013 | Michael Townsend (Doublespeak Games) | Text-based slow reveal, genre shift into exploration | https://en.wikipedia.org/wiki/A_Dark_Room |
 | Universal Paperclips | 2017 | Frank Lantz | Phase changes that replace the interface and the goal | https://en.wikipedia.org/wiki/Universal_Paperclips |
-| Antimatter Dimensions | 2016 | Hevipelle | Stacked prestige layers, automation of earlier layers, big-number handling | https://en.wikipedia.org/wiki/Antimatter_Dimensions |
+| Antimatter Dimensions | 2016 (original); 2022 (Steam release) | Hevipelle | Stacked prestige layers, automation of earlier layers, big-number handling | https://store.steampowered.com/app/1399720/Antimatter_Dimensions/ |
 | Egg, Inc. | 2016 | Auxbrain | Mobile idle pacing, optional ad boosts, prestige via soul eggs | https://en.wikipedia.org/wiki/Egg,_Inc. |
 | Melvor Idle | 2021 (Steam release date) | Games by Malcs | Idle timers across many RPG skills, offline progress cap | https://store.steampowered.com/app/1267910/Melvor_Idle/ |
 
-Note: the Wikipedia links above returned HTTP 200 on 2026-11-05; page contents were not read line by line. The Antimatter Dimensions original release year remains UNVERIFIED; its [Steam listing](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/) gives a 2022 Steam release and lists Hevipelle among its developers. The Melvor Idle Steam listing confirms the 2021 release date and Games by Malcs as developer.
+The Antimatter Dimensions [Steam listing](https://store.steampowered.com/app/1399720/Antimatter_Dimensions/) identifies its 2016 web origin and 2022 Steam release. Check other original release dates and developer credits against publisher sources before quoting them.
 
 ## Common failures
 
@@ -57,4 +57,4 @@ Note: the Wikipedia links above returned HTTP 200 on 2026-11-05; page contents w
 - Wikipedia, Incremental game: https://en.wikipedia.org/wiki/Incremental_game
 - Wikipedia pages for each game in the table above.
 - break_infinity.js (big-number library used in incremental games): https://github.com/Patashu/break_infinity.js
-- Cookie Clicker Wiki, heavenly chips and prestige formula: https://cookieclicker.fandom.com/wiki/Heavenly_Chips UNVERIFIED
+- For prestige formulas, inspect the current game and verify values before quoting them.

@@ -39,7 +39,7 @@ Outer loops sit on top: rounds and buy phases (Counter-Strike, Valorant), match 
 | Doom | 2016 | id Software | Push-forward combat: Glory Kills give health, chainsaw gives ammo; fast movement; arena encounters | https://en.wikipedia.org/wiki/Doom_(2016_video_game) |
 | Titanfall 2 | 2016 | Respawn Entertainment | Wall-running and pilot movement, Titan mode switch, campaign that adds a new mechanic per level | https://en.wikipedia.org/wiki/Titanfall_2 |
 | Fortnite | 2017 | Epic Games | Third-person shooting plus building, seasons and battle pass, cross-platform live service | https://en.wikipedia.org/wiki/Fortnite |
-| Valorant | 2020 | Riot Games | Tactical round-based shooting combined with hero abilities, 128-tick servers, anti-cheat stance | https://en.wikipedia.org/wiki/Valorant |
+| Valorant | 2020 | Riot Games | Tactical round-based shooting combined with hero abilities and anti-cheat design | https://en.wikipedia.org/wiki/Valorant |
 
 Link check: all eight Wikipedia links returned HTTP 200 on 2026-11-05. Game details in the table were written from knowledge and not re-read against each page.
 
@@ -67,6 +67,6 @@ Link check: all eight Wikipedia links returned HTTP 200 on 2026-11-05. Game deta
 ## Sources
 
 - Wikipedia pages listed in the table, all fetched (HTTP 200) on 2026-11-05.
-- Jaime Griesemer's "30 seconds of fun" framing for Halo combat is widely cited in design writing; primary source not checked (UNVERIFIED).
-- Valorant 128-tick servers: stated by Riot at launch; check current Riot sources before citing (UNVERIFIED).
+- For a Halo combat design reference, locate the original developer talk and check its wording before attributing a quotation.
+- Check Riot's current technical announcements before citing Valorant server tick rates.
 - Patch-dependent numbers (weapon damage, fire rates, aim assist values) change often. Check publisher patch notes before citing.

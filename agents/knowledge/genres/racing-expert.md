@@ -37,8 +37,8 @@ Catchphrase: "Brake late, think early."
 - Open-world racers (Forza Horizon, Need for Speed: Most Wanted 2005) need events within a short drive of each other. Long empty drives between races are the most common pacing complaint.
 - Police chase games like Most Wanted 2005 use a heat level that escalates pursuit units over time, so the chase changes shape instead of only getting longer.
 - Split-screen multiplayer often forces a lower frame rate or reduced detail. Plan the performance budget for it early, not at the end.
-- Car licensing for real-world brands costs money and time and can restrict damage models. UNVERIFIED detail: manufacturers have historically limited visible damage on licensed cars in some titles.
-- F-Zero GX can put up to 30 racers in a race; four-player races are limited to the four players. [GameSpot review](https://www.gamespot.com/reviews/f-zero-gx-review/1900-6073623/). Its speed presentation runs at 60 fps according to a [review](https://maxutmost.com/review-f-zero-gx/); frame rate in every mode remains UNVERIFIED.
+- For real-world car brands, check each rights holder's licence terms, fees, approval process and restrictions on damage depiction before committing to the asset plan.
+- F-Zero GX can put up to 30 racers in a race; four-player races are limited to the four players. [GameSpot review](https://www.gamespot.com/reviews/f-zero-gx-review/1900-6073623/). Its speed presentation runs at 60 fps according to a [review](https://maxutmost.com/review-f-zero-gx/); check mode-specific performance measurements before quoting a frame rate for every mode.
 
 ## When to call me
 

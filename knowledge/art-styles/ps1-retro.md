@@ -1,7 +1,7 @@
 ---
 title: PS1-era retro 3D
 tags: [art-style, ps1, retro-3d, low-poly, dithering, affine-mapping, vertex-snapping]
-sources: [https://en.wikipedia.org/wiki/PlayStation_technical_specifications, https://en.wikipedia.org/wiki/Texture_mapping, https://en.wikipedia.org/wiki/Ordered_dithering, https://en.wikipedia.org/wiki/Silent_Hill_(video_game), https://en.wikipedia.org/wiki/Metal_Gear_Solid_(1998_video_game), https://en.wikipedia.org/wiki/Resident_Evil_2, https://en.wikipedia.org/wiki/Spyro_the_Dragon_(video_game), https://en.wikipedia.org/wiki/Crash_Bandicoot_(video_game), https://en.wikipedia.org/wiki/Signalis, https://en.wikipedia.org/wiki/Dusk_(video_game), https://en.wikipedia.org/wiki/Haunted_PS1]
+sources: ["https://en.wikipedia.org/wiki/PlayStation_technical_specifications", "https://en.wikipedia.org/wiki/Texture_mapping", "https://en.wikipedia.org/wiki/Ordered_dithering", "https://en.wikipedia.org/wiki/Silent_Hill_(video_game)", "https://en.wikipedia.org/wiki/Metal_Gear_Solid_(1998_video_game)", "https://en.wikipedia.org/wiki/Resident_Evil_2", "https://en.wikipedia.org/wiki/Spyro_the_Dragon_(video_game)", "https://en.wikipedia.org/wiki/Crash_Bandicoot_(video_game)", "https://en.wikipedia.org/wiki/Signalis", "https://en.wikipedia.org/wiki/Dusk_(video_game)", "https://en.wikipedia.org/wiki/Haunted_PS1"]
 last_verified: 2026-11-05
 ---
 
@@ -46,13 +46,13 @@ Modern homages:
 Source: https://en.wikipedia.org/wiki/PlayStation_technical_specifications (checked 2026-11-05).
 
 - Resolution: progressive 256x224 to 640x240; interlaced up to 640x512. 320x240 is the usual 3D target (common practice, not a hardware rule).
-- Color: up to 24-bit output; texture modes are 4-bit CLUT, 8-bit CLUT, 15-bit direct, and 24-bit. The GPU supports dithering and fog per the spec page. That 3D rendering was typically 15-bit with dither while 24-bit was used mainly for FMV and stills is common knowledge (UNVERIFIED on the spec page).
+- Color: up to 24-bit output; texture modes are 4-bit CLUT, 8-bit CLUT, 15-bit direct, and 24-bit. The GPU supports dithering and fog per the spec page. For a particular game, inspect captures or developer documentation before attributing a specific colour mode.
 - Texture and sprite size: 256x256 maximum per the spec page; textures are addressed from 256x256 texture pages in VRAM.
-- VRAM: 1 MB shared between framebuffer and textures; main RAM 2 MB (UNVERIFIED in this check; confirm on the spec page).
+- Memory: consult a reliable hardware reference for the original system's RAM and VRAM before setting a historical budget.
 - No perspective-correct texture mapping: UVs are interpolated affinely in screen space, so textures warp on large or angled polygons. See https://en.wikipedia.org/wiki/Texture_mapping (affine texture mapping section).
-- No z-buffer: primitives are sorted with ordering tables by approximate depth, causing popping and sorting errors at intersections (UNVERIFIED on the spec page; widely documented in homebrew material).
-- No sub-pixel vertex precision and fixed-point geometry math on the GTE coprocessor: vertices snap to whole pixels and jitter as they move (UNVERIFIED on the spec page).
-- No mipmapping and no bilinear texture filtering: nearest sampling only (UNVERIFIED on the spec page).
+- For depth sorting artifacts, study reference footage and consult hardware documentation before reproducing a particular game's sorting method.
+- To reproduce vertex jitter, experiment with screen-space vertex snapping and compare it against reference footage.
+- For a pixelated texture look, test nearest sampling and compare it against reference footage; consult hardware documentation before claiming a hardware restriction.
 - Lighting: flat or Gouraud (per-vertex) shading; no per-pixel lighting.
 
 ## Image-prompt recipe

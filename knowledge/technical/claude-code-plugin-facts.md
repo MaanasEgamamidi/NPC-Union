@@ -27,11 +27,11 @@ Facts used when building plugins, subagents, skills, and hooks for NPC Union. Ea
 
 ## UNVERIFIED (check before relying on these)
 
-- Hook event names and event-specific JSON input schemas are documented at https://code.claude.com/docs/en/hooks. Command hooks receive the JSON on stdin.
-- `${CLAUDE_PLUGIN_ROOT}` resolves in hook `command` and `args` and in MCP server fields; the supported fields depend on transport. See https://code.claude.com/docs/en/plugins-reference.
-- Exit 2 can block an action, but its effect and where stderr appears depend on the event; consult the per-event table at https://code.claude.com/docs/en/hooks.
-- UNVERIFIED: the token cost of a 200-character description, and so how many agents fit under the 15,000-token warning. Measure rather than estimate.
-- UNVERIFIED: precedence when a plugin agent and a project or user agent share a name.
+- Check https://code.claude.com/docs/en/hooks for the event names, input schemas and command hook input for the installed version.
+- Check https://code.claude.com/docs/en/plugins-reference for `${CLAUDE_PLUGIN_ROOT}` expansion in hook and MCP configuration fields for the chosen transport.
+- Consult the event-specific table at https://code.claude.com/docs/en/hooks for exit-code behaviour and stderr handling before depending on a hook.
+- Measure actual description token usage and check the current warning threshold in Claude Code; do not infer capacity from character count.
+- Check current documentation and test which agent resolves when plugin, project and user agents share a name.
 
 ## How to re-check
 

@@ -2,11 +2,11 @@
 title: Roblox platform limits, DevEx and creator policy pointers
 tags: [roblox, luau, datastore, devex, monetization, engine]
 sources:
-  - https://create.roblox.com/docs/cloud-services/data-stores/error-codes-and-limits
-  - https://create.roblox.com/docs/production/monetization/developer-exchange
-  - https://create.roblox.com/docs/cloud-services/memory-stores
-  - https://create.roblox.com/docs/luau/type-checking
-  - https://create.roblox.com/docs/production/promotion/content-maturity
+  - "https://create.roblox.com/docs/cloud-services/data-stores/error-codes-and-limits"
+  - "https://create.roblox.com/docs/production/monetization/developer-exchange"
+  - "https://create.roblox.com/docs/cloud-services/memory-stores"
+  - "https://create.roblox.com/docs/luau/type-checking"
+  - "https://create.roblox.com/docs/production/promotion/content-maturity"
 last_verified: 2026-11-05
 ---
 
@@ -14,7 +14,7 @@ last_verified: 2026-11-05
 
 ## Luau
 
-Roblox Studio ships Luau continuously; there is no project-pinned version. Type checking modes are set per script with `--!strict`, `--!nonstrict`, `--!nocheck` (https://create.roblox.com/docs/luau/type-checking, page reachable 2026-11-05). Status of the new type solver rollout: UNVERIFIED. Language reference: https://luau.org/.
+Roblox Studio ships Luau continuously; there is no project-pinned version. Type checking modes are set per script with `--!strict`, `--!nonstrict`, `--!nocheck` (https://create.roblox.com/docs/luau/type-checking, page reachable 2026-11-05). Check the current type solver rollout in Roblox's release notes before advising. Language reference: https://luau.org/.
 
 ## DataStoreService limits (fetched 2026-11-05)
 
@@ -36,7 +36,7 @@ Source: https://create.roblox.com/docs/cloud-services/data-stores/error-codes-an
 | Storage | 500 MB + 1 MB x lifetime user count (latest versions, compressed) |
 | Budget tuning | `SetRateLimitForRequestType()` per the page |
 
-A same-key write cooldown is not stated on this page: UNVERIFIED (older docs cited 6 seconds).
+Check the current DataStore limits documentation for same-key write restrictions before setting retry timing.
 
 ## MemoryStoreService
 
@@ -56,12 +56,12 @@ Source: https://create.roblox.com/docs/production/monetization/developer-exchang
 
 ## Policy pointers
 
-- Maturity and compliance questionnaire, content labels: https://create.roblox.com/docs/production/promotion/content-maturity (reachable; current label names and rules UNVERIFIED, read before advising).
-- Monetization products: Developer Products (repeatable, `MarketplaceService.ProcessReceipt`), Passes (one-time, `UserOwnsGamePassAsync`). Fee percentages: UNVERIFIED.
+- Maturity and compliance questionnaire, content labels: https://create.roblox.com/docs/production/promotion/content-maturity (read current label names and rules before advising).
+- Monetization products: Developer Products (repeatable, `MarketplaceService.ProcessReceipt`), Passes (one-time, `UserOwnsGamePassAsync`). Check current fees in Roblox creator documentation before estimating proceeds.
 
 ## Tooling
 
-- Rojo (file sync to Studio): https://rojo.space/docs/ (reachable). Wally (package manager): https://wally.run/ (reachable). Versions: UNVERIFIED.
+- Rojo (file sync to Studio): https://rojo.space/docs/ (reachable). Wally (package manager): https://wally.run/ (reachable). Check each tool's release page for the version used by the project.
 
 ## How to re-check
 

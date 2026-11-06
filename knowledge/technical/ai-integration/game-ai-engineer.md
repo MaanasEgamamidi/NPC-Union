@@ -7,7 +7,7 @@ last_verified: 2026-11-05
 
 # Game AI engineer: sources and facts
 
-Facts here can go stale or were recalled from talks. Each item has a source and either `last_verified: 2026-11-05` (found by web search in this session) or `UNVERIFIED` (not checked here; check before quoting).
+Facts here can go stale. Open the linked source and check the relevant passage before quoting it.
 
 ## Decision models
 
@@ -16,14 +16,13 @@ Facts here can go stale or were recalled from talks. Each item has a source and 
   - Paper copy: https://pages.cs.wisc.edu/~dyer/cs540/handouts/gdc2006_orkin_jeff_fear.pdf (last_verified: 2026-11-05)
 - **Utility AI and response curves.** Kevin Dill and Dave Mark, [Improving AI Decision Modeling Through Utility Theory](https://gdcvault.com/play/1012747/Improving-AI-Decision-Modeling-Through), GDC 2010. Mark also presented his [infinite-axis utility system](https://www.gdcvault.com/play/1018040/Architecture-Tricks-Managing-Behaviors-in) at GDC 2013.
 - **Game AI Pro books.** [Free chapters](https://www.gameaipro.com/) cover a range of game AI techniques.
-- **HTN in Killzone 2.** Guerrilla describes its multiplayer bot planner in [Killzone 2 Multiplayer Bots](https://www.guerrilla-games.com/read/killzone-2-multiplayer-bots). **Horizon Zero Dawn HTN:** UNVERIFIED.
+- **HTN in Killzone 2.** Guerrilla describes its multiplayer bot planner in [Killzone 2 Multiplayer Bots](https://www.guerrilla-games.com/read/killzone-2-multiplayer-bots). Check developer talks before attributing a decision model to another game.
 - **Halo 2 behavior trees.** Damian Isla, [Handling Complexity in the Halo 2 AI](https://www.gamedeveloper.com/programming/gdc-2005-proceeding-handling-complexity-in-the-i-halo-2-i-ai), GDC 2005; the implementation is a behavior DAG with shared subtrees.
 
 ## Pacing and director AI
 
 - **Left 4 Dead AI Director.** Michael Booth (Valve), "The AI Systems of Left 4 Dead", AIIDE 2009 keynote. Goals include generating dramatic pacing. The build-up / sustained peak / peak fade / relax cycle is from these slides.
   - Mirror of slides: https://www.readkong.com/page/the-ai-systems-of-left-4-dead-michael-booth-valve-9664541 (last_verified: 2026-11-05, existence of the mirror only)
-  - Valve-hosted PDF: exact URL not confirmed. UNVERIFIED.
   - Related: Booth, "Replayable Cooperative Game Design: Left 4 Dead", GDC 2009: https://cdn.fastly.steamstatic.com/apps/valve/2009/GDC2009_ReplayableCooperativeGameDesign_Left4Dead.pdf (last_verified: 2026-11-05)
 
 ## Pathfinding and movement

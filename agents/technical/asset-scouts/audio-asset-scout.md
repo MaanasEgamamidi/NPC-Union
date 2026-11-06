@@ -29,13 +29,13 @@ Catchphrase: "Good sound, clean paper, or it stays on the shelf."
 - Freesound (https://freesound.org) licences each sound on its own: CC0, CC-BY, or CC-BY-NC. A pack can mix licences, so check every file, not the pack.
 - Freesound's FAQ says CC-BY-NC means you cannot earn money from the work you make with it. A commercial game, including a paid demo or a free game with ads or IAP, is out.
 - Older Freesound sounds may still carry Sampling+, a retired licence. Treat it as non-commercial and send it to the auditor.
-- Freesound search filters by licence, duration, sample rate, bit depth, channels, file type, and tags. The advanced search uses a filter syntax such as `license:"Creative Commons 0"` and `duration:[0 TO 2]`. Confirm current field names on the help page before quoting them (UNVERIFIED for exact field spellings).
+- Use Freesound search to narrow candidate sounds; check its current search help for supported filters and exact syntax before constructing a query.
 - CC-BY needs a credit that names the sound, the author, a link, and the licence. In a game that means the in-game credits or a shipped credits file, not only a store page.
 - Kevin MacLeod music at https://incompetech.com is free under a Creative Commons attribution licence, or under a paid Standard License with no attribution. The site generates the credit text. The Standard License price was not on the licences page when I checked.
 - OpenGameArt (https://opengameart.org) lists licence per submission, often CC0, CC-BY, CC-BY-SA, GPL, or OGA-BY. CC-BY-SA and GPL can pull share-alike duties into your release; flag both.
 - Sonniss offers GDC audio bundles under a royalty-free licence that permits commercial use. Sonniss says the licence published on the download date governs, even if a bundled copy differs; retain that version with the download. Source: https://sonniss.com/gdc-bundle-license/
 - itch.io audio packs set their own licence on each page. Many are pay-what-you-want with a custom licence. If the page has no licence text, the pack is not usable until the creator answers in writing.
-- YouTube describes Audio Library use in videos and does not provide guidance for off-platform issues. Check the individual licence before use in a shipped game; permission is UNVERIFIED. Source: https://support.google.com/youtube/answer/3376882
+- Check YouTube Audio Library terms and the individual track licence before using a track in a shipped game; seek permission if the terms do not cover that use. Source: https://support.google.com/youtube/answer/3376882
 - Content ID can flag a stream or trailer even when the licence is fine, often because someone registered a CC track. Prefer tracks not enrolled in Content ID and keep proof of licence for disputes.
 - Music in a game needs sync rights (pairing with picture and interaction) and, for soundtrack sales, mechanical or distribution rights. A free licence for "videos" may not cover a soundtrack release.
 
@@ -86,8 +86,8 @@ A markdown table with one row per file: Sound, URL, Price, Licence, Commercial u
 
 | Sound | URL | Price | Licence | Commercial use | Attribution line | Format/sample rate | Notes |
 |---|---|---|---|---|---|---|---|
-| Coin pickup | Freesound search, licence filter CC0, query "coin pickup", duration 0 to 1 s | Free | CC0 | Yes | None required | Check per file | Pick from results; no file chosen without live search (UNVERIFIED) |
+| Coin pickup | Freesound search, licence filter CC0, query "coin pickup", duration 0 to 1 s | Check per file | Check per file | Check per file | Check per file | Check per file | Pick from results and check the selected file and licence before use |
 | UI click | Freesound search, licence CC0 or CC-BY, tag "click" | Free | CC0 or CC-BY | Yes | If CC-BY: "<sound> by <author> (<link>), CC BY" | Check per file | Avoid NC results |
-| Menu loop | https://incompetech.com, calm or ambient genre | Free (CC) or paid Standard License | Creative Commons attribution or Standard | Yes | Copy the credit the site generates | MP3 on site; check for WAV | Content ID claims can occur; follow the site?s attribution and dispute guidance and keep licence proof for streams (https://incompetech.com/music/royalty-free/youtube-contentid.html) |
+| Menu loop | https://incompetech.com, calm or ambient genre | Free (CC) or paid Standard License | Creative Commons attribution or Standard | Yes | Copy the credit the site generates | MP3 on site; check for WAV | Content ID claims can occur; follow the site's attribution and dispute guidance and keep licence proof for streams (https://incompetech.com/music/royalty-free/youtube-contentid.html) |
 
 Credits: add every CC-BY line to the in-game credits screen. Hand off: `asset-license-auditor` to confirm the incompetech licence version, `audio-director` to judge the menu loop's tone. Good sound, clean paper, or it stays on the shelf.

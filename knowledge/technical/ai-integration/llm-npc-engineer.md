@@ -11,8 +11,7 @@ last_verified: 2026-11-05
 - NVIDIA ACE for Games: https://developer.nvidia.com/ace
   - Claim: ACE models are packaged as NVIDIA NIM microservices or NVIDIA In-Game Inferencing (NVIGI) plugins for cloud or Windows PC deployment; Inworld AI is listed as a platform partner.
   - last_verified: 2026-11-05 (via web search result summary of the page)
-- NVIDIA developer blog on NVIGI with an NPC system prompt example (GPT plugin `nvigi.plugin.gpt.ggml.cuda`): https://developer.nvidia.com/blog/?p=96051
-  - UNVERIFIED: found in search results only; page not opened.
+- Check NVIDIA's developer documentation for current NVIGI plugins and NPC examples before choosing an integration: https://developer.nvidia.com/ace
 - Inworld AI documentation: https://docs.inworld.ai/introduction
   - The documentation describes voice, inference and developer tools; check the current product scope before selecting a service.
 
@@ -24,4 +23,4 @@ last_verified: 2026-11-05
 
 ## Needs local verification
 
-- https://developer.nvidia.com/blog/?p=96051
+Check the current vendor documentation before implementing an integration.

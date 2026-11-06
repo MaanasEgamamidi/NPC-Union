@@ -6,14 +6,14 @@ owner: itch-scout
 
 # itch.io game assets
 
-Facts below were checked with a WebFetch of https://itch.io/game-assets on 2026-11-05 unless marked UNVERIFIED.
+Facts below were checked with a WebFetch of https://itch.io/game-assets on 2026-11-05; re-check the listing before use.
 
 ## Licensing
 
 - itch.io has no single standard asset licence. Each creator writes their own terms on the asset page, in the description, a "License" section, or a text file inside the download. Quote the creator's words; never assume.
-- Common terms seen on pages include CC0, CC BY, and custom "use in commercial projects, do not resell" wording. UNVERIFIED as a frequency claim.
+- Check each asset's licence text for attribution, commercial use and redistribution terms.
 - The `tag-royalty-free` tag (https://itch.io/game-assets/tag-royalty-free) is set by the creator. It is not a licence and is not checked by itch.io.
-- Pay-what-you-want pages show a price of $0 with an optional payment. The licence still applies. UNVERIFIED for every page; read the buy button text.
+- Read the listing's purchase button and terms to determine the actual price and payment options; the licence still applies.
 
 ## Browse URLs (verified 2026-11-05)
 
@@ -52,8 +52,8 @@ Each tag is used as https://itch.io/game-assets/<tag>, for example https://itch.
 
 ## UNVERIFIED
 
-- Free-text search at https://itch.io/search?q=<terms> covers all itch content, not only assets. UNVERIFIED.
-- Download counts are not public on asset pages; ratings and rating counts are shown when the creator allows it. UNVERIFIED.
+- Check the search results and filters at https://itch.io/search before assuming their scope.
+- Inspect the individual asset page for available ratings and download information.
 
 ## How to re-check
 

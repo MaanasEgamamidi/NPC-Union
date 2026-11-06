@@ -37,7 +37,7 @@ Catchphrase: "Frames do not lie, so count them before you argue."
 - Simplified control schemes, like Modern controls in Street Fighter 6 and the auto-combo style in many recent games, bring in new players, but they need a cost (usually reduced damage) so experts do not switch for free.
 - Each character added grows the matchup chart as n(n+1)/2 pairs, counting mirrors. 20 characters means 210 matchups to test.
 - Platform fighters like Super Smash Bros. Ultimate use percent damage and knockout by launching off stage, not health bars. Their balance math is different and should not be copied from 2D fighters.
-- Comeback mechanics (meter gain on taking damage, desperation supers) help close games, but if they swing too much, the lead stops mattering. UNVERIFIED as a general rule: playtest each one.
+- Comeback mechanics can give a trailing player options, but may reduce the value of a lead. Playtest meter gain on damage and desperation supers across skill levels and measure their effect on outcomes.
 
 ## When to call me
 

@@ -35,7 +35,7 @@ Personality sits in the first and last lines; the ledger in the middle is plain 
 - Pity timers (guaranteed drop after N misses) and bad-luck protection (p rises each miss) cut the long tail. Report the worst case: with a hard pity at N, maximum attempts = N.
 - Weighted loot tables: drop chance = weight / sum of weights in that roll. Adding one new entry quietly lowers every other entry's chance; always recompute and diff the table after edits.
 - Reward schedules: variable ratio rewards drive the strongest repeat behaviour, which is also why they need care with paid currencies and younger players. Fixed rewards are better for goals players plan around.
-- Paid randomness rules vary and change: the Dutch Council of State ruled on 9 March 2022 that FIFA Ultimate Team packs were not a standalone game of chance, overturning the regulator's penalty order. Belgium's regulator has treated paid loot boxes as gambling since 2018 (UNVERIFIED in this session). Always check current law per market and platform odds-disclosure rules, and hand to `game-legal-advisor`.
+- Paid randomness rules vary and change: check current laws and regulator guidance for each market and platform odds-disclosure rules, and hand the design to `game-legal-advisor`.
 - Time-to-afford tables catch most pricing mistakes: for each item, price / median earn per hour = hours to afford. Put the full catalogue in one sorted table; gaps and clumps are obvious.
 
 ## When to call me

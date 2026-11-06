@@ -8,7 +8,7 @@ owner: unity-store-scout
 
 last_verified: 2026-11-05
 
-Facts below were checked by WebFetch on 2026-11-05 unless marked UNVERIFIED. Re-check anything older than 90 days before quoting it to a client.
+Facts below were checked by WebFetch on 2026-11-05; follow the explicit checks for fields that may have changed. Re-check anything older than 90 days before quoting it to a client.
 
 ## Sources
 
@@ -46,10 +46,10 @@ Facts below were checked by WebFetch on 2026-11-05 unless marked UNVERIFIED. Re-
 - Store front menu also lists: SDKs, Verified Solutions, Sale.
 - Search page facets seen: Price, Rating, Publisher, Release Date, plus sale facets "New release discount" and "On sale".
 - [Unity's Asset Store guide](https://docs.unity.com/en-us/engine/6000.3/manual/assets-and-media/asset-store/downloads/asset-packages-purchase) lists sorting by relevance, popularity, rating, publish or update date, name, and price.
-- Free assets: store front links "Top free assets" and "Top Free Assets". A dedicated free-only filter toggle: UNVERIFIED (Price facet may cover it).
-- Unity version filter and render pipeline (Built-in, URP, HDRP) filter: UNVERIFIED as search facets on 2026-11-05. Read compatibility from each asset page instead.
+- For free assets, inspect the current store search and price controls; confirm each asset's price on its page.
+- Check the current search page for Unity version and render pipeline filters; read compatibility on each asset page.
 
-## Asset page fields to read (UNVERIFIED layout, check per asset)
+## Asset page fields to read (check per asset)
 
 - Price, and sale price against list price when a sale is running.
 - Licence type (Standard Unity Asset Store EULA, or Restricted Asset terms) and whether it is an Extension Asset.

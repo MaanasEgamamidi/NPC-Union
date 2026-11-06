@@ -1,7 +1,7 @@
 ---
 title: QA tester version and policy notes
 tags: [qa, testing, certification, locale, save-load]
-sources: [https://partner.steamgames.com/doc/home, https://cldr.unicode.org/, https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.invariantculture]
+sources: ["https://partner.steamgames.com/doc/home", "https://cldr.unicode.org/", "https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.invariantculture"]
 last_verified: 2026-11-05
 ---
 
@@ -9,9 +9,9 @@ last_verified: 2026-11-05
 
 Facts here change with platform versions or policies. Check each against the source before relying on it.
 
-- Console certification (Xbox Requirements, Sony TRC, Nintendo lotcheck) includes rules on controller disconnect, suspend/resume and save data handling. Exact wording and numbering are under NDA. UNVERIFIED.
+- For console certification, check the current platform requirements for controller disconnect, suspend/resume and save data handling in the developer portal.
 - Steam Deck Verified criteria include default controller support and a controller-accessible way to enter text. Check the current [compatibility checklist](https://partner.steamgames.com/doc/steamhardware/compat).
-- Unity exposes `OnApplicationFocus` and `OnApplicationPause` for focus and suspend handling; behavior differs per platform and version. UNVERIFIED for the project's engine version.
+- For focus and suspend tests, check the documentation for `OnApplicationFocus` and `OnApplicationPause` in the project's Unity version and test each target platform.
 - .NET `ToUpper()` and `ToLower()` without a culture use the current culture, so tr-TR maps "i" to "İ". Use invariant culture or ordinal comparison for identifiers. [Microsoft documents current-culture casing and ordinal comparisons](https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper).
-- Number parsing with the current culture reads "1,5" as 1.5 in de-DE and fails or misreads in en-US. UNVERIFIED for each engine's default.
-- German and Finnish text expansion of 30 to 40 percent over English is an industry rule of thumb, not a standard. UNVERIFIED.
+- Test number parsing with representative decimal separators under each target locale and verify the engine's configured culture.
+- Measure localized text expansion using representative German, Finnish and other target-language strings in the actual UI.

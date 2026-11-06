@@ -1,7 +1,7 @@
 ---
 title: Store page specs and policies
 tags: [steam, itch-io, capsule-art, next-fest, store-page]
-sources: [https://partner.steamgames.com/doc/store/assets, https://partner.steamgames.com/doc/store/tags, https://itch.io/docs/creators/faq]
+sources: ["https://partner.steamgames.com/doc/store/assets", "https://partner.steamgames.com/doc/store/tags", "https://itch.io/docs/creators/faq"]
 last_verified: 2026-11-05
 ---
 
@@ -24,7 +24,7 @@ Check the linked official documentation again before use.
 
 - Base store capsules are limited to game artwork, name and official subtitle; review scores, awards and discount text are prohibited. Current update text can appear in a qualifying temporary artwork override. [Rules](https://partner.steamgames.com/doc/store/assets/rules).
 - The top 20 tags influence tag-page visibility and similarity recommendations; customer tags are mixed with developer-selected tags. [Steam Tags](https://partner.steamgames.com/doc/store/tags).
-- Short description character limit: 300. UNVERIFIED.
+- Check the short description limit in the current [Steamworks documentation](https://partner.steamgames.com/doc/store/page/description) and the store editor before finalizing copy.
 - Coming Soon page live at least two weeks before release. [Release options](https://partner.steamgames.com/doc/store/types).
 - Next Fest occurs three times a year (February, June, October); an eligible game may participate in one edition and must have a public playable demo by its start. [Next Fest](https://partner.steamgames.com/doc/marketing/upcoming_events/nextfest).
 

@@ -30,7 +30,7 @@ Gather resources, craft tools and shelter, survive a recurring threat (night, we
 | Minecraft | 2011 | Mojang | The first night as a deadline; a 20-minute day-night cycle; open-ended building with no required end goal | https://en.wikipedia.org/wiki/Minecraft |
 | Don't Starve | 2013 | Klei Entertainment | Lethal darkness that makes light a hard need; sanity meter that spawns visible threats; seasons as a long clock | https://en.wikipedia.org/wiki/Don%27t_Starve |
 | Subnautica | 2018 | Unknown Worlds Entertainment | Depth as the difficulty curve; blueprints unlocked by scanning fragments; vehicles as progression gates | https://en.wikipedia.org/wiki/Subnautica |
-| Valheim | 2021 (early access) | Iron Gate Studio | Boss drops that unlock the next tier; portal restrictions on metal (UNVERIFIED for current portal types and world settings); comfort and rested buffs that reward base building | https://en.wikipedia.org/wiki/Valheim |
+| Valheim | 2021 (early access) | Iron Gate Studio | Study progression, transport and base-building incentives; check the current game and official patch notes for specific mechanics and world settings | https://en.wikipedia.org/wiki/Valheim |
 | Terraria | 2011 | Re-Logic | 2D crafting depth; bosses as progression; hardmode world shift after the Wall of Flesh | https://en.wikipedia.org/wiki/Terraria |
 | The Long Dark | 2017 (full release) | Hinterland Studio | Competing needs (calories, warmth, fatigue, thirst) with little combat; weather as the main threat | https://en.wikipedia.org/wiki/The_Long_Dark |
 | Rust | 2018 (full release) | Facepunch Studios | Multiplayer raiding as the base's reason to exist; scheduled server wipes that reset the economy ([Facepunch wipe timer](https://wiki.facepunch.com/rust/Server-Wipe-Timer)) | https://en.wikipedia.org/wiki/Rust_(video_game) |
@@ -64,4 +64,4 @@ Gather resources, craft tools and shelter, survive a recurring threat (night, we
 - Terraria, Wikipedia: https://en.wikipedia.org/wiki/Terraria (link resolved 2026-11-05)
 - The Long Dark, Wikipedia: https://en.wikipedia.org/wiki/The_Long_Dark (link resolved 2026-11-05)
 - Rust, Wikipedia: https://en.wikipedia.org/wiki/Rust_(video_game) (link resolved 2026-11-05)
-- Game mechanics described above (day lengths, portal rules, wipe schedules) come from the designer's knowledge of the games and should be re-checked against official patch notes before quoting. UNVERIFIED
+- Check game mechanics described above against the games and official patch notes for the relevant version before quoting them.

@@ -17,14 +17,14 @@ last_verified: 2026-11-05
 - Godot version filter: 2.0, 2.1, 2.2, 3.0 to 3.6, 4.0 to 4.7, Unknown, Custom build.
 - Categories: 2D Tools, 3D Tools, Shaders, Materials, Tools, Scripts, Misc, Templates, Projects, Demos.
 - Support level checkboxes on the web page: Featured, Community, Testing.
-- "Official" support level: not shown as a web filter on 2026-11-05. UNVERIFIED.
+- Check the live library's support-level filters before constructing a search.
 - Sort options: Updated, Name, License, with a reverse toggle.
 
 ## Godot Asset Store
 
 - URL: https://store.godotengine.org
 - Live on 2026-11-05, labelled Beta. Shows publisher, price and licence per asset.
-- All prices on the front page on 2026-11-05 were FREE. Paid listings and checkout: UNVERIFIED.
+- Check each listing's current price and checkout terms before recommending it.
 
 ## Licence pitfalls
 

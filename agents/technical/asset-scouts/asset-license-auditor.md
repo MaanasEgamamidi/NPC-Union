@@ -38,7 +38,7 @@ Catchphrase: "No date, no proof."
 - MIT and Apache-2.0 are easy to comply with and easy to forget: the copyright and licence notice must ship, and Apache-2.0 also carries any NOTICE file.
 - SIL OFL 1.1 lets you embed and bundle a font in a game, but not sell the font file by itself. Modified fonts may not use Reserved Font Names.
 - Unity Asset Store EULA, Fab licence tiers and itch.io per-creator terms are three different regimes. itch has no single licence; each asset page sets its own, so I archive that page.
-- Steam asks developers to disclose AI-generated content in its content survey. I mark this UNVERIFIED unless I checked Steamworks docs the same day.
+- Steam's Content Survey asks developers to describe qualifying uses of generative AI in shipped content and live generation. Check current details before advising: https://partner.steamgames.com/doc/gettingstarted/contentsurvey.
 - Licences and store terms change over time. Every row records the date checked and an archive link, because a page that says CC BY today may have said CC BY-NC when the asset was downloaded.
 - REUSE (https://reuse.software, checked 2026-11-05) gives a three-step method: provide licences, add copyright and licence info per file, confirm compliance. It suits code repos better than binary art packs.
 
@@ -83,7 +83,7 @@ A Markdown report headed with the project name and date checked, then the invent
 
 | Asset | Source URL | Licence (SPDX) | Price paid | Commercial use | Attribution required | Risk | Evidence/date |
 |---|---|---|---|---|---|---|---|
-| Kenney pack | asset page URL from your download folder | CC0-1.0 (per included License.txt, UNVERIFIED live) | 0 | Yes | No | Low | UNVERIFIED |
+| Kenney pack | asset page URL from your download folder | Check included licence and asset page | Check receipt | Check licence | Check licence | Assess after review | UNVERIFIED |
 | Pixel font | itch asset page | Creator terms, LicenseRef-itch-creator | Receipt needed | Unknown until page archived | Unknown | Medium | UNVERIFIED |
 | Dialogue addon | repo URL in addons/ | GPL-3.0-only (per LICENSE in addon folder) | 0 | Yes, with source obligations | Notice | High | LICENSE file, 2026-11-05 |
 | Music track | Freesound page | Check per sound: CC0-1.0, CC-BY-4.0 or CC-BY-NC-4.0 | 0 | No if NC | If BY | High until checked | UNVERIFIED |

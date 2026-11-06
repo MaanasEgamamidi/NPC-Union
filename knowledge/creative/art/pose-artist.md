@@ -1,7 +1,7 @@
 ---
 title: Pose artist reference
 tags: [pose, line-of-action, controlnet, openpose, hands, foreshortening, on-model]
-sources: [https://github.com/lllyasviel/ControlNet, https://github.com/CMU-Perceptual-Computing-Lab/openpose, https://huggingface.co/docs/diffusers/using-diffusers/controlnet]
+sources: ["https://github.com/lllyasviel/ControlNet", "https://github.com/CMU-Perceptual-Computing-Lab/openpose", "https://huggingface.co/docs/diffusers/using-diffusers/controlnet"]
 last_verified: 2026-11-05
 ---
 
@@ -23,14 +23,12 @@ Sources (check the model and version before quoting settings):
 | Twinning | Compare left and right limbs | Mirror-matched angles | Offset one joint or one beat |
 | Camera height | Note eye line | Changes across a set | Fix one height per sheet |
 
-## Keypoint formats (UNVERIFIED, check the model card)
+## Keypoint formats (check the model card)
 
 | Format | Body points | Notes |
 |---|---|---|
-| COCO-style 18 | 18 | Common input for OpenPose ControlNets |
-| OpenPose BODY_25 | 25 | Adds mid-hip and foot points |
-| Hand | 21 per hand | Wrist plus 4 per finger |
-| Face | 70 | Optional, helps head angle |
+| COCO and BODY_25 | Check the selected model | Compare body-point ordering and available feet in the [OpenPose output documentation](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/02_output.md) and the control model card |
+| Hand and face | Check the selected model | Confirm point counts and ordering in the model card before preparing input |
 
 Side colours encode left and right. A mirrored skeleton moves the prop to the wrong hand.
 

@@ -14,7 +14,7 @@ Facts about free and open art and 3D asset sites. Each entry says whether it was
 - Licence: CC0 (public domain). Source: https://kenney.nl/support. Verified 2026-11-05.
 - Commercial use allowed. Attribution not required; if crediting, use "Kenney".
 - Do not use the Kenney logo; it is reserved for the studio's own projects.
-- Price and donation options per pack: UNVERIFIED.
+- Check each pack's page for its current price and donation options.
 - last_verified: 2026-11-05
 
 ## Poly Haven
@@ -37,7 +37,7 @@ Facts about free and open art and 3D asset sites. Each entry says whether it was
 - Site: https://opengameart.org
 - Licences are set per entry; many entries are multi-licensed (for example CC-BY and GPL together). Read the licence list on each entry page.
 - Entries can contain files by several authors; check the entry text and any credits file.
-- "Art search" filters by art type and licence. Exact filter options: UNVERIFIED (https://opengameart.org/art-search-advanced returned HTTP 403 to an automated fetch on 2026-11-05).
+- Check the current options on [advanced art search](https://opengameart.org/art-search-advanced); the page returned HTTP 403 to an automated fetch on 2026-11-05.
 - last_verified: 2026-11-05 (partial)
 
 ## Quaternius
@@ -53,4 +53,4 @@ Facts about free and open art and 3D asset sites. Each entry says whether it was
 - Any NC licence: no commercial use. https://creativecommons.org/licenses/by-nc/4.0/
 - GPL on art: unclear how it applies to game assets; route to `asset-license-auditor`.
 - Attribution guidance: https://wiki.creativecommons.org/wiki/Best_practices_for_attribution
-- Licence URLs above taken from standard Creative Commons paths; not fetched on 2026-11-05 (UNVERIFIED).
+- Open the applicable licence and read its terms before relying on this summary.

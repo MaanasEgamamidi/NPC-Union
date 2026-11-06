@@ -38,7 +38,7 @@ Version-sensitive facts for netcode decisions. Re-check each link before quoting
 
 ## Reference articles on prediction, interpolation, lag compensation
 
-- Valve, Source Multiplayer Networking (interpolation delay, input prediction, lag compensation). Source: https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking UNVERIFIED (not fetched this session)
+- Consult Valve's [Source Multiplayer Networking](https://developer.valvesoftware.com/wiki/Source_Multiplayer_Networking) when researching interpolation, prediction and lag compensation; check the page and its game-specific scope before applying it.
 - Glenn Fiedler, Gaffer On Games articles on snapshot interpolation and state synchronisation. Source: https://gafferongames.com/
 
 ## How to check

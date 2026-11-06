@@ -155,4 +155,4 @@ func _on_died() -> void:
 
 Bat reuses Health and LootDropper with a different `bat_stats.tres`. Max HP is only read, so the shared resource is safe; if you ever write to it at runtime, `duplicate()` it in `_ready()` first. `LootDropper.drop()` should `add_child` the loot to the level via `get_tree().current_scene`, not to the enemy, or the loot vanishes with `queue_free()`. No autoload needed yet; add an `Events` bus only when the HUD needs kill counts from many enemies.
 
-Risks: confirm your installed editor is 4.7.x (Help > About); the 4.7 migration notes in the knowledge file are UNVERIFIED for today and should be checked if you come from 4.6. Composition gives you a goblin that can also be a crate: same Health, no Enemy class. Call down, signal up.
+Risks: confirm your installed editor is 4.7.x (Help > About); check the official migration guide and release notes for your installed version before migrating. Composition gives you a goblin that can also be a crate: same Health, no Enemy class. Call down, signal up.

@@ -2,33 +2,33 @@
 title: Cybersecurity as game subject matter
 tags: [cybersecurity, hacking-games, mitre-attack, ctf, soc, incident-response, cve, cwe, owasp]
 sources:
-  - https://attack.mitre.org/
-  - https://attack.mitre.org/tactics/enterprise/
-  - https://attack.mitre.org/resources/versions/
-  - https://attack.mitre.org/resources/updates/updates-october-2026/
-  - https://attack.mitre.org/resources/legal-and-branding/terms-of-use/
-  - https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/README.md
-  - https://en.wikipedia.org/wiki/Cyber_kill_chain
-  - https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html
-  - https://csrc.nist.gov/pubs/sp/800/61/r3/final
-  - https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf
-  - https://pages.nist.gov/800-63-4/sp800-63b.html
-  - https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2021-44228
-  - https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
-  - https://raw.githubusercontent.com/cisagov/kev-data/develop/README.md
-  - https://cwe.mitre.org/about/termsofuse.html
-  - https://owasp.org/Top10/2025/
-  - https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
-  - https://www.first.org/cvss/v4-0/
-  - https://raw.githubusercontent.com/SigmaHQ/sigma/master/README.md
-  - https://picoctf.org/
-  - https://overthewire.org/wargames/
-  - https://overthewire.org/rules/
-  - https://www.rfc-editor.org/rfc/rfc5737
-  - https://www.rfc-editor.org/rfc/rfc3849
-  - https://www.rfc-editor.org/rfc/rfc2606
-  - https://www.law.cornell.edu/uscode/text/18/1030
-  - https://www.legislation.gov.uk/ukpga/1990/18/contents
+  - "https://attack.mitre.org/"
+  - "https://attack.mitre.org/tactics/enterprise/"
+  - "https://attack.mitre.org/resources/versions/"
+  - "https://attack.mitre.org/resources/updates/updates-october-2026/"
+  - "https://attack.mitre.org/resources/legal-and-branding/terms-of-use/"
+  - "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/README.md"
+  - "https://en.wikipedia.org/wiki/Cyber_kill_chain"
+  - "https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html"
+  - "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+  - "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf"
+  - "https://pages.nist.gov/800-63-4/sp800-63b.html"
+  - "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2021-44228"
+  - "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+  - "https://raw.githubusercontent.com/cisagov/kev-data/develop/README.md"
+  - "https://cwe.mitre.org/about/termsofuse.html"
+  - "https://owasp.org/Top10/2025/"
+  - "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html"
+  - "https://www.first.org/cvss/v4-0/"
+  - "https://raw.githubusercontent.com/SigmaHQ/sigma/master/README.md"
+  - "https://picoctf.org/"
+  - "https://overthewire.org/wargames/"
+  - "https://overthewire.org/rules/"
+  - "https://www.rfc-editor.org/rfc/rfc5737"
+  - "https://www.rfc-editor.org/rfc/rfc3849"
+  - "https://www.rfc-editor.org/rfc/rfc2606"
+  - "https://www.law.cornell.edu/uscode/text/18/1030"
+  - "https://www.legislation.gov.uk/ukpga/1990/18/contents"
 last_verified: 2026-11-05
 ---
 
@@ -41,7 +41,7 @@ For making hacking, defense, and security-training content believable and safe. 
 | Name | Publisher | URL | Access | Licence / terms | Format | Cadence | Limit or pitfall |
 |---|---|---|---|---|---|---|---|
 | ATT&CK STIX data | MITRE | https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/README.md | Download from GitHub, no key | ATT&CK Terms of Use: non-exclusive, royalty-free licence for research, development, commercial use; reproduce MITRE's copyright designation and licence | STIX 2.1 JSON collections (enterprise, mobile, ics) | Two releases a year (v17.1 Apr 2025, v18.1 Oct 2025, v19.2 Apr 2026, v20.0 13 Oct 2026) | Tactic names change between versions (TA0005 is "Stealth" in v20; older data says "Defense Evasion"). Pin a versioned file such as enterprise-attack-<ver>.json |
-| NVD CVE API 2.0 | NIST | https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2021-44228 | REST, works without a key; key raises rate limit | US government data; check NVD terms (UNVERIFIED: developer pages render client-side and did not load) | JSON | Continuous | Rate limits reported as 5 requests / 30 s without key, 50 with key, key in `apiKey` header (UNVERIFIED, seen only in search snippet of nvd.nist.gov/developers/start-here). Cache locally |
+| NVD CVE API 2.0 | NIST | https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2021-44228 | REST; check current authentication requirements | Check NVD terms before use | JSON | Check NVD for current update cadence | Check the [NVD developer guidance](https://nvd.nist.gov/developers/start-here) for current rate limits and key handling; cache locally |
 | Known Exploited Vulnerabilities (KEV) | CISA | https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json | Download, no key | Creative Commons 0 1.0 (per cisagov/kev-data README); no use of CISA logo or DHS seal | JSON and CSV (GitHub mirror cisagov/kev-data) | Updated when entries change, typically US weekdays | Catalog 2026.11.04 had 1,768 entries. Only lists exploited CVEs, not all CVEs. The cisa.gov HTML page returned 403 to curl; the JSON feed loaded |
 | CWE | MITRE (sponsored by CISA) | https://cwe.mitre.org/about/termsofuse.html | Download / browse | CWE Terms of Use: free for research, development, commercial use; reproduce MITRE copyright | XML/CSV downloads | Periodic | Weakness classes, not specific bugs; good for puzzle themes |
 | OWASP Top 10:2025 | OWASP | https://owasp.org/Top10/2025/ | Web | Creative Commons Attribution 3.0 Unported | HTML | Every few years | Awareness list, not a standard. 2025 list: A01 Broken Access Control, A02 Security Misconfiguration, A03 Software Supply Chain Failures, A04 Cryptographic Failures, A05 Injection, A06 Insecure Design, A07 Authentication Failures, A08 Software or Data Integrity Failures, A09 Security Logging and Alerting Failures, A10 Mishandling of Exceptional Conditions |

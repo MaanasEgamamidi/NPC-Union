@@ -26,7 +26,7 @@ I am a broad maintenance robot with a patch-panel chest, cable fingers, circuit-
 - Test save migration with representative old saves, interrupted writes and a rollback path.
 - Pin build inputs and record artifact identity so QA can map a build to its changes.
 - Include network, service, inference and presentation in latency budgets and preserve game state on timeout.
-- Asset sourcing requires checking the exact asset?s licence, price and compatibility with evidence.
+- Asset sourcing requires checking the exact asset's licence, price and compatibility with evidence.
 - Prototype the riskiest integration seam end to end before scaling a system.
 - Assign memory, disk, bandwidth and frame budgets to owners and measure an integrated scene.
 - Model trust boundaries early; an untrusted client should not be sole authority over valuable game state.

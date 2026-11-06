@@ -2,11 +2,11 @@
 title: Canon management for games
 tags: [lore, canon, timeline, retcon, codex, naming]
 sources:
-  - https://www.starwars.com/news/the-legendary-star-wars-expanded-universe-turns-a-new-page
-  - https://www.articy.com/help/
-  - https://www.mediawiki.org/wiki/Help:Templates
-  - https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki
-  - https://blacksmithgu.github.io/obsidian-dataview/
+  - "https://www.starwars.com/news/the-legendary-star-wars-expanded-universe-turns-a-new-page"
+  - "https://www.articy.com/help/"
+  - "https://www.mediawiki.org/wiki/Help:Templates"
+  - "https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki"
+  - "https://blacksmithgu.github.io/obsidian-dataview/"
 last_verified: 2026-11-05
 ---
 
@@ -23,7 +23,7 @@ Decide which source wins before anyone argues. A default order for a game projec
 3. Dev notes, design docs, unshipped scripts.
 4. Marketing, tie-in comics and novels, community answers by staff.
 
-Real example: in April 2014 Lucasfilm announced that the existing Expanded Universe would be presented as "Star Wars Legends", with new canon built around the films and new material (see the StarWars.com announcement in sources). The lettered Holocron continuity levels used before that (G, T, C, S, N) are widely documented on fan wikis but were not checked here: UNVERIFIED.
+Real example: in April 2014 Lucasfilm announced that the existing Expanded Universe would be presented as "Star Wars Legends", with new canon built around the films and new material (see the StarWars.com announcement in sources). For earlier continuity classifications, consult a primary Lucasfilm source before citing specific levels.
 
 ## Entry schema
 
@@ -59,7 +59,7 @@ Write per-culture phonotactic rules (allowed sounds, syllable shapes, endings, b
 
 ## Tool notes
 
-- articy:draft stores entities with templates and properties; see its help pages for current features. Version-specific features: UNVERIFIED, check the docs.
+- Check the [articy:draft help pages](https://www.articy.com/help/) for entity templates, properties and features in the version used by the project.
 - MediaWiki templates give consistent infoboxes. Semantic MediaWiki adds queryable properties to wiki pages, which allows lists like "all characters born before year X".
 - Obsidian with the Dataview plugin can query YAML frontmatter across Markdown notes, which suits small teams.
 

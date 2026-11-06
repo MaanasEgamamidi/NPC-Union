@@ -2,15 +2,15 @@
 title: Game mix standards and audio direction reference
 tags: [audio, mixing, loudness, middleware, fmod, wwise, naming]
 sources:
-  - https://www.itu.int/rec/R-REC-BS.1770
-  - https://www.itu.int/dms_pub/itu-r/opb/rep/R-REP-BS.2434-2018-PDF-E.pdf
-  - https://www.audiogang.org/wp-content/uploads/2015/04/IESD-Mix-Ref-Levels-v03.02.pdf
-  - https://audiomediainternational.com/mobile-loudness-an-adaptive-approach/
-  - https://tech.ebu.ch/publications/r128
-  - https://www.fmod.com/docs
-  - https://www.audiokinetic.com/en/library/
-  - https://docs.unity3d.com/Manual/AudioMixer.html
-  - https://docs.godotengine.org/en/stable/tutorials/audio/audio_buses.html
+  - "https://www.itu.int/rec/R-REC-BS.1770"
+  - "https://www.itu.int/dms_pub/itu-r/opb/rep/R-REP-BS.2434-2018-PDF-E.pdf"
+  - "https://www.audiogang.org/wp-content/uploads/2015/04/IESD-Mix-Ref-Levels-v03.02.pdf"
+  - "https://audiomediainternational.com/mobile-loudness-an-adaptive-approach/"
+  - "https://tech.ebu.ch/publications/r128"
+  - "https://www.fmod.com/docs"
+  - "https://www.audiokinetic.com/en/library/"
+  - "https://docs.unity3d.com/Manual/AudioMixer.html"
+  - "https://docs.godotengine.org/en/stable/tutorials/audio/audio_buses.html"
 last_verified: 2026-11-05
 ---
 
@@ -22,8 +22,8 @@ Used by `audio-director`. Numbers marked as heuristics are working practice, not
 
 - Measurement: ITU-R BS.1770 defines the LKFS/LUFS measurement and true-peak metering. Use a compliant meter.
 - Home console and PC: about -24 LUFS integrated, ±2 LU. Portable game devices: about -18 LUFS, ±2 LU. An ITU-R report (BS.2434, 2018) lists these as typical video game loudness values; the IESD mix reference document hosted on the Game Audio Network Guild site also recommends -24 LUFS for console titles. Search check on 2026-11-05 found these via search results; the PDFs themselves were not opened in full.
-- These figures trace back to Sony's ASWG-R001 recommendation (published 2013 per Audio Media International). The ASWG-R001 document itself was not read. UNVERIFIED: its exact true-peak figure and measurement-duration rule.
-- True peak: -1 dBTP is a common ceiling (EBU R 128 sets -1 dBTP for broadcast). For games, treat -1 dBTP as a working default and confirm with platform guidelines. UNVERIFIED for any specific platform.
+- Consult the original ASWG-R001 recommendation before attributing specific true-peak or measurement-duration guidance to it.
+- For a game mix, choose a true-peak ceiling and confirm it against the current target platform guidelines; measure with a compliant meter.
 - Platform holders publish their own requirements under NDA. Registered developers must check them directly.
 - Measure over long, representative gameplay captures, not over a single cue or the menu. (Heuristic.)
 
@@ -61,8 +61,8 @@ Used by `audio-director`. Numbers marked as heuristics are working practice, not
 ## Middleware
 
 - FMOD Studio and Wwise both offer event-based authoring, parameters, snapshots or states, randomisation, and live profiling. Wwise includes an HDR audio feature.
-- Both have free or reduced tiers for small budgets. Terms change: always check https://www.fmod.com/licensing and Audiokinetic's pricing page before advising. UNVERIFIED: current thresholds and prices.
-- Godot integrations for FMOD and Wwise are third-party or community maintained. UNVERIFIED: current status for any given Godot 4 minor version.
+- Check current FMOD and Wwise licensing terms, thresholds and prices before advising: https://www.fmod.com/licensing and the Audiokinetic pricing page.
+- Check the maintainers' documentation and release notes for the FMOD or Wwise Godot integration and the project's exact Godot version before choosing it.
 
 ## Needs local verification
 

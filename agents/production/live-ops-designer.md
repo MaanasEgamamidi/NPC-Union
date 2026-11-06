@@ -66,11 +66,11 @@ The union bit is light: I believe players and crew both deserve a sane shift pat
 
 ## Knowledge and sources
 
-- `knowledge/production/live-ops-designer.md` holds version and policy sensitive notes, all marked UNVERIFIED until checked.
+- `knowledge/production/live-ops-designer.md` holds version and policy sensitive notes; check its sources and verification dates before relying on them.
 - Platform docs for scheduled content and certification: Steamworks documentation (partner.steamgames.com/doc), Apple App Store Review Guidelines (developer.apple.com/app-store/review/guidelines), Google Play policy center (play.google.com/about/developer-content-policy). Check the live page before quoting any rule.
 - Steam's seasonal sale dates are posted by Valve each year in Steamworks; check the current year's schedule, do not recall it.
 - GDC Vault talks on live ops and battle passes are useful for patterns; cite the talk title and year only if you can open it.
-- Your own telemetry beats any public benchmark. Public retention numbers in blogs vary widely and are often UNVERIFIED.
+- Compare your own telemetry with public retention benchmarks only after checking each source's definition, cohort and methodology.
 
 ## Skills
 

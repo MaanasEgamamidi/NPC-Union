@@ -2,23 +2,23 @@
 title: Dialogue and barks, working reference
 tags: [dialogue, barks, subtitles, ink, yarn-spinner, localization, voice]
 sources:
-  - https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md
-  - https://docs.yarnspinner.dev/
-  - https://partnerhelp.netflixstudios.com/hc/en-us/articles/217350977-English-USA-Timed-Text-Style-Guide
-  - https://gameaccessibilityguidelines.com/
-  - https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/104
+  - "https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md"
+  - "https://docs.yarnspinner.dev/"
+  - "https://partnerhelp.netflixstudios.com/hc/en-us/articles/217350977-English-USA-Timed-Text-Style-Guide"
+  - "https://gameaccessibilityguidelines.com/"
+  - "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/104"
 last_verified: 2026-11-05
 ---
 
 # Dialogue and barks, working reference
 
-Verification note: check version-specific guidance before using it in production; claims still awaiting confirmation are marked UNVERIFIED.
+Verification note: check version-specific guidance before using it in production.
 
 ## Line length budgets
 
 - [Netflix English (USA) Timed Text Style Guide](https://partnerhelp.netflixstudios.com/hc/en-us/articles/217350977-English-USA-Timed-Text-Style-Guide): 42 characters per line, at most 2 lines per subtitle event, and up to 20 characters per second for adult content.
 - Games: use the subtitle box's real capacity at the largest font size the game offers. Write English to about 38 to 42 characters per line when other languages ship.
-- Text expansion: German and French commonly run 20 to 35 percent longer than English; short UI strings can grow much more. This is a working rule of thumb, not a measured figure. UNVERIFIED.
+- Text expansion: translations can occupy more space than the source. Test representative translated strings, including short UI labels, in the actual layout and largest supported font.
 - [Xbox Accessibility Guideline 104](https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/104) covers speaker identification and subtitle and caption settings.
 
 ## Bark cooldown model
@@ -48,7 +48,7 @@ Reference design: Elan Ruskin's ["AI-driven Dynamic Dialog through Fuzzy Pattern
 - Knots `=== name ===`, stitches `= name`, diverts `-> target`.
 - `*` choices are once-only, `+` choices are sticky.
 - Square brackets in a choice: text inside shows only on the choice, not in the output that follows.
-- Tags start with `#`. Ink has no built-in line ID system, so projects add a tag convention such as `#id:`. UNVERIFIED for the current version.
+- Check the project's Ink version and tag conventions in the [Ink documentation](https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md); agree on stable line IDs with the localization pipeline.
 
 ### Yarn Spinner
 - Nodes have a `title:` header, body between `---` and `===`.

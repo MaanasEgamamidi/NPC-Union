@@ -2,17 +2,17 @@
 title: Shader precision, time wrapping and mobile cost
 tags: [shaders, glsl, wgsl, hlsl, godot, precision, overdraw, mobile]
 sources:
-  - https://registry.khronos.org/OpenGL/specs/es/3.0/GLSL_ES_Specification_3.00.pdf
-  - https://www.w3.org/TR/WGSL/
-  - https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/shading_language.html
-  - https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl
-  - https://jcgt.org/published/0009/03/02/
+  - "https://registry.khronos.org/OpenGL/specs/es/3.0/GLSL_ES_Specification_3.00.pdf"
+  - "https://www.w3.org/TR/WGSL/"
+  - "https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/shading_language.html"
+  - "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl"
+  - "https://jcgt.org/published/0009/03/02/"
 last_verified: 2026-11-05
 ---
 
 # Shader precision, time wrapping and mobile cost
 
-Reference notes for `shader-artist`. Sources were not fetched in the session that wrote this file; claims that depend on them are marked UNVERIFIED until checked against the linked page.
+Reference notes for `shader-artist`. The sources were not fetched when this file was written; check the linked sources and project versions before quoting engine or device details.
 
 ## Floating-point precision
 
@@ -32,7 +32,7 @@ The arithmetic above follows from IEEE 754 formats. What `mediump` actually maps
 - Choose a loop length L. For each periodic term `sin(2π k t / L)`, require integer k. Then `t mod L` is seamless for every term at once.
 - For noise that must loop, sample the noise along a circle (2D noise for a 1D loop, 4D noise for a looping 2D field) instead of translating it linearly with time.
 - Godot exposes `TIME` in shaders. In [Godot 4.2](https://docs.godotengine.org/en/4.2/classes/class_projectsettings.html), `rendering/limits/time/time_rollover_secs` defaults to 3,600 seconds; check the project version.
-- Unity exposes `_Time` (with `.y` as seconds) to shaders. UNVERIFIED: whether it resets on scene load in the project's version; check the Unity manual for built-in shader variables.
+- Check the Unity manual for built-in shader variables in the project's version, and test time behaviour across scene changes before relying on it.
 
 ## Porting differences
 
@@ -55,12 +55,12 @@ The arithmetic above follows from IEEE 754 formats. What `mediump` actually maps
 - Fragments per frame = covered pixels x number of layers drawn over them. A 1080x2400 screen is 2,592,000 pixels.
 - Four full-screen blended layers on that screen: about 10.4 million fragments per frame, about 622 million per second at 60 fps.
 - Rendering at half width and half height cuts fragments to one quarter. Soft, low-frequency backgrounds tolerate this well; sharp lines and text do not.
-- On tile-based GPUs (Arm Mali, Qualcomm Adreno, Apple), `discard` and alpha test can stop the GPU from rejecting hidden fragments early for that draw. UNVERIFIED: confirm wording in the Arm Mali GPU Best Practices guide and Apple's Metal documentation before quoting.
+- Profile `discard` and alpha testing on target GPUs; consult the GPU vendor's documentation to check how they affect early fragment rejection.
 - Idle menus run for long periods; capping menu frame rate (for example to 30 fps) halves sustained fill cost. Test sustained performance for at least 10 minutes, since phones throttle when warm.
 
 ## Output quality
 
-- 8-bit output bands visibly on slow, dark gradients. Add noise of about one quantisation step (1/255) before output. Interleaved gradient noise (Jimenez, "Next Generation Post Processing in Call of Duty: Advanced Warfare", SIGGRAPH 2014) is a cheap option. UNVERIFIED: no link included because the talk URL was not checked.
+- To mitigate visible gradient banding, test output dithering at the target bit depth and compare the result on representative displays.
 - Anti-alias SDF edges with `fwidth(d)` so edge width tracks screen resolution.
 - `fract` on UVs before a texture sample causes a one-pixel seam because derivatives jump at the wrap; use `textureGrad` with derivatives of the unwrapped coordinate.
 

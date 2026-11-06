@@ -1,13 +1,13 @@
 ---
 title: Texture artist reference
 tags: [texture, pbr, tiling, normal-map, texel-density, mipmaps]
-sources: [https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html, https://docs.unity3d.com/Manual/class-TextureImporter.html, https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-format-support-and-settings-in-unreal-engine, https://docs.blender.org/manual/en/latest/render/shader_nodes/vector/normal_map.html]
+sources: ["https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html", "https://docs.unity3d.com/Manual/class-TextureImporter.html", "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-format-support-and-settings-in-unreal-engine", "https://docs.blender.org/manual/en/latest/render/shader_nodes/vector/normal_map.html"]
 last_verified: 2026-11-05
 ---
 
 # Texture artist reference
 
-All sources above are UNVERIFIED: not fetched in this session. Check each page for the engine version in use before quoting a setting.
+Check the source documentation for the engine version in use before quoting a setting.
 
 ## Normal map conventions
 
@@ -34,7 +34,7 @@ Symptom of wrong convention: bumps look lit from below along one axis only.
 | Layout | R | G | B | A | Used by |
 |--------|---|---|---|---|---------|
 | ORM | Occlusion | Roughness | Metallic | - | glTF 2.0, common in Unreal |
-| Unity URP/HDRP masks | check docs | | | | layout differs by pipeline, UNVERIFIED |
+| Unity URP/HDRP masks | check docs | | | | Check the pipeline and version documentation for the channel layout |
 
 glTF 2.0 metallicRoughnessTexture reads roughness from G and metallic from B.
 

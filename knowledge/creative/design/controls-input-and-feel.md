@@ -1,7 +1,7 @@
 ---
 title: Controls, input accessibility and movement feel
 tags: [controls, input, remapping, accessibility, coyote-time, jump-buffer, dead-zone, touch, gamepad]
-sources: [https://maddymakesgames.com/articles/celeste_and_forgiveness/index.html, https://gameaccessibilityguidelines.com/allow-controls-to-be-remapped-reconfigured/, https://gameaccessibilityguidelines.com/avoid-provide-alternatives-to-requiring-buttons-to-be-held-down/, https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/107, https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API, https://developer.android.com/guide/topics/ui/accessibility/apps]
+sources: ["https://maddymakesgames.com/articles/celeste_and_forgiveness/index.html", "https://gameaccessibilityguidelines.com/allow-controls-to-be-remapped-reconfigured/", "https://gameaccessibilityguidelines.com/avoid-provide-alternatives-to-requiring-buttons-to-be-held-down/", "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/107", "https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API", "https://developer.android.com/guide/topics/ui/accessibility/apps"]
 last_verified: 2026-11-05
 ---
 
@@ -20,7 +20,7 @@ Source: https://maddymakesgames.com/articles/celeste_and_forgiveness/index.html
 | Wall jump window | 2 pixels from wall |
 | Super wall jump window | "I think it's 5 pixels" (author unsure) |
 | Stamina refunds | grace window, no duration |
-Community frame counts (e.g. 5 frames) are not from the developer: UNVERIFIED.
+For exact timing, consult the developer's source or measure the relevant build; the linked article does not specify a frame count for coyote time or jump buffering.
 
 ## Accessibility guidelines
 - GAG "Allow controls to be remapped / reconfigured": Basic, motor. Platform remapping is a backup only. https://gameaccessibilityguidelines.com/allow-controls-to-be-remapped-reconfigured/
@@ -35,7 +35,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_A
 
 ## Touch targets
 - Android: at least 48dp x 48dp. https://developer.android.com/guide/topics/ui/accessibility/apps
-- Apple recommends controls at least 44 x 44 points: [UI Design Dos and Don?ts](https://developer.apple.com/design/tips/).
+- Apple recommends controls at least 44 x 44 points: [UI Design Dos and Don'ts](https://developer.apple.com/design/tips/).
 
 ## Dead zone maths
 - Axial: zero each axis below threshold; causes snapping to cardinals.

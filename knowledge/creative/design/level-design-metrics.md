@@ -1,7 +1,7 @@
 ---
 title: Level design metrics, structure and teaching by layout
 tags: [level-design, metrics, blockout, greybox, beat-chart, kishotenketsu, portal, gating]
-sources: [https://book.leveldesignbook.com/process/blockout/metrics, https://www.gamedeveloper.com/design/the-secret-to-i-mario-i-level-design, https://theportalwiki.com/wiki/Portal_developer_commentary, https://developer.valvesoftware.com/wiki/Dimensions_(Half-Life_2_and_Counter-Strike:_Source), https://gdcvault.com/play/1024562/Change-and-Constant-Breaking-Conventions]
+sources: ["https://book.leveldesignbook.com/process/blockout/metrics", "https://www.gamedeveloper.com/design/the-secret-to-i-mario-i-level-design", "https://theportalwiki.com/wiki/Portal_developer_commentary", "https://developer.valvesoftware.com/wiki/Dimensions_(Half-Life_2_and_Counter-Strike:_Source)", "https://gdcvault.com/play/1024562/Change-and-Constant-Breaking-Conventions"]
 last_verified: 2026-11-05
 ---
 
@@ -26,7 +26,7 @@ Also from the same chapter:
 - Team Fortress 2 ranges cited: close about 256 units, medium about 1024, long about 2048; max fall without damage 256.
 - Build a "metrics zoo" developer map: rooms, halls, varied floor heights; playtest usability, then feel; revise.
 
-Source engine: max step height 18 units, player collision height 72 standing (Valve Developer Community dimensions page; the page returned 403 to automated fetch on 2026-11-05, figures confirmed via search result snippets and consistent with The Level Design Book). Crouch and jump heights differ between page revisions and games: UNVERIFIED, measure in your build.
+Source engine: max step height 18 units, player collision height 72 standing (Valve Developer Community dimensions page; the page returned 403 to automated fetch on 2026-11-05, figures confirmed via search result snippets and consistent with The Level Design Book). Measure crouch and jump heights in the target build rather than assuming they match another game.
 
 ## Gap rule of thumb (house heuristic, not sourced)
 

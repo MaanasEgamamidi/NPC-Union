@@ -2,11 +2,11 @@
 title: Voice direction and casting for games
 tags: [voice, vo, casting, barks, dialogue, ai-voice, sound]
 sources:
-  - https://www.sagaftra.org/
-  - https://www.dglaw.com/sag-aftras-new-video-game-agreement/
-  - https://technologylaw.fkks.com/post/102mewu/inside-the-new-sag-aftra-interactive-media-agreement-new-standards-for-ai-and-di
-  - https://www.equity.org.uk/
-  - https://www.audiokinetic.com/en/library/
+  - "https://www.sagaftra.org/"
+  - "https://www.dglaw.com/sag-aftras-new-video-game-agreement/"
+  - "https://technologylaw.fkks.com/post/102mewu/inside-the-new-sag-aftra-interactive-media-agreement-new-standards-for-ai-and-di"
+  - "https://www.equity.org.uk/"
+  - "https://www.audiokinetic.com/en/library/"
 last_verified: 2026-11-05
 ---
 
@@ -38,9 +38,9 @@ Game VO is usually recorded line by line, with each actor alone in the booth. Th
 4. Barks.
 5. Efforts, screams, and deaths last, because they tire the voice.
 
-Throughput rule of thumb: roughly 200 to 300 simple lines per session day, far fewer for dramatic cinematic scenes. UNVERIFIED; varies by actor, director, and line type.
+Estimate session throughput from a pilot recording with the actual actor, director and mix of line types.
 
-Pickup budget: plan a follow-up session for around 10 to 15 percent of lines. UNVERIFIED rule of thumb.
+Reserve time and budget for pickups; estimate their scope from the recording plan and revise it after review.
 
 ## File naming
 
@@ -60,9 +60,9 @@ Pattern: `VO_<area>_<speaker>_<ID>_<lang>_t<take>.wav`. Drop the take suffix on 
 
 ## Unions and AI voices
 
-- SAG-AFTRA members ratified a new Interactive Media Agreement in July 2025, ending the video game strike that began in 2024 over AI protections. Law-firm summaries describe requirements for separate, written, reasonably specific consent before a performer's digital replica is created or used, disclosure rules, and usage reporting. Sources: the Davis+Gilbert and Frankfurt Kurnit links above. Exact terms, exceptions, and dates are UNVERIFIED against the agreement text; read the agreement on sagaftra.org before relying on any of them.
+- [SAG-AFTRA's 2025 agreement page](https://www.sagaftra.org/contracts-industry-resources/interactive/2025-interactive-media-video-game-agreement) reports ratification and consent and disclosure requirements for AI digital replicas. Check the applicable agreement and its exceptions with game-legal-advisor.
 - Under SAG-AFTRA's [Tiered-Budget Independent Interactive Media Agreement](https://www.sagaftra.org/sites/default/files/Tiered-Budget%20Independent%20Interactive%20Media%20Agreement%20FAQs.pdf), vocally stressful sessions are capped at two hours. Check the specific agreement governing the production.
-- UK performers: check Equity UK guidance. No specific Equity terms are stated here; UNVERIFIED.
+- UK performers: check current [Equity UK](https://www.equity.org.uk/) guidance and the agreement governing the production.
 - Temp TTS for timing is common. Tag every temp file `TEMP_TTS_` so it cannot ship.
 - Cloning a real voice, or training a model on recordings, needs written consent from the performer and a contract check by game-legal-advisor. This file is not legal advice.
 

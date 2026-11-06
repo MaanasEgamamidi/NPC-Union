@@ -78,6 +78,6 @@ A pipeline spec with a table per asset class, an import preset list, and validat
 - Pack roughness, metallic and AO into one ORM texture: R AO, G roughness, B metallic. In Godot's StandardMaterial3D, set the roughness and metallic texture channels to green and blue, and AO to red, all on the same texture. That is 5 textures to 3.
 - Size: rocks at third-person distance get 1024 for big boulders and 512 for small ones. A 2048 to 512 cut is 16 times fewer pixels.
 - Compression: in Godot's import dock, set mode to VRAM Compressed so mobile gets ETC2 or ASTC (Godot 4 picks per platform; check the import docs for your version). Mark the normal map as a normal map so it imports linear with the right compression. Normal convention in Godot is OpenGL (Y+); flip green if the artist baked DirectX.
-- Rough numbers per small rock, assuming ASTC 6x6 at 3.56 bpp with mips: 3 textures at 512 is about 0.4 MB versus 5 PNG-sourced 2048 textures that may load uncompressed at about 21 MB each RGBA8 with mips (UNVERIFIED for your import setting: check the Memory tab in Godot's debugger).
+- Compare the texture sets using the actual imported formats, dimensions and mip settings; measure the resulting memory use in the Godot debugger for the target build.
 
 Every channel earns its keep. Swizzle out.

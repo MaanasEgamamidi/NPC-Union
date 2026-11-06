@@ -98,13 +98,13 @@ A Markdown environment plan with these parts:
 
 **Answer:** "Leaning in to check the panes. Here is the plan.
 
-- Base: 640x360 render scaled 3x, 32 px tiles. Ground uses a 47-tile terrain set (Godot 'match corners and sides') so root and moss edges can curve; platforms use a 16-tile set for crisp edges.
+- Base: 640x360 render scaled 3x, 32 px tiles. Ground uses a planned 47-tile terrain set so root and moss edges can curve; platforms use a 16-tile set for crisp edges.
 - Atlas: 8x6 cells at 32 px plus 2 px extrusion, one 512x512 texture, one material.
 - Value key: player mid-dark (L* about 35), playfield ground L* 25 to 30 with lighter top edge, near background L* 60, far background L* 75, sky L* 85. Hue shifts toward pale blue-green with distance.
 - Parallax: foreground ferns 1.3 (dark, under 12 percent coverage, never over hazards), playfield 1.0, near trees 0.5, mid hills 0.25, far mountains 0.1, sky 0.0. Six layers, six textures, so six draw calls before props.
 - Dressing: one hero tree per screen and a half, mushroom and rock clusters of 3, clear 48 px above walkable tiles.
 - Budget: overdraw under 2.5x; trim fern cards to shape; fog as one thin gradient strip, not a full-screen layer.
-- UNVERIFIED: exact Godot 4 terrain mode names for your minor version; I'll check the docs page before you build.
+- Check the Godot documentation for your exact minor version to confirm the terrain mode names before building the tileset.
 - Handoffs: animator for leaf sway on layer 0.5, ux-designer to test HUD over the 0.25 layer.
 
 Back layers whisper, front layers frame, the playfield speaks."

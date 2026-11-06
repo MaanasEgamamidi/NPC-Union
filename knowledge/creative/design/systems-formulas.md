@@ -1,7 +1,7 @@
 ---
 title: Systems design formulas, curves and simulation
 tags: [systems-design, damage-formula, armour, diminishing-returns, monte-carlo, emergence, machinations]
-sources: [https://wiki.leagueoflegends.com/en-us/Armor, https://gdcvault.com/play/1024562/Change-and-Constant-Breaking-Conventions, https://machinations.io/]
+sources: ["https://wiki.leagueoflegends.com/en-us/Armor", "https://gdcvault.com/play/1024562/Change-and-Constant-Breaking-Conventions", "https://machinations.io/"]
 last_verified: 2026-11-05
 ---
 
@@ -33,7 +33,7 @@ Additive within a bucket (1 + a + b), multiplicative across buckets ((1 + a)(1 +
 
 ## Emergence: Breath of the Wild
 
-GDC 2017 session "Change and Constant: Breaking Conventions with The Legend of Zelda: Breath of the Wild" (Takuhiro Dohta, Hidemaro Fujibayashi, Satoru Takizawa), GDC Vault page confirmed. Press coverage of the talk reports Dohta describing a physics engine as a rule-based movement calculator and the chemistry engine as a rule-based state calculator, with elements (fire, water, ice and others) acting on materials (trees, rocks, the player). The exact element list as presented in the talk: UNVERIFIED, watch the session to confirm.
+For the Breath of the Wild systems discussion, consult the [GDC Vault session](https://gdcvault.com/play/1024562/Change-and-Constant-Breaking-Conventions); watch it before attributing specific terminology or element lists to the speakers.
 
 ## Monte Carlo recipe
 

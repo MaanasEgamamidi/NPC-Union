@@ -2,18 +2,18 @@
 title: Gameplay VFX timing, budgets and flash safety
 tags: [vfx, particles, flipbook, overdraw, screen-shake, photosensitivity, accessibility]
 sources:
-  - https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html
-  - https://docs.unity3d.com/Manual/PartSysTexSheetAnimModule.html
-  - https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@latest
-  - https://docs.godotengine.org/en/stable/classes/class_gpuparticles3d.html
-  - https://gameaccessibilityguidelines.com/
-  - https://realtimevfx.com/
+  - "https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html"
+  - "https://docs.unity3d.com/Manual/PartSysTexSheetAnimModule.html"
+  - "https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@latest"
+  - "https://docs.godotengine.org/en/stable/classes/class_gpuparticles3d.html"
+  - "https://gameaccessibilityguidelines.com/"
+  - "https://realtimevfx.com/"
 last_verified: 2026-11-05
 ---
 
 # Gameplay VFX timing, budgets and flash safety
 
-Reference for the vfx-artist agent. Links were not fetched in the session that wrote this file; treat each source link as UNVERIFIED until a local check confirms it resolves.
+Reference for the vfx-artist agent. Check each source and the target engine version before relying on its guidance.
 
 ## Timing
 
@@ -31,7 +31,7 @@ Reference for the vfx-artist agent. Links were not fetched in the session that w
 
 - Unity's Texture Sheet Animation module plays grid flipbooks on particles (see Unity manual link above).
 - Grid math: an 8x8 grid on a 2048 px texture gives 256 px frames; 4x4 on 1024 gives 256 px frames with 16 frames.
-- Motion-vector blended flipbooks allow fewer frames with smooth playback. Support exists in Unity VFX Graph and Unreal Niagara; exact setting names are UNVERIFIED and change across versions.
+- Motion-vector blending can smooth flipbook playback between frames. Check the target engine version's documentation and test the effect before selecting its settings.
 
 ## Budgets
 
@@ -54,7 +54,7 @@ Reference for the vfx-artist agent. Links were not fetched in the session that w
 
 - WCAG 2.1 success criterion 2.3.1: web pages must not contain anything that flashes more than three times in any one-second period, unless the flash is below the general flash and red flash thresholds.
 - The Understanding document defines the general flash threshold area in terms of a combined area of flashes within a 10 degree visual field (0.006 steradians). Exact pixel equivalents depend on viewing distance and screen size.
-- WCAG is a web standard; applying it to games is common practice, not a legal requirement in itself. Platform holders may have their own requirements (UNVERIFIED, check current platform documentation).
+- WCAG is a web standard; applying it to games is common practice, not a legal requirement in itself. Check current platform documentation for any additional requirements.
 - Practical game rules: no full-screen white or red flash on routine events, use small-area tints on the hit target, and ship a flash reduction option.
 - Historical example: the 1997 Pokemon anime episode "Dennou Senshi Porygon" broadcast in Japan caused photosensitive seizures in viewers, which is often cited in discussions of flashing content.
 

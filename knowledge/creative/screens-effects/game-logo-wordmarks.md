@@ -2,11 +2,11 @@
 title: Game logos and wordmarks for stores and screens
 tags: [logo, wordmark, lockup, steam, capsule, app-icon, typography, font-licensing]
 sources:
-  - https://partner.steamgames.com/doc/store/assets/standard
-  - https://partner.steamgames.com/doc/store/assets/libraryassets
-  - https://developer.apple.com/design/human-interface-guidelines/app-icons
-  - https://developer.android.com/distribute/google-play/resources/icon-design-specifications
-  - https://fonts.google.com/knowledge/glossary/open_font_license
+  - "https://partner.steamgames.com/doc/store/assets/standard"
+  - "https://partner.steamgames.com/doc/store/assets/libraryassets"
+  - "https://developer.apple.com/design/human-interface-guidelines/app-icons"
+  - "https://developer.android.com/distribute/google-play/resources/icon-design-specifications"
+  - "https://fonts.google.com/knowledge/glossary/open_font_license"
 last_verified: 2026-11-05
 ---
 
@@ -27,18 +27,18 @@ Reference for logo-designer. Sizes go stale; re-check the source before quoting 
 
 Steam rules from the same page: no quotes or other text strings beyond the title on header, main, and vertical capsules. The logotype must be legible against the background. Use Artwork Overrides for time-limited event art instead of editing base capsules.
 
-## Steam library assets (UNVERIFIED this session)
+## Steam library assets
 
 The [Steamworks library assets documentation](https://partner.steamgames.com/doc/store/assets/libraryassets) specifies:
 - Library capsule 600 x 900.
 - Library hero 3840 x 1240, with no text in the hero itself.
 - Library logo as a transparent PNG, 1280 px wide and/or 720 px tall, placed over the hero.
 
-## App icons (UNVERIFIED this session)
+## App icons
 
 - Apple: iOS, iPadOS and macOS app icon layouts are 1024 x 1024; the system applies the corner mask. Other Apple platforms have different specifications. See the [Apple icon guidelines](https://developer.apple.com/design/human-interface-guidelines/app-icons).
 - Google Play: store listing icon 512 x 512, 32-bit PNG. See [Google Play icon specifications](https://developer.android.com/distribute/google-play/resources/icon-design-specifications).
-- Consoles (Nintendo, PlayStation, Xbox): specs are under developer NDA portals and cannot be checked publicly. Always ask the team for the current spec sheet.
+- Consoles: ask the team for the current platform-specific icon specifications and check the applicable developer documentation.
 
 ## Small-size legibility rules (craft practice, not platform rules)
 

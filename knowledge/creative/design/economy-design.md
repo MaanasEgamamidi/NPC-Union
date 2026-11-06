@@ -1,7 +1,7 @@
 ---
 title: Game economy design, loot math and paid randomness status
 tags: [economy, sources-sinks, inflation, loot-tables, loot-boxes, eve-online, machinations]
-sources: [https://www.eveonline.com/news/view/monthly-economic-report-march-2026, https://www.raadvanstate.nl/actueel/nieuws/@130206/dwangsom-onterecht-opgelegd-loot-boxes/, https://machinations.io/]
+sources: ["https://www.eveonline.com/news/view/monthly-economic-report-march-2026", "https://www.raadvanstate.nl/actueel/nieuws/@130206/dwangsom-onterecht-opgelegd-loot-boxes/", "https://machinations.io/"]
 last_verified: 2026-11-05
 ---
 
@@ -31,9 +31,9 @@ Percentile n = ln(1 - q) / ln(1 - p), rounded up. Chance of still missing after 
 
 ## Paid randomness: status as checked 2026-11-05
 
-- Netherlands: Council of State (Raad van State), ruling 9 March 2022, case 202005769/1: FIFA Ultimate Team packs not a standalone game of chance; the KSA's penalty order against EA annulled; no further appeal. Confirmed via search results of raadvanstate.nl and press. Later Dutch policy proposals to ban or regulate loot boxes: UNVERIFIED, check current status.
+- Netherlands: Council of State (Raad van State), ruling 9 March 2022, case 202005769/1: FIFA Ultimate Team packs not a standalone game of chance; the KSA's penalty order against EA annulled; no further appeal. Confirmed via search results of raadvanstate.nl and press. Ask game-legal-advisor to check current Dutch policy and legislation before advising.
 - Belgium: In 2018 the Gaming Commission concluded that paid loot boxes examined in Overwatch, FIFA 18, and Counter-Strike: Global Offensive met its definition of games of chance. See the [Australian parliamentary report citing the commission](https://www.aph.gov.au/Parliamentary_Business/Committees/Senate/Environment_and_Communications/Gamingmicro-transactions/Report/c01); check current law before relying on this historical conclusion.
-- Other markets (Australia classification, PEGI criteria, Brazil, China odds disclosure, Apple and Google store odds rules): not verified in this session; UNVERIFIED. Hand to `game-legal-advisor`.
+- For other markets and platform odds-disclosure rules, have `game-legal-advisor` check current primary sources for each target territory and storefront.
 
 ## Tools
 

@@ -96,4 +96,4 @@ A Markdown note with these parts:
 - **Client side:** interpolate remote players 100 ms behind the latest snapshot so a single dropped snapshot is invisible. Hand prediction and reconciliation for the local player to `netcode-architect`.
 - **Test:** `tc qdisc add dev eth0 root netem delay 80ms 20ms loss 2%` on a staging box, then compare the snapshot-gap p99 before and after.
 
-Sources: MDN RTCDataChannel and WebTransport pages, geckos.io README, checked 2026-11-05; Node HTTP/3 maturity UNVERIFIED; [Node documents QUIC as experimental](https://nodejs.org/dist/latest/docs/api/all.html). Which packet was waiting? The one behind the TCP retransmit. Let's stop making it wait.
+Sources: MDN RTCDataChannel and WebTransport pages, geckos.io README, checked 2026-11-05; Check the target Node version's [QUIC documentation](https://nodejs.org/docs/latest/api/quic.html) and test the intended HTTP/3 implementation before committing to it. Which packet was waiting? The one behind the TCP retransmit. Let's stop making it wait.

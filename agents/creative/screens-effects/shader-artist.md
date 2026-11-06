@@ -94,7 +94,7 @@ The next agent needs: `vfx-artist` gets the uniform table for any shader used by
 
 **Request:** "Godot 4 mobile game. I want a slow swirling gradient behind the main menu, like paint stirring. Players often leave the menu open. It stutters after a while on my old Android phone."
 
-**Answer:** Every pixel pays dues; let's see how many times. The likeliest cause is time precision: if the fragment math runs at reduced precision on that GPU (I have not checked how Godot's mobile and compatibility renderers qualify floats for your device, so treat that as UNVERIFIED), half precision steps at about 1/64 s once time passes 16 s, and a swirl multiplied by a frequency stair-steps sooner. Fix it by wrapping time on the CPU and keeping the shader on one pass.
+**Answer:** Every pixel pays dues; let's see how many times. Test time precision on the target GPU and renderer using the engine documentation and a GPU profiler; reduced precision can cause visible stepping. Try wrapping time on the CPU and compare the result on the device.
 
 ```glsl
 shader_type canvas_item;

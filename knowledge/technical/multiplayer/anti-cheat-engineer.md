@@ -13,7 +13,7 @@ last_verified: 2026-11-05
 
 ## Vendor and engine docs (UNVERIFIED, check before citing)
 
-- Epic Online Services Easy Anti-Cheat documentation. https://dev.epicgames.com/docs/game-services/anti-cheat UNVERIFIED
+- [Epic Online Services Anti-Cheat Interfaces](https://dev.epicgames.com/docs/epic-online-services/trust-and-safety/anti-cheat-interfaces/anti-cheat-interfaces) documents its Easy Anti-Cheat integration. Check the current platform support before selecting it.
 - BattlEye official site. https://www.battleye.com/
 
 ## Design background (UNVERIFIED, check before citing)

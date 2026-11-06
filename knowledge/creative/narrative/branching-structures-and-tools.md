@@ -2,13 +2,13 @@
 title: Branching structures and narrative tools
 tags: [narrative, branching, ink, yarn-spinner, twine, ludonarrative, environmental-storytelling]
 sources:
-  - https://emshort.blog/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/
-  - https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md
-  - https://docs.yarnspinner.dev/
-  - https://twinery.org/
-  - https://twinery.org/cookbook/
-  - https://www.articy.com/
-  - https://gdcvault.com/
+  - "https://emshort.blog/2016/04/12/beyond-branching-quality-based-and-salience-based-narrative-structures/"
+  - "https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md"
+  - "https://docs.yarnspinner.dev/"
+  - "https://twinery.org/"
+  - "https://twinery.org/cookbook/"
+  - "https://www.articy.com/"
+  - "https://gdcvault.com/"
 last_verified: 2026-11-05
 ---
 
@@ -26,7 +26,7 @@ Owner: narrative-director. Only the Emily Short post was fetched on 2026-11-05. 
 
 ## Talks and terms
 
-- **Ludonarrative dissonance:** term from Clint Hocking's 2007 blog post critiquing BioShock on his "Click Nothing" blog. The original Typepad URL now redirects to a hosting provider page, so the source could not be checked. UNVERIFIED (link dead; do not cite as a live source).
+- **Ludonarrative dissonance:** use the term for a tension between a game's story and its mechanics; locate an accessible primary source before attributing its origin or quoting a specific critique.
 - **Dynamic dialogue via fuzzy pattern matching:** Elan Ruskin, Valve, GDC 2012, about the Left 4 Dead response system. Source: https://gdcvault.com/play/1015946/AI-driven-Dynamic-Dialog-through
 - **"What Happened Here? Environmental Storytelling":** Harvey Smith and Matthias Worch, GDC 2010. Source: https://gdcvault.com/play/1012696/What-Happened-Here-Environmental
 
@@ -42,7 +42,7 @@ Owner: narrative-director. Only the Emily Short post was fetched on 2026-11-05. 
 ## Tools
 
 - **Ink (inkle):** open-source scripting language for interactive narrative, MIT licence. Core concepts: knots, stitches, diverts, choices, weave with gathers, tunnels, variables, LIST. Inky is the editor; a Unity integration package exists. Check the docs for the version pinned by the project. Sources: https://github.com/inkle/ink and https://github.com/inkle/ink-unity-integration.
-- **Yarn Spinner:** node-based dialogue language with commands such as `<<set>>` and `<<if>>`, and line ID tags for localisation. Version 3 adds features for choosing content by condition; confirm exact syntax in the docs before use. UNVERIFIED this session.
+- **Yarn Spinner:** consult the [documentation](https://docs.yarnspinner.dev/) for the project's installed version before using commands, localisation tags or conditional content selection.
 - **Twine 2:** browser and desktop tool for hypertext stories. Story formats include Harlowe (default), SugarCube, Snowman and Chapbook. Sources: https://twinery.org/ and https://twinery.org/cookbook/terms/terms_storyformats.html
 - **articy:draft:** commercial narrative design tool with dialogue flows and dedicated Unity and Unreal importers. Pricing changes; check the site. Source: https://www.articy.com/en/articydraft/feature-list/
 

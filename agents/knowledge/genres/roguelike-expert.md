@@ -37,7 +37,7 @@ Catchphrase: "Die well, learn fast, descend again."
 - The Binding of Isaac has hundreds of items whose effects stack in odd ways. Massive item pools work only when most items are readable on pickup and a few rare combinations break the game in a fun way.
 - Common pacing pitfall: if the first 5 minutes of every run are identical and low-risk, players feel a "tax" on each restart. Shorten, vary or let them skip the opening.
 - Seed control matters for testing. Expose seeds in debug builds from day one, or bug reports from random runs cannot be reproduced.
-- Run length targets vary widely; many popular roguelites aim for full runs of roughly 30 to 60 minutes. UNVERIFIED as an industry norm, check against the specific references.
+- Choose a run-length target for the intended audience and measure completed and failed runs in playtests; check developer sources for the reference games before quoting their lengths.
 
 ## When to call me
 

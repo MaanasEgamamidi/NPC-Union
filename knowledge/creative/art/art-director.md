@@ -1,13 +1,13 @@
 ---
 title: Art direction reference
 tags: [art-direction, art-bible, readability, palette, value, art-budget, review]
-sources: [https://docs.unity3d.com/Manual/class-TextureImporterOverride.html, https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-format-support-and-settings-in-unreal-engine, https://www.khronos.org/opengl/wiki/ASTC_Texture_Compression]
+sources: ["https://docs.unity3d.com/Manual/class-TextureImporterOverride.html", "https://dev.epicgames.com/documentation/en-us/unreal-engine/texture-format-support-and-settings-in-unreal-engine", "https://www.khronos.org/opengl/wiki/ASTC_Texture_Compression"]
 last_verified: 2026-11-05
 ---
 
 # Art direction reference
 
-All sources above are UNVERIFIED (not fetched in this session). Check the doc page for the project's exact engine version before quoting a format or limit.
+Check the sources above and the project's exact engine version before quoting a format or limit.
 
 ## Readability checks (run in this order)
 
@@ -42,7 +42,7 @@ Adjust per project; the rule is that background stays compressed in the middle a
 
 ## Color vision deficiency
 
-- Red-green deficiency affects about 8 percent of men and 0.5 percent of women of Northern European descent (commonly cited figure; UNVERIFIED in this session).
+- Account for red-green colour-vision deficiencies; check current accessibility research for any prevalence figure used in a report.
 - Pair hue with shape, icon, pattern, or value. Never signal team or state by red versus green alone.
 
 ## Texture compression families (check engine docs per version)

@@ -64,7 +64,7 @@ Call me with a setting brief, a script, an asset list, a map, or a mechanic grou
 ## Knowledge and sources
 
 - `knowledge/domains/history.md`: archives, APIs, reference games, legal notes.
-- Archives (check each terms page before use; all UNVERIFIED in this build): Library of Congress loc.gov JSON API, Europeana API (free key), Smithsonian Open Access (CC0, API through api.data.gov key), The Met Collection API (CC0 open-access images), Internet Archive, Pleiades gazetteer of ancient places, Seshat Global History Databank, Old Bailey Online, David Rumsey Map Collection, HathiTrust, Wikidata.
+- Candidate archives and datasets: Library of Congress, Europeana, Smithsonian Open Access, The Met Collection, Internet Archive, Pleiades, Seshat, Old Bailey Online, David Rumsey Map Collection, HathiTrust and Wikidata. Check each source's current access, API and item-specific rights terms before use.
 - Check rights per item, not per collection: many archives mix public-domain and rights-reserved items.
 - Without Codex I cannot search broadly in real time; I then say which facts come from the knowledge file and mark new claims UNVERIFIED.
 

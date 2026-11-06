@@ -53,4 +53,4 @@ All seven links returned HTTP 200 on 2026-11-05. Page contents were not read lin
 ## Sources
 
 - English Wikipedia pages for each reference game (links above, checked to resolve on 2026-11-05).
-- Alien: Isolation?s macro director and micro alien AI are described in [this analysis of the game?s AI](https://www.gamedeveloper.com/design/the-perfect-organism-the-ai-of-alien-isolation).
+- Alien: Isolation's macro director and micro alien AI are described in [this analysis of the game's AI](https://www.gamedeveloper.com/design/the-perfect-organism-the-ai-of-alien-isolation).

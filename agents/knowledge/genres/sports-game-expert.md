@@ -35,7 +35,7 @@ Catchphrase: "Check the box score, then check the feel."
 - Management games live or die on the data model and the match engine's believability. Football Manager's appeal comes from a large scouting database and readable cause and effect between tactics and results.
 - Commentary and presentation (broadcast cameras, replays, crowd noise) carry much of the realism. Repetitive commentary lines are one of the most common player complaints.
 - Online competitive modes need netcode and matchmaking from day one; sports players notice input lag on passes and shots quickly.
-- Monetized card-collection modes (Ultimate Team, MyTeam) are under regulatory attention in some countries over loot box rules. UNVERIFIED on current per-country status; check before advising.
+- For monetized card-collection modes, ask the legal advisor to check current random-item rules in each launch jurisdiction and the applicable platform policies before advising.
 
 ## When to call me
 

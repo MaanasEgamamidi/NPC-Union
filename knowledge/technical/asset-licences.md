@@ -8,7 +8,7 @@ last_verified: 2026-11-05
 
 last_verified: 2026-11-05
 
-Facts the asset-license-auditor relies on. Each line says whether it was checked on 2026-11-05 (VERIFIED) or not (UNVERIFIED). Licences and store terms change, so re-check before any release and record the date in the audit.
+Facts and checks for the asset-license-auditor. Licences and store terms change, so re-check before any release and record the date in the audit.
 
 ## Identifiers and tooling
 
@@ -24,8 +24,8 @@ Facts the asset-license-auditor relies on. Each line says whether it was checked
 
 ## Code licences
 
-- GPL in shipped game code or an engine addon can require releasing source of the combined work when distributed. LGPL generally allows linking if the user can replace the library. UNVERIFIED; check https://www.gnu.org/licenses/ (UNVERIFIED URL check).
-- MIT and Apache-2.0 require keeping the copyright and licence notice. Apache-2.0 also requires carrying a NOTICE file if one exists. UNVERIFIED.
+- For GPL and LGPL dependencies, inspect the exact licence version and distribution arrangement with game-legal-advisor; consult https://www.gnu.org/licenses/ before determining source or relinking obligations.
+- For MIT and Apache-2.0 dependencies, read the exact licence text and any NOTICE file, and document required notices with game-legal-advisor.
 
 ## Fonts
 
@@ -35,10 +35,10 @@ Facts the asset-license-auditor relies on. Each line says whether it was checked
 
 - Unity Asset Store: under the [standard EULA](https://unity.com/legal/as-terms), extension assets are per-seat; other assets have different entity-based terms. Check the asset for non-standard terms.
 - Fab Standard License: Personal and Professional pricing tiers grant the same scope of rights; Reference-Only gives referenced content rather than source format. Check the specific asset licence. [Fab](https://www.fab.com/eula).
-- itch.io: each creator sets their own terms on the asset page. There is no single itch licence. UNVERIFIED; archive the asset page.
+- itch.io: inspect and archive the specific asset's licence terms, including any licence included in the download.
 - Steam's content survey asks about generative AI used in development or in the product. [Steamworks](https://partner.steamgames.com/doc/gettingstarted/contentsurvey).
 
 ## Evidence practice
 
-- Archive each licence page (for example with the Wayback Machine at https://web.archive.org, UNVERIFIED in this pass) and record the archive URL and date checked.
+- Archive each licence page where possible and record the archive URL and date checked; retain a dated copy if archiving is unavailable.
 - Keep the receipt or order number for paid assets.

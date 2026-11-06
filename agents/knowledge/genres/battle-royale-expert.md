@@ -29,9 +29,9 @@ Catchphrase: "The circle closes on everyone. Make sure it closes on something wo
 - Redeploy and second-chance systems (Warzone's Gulag, Apex Legends' respawn beacons) exist to cut the cost of an early death without removing elimination stakes.
 - Zone pacing is a schedule, not a single number: each phase has a wait, a shrink time, a damage value, and a final size. Late phases should hit harder and close faster than early ones.
 - Final circles that land on terrain with no cover, or one dominant height, decide matches by circle luck rather than skill. Tune end-zone selection rules, not just timers.
-- Lobby size sets map size and density. Classic examples run around 100 players (PUBG, Fortnite) and around 60 (Apex Legends at launch, Fall Guys); Warzone launched at 150. UNVERIFIED for current live counts, which change.
+- Lobby size affects map density. Check official current mode descriptions for reference-game player counts, then playtest density against the intended population.
 - Third-partying (a fresh squad attacking two that are already fighting) is a natural result of noise and visibility. Decide whether you want to reward it or soften it, and tune audio range and healing time to match.
-- Loot spread must answer "can a player who landed alone find a working kit in under about two minutes". UNVERIFIED as a fixed rule; treat it as a starting target for playtests.
+- Loot spread should let a player who lands alone find a working kit in time for the intended pace. Measure time to a working kit in playtests and set a project-specific target.
 - Contextual pings (Apex Legends) let squads communicate without voice, and they were widely copied. Any squad BR without them needs a strong reason.
 - Fortnite's building added a skill ceiling that also widened the gap between new and veteran players; Epic later added a Zero Build mode. A signature mechanic can split the audience.
 - Hot drops (many players landing on one named location) front-load action for players who want it. Give the map both hot and quiet landing options so players choose their risk.

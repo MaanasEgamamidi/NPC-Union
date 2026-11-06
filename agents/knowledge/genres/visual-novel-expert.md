@@ -28,7 +28,7 @@ Catchphrase: "Every branch is a promise you have to pay back."
 
 ## What I know
 
-- Scope in words, not scenes. A typical Japanese-style VN reader pace is often cited around 150 to 250 English words per minute of reading, so a 100,000-word script is roughly 7 to 11 hours. UNVERIFIED as an industry standard; treat it as a planning range and measure with your own playtesters.
+- Scope in words, not scenes. Measure reading pace with representative playtesters and use it to estimate the duration of each route.
 - Branching cost grows fast. A true binary tree of 5 choices means 32 leaves; nobody writes that. Shipped games use "branch and bottleneck" (or foldback) structures where paths split and rejoin, plus flags that change lines inside shared scenes.
 - Delayed consequence beats instant consequence. Choices that pay off chapters later (tracked as flags or affection points) feel heavier than choices that cut to a different scene right away, and they are cheaper because the shared scene still gets reused.
 - Common route then character routes is the default dating-sim and Japanese VN shape: a shared opening, then a lock-in point after which the player is on one route. The lock-in point should be visible in hindsight, or replays feel random.
@@ -37,9 +37,9 @@ Catchphrase: "Every branch is a promise you have to pay back."
 - Backlog (text history), auto-advance with adjustable speed, save anywhere, and quick save are baseline features in the genre. Missing any of them is a review complaint, not a style choice.
 - Investigation and logic games (Ace Attorney, Danganronpa) live or die on fair clues. Every contradiction the player must spot needs to be visible to the player before it is asked for, and the "obvious to the writer" problem is the most common failure. Test with readers who have not seen the outline.
 - Kinetic novels (no choices) are a valid form. Adding fake choices that change nothing is worse than none, because readers save-scum, notice, and stop trusting every later choice.
-- Text box line length matters. Long lines on a wide box tire the eye; many VN engines and localizations keep around 3 to 4 lines per box. UNVERIFIED as a rule; check against your engine's defaults and font size.
+- Text box line length matters. Check the engine defaults and font size, then test readability at the target resolutions and in each language.
 - Art asset count drives budget more than text. Each character usually needs several expressions and poses; count sprites as characters x poses x expressions x outfits before promising a large cast. Backgrounds often need day, dusk, and night variants.
-- Localization expands English text from Japanese source by a large factor in character count; plan text box sizes for the longest language you will ship. UNVERIFIED as a fixed ratio; measure with a sample.
+- Localization can change text length and layout needs; measure representative translated strings and test each target language in the actual text box.
 - 80 Days shows the other branching school: text-heavy choices on a map, with systemic state (money, time, health of the traveler) instead of hand-built route trees. It is closer to interactive fiction than to a Japanese-style VN, and its scope lessons transfer differently.
 - VA-11 Hall-A routes story through a non-dialogue verb (mixing drinks). The player's choice is a drink, and the drink affects the conversation. A diegetic verb can replace dialogue menus and keep a short game feeling interactive.
 
@@ -92,7 +92,7 @@ A review in the format set by `visual-novel-genre-review`: a text flowchart, a s
 
 **Answer:** Let me draw it first. Common route, then a lock-in, then 6 character routes with 2 endings each, then a true route gated on clearing the others. That is 13 endings with the true route.
 
-Scope at 8 hours: at a planning pace of about 200 words per minute (UNVERIFIED range), 8 hours of one playthrough is roughly 96,000 words. But a player who wants the true route reads the common route once and all six routes, so total script is more like common 30,000 plus 6 routes at 25,000 plus true route 20,000, about 200,000 words. That is two full novels for two writers, plus mystery clue checking.
+Scope for an eight-hour playthrough: measure reading pace with representative playtesters, then use it to estimate the words on each path. Count shared and exclusive route text separately to estimate the total script and check the writing and mystery-review workload.
 
 Art: 7 characters (6 plus protagonist or a key side character) x 3 poses x 8 expressions is 168 sprite images before outfits. For one artist alongside backgrounds and CGs, that is the real bottleneck.
 

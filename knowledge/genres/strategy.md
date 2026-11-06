@@ -22,15 +22,15 @@ Observe the state (map, resources, enemy), decide on a plan with trade-offs, act
 
 ## Reference games
 
-| Name | Year | Developer | What to study | Link |
-|---|---|---|---|---|
-| StarCraft II: Wings of Liberty | 2010 | Blizzard Entertainment | Three asymmetric factions, build orders, scouting under fog of war, competitive balance patching | https://en.wikipedia.org/wiki/StarCraft_II:_Wings_of_Liberty |
-| Age of Empires II | 1999 | Ensemble Studios | Age-up phases as pacing gates, many civilizations from a shared unit base, long-term community balance | https://en.wikipedia.org/wiki/Age_of_Empires_II |
-| Civilization VI | 2016 | Firaxis Games | Districts that make city placement a map puzzle, multiple victory types, late-game turn length | https://en.wikipedia.org/wiki/Civilization_VI |
-| XCOM: Enemy Unknown | 2012 | Firaxis Games | Percent-to-hit tension, permadeath attachment, strategic layer feeding tactical missions | https://en.wikipedia.org/wiki/XCOM:_Enemy_Unknown |
-| Total War: Warhammer II | 2017 | Creative Assembly | Turn-based campaign joined to real-time battles, highly asymmetric races, campaign objective race | https://en.wikipedia.org/wiki/Total_War:_Warhammer_II |
-| Into the Breach | 2018 | Subset Games | Telegraphed enemy intent, small 8x8 maps, puzzle-like tactics with near-zero randomness in combat | https://en.wikipedia.org/wiki/Into_the_Breach |
-| Crusader Kings III | 2020 | Paradox Development Studio | Character-driven grand strategy, emergent stories from traits and succession, real time with pause | https://en.wikipedia.org/wiki/Crusader_Kings_III |
+| Name | What to study | Link |
+|---|---|---|
+| StarCraft II: Wings of Liberty | Three asymmetric factions, build orders, scouting under fog of war, competitive balance patching | https://en.wikipedia.org/wiki/StarCraft_II:_Wings_of_Liberty |
+| Age of Empires II | Age-up phases as pacing gates, many civilizations from a shared unit base, long-term community balance | https://en.wikipedia.org/wiki/Age_of_Empires_II |
+| Civilization VI | Districts that make city placement a map puzzle, multiple victory types, late-game turn length | https://en.wikipedia.org/wiki/Civilization_VI |
+| XCOM: Enemy Unknown | Percent-to-hit tension, permadeath attachment, strategic layer feeding tactical missions | https://en.wikipedia.org/wiki/XCOM:_Enemy_Unknown |
+| Total War: Warhammer II | Turn-based campaign joined to real-time battles, highly asymmetric races, campaign objective race | https://en.wikipedia.org/wiki/Total_War:_Warhammer_II |
+| Into the Breach | Telegraphed enemy intent, small 8x8 maps, puzzle-like tactics with near-zero randomness in combat | https://en.wikipedia.org/wiki/Into_the_Breach |
+| Crusader Kings III | Character-driven grand strategy, emergent stories from traits and succession, real time with pause | https://en.wikipedia.org/wiki/Crusader_Kings_III |
 
 ## Common failures
 
@@ -56,5 +56,5 @@ Observe the state (map, resources, enemy), decide on a plan with trade-offs, act
 ## Sources
 
 - English Wikipedia pages listed in the reference table. The Total War: Warhammer II page was fetched on 2026-11-05; other page contents were not rechecked.
-- Release years and developers are from prior knowledge and should be rechecked against the Wikipedia pages: UNVERIFIED.
+- Check the publisher's or developer's official game page before citing release dates or developer credits.
 - Into the Breach combat uses an [8x8 grid](https://www.gameinformer.com/games/into_the_breach/b/pc/archive/2018/02/26/game-informer-review-into-the-breach).

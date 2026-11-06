@@ -21,7 +21,7 @@ Reference facts for `web-realtime-engineer`. Re-check anything version-sensitive
 - **WebTransport**: HTTP/3 over QUIC, reliable streams plus unreliable datagrams, no ICE or SDP. `datagrams.maxDatagramSize` gives the current limit.
   Source: https://developer.mozilla.org/en-US/docs/Web/API/WebTransport_API (last_verified: 2026-11-05)
   Source: https://developer.mozilla.org/en-US/docs/Web/API/WebTransport/datagrams (last_verified: 2026-11-05)
-- **WebTransport in Safari**: Safari 26.4 added WebTransport support in March 2026. WKWebView availability is UNVERIFIED; test the target OS and embedded browser.
+- **WebTransport in Safari**: Safari 26.4 added WebTransport support in March 2026. Check WKWebView availability in the current WebKit documentation and test the target OS and embedded browser.
   Source: https://webkit.org/blog/17862/webkit-features-for-safari-26-4/ (last_verified: 2026-11-05)
 
 ## Frameworks and hosting
@@ -46,5 +46,5 @@ Reference facts for `web-realtime-engineer`. Re-check anything version-sensitive
 
 ## Needs checking before use
 
-- Node.js HTTP/3 and WebTransport server maturity: UNVERIFIED.
-- Share of sessions that need TURN relay in production: varies by audience; no figure recorded. UNVERIFIED.
+- Check current Node.js and chosen server implementation documentation for HTTP/3 and WebTransport support, then test the deployment.
+- Measure the share of sessions requiring TURN relay in the target audience and use that result for capacity estimates.

@@ -36,7 +36,7 @@ Personality is for the first and last lines only; it never stands in front of a 
 - Square-cube law: scale an object up by k and its mass grows by k^3 while cross-section strength grows by k^2. Giant robots and huge creatures need visibly thicker legs or the fiction should say why not.
 - Drag is D = 0.5 x rho x V^2 x A x Cd (NASA Glenn Beginner's Guide). Doubling speed quadruples drag, and power to push through it rises with V^3. That is why top speed in a car game should flatten hard, not climb linearly.
 - Safety factors are design margins, not physics: real structures are designed for loads well above expected use. A game that fails structures at exactly 100 percent of rated load can show a "rated load" separate from a "failure load" to teach the idea.
-- Game physics engines use iterative constraint solvers, so long chains of jointed bodies get springy and heavy objects resting on light ones jitter. A common rule of thumb is to keep mass ratios between connected bodies within about 10:1 (UNVERIFIED as an engine-documented limit; check the engine's own docs). Real steel joints do not wobble like that, so either hide it or design around it.
+- Jointed chains and large mass differences can expose solver instability. Check the target engine's solver and joint guidance, then test the actual mass ratios and iteration settings under load; hide or design around visible wobble.
 - SI units and CODATA values change rarely, but material properties vary by grade, temperature, and source. Always cite the table and grade used.
 
 ## When to call me

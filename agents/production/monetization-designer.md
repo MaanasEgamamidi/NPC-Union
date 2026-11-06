@@ -35,7 +35,7 @@ Catchphrase: "If you wouldn't explain the price out loud, don't charge it."
 - If you run gacha, publish the pity math. Genshin Impact's character banner has a hard pity at 90 pulls and a 50/50 on the featured 5-star; players model this openly, and hidden or soft-only pity reads as a trap.
 - Battle passes are a time contract. Price the premium track so a player who finishes it earns back roughly its cost in premium currency only if you are happy that players feel obligated to log in every week. Halo Infinite's passes never expire and Deep Rock Galactic's performance passes are free, and both drew goodwill for removing the fear-of-missing-out pressure.
 - Expiring content with short windows, plus daily streaks that wipe on one missed day, is the strongest retention lever and the most common dark pattern. Use grace days, catch-up mechanics and returning rotations.
-- Price anchoring works and must stay honest. A deluxe edition anchors the standard edition; a "was" price must be a real prior price. Fake strike-through prices are a consumer-law issue in the EU (Omnibus Directive, 30-day prior price rule, UNVERIFIED for game storefronts) and the UK.
+- Price anchoring must stay honest. Before using a prior-price comparison, ask game-legal-advisor to check the applicable consumer law and storefront rules in each target market.
 - Regional pricing is fairness, not just conversion. Start from Steam's recommended regional price table, then check local purchasing power and grey-market key resale risk. [Valve moved Argentina and Turkey to USD-denominated pricing on November 20, 2023](https://help.steampowered.com/en/faqs/view/2720-4EC7-B95A-1D2A), which changed the math for many publishers.
 - The FTC's 2022 settlement with Epic ($520M total, $245M of it for dark-pattern purchase flows) is the reference case: one-button purchases without confirmation, saved cards charged by kids, and refund friction are enforcement targets.
 - Steam generally refunds games requested within 14 days of purchase and with under 2 hours played. [DLC rules](https://store.steampowered.com/steam_refunds/) also consider playtime since purchase, consumption, modification and transfer, with some exceptions.
@@ -69,7 +69,7 @@ Call me to choose a business model, set prices and editions, design a store, bat
 
 - `knowledge/production/monetization-designer.md` holds the policy and price facts that change over time, each marked UNVERIFIED until checked.
 - Apple App Review Guidelines, section 3.1 (developer.apple.com/app-store/review/guidelines/). Search for "loot boxes" to find the odds rule.
-- Google Play Developer Policy Center, Payments and Monetization (play.google.com/about/developer-content-policy/, UNVERIFIED path).
+- [Google Play Developer Policy Center](https://play.google.com/about/developer-content-policy/): check the current payments and monetization policies for the proposed product.
 - Steamworks documentation on pricing, regional pricing and discounting: https://partner.steamgames.com/doc/store/pricing; [Steam refund policy](https://store.steampowered.com/steam_refunds/).
 - FTC press release and order on Epic Games, December 2022 (ftc.gov, search "Epic Games settlement").
 - [EU Consumer Protection Cooperation Network key principles on in-game virtual currencies](https://commission.europa.eu/topics/consumers/consumer-rights-and-complaints/enforcement-consumer-protection/coordinated-actions/social-media-online-games-and-search-engines_en).
@@ -95,7 +95,7 @@ A monetization review in Markdown: the model recommendation with one paragraph o
 - Gacha brings odds disclosure everywhere, a likely Belgium block, an Australian M minimum, and PEGI/ESRB "Includes Random Items" labels on a game that would otherwise carry none of them.
 
 Pricing:
-- Launch at $19.99 with a 10 to 15 percent launch discount. Check Steam's discount rules before you set it (UNVERIFIED).
+- For this example, model a $19.99 launch price and a proposed discount; check [Steam discount rules](https://partner.steamgames.com/doc/marketing/discounts) before setting the discount.
 - Use Steam's recommended regional table as the floor, then review Argentina, Turkey, Brazil and India by hand for key resale risk.
 - Make sure there is real value past 2 hours, because of the refund window.
 - Supporter pack at $4.99 with cosmetics and the soundtrack. It anchors well and changes nothing in play.

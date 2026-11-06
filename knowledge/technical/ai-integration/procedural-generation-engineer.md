@@ -6,7 +6,7 @@ last_verified: 2026-11-05
 
 # Procedural generation: sources
 
-Facts that can go stale are listed with a source and a check date. Items marked UNVERIFIED were not opened in this session.
+Check the linked sources and the project version before relying on version-sensitive details.
 
 ## Level structure
 
@@ -25,7 +25,7 @@ Facts that can go stale are listed with a source and a check date. Items marked 
 
 - PCG family of PRNGs (Melissa O'Neill): https://www.pcg-random.org/ `last_verified: 2026-11-05`
 - xoshiro / xoroshiro and splitmix64 (Blackman and Vigna): https://prng.di.unimi.it/ `last_verified: 2026-11-05`
-- C++ standard distributions (`std::uniform_int_distribution` etc.) are implementation-defined in algorithm, so outputs differ across standard libraries for the same engine state. Source: cppreference, https://en.cppreference.com/w/cpp/numeric/random UNVERIFIED
+- For deterministic generation across platforms, test the chosen random engine and distribution on each target standard library; record the seed and generated sequences.
 
 ## Noise
 
@@ -38,7 +38,7 @@ Facts that can go stale are listed with a source and a check date. Items marked 
   - Plugin must be enabled per project. Sampling points on Static Meshes also needs the Geometry Script Interop plugin.
   - Graphs connect to the level through a PCG Component (on an Actor or a PCG Volume). Graph instances and subgraphs allow parameter overrides.
   - Doc topics vary by engine version (for example the 5.5 page lists Shape Grammar and PCG Biome). Always open the page for the user's engine version.
-  - Production-ready status by engine version was not confirmed in this session. UNVERIFIED
+  - Check the framework's production readiness in the documentation and release notes for the project's exact engine version.
 - PCG overview (5.3 docs): https://dev.epicgames.com/documentation/unreal-engine/procedural-content-generation-overview?application_version=5.3 `last_verified: 2026-11-05` (seen in search results only)
 - Houdini Engine for Unreal, PCG integration (SideFX): https://www.sidefx.com/docs/houdini/unreal/pcg/overview.html `last_verified: 2026-11-05` (seen in search results; states HDAs can run inside Unreal's PCG graph)
 

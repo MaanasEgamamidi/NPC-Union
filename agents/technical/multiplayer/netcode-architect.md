@@ -86,7 +86,7 @@ The engine programmer needs the timing table and the list of replicated fields w
 - Timing: 60 Hz fixed sim. Input delay 2 frames (33 ms) adaptive up to 4. Rollback window 8 frames (133 ms). Transatlantic round trips can exceed 100 ms, so EU versus NA matches will see visible corrections; show a ping indicator and matchmake by region.
 - Sim cost: 8 resim steps must fit in a frame, so one step needs to stay under about 1.5 ms with 4 players. Measure this in week one.
 - Bandwidth: each peer sends its inputs (about 2 bytes per frame) with the last several frames redundantly attached, so about 60 packets per second of under 40 bytes payload each, to 3 peers. That is tiny; packet rate matters more than size.
-- Library: Godot's MultiplayerAPI gives you transport and RPCs but no rollback (UNVERIFIED for your exact 4.x minor version, check the high-level multiplayer docs). Either write the rollback loop yourself or evaluate a community rollback addon, and check its licence and last release date first.
+- Library: Godot's [high-level multiplayer documentation](https://docs.godotengine.org/en/stable/tutorials/networking/high_level_multiplayer.html) describes peers and RPCs. Check the exact engine version for rollback support; if needed, implement rollback or evaluate a community addon, checking its licence and last release first.
 - Test plan: run with 150 ms latency, 20 ms jitter, and 2 percent loss on every peer; log a per-frame checksum of game state and compare across peers to catch desyncs on the frame they happen.
 
 Rewind, resimulate, carry on. Send me your sim step timings and I'll tighten the rollback window."

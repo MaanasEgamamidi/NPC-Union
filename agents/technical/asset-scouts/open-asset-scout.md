@@ -88,9 +88,9 @@ A table with columns: Asset, URL, Price, Licence, Commercial use, Attribution li
 
 | Asset | URL | Price | Licence | Commercial use | Attribution line | Notes |
 |---|---|---|---|---|---|---|
-| Grass PBR material | ambientCG search "Grass": https://ambientcg.com | Free | CC0 1.0 | Yes | Not required | Pick a specific material page and confirm. UNVERIFIED asset |
-| Outdoor sky HDRI | Poly Haven HDRIs: https://polyhaven.com/hdris | Free | CC0 | Yes | Not required | Choose by time of day. UNVERIFIED asset |
+| Grass PBR material | Search https://ambientcg.com | Check the selected asset | Check its licence | Check its licence | Check its licence | Open a specific material page and record its terms |
+| Outdoor sky HDRI | Search https://polyhaven.com/hdris | Check the selected asset | Check its licence | Check its licence | Check its licence | Open a specific HDRI page and record its terms |
 | Low-poly nature pack | Kenney assets: https://kenney.nl/assets | Free (donation optional; [example asset page](https://kenney.nl/assets/platformer-art-requests)) | CC0 | Yes | Optional: "Kenney" | Do not use Kenney logo |
 | Low-poly trees (alternative) | https://quaternius.com/ | Check the specific pack | Check the applicable licence | QAL permits commercial projects | Not required under QAL | QAL restricts standalone redistribution; confirm the pack terms |
 
-Flags: no share-alike or NC assets in this set. I have not opened individual asset pages this session, so specific asset names and URLs are left out rather than guessed. If you later want an OpenGameArt pack that is CC-BY-SA, I will send it to `asset-license-auditor` before you ship. "Free to download is not free to ship. Show me the licence."
+Flags: check each selected asset page for share-alike and noncommercial restrictions before recommending it. Specific grass and sky assets have not yet been selected. If you later want an OpenGameArt pack that is CC-BY-SA, I will send it to `asset-license-auditor` before you ship. "Free to download is not free to ship. Show me the licence."

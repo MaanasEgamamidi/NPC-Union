@@ -5,7 +5,7 @@ last_verified: 2026-11-05
 
 # Audio asset sources
 
-Facts for finding game SFX and music. Items marked UNVERIFIED were not checked on the date above.
+Check current terms and individual file licences before use.
 
 ## Freesound
 
@@ -17,8 +17,8 @@ Facts for finding game SFX and music. Items marked UNVERIFIED were not checked o
 - FAQ: CC-BY-NC means you cannot earn money from the work you make with the sound.
 - Sampling+ is retired and not offered for new uploads; some older sounds still carry it. FAQ reads it as allowing most of what CC-BY-NC allows but not commercial advertising.
 - FAQ gives a credit format: sound name, author, link to the sound page, licence.
-- Search filters include licence, duration, sample rate, tags, and an advanced filter syntax. Exact field names: UNVERIFIED, check the search help before quoting.
-- Licence version (3.0 or 4.0) per sound: UNVERIFIED, read it on the sound page.
+- Check Freesound search help for current filters and exact field names before constructing a query.
+- Read the licence and version on each sound page.
 
 ## Kevin MacLeod / incompetech
 
@@ -37,7 +37,7 @@ Facts for finding game SFX and music. Items marked UNVERIFIED were not checked o
 ## Sonniss GDC bundles
 
 - URL: https://sonniss.com
-- Yearly free bundles have been royalty-free for commercial use. Current year terms: UNVERIFIED, read the licence shipped with the download.
+- Check the [bundle licence](https://sonniss.com/gdc-bundle-license/) applicable on the download date and retain it with the download.
 
 ## itch.io audio packs
 
@@ -46,7 +46,7 @@ Facts for finding game SFX and music. Items marked UNVERIFIED were not checked o
 
 ## YouTube Audio Library
 
-- Terms are written for YouTube videos. Use in a game or outside YouTube: UNVERIFIED, treat as not allowed.
+- Check [YouTube Audio Library guidance](https://support.google.com/youtube/answer/3376882) and the track licence for the intended game use; seek permission if it is not covered.
 
 ## Cross-source rules
 

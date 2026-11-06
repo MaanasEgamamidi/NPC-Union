@@ -2,19 +2,19 @@
 title: Game localization pipeline reference
 tags: [localization, i18n, plurals, pseudo-localization, cjk, rtl, lqa]
 sources:
-  - https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html
-  - https://unicode-org.github.io/icu/userguide/format_parse/messages/
-  - https://www.unicode.org/reports/tr9/
-  - https://www.unicode.org/reports/tr14/
-  - https://www.w3.org/TR/jlreq/
-  - https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html
-  - https://learn.microsoft.com/en-us/globalization/methodology/pseudolocalization
+  - "https://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html"
+  - "https://unicode-org.github.io/icu/userguide/format_parse/messages/"
+  - "https://www.unicode.org/reports/tr9/"
+  - "https://www.unicode.org/reports/tr14/"
+  - "https://www.w3.org/TR/jlreq/"
+  - "https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html"
+  - "https://learn.microsoft.com/en-us/globalization/methodology/pseudolocalization"
 last_verified: 2026-11-05
 ---
 
 # Game localization pipeline reference
 
-Owner: `localization-lead`. Links were not fetched during this write-up because of a time limit. Treat every link as UNVERIFIED until a session fetches it, and check version-specific engine behaviour on the live docs.
+Owner: `localization-lead`. Treat every link as UNVERIFIED until a session fetches it, and check version-specific engine behaviour on the live docs.
 
 ## Plural categories (CLDR)
 
@@ -40,16 +40,7 @@ Test values that exercise most rules: 0, 1, 2, 3, 5, 11, 21, 22, 100, 101, 1.5.
 
 ## Text expansion budgets
 
-Rule of thumb used in the industry, UNVERIFIED as a precise standard (figures vary by source):
-
-| English length | Allow growth of |
-|---|---|
-| up to 10 characters | 100 to 200 percent |
-| 11 to 20 | 80 to 100 percent |
-| 21 to 70 | 40 to 60 percent |
-| over 70 | about 30 percent |
-
-German, French, Russian and Brazilian Portuguese are usually the longest European targets. CJK strings are usually shorter in character count but may need larger font sizes for legibility, so measure in pixels, not characters.
+Measure representative translations in the target UI, including short labels and long passages. Use pseudolocalization to expose clipping, then adjust layout based on actual rendered text in each target language and font.
 
 ## Pseudo-localization spec
 
@@ -71,7 +62,7 @@ German, French, Russian and Brazilian Portuguese are usually the longest Europea
 - Shaping: Arabic letters take initial, medial, final and isolated forms. Confirm the engine text stack shapes them.
 - Bidi: mixed Arabic with numbers or Latin names follows UAX #9. Test player names and numbers inside sentences.
 - Mirror layout: navigation arrows, progress bars, list and HUD alignment. Do not mirror clocks, media play icons or real-world maps.
-- Godot 4's advanced text server provides BiDi and shaping (check current docs). Unity and Unreal support varies by text component and version: UNVERIFIED, check current docs.
+- Check the current engine and text-component documentation for bidirectional text and shaping support, then test mixed-direction strings in the shipping build.
 
 ## Casing pitfalls
 

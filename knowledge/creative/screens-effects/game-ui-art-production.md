@@ -2,14 +2,14 @@
 title: Game UI art production (9-slice, states, icons, font atlases, scaling)
 tags: [ui, hud, 9-slice, icons, fonts, sdf, scaling, accessibility]
 sources:
-  - https://docs.godotengine.org/en/stable/classes/class_ninepatchrect.html
-  - https://docs.godotengine.org/en/stable/classes/class_styleboxtexture.html
-  - https://docs.godotengine.org/en/stable/tutorials/ui/gui_using_fonts.html
-  - https://docs.unity3d.com/Manual/9SliceSprites.html
-  - https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html
-  - https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html
-  - https://learn.microsoft.com/en-us/gaming/accessibility/guidelines
-  - https://gameaccessibilityguidelines.com/
+  - "https://docs.godotengine.org/en/stable/classes/class_ninepatchrect.html"
+  - "https://docs.godotengine.org/en/stable/classes/class_styleboxtexture.html"
+  - "https://docs.godotengine.org/en/stable/tutorials/ui/gui_using_fonts.html"
+  - "https://docs.unity3d.com/Manual/9SliceSprites.html"
+  - "https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html"
+  - "https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html"
+  - "https://learn.microsoft.com/en-us/gaming/accessibility/guidelines"
+  - "https://gameaccessibilityguidelines.com/"
 last_verified: 2026-11-05
 ---
 
@@ -44,7 +44,7 @@ Other resolutions (for example 1280x800, 1366x768) need bars or extra canvas.
 ## State variants
 
 - Minimum set: normal, hover, focused/selected, pressed, disabled.
-- Unity's Selectable transitions use Normal, Highlighted, Pressed, Selected and Disabled states. UNVERIFIED against the current uGUI manual.
+- For Unity Selectable states, check the uGUI documentation for the project's package version before preparing variants.
 - Godot buttons use theme styleboxes for normal, hover, pressed, disabled and focus, with focus drawn on top. The [stable Button documentation](https://docs.godotengine.org/en/stable/classes/class_button.html) also lists hover-pressed.
 
 ## Fonts
@@ -59,6 +59,6 @@ Other resolutions (for example 1280x800, 1366x768) need bars or extra canvas.
 - WCAG 2.1 SC 1.4.3: 4.5:1 for normal text, 3:1 for large text.
 - WCAG 2.1 SC 1.4.11: 3:1 for UI components and graphical objects needed to understand them.
 - Do not carry meaning by colour alone (Game Accessibility Guidelines and Xbox Accessibility Guidelines both cover this).
-- Text expansion: German and French often run about 30% longer than English. UNVERIFIED as a fixed figure; get real limits from localization-lead.
+- Text expansion varies by string and language; ask localization-lead for representative translations and test them in the actual layouts.
 - Touch targets: [Apple recommends a 44x44 pt default for iOS and iPadOS](https://developer.apple.com/design/human-interface-guidelines/accessibility), with a 28x28 pt minimum; [Android guidance](https://developer.android.com/develop/ui/compose/accessibility/api-defaults) recommends at least 48x48 dp.
 - TV safe areas: console requirements change; look them up per platform. No figure recorded here.

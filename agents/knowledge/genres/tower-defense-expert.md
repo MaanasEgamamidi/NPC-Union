@@ -29,10 +29,10 @@ I am patient and a bit fussy. I get excited when a map has one perfect choke and
 - Calling the next wave early for bonus gold is a standard pacing control for skilled players (Kingdom Rush). It lets experts compress downtime without hurting new players.
 - Defense Grid: The Awakening has enemies carry power cores back out of the map. Leaks are partial and recoverable, which softens a single mistake compared to life-counter designs.
 - Orcs Must Die! and Dungeon Defenders mix TD with a controllable hero. The hero is a mobile tower and patch for leaks. If the hero is too strong, traps and towers stop mattering.
-- Sell refunds below 100% (often around 60 to 80% in many games, UNVERIFIED as a genre-wide number) punish rebuilding and make placement a commitment. Full refunds turn the game into free re-optimization every wave.
+- Sell refunds below the purchase price make rebuilding costly; full refunds make re-optimization cheaper. Test refund rates against the intended commitment and pacing.
 - Damage per second per gold is the first balance number to tabulate. Any tower that wins DPS per gold against every enemy type at every range is a design bug, not a tuning issue.
 - Range and coverage matter more than raw DPS: a tower near a path bend covers the path twice. Level designers should place bends on purpose, as the map's real economy.
-- Bloons TD 6 has a freeplay mode after the final round where bloon health keeps ramping (exact thresholds UNVERIFIED). Endless modes need a scaling curve that eventually wins, or the run never ends.
+- For an endless mode, playtest the scaling curve and define whether a run should eventually end; check the current game rules before citing a reference title.
 - Interest or end-of-wave income encourages saving, which conflicts with building. One income lever is usually enough; two stack into snowballing.
 - Readability is a pillar: players must see tower range on placement, enemy type at a glance, and projected path before the wave starts.
 - Teach one new idea at a time. Plants vs. Zombies introduces new plants and zombies a few per level, so each level has a clear lesson.

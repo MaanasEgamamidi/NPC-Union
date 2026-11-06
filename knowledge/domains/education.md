@@ -2,26 +2,26 @@
 title: Education and learning games
 tags: [education, learning-science, edtech, coppa, ferpa, standards, assessment, udl]
 sources:
-  - https://en.wikipedia.org/wiki/Bloom%27s_taxonomy
-  - https://shura.shu.ac.uk/3556/
-  - https://eprints.whiterose.ac.uk/id/eprint/189921/
-  - https://en.wikipedia.org/wiki/Testing_effect
-  - https://en.wikipedia.org/wiki/Spacing_effect
-  - https://en.wikipedia.org/wiki/Cognitive_load
-  - https://myweb.fsu.edu/vshute/pdf/IJT.pdf
-  - https://www.thecorestandards.org/Math/Content/6/RP/
-  - https://www.nextgenscience.org/three-dimensions
-  - https://udlguidelines.cast.org/
-  - https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa
-  - https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions
-  - https://www.govinfo.gov/content/pkg/FR-2025-04-22/html/2025-05904.htm
-  - https://gdpr-info.eu/art-8-gdpr/
-  - https://studentprivacy.ed.gov/ferpa
-  - https://www.1edtech.org/standards/lti
-  - https://www.esrb.org/ratings-guide/
-  - https://pegi.info/what-do-the-labels-mean
-  - https://nces.ed.gov/ccd/
-  - https://educationdata.urban.org/documentation/
+  - "https://en.wikipedia.org/wiki/Bloom%27s_taxonomy"
+  - "https://shura.shu.ac.uk/3556/"
+  - "https://eprints.whiterose.ac.uk/id/eprint/189921/"
+  - "https://en.wikipedia.org/wiki/Testing_effect"
+  - "https://en.wikipedia.org/wiki/Spacing_effect"
+  - "https://en.wikipedia.org/wiki/Cognitive_load"
+  - "https://myweb.fsu.edu/vshute/pdf/IJT.pdf"
+  - "https://www.thecorestandards.org/Math/Content/6/RP/"
+  - "https://www.nextgenscience.org/three-dimensions"
+  - "https://udlguidelines.cast.org/"
+  - "https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa"
+  - "https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions"
+  - "https://www.govinfo.gov/content/pkg/FR-2025-04-22/html/2025-05904.htm"
+  - "https://gdpr-info.eu/art-8-gdpr/"
+  - "https://studentprivacy.ed.gov/ferpa"
+  - "https://www.1edtech.org/standards/lti"
+  - "https://www.esrb.org/ratings-guide/"
+  - "https://pegi.info/what-do-the-labels-mean"
+  - "https://nces.ed.gov/ccd/"
+  - "https://educationdata.urban.org/documentation/"
 last_verified: 2026-11-05
 ---
 
@@ -33,13 +33,13 @@ Reference for `education-expert`. Learning science, standards, data, classroom c
 
 | Name | Publisher | URL | Access | Licence / terms | Format | Cadence | Limit or pitfall |
 |---|---|---|---|---|---|---|---|
-| Common Core of Data (CCD) | NCES (US Dept. of Education) | https://nces.ed.gov/ccd/ | Download, CCD Data File Tool | US federal statistics; licence wording not checked on page (UNVERIFIED) | CSV / data files | Annual | About 100,000 public schools and 18,000 districts; school-level, no student data |
+| Common Core of Data (CCD) | NCES (US Dept. of Education) | https://nces.ed.gov/ccd/ | Download, CCD Data File Tool | Check NCES terms for the intended use | CSV / data files | Annual | About 100,000 public schools and 18,000 districts; school-level, no student data |
 | Education Data Portal API | Urban Institute | https://educationdata.urban.org/documentation/ | REST API by URL, or Stata / R; no key stated | [ODC-By 1.0](https://educationdata.urban.org/documentation/); site terms also apply | JSON | Follows source releases | Aggregates CCD and other sources; check source-year coverage per endpoint |
-| Common Core State Standards | Common Core State Standards Initiative | https://www.thecorestandards.org/Math/Content/6/RP/ | Web pages per grade and domain | Terms not checked (UNVERIFIED) | HTML with stable codes (e.g. CCSS.Math.Content.6.RP.A.1) | Rarely changes | States adopt and modify; check the state's version |
+| Common Core State Standards | Common Core State Standards Initiative | https://www.thecorestandards.org/Math/Content/6/RP/ | Web pages per grade and domain | Check the current terms before reuse | HTML with stable codes (e.g. CCSS.Math.Content.6.RP.A.1) | Rarely changes | States adopt and modify; check the state's version |
 | NGSS | NGSS Lead States | https://www.nextgenscience.org/three-dimensions | Web pages | [NGSS copyright terms](https://www.nextgenscience.org/ngss-trademarks-and-copyright/ngss-trademarks-and-copyright) allow specified education entities to copy and adapt; check terms for other users | HTML; performance expectations combine three dimensions | Rarely changes | Each standard is three-dimensional; a game that only covers content (core ideas) misses practices |
 | OpenStax textbooks | Rice University | https://openstax.org/license | Download | Licences vary by book: [American Government 3e](https://openstax.org/books/american-government-3e/pages/preface) is CC BY 4.0; [Foundations of Information Systems](https://openstax.org/books/foundations-information-systems/pages/preface) is CC BY-NC-SA 4.0. Check each book | PDF, web | Editions | Logo and name are trademarks; check before use |
 | PhET simulations | University of Colorado Boulder | https://phet.colorado.edu/en/licensing | Web, download | [Regular HTML simulations are CC BY-NC 4.0](https://phet.colorado.edu/en/licensing/); contact PhET for commercial licensing | HTML5 sims | Ongoing | Older Java/Flash sims differ; check per sim |
-| Khan Academy | Khan Academy | none | No public API known (UNVERIFIED: GitHub repo blocked in this environment) | n/a | n/a | n/a | Do not plan a game around Khan Academy data |
+| Khan Academy | Khan Academy | https://www.khanacademy.org/ | Check current access options with the provider | Check current terms | Check formats | Check provider | Confirm access and permitted use before planning an integration |
 
 ## Standards and expert sources
 
@@ -72,22 +72,22 @@ Trust breakers for teachers and researchers:
 
 - The extrinsic quiz-gate pattern, tested directly by Habgood and Ainsworth: same questions, less learning, far less voluntary play.
 - Rewards for speed that push children to guess.
-- Monetization and engagement loops in children's learning products. A specific criticism of Prodigy Math by advocacy groups is widely reported, but this build did not fetch the source (UNVERIFIED); speak generally unless verified.
+- Evaluate monetization and engagement loops in children's learning products; consult primary evidence before attributing a criticism to a specific product.
 - Sessions longer than a class period with no mid-level save.
 - Dependence on installs, WebGL features, or domains blocked by school filters.
 
 ## Reference games
 
-Details below were not fetched in this build; confirm each on Wikipedia or the official site before citing (all UNVERIFIED).
+Use these examples as leads for study; confirm game details and mechanics on the developer's official site or in the game before citing them.
 
 | Game | Year | Developer | What to study |
 |---|---|---|---|
-| The Oregon Trail | 1971 (later MECC versions) | MECC | Resource trade-offs as history; consequences that stick |
-| DragonBox Algebra 5+ | 2012 | WeWantToKnow | Algebra rules as card manipulation before symbols appear |
-| Minecraft Education | 2016 | Mojang Studios / Microsoft | Teacher controls, classroom worlds, LMS integration |
-| Kerbal Space Program (KSP EDU) | 2015 (full release) | Squad | Orbital mechanics learned by failing launches |
-| Zoombinis (The Logical Journey of the Zoombinis) | 1996 | TERC / Brøderbund | Logic puzzles with no text instructions |
-| Duolingo | 2011 | Duolingo | Streaks and spaced review; study where gamification helps retention and where it pushes shallow practice |
+| The Oregon Trail | Check official history | Check credits | Examine resource trade-offs and consequences |
+| DragonBox Algebra 5+ | Check official history | Check credits | Examine how the game introduces algebra |
+| Minecraft Education | Check official history | Check credits | Examine classroom controls and integration |
+| Kerbal Space Program | Check official history | Check credits | Examine how launch attempts teach orbital concepts |
+| Zoombinis | Check official history | Check credits | Examine how players learn puzzle rules |
+| Duolingo | Check official history | Check credits | Examine practice and engagement mechanics |
 
 ## Sensitive topics and legal
 

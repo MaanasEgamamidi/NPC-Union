@@ -15,15 +15,13 @@ Facts that can go stale. Re-check before relying on them. Provider model names, 
 - What it says: the survey covers AI used in content that ships with the game, not AI used only as a development efficiency tool. Two categories:
   - Pre-Generated: content created with AI tools during development. Reviewed like other content, including legality and consistency with marketing.
   - Live-Generated: content created with AI tools while the game runs. Same rules, plus the developer must describe the guardrails that stop the AI producing illegal content.
-- The page as fetched did not describe a player reporting mechanism. Earlier Valve announcements described one; that is UNVERIFIED here.
+- Check current Steamworks documentation for player reporting and disclosure requirements before submission.
 
 ### Valve announcement on AI content on Steam (January 2024)
-- Source: UNVERIFIED (not fetched in this session; find it via the Steamworks news feed and add the link once checked)
-- Status: UNVERIFIED
+- Consult the Steamworks news feed for the announcement and compare it with current disclosure requirements before relying on it.
 
 ### Console and mobile platform rules on generated content
-- Nintendo, Sony, Microsoft, Apple App Store, Google Play: rules sit behind developer portals or change often.
-- Status: UNVERIFIED. Check each platform's current developer documentation before submission.
+- For Nintendo, Sony, Microsoft, Apple App Store and Google Play, check each platform's current developer documentation and applicable portal before submission.
 
 ## Provider facts
 
@@ -32,5 +30,4 @@ Facts that can go stale. Re-check before relying on them. Provider model names, 
 
 ## Needs local verification
 
-- Valve January 2024 AI content announcement link.
 - Console platform rules on runtime generated content.

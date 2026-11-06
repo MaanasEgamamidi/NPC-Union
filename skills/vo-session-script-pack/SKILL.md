@@ -18,7 +18,7 @@ Builds everything a voice session needs from a list of dialogue lines, keyed to 
 - Which lines are time-locked (cutscene, lip sync) and their max durations.
 - Whether any AI, TTS, or voice cloning is planned.
 
-If session length is missing, assume one session of about 3 to 4 hours and state the assumption (UNVERIFIED rule of thumb).
+If session length is missing, ask the production team for its planned session length; if unavailable, state the scheduling assumption and confirm it with the performers.
 
 ## Steps
 

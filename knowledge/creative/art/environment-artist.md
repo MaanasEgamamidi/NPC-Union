@@ -1,13 +1,13 @@
 ---
 title: Environment art reference
 tags: [environment, tileset, autotile, parallax, modular-kit, set-dressing, performance]
-sources: [https://docs.unity3d.com/Manual/Tilemap.html (UNVERIFIED), https://docs.godotengine.org/en/stable/tutorials/2d/using_tilesets.html (UNVERIFIED), https://docs.unrealengine.com/ (UNVERIFIED), https://gdcvault.com/ (UNVERIFIED)]
+sources: ["https://docs.godotengine.org/en/stable/classes/class_tileset.html", "https://docs.unity3d.com/Packages/com.unity.2d.tilemap.extras@latest/"]
 last_verified: 2026-11-05
 ---
 
 # Environment art reference
 
-Working tables for environment-artist. Engine setting names change between versions: check the current docs page before quoting one. Links in `sources` were not fetched in this session and are UNVERIFIED.
+Working tables for environment-artist. Engine setting names change between versions: check the current docs page before quoting one.
 
 ## Autotile schemes
 
@@ -63,11 +63,11 @@ Rules: pivot at grid corner; widths are whole multiples; test every piece agains
 
 - [ ] One shared atlas and material per kit where possible.
 - [ ] Draw calls estimated per screen or room (count unique materials).
-- [ ] Average overdraw target set (about 2.5x or less on mid-range mobile is a working heuristic, UNVERIFIED as a universal number).
+- [ ] Set an overdraw budget from profiling on representative target hardware and check it in the engine's profiler.
 - [ ] Alpha cards trimmed to shape; no full-screen alpha layers without need.
 - [ ] Static environment pieces batched or instanced.
 - [ ] Greyscale check: player reads against every background band.
 
 ## Reference talk
 
-- Joel Burgess and Nate Purkeypile, "Skyrim's Modular Level Design", GDC 2013. Find on GDC Vault by title; URL not checked (UNVERIFIED).
+- Search the GDC Vault for talks on modular level design; confirm the speakers and session details on the listing before citing one.

@@ -38,7 +38,7 @@ Catchphrase: "Show me where the people want to go."
 - Overlays (info views) for land value, pollution, coverage, traffic, and happiness are not polish. Without them the simulation is invisible and players cannot diagnose problems.
 - The midgame is the usual weak point: once the first districts are stable, players can run out of problems. Plan new pressure (a new tier, a disaster, a new region, a deadline) to land around the time the first layout stabilises.
 - Bulldozing and rebuilding is part of play. Refund rules, undo, and a pause with full build access decide whether players experiment or play safe.
-- Big cities are a performance problem first. Agent counts, pathfinding, and save size grow with the city, so set a target population and test at it early. Exact engine agent caps vary by game and version: UNVERIFIED unless checked.
+- Big cities are a performance problem first. Agent counts, pathfinding, and save size grow with the city, so set a target population and test at it early. Check any agent limit against the engine documentation and benchmark the target build.
 
 ## When to call me
 

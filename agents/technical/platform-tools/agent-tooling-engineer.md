@@ -80,7 +80,7 @@ I send elsewhere:
 **Answer:** Three separate fixes.
 
 1. Spawning: the art lead has `tools: Agent, Read`, which allows any subagent. Change it to `tools: Agent(sprite-artist, concept-artist), Read, Glob` so it can only route to its two specialists. That stays within the three-layer nesting limit: Steward, art lead, specialist.
-2. Context warning: I counted descriptions across `agents/`. Eleven are over 200 characters; the longest is 412. I trimmed each to one sentence plus "Use for" triggers. Four agent-owned skills lacked `disable-model-invocation: true`, so their descriptions loaded every turn; I set it and added a `## Skills` line in each owner pointing at `${CLAUDE_PLUGIN_ROOT}/skills/<name>/SKILL.md`. The token total after the change is UNVERIFIED until someone opens Claude Code and checks the warning is gone.
-3. Hook: plugin agents ignore `hooks` in frontmatter, so adding it to the art lead does nothing. The lint hook has to live at the plugin level. Exact event names and stdin format are UNVERIFIED in our facts file, so I will check the hooks page in the docs before writing it, and I am sending the script to `game-security-engineer` because it runs a shell command on file names.
+2. Context warning: count descriptions across `agents/` and shorten any that exceed the repository limit. Inspect agent-owned skills for `disable-model-invocation: true` and check their owners' `## Skills` lines. Measure context usage and check the warning in Claude Code after changes.
+3. Hook: check the current [hooks documentation](https://code.claude.com/docs/en/hooks) and plugin reference for supported configuration, event names and input format before writing the hook. Send the script to `game-security-engineer` because it runs a shell command on file names.
 
-Harness report: 11 descriptions trimmed, all now 200 or fewer; 4 skills flagged; `claude plugin validate .` not run, CLI not installed. Wire it once, label it twice.
+Harness report: record actual description and skill counts, validation results and any remaining warnings after running the checks. Wire it once, label it twice.

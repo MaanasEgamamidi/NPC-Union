@@ -2,17 +2,17 @@
 title: Trailer and cutscene direction
 tags: [trailer, cutscene, store-video, capture, steam, app-store, flash-safety]
 sources:
-  - https://partner.steamgames.com/doc/store/trailer
-  - https://developer.apple.com/app-store/app-previews/
-  - https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications
-  - https://support.google.com/googleplay/android-developer/answer/9866151
-  - https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html
+  - "https://partner.steamgames.com/doc/store/trailer"
+  - "https://developer.apple.com/app-store/app-previews/"
+  - "https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications"
+  - "https://support.google.com/googleplay/android-developer/answer/9866151"
+  - "https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-threshold.html"
 last_verified: 2026-11-05
 ---
 
 # Trailer and cutscene direction
 
-Reference for video-director. Items checked against a source on 2026-11-05 say so. Everything else is marked UNVERIFIED and must be checked before it is quoted to a user.
+Reference for video-director. Check linked platform documentation for the current requirements before quoting them.
 
 ## Steam trailers (checked 2026-11-05)
 
@@ -30,7 +30,7 @@ Source: https://partner.steamgames.com/doc/store/trailer
 - Steam builds a 6-second looping microtrailer from clips of the first visible trailer. It cannot be customised.
 - The page does not state a maximum length, a trailer count limit, HDR support or autoplay behaviour.
 
-## Apple App Store app previews (UNVERIFIED)
+## Apple App Store app previews
 
 Sources: [Apple app previews](https://developer.apple.com/app-store/app-previews/) and [App Store Connect specifications](https://developer.apple.com/help/app-store-connect/reference/app-information/app-preview-specifications).
 
@@ -38,7 +38,7 @@ Sources: [Apple app previews](https://developer.apple.com/app-store/app-previews
 - Footage must be captured from the app itself; accepted resolutions depend on the display size.
 - Check the page and App Store Connect help before giving numbers.
 
-## Google Play and console stores (UNVERIFIED)
+## Google Play and console stores
 
 - Google Play uses a [YouTube URL](https://support.google.com/googleplay/android-developer/answer/9866151) for the store listing preview video.
 - Console store video specs (PlayStation, Xbox, Nintendo) sit behind partner portals. Ask the user to check their partner documentation. Do not quote from memory.
@@ -56,14 +56,14 @@ Source: https://www.w3.org/WAI/WCAG21/Understanding/three-flashes-or-below-thres
 - Text card hold: about 3 words per second plus 0.5 s.
 - Music grid: seconds per beat = 60 / BPM. Frames per beat = seconds per beat x fps.
 - Cuts 2 to 3 frames ahead of a beat read as on time.
-- UNVERIFIED: YouTube normalises playback loudness to roughly -14 LUFS integrated. Confirm with audio-director before mixing to it.
+- Ask audio-director to check the destination platform's current loudness guidance and audition the delivered encode before choosing a mix target.
 
 ## Capture setup
 
 - Capture at 60 fps, even for 30 fps delivery, for clean slow motion and frame choice.
 - Capture above delivery resolution when frame rate holds, for downsampled sharpness and room to reframe.
 - Capture build: debug UI off, fixed seeds, invulnerability, dynamic resolution off, deliberate motion blur and shake settings, free camera or photo mode, save file per shot.
-- Offline frame-by-frame capture: Unity Recorder (Unity) and Movie Render Queue (Unreal Engine). Check the engine version's documentation for current settings (UNVERIFIED for any specific version).
+- Offline frame-by-frame capture: Unity Recorder (Unity) and Movie Render Queue (Unreal Engine). Check the installed engine version's documentation for current settings.
 
 ## In-engine versus pre-rendered cutscenes
 

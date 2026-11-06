@@ -23,7 +23,7 @@ Prices are deliberately not stored here. Model prices and rate limits change oft
 
 ## General privacy
 
-- GDPR full text (Regulation (EU) 2016/679): https://eur-lex.europa.eu/eli/reg/2016/679/oj (UNVERIFIED)
+- For GDPR requirements, consult the current regulation on EUR-Lex and seek legal review for the intended processing: https://eur-lex.europa.eu/eli/reg/2016/679/oj.
 
 ## Age ratings
 
@@ -39,4 +39,4 @@ Prices are deliberately not stored here. Model prices and rate limits change oft
 
 ## Needs local verification
 
-The GDPR link marked UNVERIFIED above, plus the exact current wording of the Steam Content Survey AI section.
+Check the exact current wording of the Steam Content Survey AI section before quoting it.

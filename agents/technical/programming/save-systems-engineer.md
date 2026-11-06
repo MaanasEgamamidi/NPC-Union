@@ -107,6 +107,6 @@ static func save(data: Dictionary) -> Error:
     return dir.rename("save.json.tmp", "save.json")
 ```
 
-Sequence: write `save.json.tmp`, flush, close, copy the current file to `.bak`, rename tmp over the real file. On load, if parsing fails or the version is newer than the build supports, try `.bak`, and never overwrite a newer-version save. Caveats: Godot's `flush()` does not promise an fsync, and `DirAccess.rename` replacing an existing file should be checked on Windows for your Godot version (UNVERIFIED; test it with a kill-during-save loop). Add fixtures `v1_basic.json`, `v1_empty_inventory.json`, `v1_30_items.json` and assert the migrated counts.
+Sequence: write `save.json.tmp`, flush, close, copy the current file to `.bak`, rename tmp over the real file. On load, if parsing fails or the version is newer than the build supports, try `.bak`, and never overwrite a newer-version save. Caveats: Godot's `flush()` does not promise an fsync, and replacement behavior of `DirAccess.rename` must be checked on Windows for your Godot version; test it with a kill-during-save loop. Add fixtures `v1_basic.json`, `v1_empty_inventory.json`, `v1_30_items.json` and assert the migrated counts.
 
 Write it twice, rename it once. Backup, backup.

@@ -2,20 +2,20 @@
 title: "NASA International Space Apps Challenge: history, rules, judging, and game-relevant winners"
 tags: [space-apps, nasa, hackathon, judging, awards, game-jam, open-data]
 sources:
-  - https://www.spaceappschallenge.org/
-  - https://www.spaceappschallenge.org/blog/explore-the-next-frontier-at-the-2026-nasa-space-apps-challenge/
-  - https://www.spaceappschallenge.org/2025/awards/global-winners/
-  - https://en.wikipedia.org/wiki/NASA_International_Space_Apps_Challenge
-  - https://www.nasa.gov/learning-resources/stem-engagement-at-nasa/nasa-announces-2025-international-space-apps-challenge-global-winners/
-  - https://www.nasa.gov/learning-resources/stem-engagement-at-nasa/nasa-international-space-apps-challenge-announces-2024-global-winners/
-  - https://science.nasa.gov/directorates/smd/2023-nasa-international-space-apps-challenge-announces-10-global-winners
-  - https://spaceapps-prod.s3.amazonaws.com/media/documents/Space_Apps_2022_Judging_and_Awards_Guide.pdf
-  - https://spaceapps-prod.s3.amazonaws.com/media/documents/Space_Apps_2022_Project_Submission_Guide.pdf
-  - https://2022.spaceappschallenge.org/awards/
-  - https://2021.spaceappschallenge.org/awards/
-  - https://2020.spaceappschallenge.org/awards/
-  - https://2019.spaceappschallenge.org/awards/
-  - https://legacy.spaceappschallenge.org/
+  - "https://www.spaceappschallenge.org/"
+  - "https://www.spaceappschallenge.org/blog/explore-the-next-frontier-at-the-2026-nasa-space-apps-challenge/"
+  - "https://www.spaceappschallenge.org/2025/awards/global-winners/"
+  - "https://en.wikipedia.org/wiki/NASA_International_Space_Apps_Challenge"
+  - "https://www.nasa.gov/learning-resources/stem-engagement-at-nasa/nasa-announces-2025-international-space-apps-challenge-global-winners/"
+  - "https://www.nasa.gov/learning-resources/stem-engagement-at-nasa/nasa-international-space-apps-challenge-announces-2024-global-winners/"
+  - "https://science.nasa.gov/directorates/smd/2023-nasa-international-space-apps-challenge-announces-10-global-winners"
+  - "https://spaceapps-prod.s3.amazonaws.com/media/documents/Space_Apps_2022_Judging_and_Awards_Guide.pdf"
+  - "https://spaceapps-prod.s3.amazonaws.com/media/documents/Space_Apps_2022_Project_Submission_Guide.pdf"
+  - "https://2022.spaceappschallenge.org/awards/"
+  - "https://2021.spaceappschallenge.org/awards/"
+  - "https://2020.spaceappschallenge.org/awards/"
+  - "https://2019.spaceappschallenge.org/awards/"
+  - "https://legacy.spaceappschallenge.org/"
 last_verified: 2026-11-05
 ---
 
@@ -30,7 +30,7 @@ Access note: www.spaceappschallenge.org serves an incomplete TLS chain (leaf iss
 - 2026 hackathon: **November 14-15, 2026**, registration open (homepage banner: "Be a part of the largest annual global hackathon on November 14-15, 2026"). This breaks the October pattern of 2018-2025. Source: https://www.spaceappschallenge.org/
 - Homepage cumulative stats (all years): 487k+ registrations, 3,400+ local events, 190+ countries/territories, 17 Space Agency Partners.
 - Funded by NASA's Science Mission Directorate through a contract with Booz Allen Hamilton, Mindgrub, and SecondMuse (homepage footer). Wikipedia says it is managed by the Earth Science Division at NASA HQ.
-- Registration was open by August 26, 2026, and remains open through November 15, according to the [Space Apps announcement](https://www.spaceappschallenge.org/blog/explore-the-next-frontier-at-the-2026-nasa-space-apps-challenge/). Exact opening date, challenge release date, and 2026 team-size and demo rules: UNVERIFIED. Check the 2026 Participant Guides.
+- Registration was open by August 26, 2026, and remains open through November 15, according to the [Space Apps announcement](https://www.spaceappschallenge.org/blog/explore-the-next-frontier-at-the-2026-nasa-space-apps-challenge/). Check the 2026 Participant Guides for the exact opening date, challenge release date, team-size and demo rules.
 
 ## Year-by-year
 
@@ -76,7 +76,7 @@ Three phases (2022 guide):
 2. Global Judging by NASA and partner-agency experts selects Global Finalists.
 3. Executive Judging by agency leaders selects one winner per Global Award.
 
-Criteria (2022): **Impact** (size of problem, how many helped), **Creativity** (novel vs incremental), **Validity** (scientifically valid, works in the real world), **Relevance** (responsive to the challenge, complete, feasible, usable), **Presentation** (the story: challenge, solution, why it matters). The guide stresses equal attention to Presentation. Current-year wording: UNVERIFIED (the 2026 Judging & Awards guide page did not return readable text).
+Criteria (2022): **Impact** (size of problem, how many helped), **Creativity** (novel vs incremental), **Validity** (scientifically valid, works in the real world), **Relevance** (responsive to the challenge, complete, feasible, usable), **Presentation** (the story: challenge, solution, why it matters). The guide stresses equal attention to Presentation. Check the current year's Judging & Awards guide for current wording.
 
 ## Global awards
 
@@ -112,7 +112,7 @@ Names vary by year: 2020 used Data, Mission, Impact, Science, Technology, Inspir
 | 2024 | Best Storytelling | TerraTales (Cairo), climate stories web app with an eco-choices game | Tell Us a Climate Story! | Story plus game hybrid | same NASA 2024 page |
 | 2025 | Best Use of Storytelling | HerCode Space (Universal Event), "A Solar Tale" | Stellar Stories: Space Weather Through the Eyes of Earthlings | Narrative format for space weather | https://www.nasa.gov/learning-resources/stem-engagement-at-nasa/nasa-announces-2025-international-space-apps-challenge-global-winners/ |
 
-The official [2025 Global Winners page](https://www.spaceappschallenge.org/2025/awards/global-winners/) lists the awards; see the NASA release above for the projects. Official project pages for 2023-2024 were not checked (UNVERIFIED).
+The official [2025 Global Winners page](https://www.spaceappschallenge.org/2025/awards/global-winners/) lists the awards; see the NASA release above for the projects. Consult the official project pages before adding details beyond the NASA releases.
 
 Lessons from the list: prototypes in Adobe XD, Canva, and Construct 3 have won; game-shaped challenges come with an age group and explicit data; storytelling and inspirational awards are where most games land, while Best Use of Science/Data winners put the dataset at the center of the interaction.
 
@@ -122,6 +122,6 @@ Best Use of Science: SpaceGenes+ (Berlin), Build a Space Biology Knowledge Engin
 
 ## Resources
 
-- Official Resources and Participant Guides: Resources menu on https://www.spaceappschallenge.org/ (participant FAQ and guide pages not loaded this session: UNVERIFIED).
+- Find current Resources and Participant Guides through https://www.spaceappschallenge.org/ and check the relevant pages before advising.
 - Each challenge's Resources tab is the primary data list; start there.
 - NASA open data access details: see `knowledge/space/nasa-apis.md`, `knowledge/space/earthdata.md`, `knowledge/space/exoplanet-archive.md`, `knowledge/space/jpl-ssd-apis.md`, `knowledge/space/pds-and-planetary-data.md`, and `knowledge/space/nasa-media-and-usage.md` (NASA insignia and branding rules for project pages).

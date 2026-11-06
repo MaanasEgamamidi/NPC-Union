@@ -1,7 +1,7 @@
 ---
 title: Low poly (flat-shaded faceted 3D)
 tags: [art-style, low-poly, flat-shading, 3d, faceted, stylized]
-sources: [https://en.wikipedia.org/wiki/Star_Fox_(1993_video_game), https://en.wikipedia.org/wiki/Virtua_Fighter_(video_game), https://en.wikipedia.org/wiki/Superhot, https://en.wikipedia.org/wiki/Islanders_(video_game), https://en.wikipedia.org/wiki/The_Battle_of_Polytopia, https://en.wikipedia.org/wiki/Lara_Croft_Go, https://en.wikipedia.org/wiki/A_Short_Hike, https://en.wikipedia.org/wiki/Flat_shading]
+sources: ["https://en.wikipedia.org/wiki/Star_Fox_(1993_video_game)", "https://en.wikipedia.org/wiki/Virtua_Fighter_(video_game)", "https://en.wikipedia.org/wiki/Superhot", "https://en.wikipedia.org/wiki/Islanders_(video_game)", "https://en.wikipedia.org/wiki/The_Battle_of_Polytopia", "https://en.wikipedia.org/wiki/Lara_Croft_Go", "https://en.wikipedia.org/wiki/A_Short_Hike", "https://en.wikipedia.org/wiki/Flat_shading"]
 last_verified: 2026-11-05
 ---
 
@@ -9,7 +9,7 @@ last_verified: 2026-11-05
 
 Low poly as an art style means visible facets on purpose: each polygon reads as one flat value, shapes are simplified to their silhouette, and color plus lighting carry the detail that texture would carry in other styles. It grew out of the hardware limits of early real-time 3D and is now chosen for clarity, readability, and small asset cost.
 
-All links below resolved (HTTP 200) on 2026-11-05. Game details are summarized from those pages and general knowledge; claims about specific internal technique are marked UNVERIFIED where not checked.
+Check the linked game pages before citing a reference; verify any claims about internal production techniques with the developers.
 
 ## Reference games
 
@@ -25,7 +25,7 @@ All links below resolved (HTTP 200) on 2026-11-05. Game details are summarized f
 
 - Define colors per light band, not per object: each material family gets a top (lit), side (mid), and under (shadow) value. Three values per family is usually enough.
 - Shift hue, not only value, between bands: lit faces lean warm toward the key light, shadow faces lean cool toward the ambient.
-- Keep total swatches small (about 16 to 32 for a scene). A shared palette texture with UV islands placed on swatches gives one material for most props. (Common practice; UNVERIFIED as a universal rule.)
+- Keep the palette manageable for the scene. Test a shared palette texture and UV swatches on representative props, and profile its materials and draw calls in the target engine.
 - Reserve one saturated accent hue for gameplay-critical things (enemies, pickups, the player), as Superhot does with red.
 - Separate depth layers with fog tinted toward the sky color rather than adding detail.
 - Avoid pure black shadows; they flatten facets into holes.
@@ -42,8 +42,8 @@ All links below resolved (HTTP 200) on 2026-11-05. Game details are summarized f
 ## Technical constraints
 
 - **Normals:** flat shading needs one normal per face. Either split all edges (hard edges, vertex count rises to about 3 per triangle) or compute the face normal in the shader from screen-space derivatives of world position (no extra vertices; may conflict with effects that read vertex normals).
-- **Import settings:** engines expose normal import options (for example a normals or smoothing setting on model import). Exact menu names and defaults vary by engine version: UNVERIFIED, check current Unity, Godot, or Unreal docs before writing them into a sheet.
-- **Budgets (starting points, adjust per project; UNVERIFIED as industry standards):** small props 20 to 300 tris, characters 150 to 1,500 tris, buildings 200 to 2,000 tris, terrain chunks sized by facet size. Mobile budgets should count vertices after edge splitting.
+- **Import settings:** Check the current Unity, Godot, or Unreal documentation for normal import options and defaults in the project's engine version.
+- **Budgets:** Set triangle and vertex budgets from representative props, characters, buildings and terrain chunks; profile them on the target hardware, including vertices after edge splitting.
 - **Materials:** one shared unlit or simple-lit material with a palette texture keeps draw calls low and batching easy.
 - **Lighting:** one directional key light at about 30 to 50 degrees elevation plus flat ambient. Hard shadows suit the style; heavy soft shadows and strong screen-space AO blur facet edges.
 - **Anti-aliasing:** facet edges are high contrast, so aliasing is visible. Use MSAA where the pipeline supports it, or accept it intentionally with a pixelated low-resolution render.

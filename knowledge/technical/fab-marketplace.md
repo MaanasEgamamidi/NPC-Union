@@ -8,7 +8,7 @@ last_verified: 2026-11-05
 
 last_verified: 2026-11-05
 
-Verification note: the Fab licence summary was fetched on 2026-11-05 at https://www.fab.com/eula?lang=en. The summary says the full EULA is binding; check it and the individual listing before relying on terms. Other unchecked facts remain marked UNVERIFIED.
+Verification note: the Fab licence summary was fetched on 2026-11-05 at https://www.fab.com/eula?lang=en. The summary says the full EULA is binding; check it and the individual listing before relying on terms. Check individual listings and current documentation before relying on listing-specific terms.
 
 ## What Fab is
 
@@ -24,7 +24,7 @@ Verification note: the Fab licence summary was fetched on 2026-11-05 at https://
 | Fab Standard License | Commercial use is allowed subject to its terms; check the tier and full EULA | Licence summary: https://www.fab.com/eula?lang=en |
 | Personal tier of Standard License | Commercial use is permitted; Personal and Professional grant the same scope of rights | Licence summary: https://www.fab.com/eula?lang=en |
 | Creative Commons Attribution (CC BY) | Record attribution requirements and the exact licence on the listing | https://dev.epicgames.com/documentation/fab/licenses-and-pricing-in-fab?lang=en-US |
-| "Unreal Engine only" restriction | Some content, largely legacy Marketplace and Epic-produced content, may only be used in Unreal Engine projects | UNVERIFIED |
+| Engine restrictions | Check the applicable licence and listing for engine restrictions before use | Review the full EULA and listing |
 
 ## Pricing tiers
 
@@ -34,9 +34,9 @@ Verification note: the Fab licence summary was fetched on 2026-11-05 at https://
 ## Search and filters
 
 - Fab search offers dynamic filters including product types, price, licences and formats. Available filters depend on the selected category and format. Source: https://dev.epicgames.com/documentation/en-us/fab/purchasing-and-downloading-assets-in-fab
-- Fab requires sellers to disclose AI-generated content, and listings carry an AI-generated label that can be used as a filter. UNVERIFIED.
+- Check the current Fab documentation and listing for AI disclosure labels and available filters before reporting them.
 - Listings show file formats and technical details; read each listing rather than inferring compatibility. Source: https://dev.epicgames.com/documentation/en-us/fab/purchasing-and-downloading-assets-in-fab
-- Nanite and Lumen readiness is a seller claim in the description or tags, not a Fab guarantee. Record it as "seller states" and send to unreal-specialist for a check. UNVERIFIED.
+- Check any Nanite or Lumen compatibility claim on the listing; attribute it to the seller and send the asset to unreal-specialist for testing.
 
 ## Sources
 

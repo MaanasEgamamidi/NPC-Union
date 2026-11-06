@@ -27,7 +27,7 @@ A repeatable procedure for finding game audio with clean licence terms.
 4. For music, check incompetech (https://incompetech.com) before paid libraries.
 5. Open each file page and copy the licence from the page itself, with its version.
 6. Remove CC-BY-NC and Sampling+ files from commercial projects. Flag CC-BY-SA, GPL, and custom licences.
-7. Check the individual licence before using YouTube Audio Library tracks outside YouTube; YouTube does not provide guidance for off-platform issues. Off-platform permission is UNVERIFIED. Source: https://support.google.com/youtube/answer/3376882
+7. Check the individual licence before using YouTube Audio Library tracks outside YouTube; YouTube does not provide guidance for off-platform issues. Confirm off-platform permission in the individual licence or with the rights holder before use. Source: https://support.google.com/youtube/answer/3376882
 8. WebFetch one or two source pages to confirm terms. Mark anything unchecked UNVERIFIED.
 9. Write the attribution line for each CC-BY file.
 10. Note Content ID risk for any music that will appear on streams.

@@ -2,18 +2,18 @@
 title: Chip synthesis reference for retro game SFX
 tags: [audio, chiptune, nes, 2a03, sfxr, jsfxr, web-audio, synthesis]
 sources:
-  - https://www.nesdev.org/wiki/APU
-  - https://www.nesdev.org/wiki/APU_Pulse
-  - https://www.nesdev.org/wiki/APU_Triangle
-  - https://www.nesdev.org/wiki/APU_Noise
-  - https://www.nesdev.org/wiki/APU_Mixer
-  - https://gbdev.io/pandocs/Audio.html
-  - https://www.drpetter.se/project_sfxr.html
-  - https://github.com/chr15m/jsfxr
-  - https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API
-  - https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createPeriodicWave
-  - https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/exponentialRampToValueAtTime
-  - https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay
+  - "https://www.nesdev.org/wiki/APU"
+  - "https://www.nesdev.org/wiki/APU_Pulse"
+  - "https://www.nesdev.org/wiki/APU_Triangle"
+  - "https://www.nesdev.org/wiki/APU_Noise"
+  - "https://www.nesdev.org/wiki/APU_Mixer"
+  - "https://gbdev.io/pandocs/Audio.html"
+  - "https://www.drpetter.se/project_sfxr.html"
+  - "https://github.com/chr15m/jsfxr"
+  - "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
+  - "https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createPeriodicWave"
+  - "https://developer.mozilla.org/en-US/docs/Web/API/AudioParam/exponentialRampToValueAtTime"
+  - "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay"
 last_verified: 2026-11-05
 ---
 
@@ -30,9 +30,9 @@ Used by `chiptune-synthesist`. NESdev pages remain blocked to direct fetching in
 | Noise | 15-bit LFSR | 4-bit envelope | 16 period presets, mode bit for short loop |
 | DMC | 1-bit delta samples | 7-bit output level | Used for drums and voice clips |
 
-- Pulse frequency: `f = fCPU / (16 * (t + 1))`. Triangle: `f = fCPU / (32 * (t + 1))`. NTSC fCPU is about 1.789773 MHz; PAL is about 1.662607 MHz. UNVERIFIED.
+- Check pulse and triangle frequency formulas and the target region's CPU clock in the linked NESdev channel documentation before calculating pitches.
 - Pulse timer values below 8 mute the channel. The sweep unit also mutes the channel when its target period exceeds $7FF. [NESdev sweep](https://www.nesdev.org/wiki/APU_Sweep).
-- Pulse 1 sweep negate uses ones' complement, pulse 2 uses two's complement, so the same downward sweep differs by one timer step. UNVERIFIED.
+- Check the linked NESdev sweep documentation for differences between the pulse channels before implementing downward sweeps.
 - 75% duty is the 25% waveform inverted. Heard alone, they sound the same.
 - Noise short mode (mode bit set) produces a 93- or 31-step repeating sequence, depending on the shift register state. [NESdev noise](https://www.nesdev.org/wiki/APU_Noise).
 - The mixer is nonlinear. An approximation is `pulse_out = 95.88 / (8128 / (pulse1 + pulse2) + 100)` with a separate curve for triangle, noise and DMC. [NESdev mixer](https://www.nesdev.org/wiki/APU_Mixer).
@@ -40,7 +40,7 @@ Used by `chiptune-synthesist`. NESdev pages remain blocked to direct fetching in
 
 ## Game Boy (DMG) for comparison
 
-Four channels: two pulse (duty 12.5, 25, 50, 75%; only channel 1 has a frequency sweep), one wave channel playing 32 4-bit samples, and one noise channel with a 15-bit or 7-bit LFSR. UNVERIFIED in this environment; check Pan Docs (https://gbdev.io/pandocs/Audio.html) before quoting.
+For Game Boy channel capabilities, waveform sizes and noise modes, consult [Pan Docs](https://gbdev.io/pandocs/Audio.html) for the target hardware before implementing them.
 
 ## Arpeggios and frame timing
 
@@ -49,7 +49,7 @@ Four channels: two pulse (duty 12.5, 25, 50, 75%; only channel 1 has a frequency
 
 ## sfxr and jsfxr parameters
 
-sfxr was released by DrPetter in 2007. jsfxr is a JavaScript port maintained by Chris McCormick. Parameter groups (names vary slightly between ports, UNVERIFIED for exact jsfxr key names):
+Use the [sfxr project page](https://www.drpetter.se/project_sfxr.html) and [jsfxr repository](https://github.com/chr15m/jsfxr) to check release history and the chosen port's exact parameter names. Parameter groups to inspect:
 
 - Wave: square, sawtooth, sine, noise (some ports add more).
 - Envelope: attack, sustain, sustain punch, decay.

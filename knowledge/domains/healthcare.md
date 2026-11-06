@@ -2,36 +2,36 @@
 title: Healthcare, medicine and public health for games
 tags: [healthcare, medicine, nursing, epidemiology, public-health, hospital-sim, serious-games, health-data]
 sources:
-  - https://www.who.int/data/gho/info/gho-odata-api
-  - https://ghoapi.azureedge.net/api/Dimension
-  - https://data.who.int/about/data/terms-and-conditions
-  - https://wonder.cdc.gov/wonder/help/wonder-api.html
-  - https://data.cdc.gov/
-  - https://dev.socrata.com/docs/app-tokens.html
-  - https://icd.who.int/icdapi
-  - https://icd.who.int/docs/icd-api/license/
-  - https://icd.who.int/en/docs/icd11-license.pdf
-  - https://www.snomed.org/get-snomed
-  - https://www.nlm.nih.gov/research/umls/rxnorm/index.html
-  - https://www.nlm.nih.gov/research/umls/rxnorm/docs/rxnormfiles.html
-  - https://lhncbc.nlm.nih.gov/RxNav/APIs/index.html
-  - https://lhncbc.nlm.nih.gov/RxNav/TermsofService.html
-  - https://open.fda.gov/apis/authentication/
-  - https://open.fda.gov/terms/
-  - https://physionet.org/content/mimiciv/3.1/
-  - https://synthetichealth.github.io/synthea/
-  - https://raw.githubusercontent.com/synthetichealth/synthea/master/README.md
-  - https://hl7.org/fhir/
-  - https://hl7.org/fhir/license.html
-  - https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/denovo.cfm?id=DEN200026
-  - https://en.wikipedia.org/wiki/Theme_Hospital
-  - https://en.wikipedia.org/wiki/Two_Point_Hospital
-  - https://en.wikipedia.org/wiki/Project_Hospital
-  - https://en.wikipedia.org/wiki/Plague_Inc.
-  - https://en.wikipedia.org/wiki/Surgeon_Simulator_2013
-  - https://en.wikipedia.org/wiki/Trauma_Center:_Under_the_Knife
-  - https://en.wikipedia.org/wiki/Pandemic_(board_game)
-  - https://en.wikipedia.org/wiki/EndeavorRx
+  - "https://www.who.int/data/gho/info/gho-odata-api"
+  - "https://ghoapi.azureedge.net/api/Dimension"
+  - "https://data.who.int/about/data/terms-and-conditions"
+  - "https://wonder.cdc.gov/wonder/help/wonder-api.html"
+  - "https://data.cdc.gov/"
+  - "https://dev.socrata.com/docs/app-tokens.html"
+  - "https://icd.who.int/icdapi"
+  - "https://icd.who.int/docs/icd-api/license/"
+  - "https://icd.who.int/en/docs/icd11-license.pdf"
+  - "https://www.snomed.org/get-snomed"
+  - "https://www.nlm.nih.gov/research/umls/rxnorm/index.html"
+  - "https://www.nlm.nih.gov/research/umls/rxnorm/docs/rxnormfiles.html"
+  - "https://lhncbc.nlm.nih.gov/RxNav/APIs/index.html"
+  - "https://lhncbc.nlm.nih.gov/RxNav/TermsofService.html"
+  - "https://open.fda.gov/apis/authentication/"
+  - "https://open.fda.gov/terms/"
+  - "https://physionet.org/content/mimiciv/3.1/"
+  - "https://synthetichealth.github.io/synthea/"
+  - "https://raw.githubusercontent.com/synthetichealth/synthea/master/README.md"
+  - "https://hl7.org/fhir/"
+  - "https://hl7.org/fhir/license.html"
+  - "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/denovo.cfm?id=DEN200026"
+  - "https://en.wikipedia.org/wiki/Theme_Hospital"
+  - "https://en.wikipedia.org/wiki/Two_Point_Hospital"
+  - "https://en.wikipedia.org/wiki/Project_Hospital"
+  - "https://en.wikipedia.org/wiki/Plague_Inc."
+  - "https://en.wikipedia.org/wiki/Surgeon_Simulator_2013"
+  - "https://en.wikipedia.org/wiki/Trauma_Center:_Under_the_Knife"
+  - "https://en.wikipedia.org/wiki/Pandemic_(board_game)"
+  - "https://en.wikipedia.org/wiki/EndeavorRx"
 last_verified: 2026-11-05
 ---
 
@@ -59,7 +59,7 @@ For hospital management sims, emergency and triage games, outbreak and pandemic 
 
 - Classifications: ICD-11 for diagnoses (cite as WHO requires), SNOMED CT for clinical terms, RxNorm for US drug names, FHIR for record structure.
 - Regulatory: FDA De Novo database record DEN200026 (EndeavorRx, "digital therapeutic software for attention deficit hyperactivity disorder", decision date 06/15/2020). Use the FDA databases, not press coverage, to check device status.
-- Triage systems (START for mass casualty, five-level ED acuity scales such as ESI, the Manchester Triage System): look up current official handbooks before quoting criteria. UNVERIFIED in this file.
+- Triage systems: consult the current official handbook for the chosen system before quoting criteria or modeling a scenario.
 - Privacy: US HIPAA rules apply to covered entities and business associates; EU GDPR treats health data as a special category. [HHS](https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html), [European Commission](https://commission.europa.eu/law/law-topic/data-protection/information-individuals_en). Route applicability to `game-legal-advisor`.
 - [WHO guidance](https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme/evidence-centre/self-harm-and-suicide/responsible-and-deglamorized-media-reporting) recommends avoiding explicit descriptions of suicide methods and providing information on where to seek help. Check current national guidance too.
 

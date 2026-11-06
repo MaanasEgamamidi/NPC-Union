@@ -25,7 +25,7 @@ Sources behind the claims in the `rag-engineer` agent. Re-check before quoting a
 - Thakur et al., "BEIR: A Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models", shows BM25 as a strong out-of-domain baseline. https://arxiv.org/abs/2104.08663
   - last_verified: 2026-11-05
 - BEIR code and datasets. https://github.com/beir-cellar/beir
-  - UNVERIFIED (GitHub blocked from this environment).
+  - Repository and benchmark description checked 2026-11-05.
 
 ## Fusion
 

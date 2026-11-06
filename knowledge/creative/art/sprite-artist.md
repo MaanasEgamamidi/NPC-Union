@@ -1,13 +1,13 @@
 ---
 title: Sprite sheet reference
 tags: [sprites, pixel-art, atlas, animation, import-settings]
-sources: [https://docs.unity3d.com/Manual/class-TextureImporter.html, https://docs.godotengine.org/en/stable/tutorials/2d/2d_sprite_animation.html, https://www.aseprite.org/docs/sprite-sheet/, https://www.codeandweb.com/texturepacker/documentation]
+sources: ["https://docs.unity3d.com/Manual/class-TextureImporter.html", "https://docs.godotengine.org/en/stable/tutorials/2d/2d_sprite_animation.html", "https://www.aseprite.org/docs/sprite-sheet/", "https://www.codeandweb.com/texturepacker/documentation"]
 last_verified: 2026-11-05
 ---
 
 # Sprite sheet reference
 
-Owner: `sprite-artist`. Source status: each URL in `sources` returned HTTP 200 on 2026-11-05. The specific menu names and settings below were not checked against those pages and are UNVERIFIED for any given engine version.
+Owner: `sprite-artist`. Check import settings against the documentation for the exact engine version in use, then test the exported sprites in the target build.
 
 ## Internal resolution and integer scaling
 
@@ -57,12 +57,12 @@ These are craft starting points, not standards. Adjust to the game's feel.
 
 ## Import settings per engine (UNVERIFIED for exact names by version)
 
-| Engine | Filtering | Other |
-|---|---|---|
-| Unity | Filter Mode: Point (no filter) | Compression: None; Generate Mip Maps off; set Pixels Per Unit to cell size; use Pixel Perfect Camera |
-| Godot 4 | Texture filter: Nearest (project default or per CanvasItem) | Mipmaps off; lossless import; snap 2D transforms to pixel |
-| Phaser 3 | `pixelArt: true` in game config | Also enables rounded pixels |
-| Aseprite export | n/a | Sheet type by rows, border and inner padding, trim options, JSON data output |
+| Engine or tool | Check for the version in use |
+|---|---|
+| Unity | Find the texture filtering, compression, mipmap and pixels-per-unit controls in the current manual; test the pixel camera setup. |
+| Godot | Find the texture filtering, import and pixel-snapping controls in the current manual; test in the target renderer. |
+| Phaser | Check the current game configuration documentation for pixel-art filtering and pixel rounding; test at target scales. |
+| Aseprite export | Check the current sprite-sheet export documentation for layout, padding, trimming and metadata options. |
 
 ## Pre-export checklist
 

@@ -73,7 +73,7 @@ Runtime note: I run on Codex. Without Codex web search turned on I cannot check 
 
 ## Knowledge and sources
 
-- Steamworks documentation, partner.steamgames.com/doc, for Events and Announcements, the store update flow and community hub tools. Check by searching the doc site for "Events and Announcements". Exact image sizes and event-type rules are UNVERIFIED until checked there.
+- Steamworks documentation, partner.steamgames.com/doc, for Events and Announcements, the store update flow and community hub tools. Check by searching the doc site for "Events and Announcements". Check current image sizes and event-type rules there before publishing.
 - [Steam User Reviews](https://help.steampowered.com/faqs/view/2DA6-9CB3-F84A-643E): review scores exclude periods classified as off-topic by default; users can override that preference.
 - Discord Help Center and developer docs cover AutoMod, timeouts, Community server features and Announcement Channels. The [Announcement Channel FAQ](https://support.discord.com/hc/en-us/articles/360032008192-Announcement-Channel-FAQ) states a limit of 10 publishes per hour.
 - Discord Community Guidelines and Steam Online Conduct rules, read before writing server rules so yours do not contradict the platform's.

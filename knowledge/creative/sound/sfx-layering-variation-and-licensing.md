@@ -2,24 +2,24 @@
 title: SFX layering, variation, loudness and library licensing
 tags: [sfx, sound-design, variation, round-robin, loudness, licensing, freesound, audio-formats]
 sources:
-  - https://freesound.org/help/faq/
-  - https://creativecommons.org/licenses/by/4.0/
-  - https://creativecommons.org/licenses/by-nc/4.0/
-  - https://creativecommons.org/publicdomain/zero/1.0/
-  - https://docs.unity3d.com/Manual/class-AudioClip.html
-  - https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html
-  - https://docs.godotengine.org/en/stable/classes/class_audiostreamrandomizer.html
-  - https://www.fmod.com/docs/
-  - https://www.audiokinetic.com/library/
-  - https://developer.valvesoftware.com/wiki/Soundscripts
-  - https://www.itu.int/rec/R-REC-BS.1770
-  - https://tech.ebu.ch/publications/r128
+  - "https://freesound.org/help/faq/"
+  - "https://creativecommons.org/licenses/by/4.0/"
+  - "https://creativecommons.org/licenses/by-nc/4.0/"
+  - "https://creativecommons.org/publicdomain/zero/1.0/"
+  - "https://docs.unity3d.com/Manual/class-AudioClip.html"
+  - "https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html"
+  - "https://docs.godotengine.org/en/stable/classes/class_audiostreamrandomizer.html"
+  - "https://www.fmod.com/docs/"
+  - "https://www.audiokinetic.com/library/"
+  - "https://developer.valvesoftware.com/wiki/Soundscripts"
+  - "https://www.itu.int/rec/R-REC-BS.1770"
+  - "https://tech.ebu.ch/publications/r128"
 last_verified: 2026-11-05
 ---
 
 # SFX layering, variation, loudness and library licensing
 
-Working notes for the sfx-designer. Numbers here are craft heuristics, not standards, unless a source is named. Claims that could not be checked remain marked UNVERIFIED.
+Working notes for the sfx-designer. Numbers here are craft heuristics, not standards, unless a source is named.
 
 ## Layering
 
@@ -35,24 +35,24 @@ Working notes for the sfx-designer. Numbers here are craft heuristics, not stand
 - Pitch randomization around +/-100 to 200 cents for small repeated sounds; beyond about 300 cents the sound reads as a different object. Volume randomization +/-1 to 2 dB.
 - Pure random selection repeats the previous file with probability 1/N (25 percent for a 4-file pool). Use shuffle or "avoid last N".
 - Middleware and engine support:
-  - Wwise Random Containers have an option to avoid repeating the last played items. Exact setting name: UNVERIFIED, check https://www.audiokinetic.com/library/.
+  - Check the [Wwise documentation](https://www.audiokinetic.com/library/) for the target version's random-container repeat controls and setting names.
   - FMOD Studio multi instruments select items from a playlist, with shuffle as the default; Random modulators modify properties. See the [FMOD 2.04 glossary](https://www.fmod.com/docs/2.04/studio/glossary.html).
   - Godot 4 has `AudioStreamRandomizer` with `random_pitch`, `random_volume_offset_db`, and `playback_mode`; `PLAYBACK_RANDOM_NO_REPEATS` avoids consecutive repeats when possible. See the [class reference](https://docs.godotengine.org/en/stable/classes/class_audiostreamrandomizer.html).
-  - Valve Source engine soundscripts support `rndwave` to pick randomly from a list of files (https://developer.valvesoftware.com/wiki/Soundscripts). UNVERIFIED in this session.
+  - Check [Source soundscript documentation](https://developer.valvesoftware.com/wiki/Soundscripts) for the target engine version before configuring random wave selection.
 - Limit instances of the same event (start at 3 to 6 voices) and add a retrigger cooldown of about 30 to 50 ms for rapid sounds. Many identical starts within a few milliseconds comb-filter.
 
 ## Loudness
 
 - Loudness is measured in LUFS/LKFS per ITU-R BS.1770; EBU R 128 sets broadcast programme targets. These are written for programmes, so for short SFX use short-term or momentary loudness to compare items in a pool, and balance categories by ear against a reference such as dialogue.
 - Keep true peak on exported files at or below about -1 dBTP to leave room for codec overshoot. Heuristic, not a game-industry standard.
-- The Audio Standards Working Group (ASWG) published loudness recommendations for game output, commonly cited as about -24 LUFS integrated for console and PC and about -18 LUFS for mobile and handheld. UNVERIFIED: no source checked in this session, and no URL is listed for it.
+- Set loudness targets with the audio team and check current platform delivery requirements before specifying a numerical target.
 
 ## Formats
 
 - Masters: WAV, 48 kHz, 24-bit is common for game work. Record at 96 kHz if sounds will be pitched down a lot, so they keep high-frequency content.
 - Do not upsample 44.1 kHz library files to 48 kHz for no reason beyond matching the project; resampling is fine, but it adds nothing.
 - Avoid MP3 for loops: encoders add padding at start and end that causes a gap. Ogg Vorbis and WAV loop cleanly.
-- Unity: AudioClip import offers load types (decompress on load, compressed in memory, streaming) and compression formats (PCM, ADPCM, Vorbis). Check the current manual before stating defaults. UNVERIFIED for the current version.
+- Unity: check the [AudioClip manual](https://docs.unity3d.com/Manual/class-AudioClip.html) for the target version's load types, formats and defaults before choosing import settings.
 - Godot imports WAV, Ogg Vorbis and MP3; [Godot 4.3 documentation](https://docs.godotengine.org/en/4.3/tutorials/assets_pipeline/importing_audio_samples.html) lists QOA as a WAV compression option.
 - Mono for anything the engine spatialises. Stereo for UI, 2D and non-diegetic sounds.
 - Put loop points on zero crossings and crossfade noisy loops.

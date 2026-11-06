@@ -25,8 +25,8 @@ last_verified: 2026-11-05
 
 ## Open-weight model licences
 
-- Licence terms (use restrictions, user thresholds, attribution) must be read per checkpoint on the model repository. No specific licence terms recorded here yet. UNVERIFIED.
+- Check the licence for each checkpoint in its model repository, including use restrictions, thresholds and attribution requirements.
 
 ## Platform memory and store download limits
 
-- Console and mobile store limits are not recorded. Console figures are under NDA. UNVERIFIED.
+- Check current memory and download limits in the target platform's developer documentation; ask the team for access where needed.

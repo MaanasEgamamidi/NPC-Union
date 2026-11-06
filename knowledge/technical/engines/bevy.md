@@ -2,11 +2,11 @@
 title: Bevy versions, MSRV and physics crate compatibility
 tags: [bevy, rust, ecs, engine, versions, avian, rapier]
 sources:
-  - https://crates.io/crates/bevy
-  - https://bevy.org/news/
-  - https://bevy.org/learn/migration-guides/
-  - https://crates.io/crates/avian3d
-  - https://crates.io/crates/bevy_rapier3d
+  - "https://crates.io/crates/bevy"
+  - "https://bevy.org/news/"
+  - "https://bevy.org/learn/migration-guides/"
+  - "https://crates.io/crates/avian3d"
+  - "https://crates.io/crates/bevy_rapier3d"
 last_verified: 2026-11-05
 ---
 
@@ -34,9 +34,9 @@ Every 0.x minor is a breaking release. A pinned `bevy = "0.20"` gets 0.20.x patc
 | Crate | Latest | Depends on | Licence | Source |
 |---|---|---|---|---|
 | avian2d / avian3d | 0.8.0 (2026-10-20) | bevy ^0.20 | MIT OR Apache-2.0 | https://crates.io/crates/avian3d |
-| avian2d / avian3d | 0.7.0 (2026-06-20) | bevy 0.19 (UNVERIFIED, inferred from date) | MIT OR Apache-2.0 | crates.io |
+| avian2d / avian3d | 0.7.0 (2026-06-20) | Check this version's Bevy dependency on the crate's Dependencies tab | MIT OR Apache-2.0 | crates.io |
 | bevy_rapier2d / bevy_rapier3d | 0.37.0 (2026-10-10) | bevy ^0.20, rapier3d ^0.36.1 | Apache-2.0 | https://crates.io/crates/bevy_rapier3d |
-| bevy_rapier 0.34-0.36 | 2026-05 to 2026-08 | bevy 0.19 (UNVERIFIED, inferred from date) | Apache-2.0 | crates.io |
+| bevy_rapier 0.34-0.36 | 2026-05 to 2026-08 | Check this version's Bevy dependency on the crate's Dependencies tab | Apache-2.0 | crates.io |
 
 Rule: third-party crates pin one Bevy minor. Check the crate's `bevy` dependency on its crates.io "Dependencies" tab before adding it.
 

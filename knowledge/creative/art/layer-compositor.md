@@ -1,13 +1,13 @@
 ---
 title: Layer compositing reference for game layer splits
 tags: [layers, alpha, matting, parallax, inpainting, manifest, export]
-sources: [https://en.wikipedia.org/wiki/Alpha_compositing, https://docs.godotengine.org/en/stable/classes/class_parallax2d.html, https://docs.unity3d.com/Manual/class-TextureImporter.html, https://docs.krita.org/]
+sources: ["https://en.wikipedia.org/wiki/Alpha_compositing", "https://docs.godotengine.org/en/stable/classes/class_parallax2d.html", "https://docs.unity3d.com/Manual/class-TextureImporter.html", "https://docs.krita.org/"]
 last_verified: 2026-11-05
 ---
 
 # Layer compositing reference
 
-All sources above are UNVERIFIED in this session (not fetched). Engine setting names change between versions; check the version selector on each doc page before quoting one.
+The sources were not fetched when this file was written; check each source before relying on its claims. Engine setting names change between versions; check the version selector on each doc page before quoting one.
 
 ## Alpha conventions
 

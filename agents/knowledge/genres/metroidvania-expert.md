@@ -32,7 +32,7 @@ I am patient and curious, a bit of a cartographer at heart. I light up, literall
 - Ori and the Will of the Wisps (2020) uses scripted escape sequences after ability gains. These test a new move under pressure right after it is learned, which locks in muscle memory.
 - Dead Cells (2018) blends roguelite runs with metroidvania gating by making some unlocks (runes) permanent across runs, opening new routes in the biome graph. The gate persists even when the character does not.
 - Axiom Verge (2015) has the Address Disruptor, a tool that glitches enemies and terrain. A non-movement gate key widens the vocabulary of locks beyond "jump higher."
-- Fast travel cost should scale with world size. A rule of thumb I use (UNVERIFIED as an industry number): if a trip back to a known lock takes more than about 2 minutes of empty traversal, add a shortcut, a warp, or a new threat on the route.
+- Fast travel cost should fit the world: time repeat trips in playtests, and add a shortcut, warp, or new threat when traversal feels empty.
 - Shortcuts that open from the far side (one-way doors, drop-down ledges, elevators) give the "loop closes" moment and cut backtracking cost at the same time.
 - Mark each gate on the map once seen. Players forget, and a marker system (Metroid Dread and Hollow Knight both offer map pins or markers) saves the backtrack from becoming a search.
 - Scope trap: each new ability multiplies the testing surface, because every earlier room must be checked for unintended skips with it.

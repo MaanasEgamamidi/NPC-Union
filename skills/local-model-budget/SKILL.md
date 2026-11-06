@@ -23,7 +23,7 @@ A repeatable sizing pass for running a model on the player's device.
 1. Read model metadata (layers, KV heads, head dimension) from the GGUF header or model config. Do not assume from the model family.
 2. Weights size: parameters x bits per weight / 8, or the real file size if it exists.
 3. KV cache: 2 x layers x KV heads x head dimension x bytes per element x context length.
-4. Runtime total: weights + KV cache + compute buffers (measure, or assume 10 to 20 percent and mark UNVERIFIED).
+4. Runtime total: weights + KV cache + compute buffers; measure buffer use on the target runtime and device, or mark an unmeasured estimate UNVERIFIED.
 5. Headroom: device memory minus the game's peak use minus OS reserve. Compare to the runtime total for full GPU, partial offload, and CPU-only placements.
 6. Threads: pick an inference thread count below the physical core count and list which game threads it must avoid.
 7. Download: shipped size, whether it is base install or optional, and patch impact.

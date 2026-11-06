@@ -1,23 +1,23 @@
 ---
 title: 3D modeling for games, generated meshes to glTF
 tags: [3d, modeling, retopology, uv, texel-density, gltf, lod, export]
-sources: [https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html, https://github.com/KhronosGroup/glTF-Validator, https://docs.blender.org/manual/en/latest/addons/import_export/scene_gltf2.html, https://gltf-transform.dev/]
+sources: ["https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html", "https://github.com/KhronosGroup/glTF-Validator", "https://docs.blender.org/manual/en/latest/addons/import_export/scene_gltf2.html", "https://gltf-transform.dev/"]
 last_verified: 2026-11-05
 ---
 
 # 3D modeling reference
 
-The glTF specification was checked on 2026-11-05. Other sources are UNVERIFIED; re-check before quoting version-specific options.
+The glTF specification was checked on 2026-11-05. Check the linked tool documentation for the project version before quoting options.
 
 ## Engine units and axes
 
 | Target | Unit | Up axis | Notes |
 |---|---|---|---|
 | glTF 2.0 | 1 = 1 m | +Y | Right-handed, asset front faces +Z. Source: [glTF 2.0 spec](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units) |
-| Blender | 1 = 1 m (default) | +Z | glTF exporter converts to +Y up |
-| Unity | 1 = 1 m | +Y | Left-handed |
-| Godot | 1 = 1 m | +Y | Right-handed |
-| Unreal | 1 = 1 cm | +Z | Expect a 100x factor if units are mismatched |
+| Blender | Check project settings | Check version documentation | Test the glTF export orientation |
+| Unity | Check project version documentation | Check project version documentation | Test imported scale and facing |
+| Godot | Check project version documentation | Check project version documentation | Test imported scale and facing |
+| Unreal | Check project settings and version documentation | Check project version documentation | Test imported scale and facing |
 
 ## Triangle budget starting points (LOD0)
 

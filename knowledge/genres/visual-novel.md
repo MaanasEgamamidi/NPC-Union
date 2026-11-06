@@ -48,10 +48,10 @@ Read a scene (text, character sprites, background, music), reach a choice or an 
 - Background variants for time of day and weather.
 - Event CGs per route and per ending.
 - Voice acting cost scales with every line on every route. Partial voicing is a common compromise.
-- Localization of a large script, including text expansion and UI fitting. Ratios vary by language pair; measure with a sample (UNVERIFIED as a fixed number).
+- Budget localization of a large script, including text expansion and UI fitting; measure representative translated strings in the target UI.
 
 ## Sources
 
 - English Wikipedia pages linked in the Reference games table, for year and developer.
 - Ren'Py documentation, https://www.renpy.org/doc/html/ , for engine features such as rollback, skip, and auto-forward. Check the current version.
-- Reading-pace planning figures in the agent file are UNVERIFIED planning ranges, not measured data.
+- Measure reading pace with representative players before using it to estimate playtime.

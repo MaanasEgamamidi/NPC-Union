@@ -2,24 +2,24 @@
 title: NASA open APIs (api.nasa.gov, Image and Video Library, EONET)
 tags: [nasa, api, apod, neows, donki, eonet, epic, images, rate-limits]
 sources:
-  - https://api.nasa.gov/
-  - https://api.nasa.gov/assets/html/authentication.html
-  - https://api.nasa.gov/assets/json/apis.json
-  - https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-11-05&end_date=2026-11-07&api_key=DEMO_KEY
-  - https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=DEMO_KEY
-  - https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY
-  - https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
-  - https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=DEMO_KEY
-  - https://images-api.nasa.gov/search?q=apollo%2011&media_type=image&page_size=5
-  - https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf
-  - https://eonet.gsfc.nasa.gov/docs/v3
-  - https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=5&days=30
+  - "https://api.nasa.gov/"
+  - "https://api.nasa.gov/assets/html/authentication.html"
+  - "https://api.nasa.gov/assets/json/apis.json"
+  - "https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-11-05&end_date=2026-11-07&api_key=DEMO_KEY"
+  - "https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=DEMO_KEY"
+  - "https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY"
+  - "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY"
+  - "https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=DEMO_KEY"
+  - "https://images-api.nasa.gov/search?q=apollo%2011&media_type=image&page_size=5"
+  - "https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf"
+  - "https://eonet.gsfc.nasa.gov/docs/v3"
+  - "https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=5&days=30"
 last_verified: 2026-11-05
 ---
 
 # NASA open APIs
 
-All requests below were run on 2026-11-05 unless marked UNVERIFIED.
+Request results below are dated observations, not guarantees of current availability. Call each endpoint and check its current documentation before use.
 
 ## api.nasa.gov: keys and limits
 
@@ -29,7 +29,7 @@ All requests below were run on 2026-11-05 unless marked UNVERIFIED.
 - Headers: `X-RateLimit-Limit` and `X-RateLimit-Remaining` on every response; `Access-Control-Expose-Headers` makes them readable from browser JS. `Access-Control-Allow-Origin: *`.
 - No key: HTTP 403 `{"error":{"code":"API_KEY_MISSING",...}}`.
 - The catalog (https://api.nasa.gov/assets/json/apis.json) listed 16 entries: APOD, Asteroids NeoWs, DONKI, EONET, EPIC, Exoplanet, GIBS, InSight, NASA Image and Video Library, Open Science Data Repository, Satellite Situation Center, SSD/CNEOS, Techport, TechTransfer, TLE API, Vesta/Moon/Mars Trek WMTS.
-- **Not listed any more:** Mars Rover Photos and Earth imagery/assets. Treat as retired; live status not tested (UNVERIFIED).
+- Mars Rover Photos and Earth imagery/assets were absent from the catalog snapshot. Check current official documentation and call the relevant endpoint before deciding whether a service is available.
 
 ## Status table
 
@@ -40,15 +40,15 @@ All requests below were run on 2026-11-05 unless marked UNVERIFIED.
 | NeoWs feed | `https://api.nasa.gov/neo/rest/v1/feed?start_date=2026-11-05&end_date=2026-11-07&api_key=DEMO_KEY` | 200, 26 KB | `{element_count, links, near_earth_objects:{"YYYY-MM-DD":[...]}}`; 22 objects, 4 hazardous. Max range 7 days. |
 | NeoWs lookup | `https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=DEMO_KEY` | 200, 121 KB | Adds `designation`, `orbital_data`; `close_approach_data` had 282 entries (1900 to 2200, Earth, Venus, "Merc"). |
 | NeoWs browse | `https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY` | 200, 323 KB | `page: {size:20, total_elements:62825, total_pages:3142}`. |
-| DONKI | `https://api.nasa.gov/DONKI/CME?startDate=2017-01-03&endDate=2017-01-03&api_key=DEMO_KEY` (catalog example) | listed; not called (UNVERIFIED) | Catalog: CME, CMEAnalysis, GST, IPS, FLR, SEP, MPC, RBE, HSS, WSAEnlilSimulations, notifications; default window 30 days before current UTC date. |
-| EPIC | `https://api.nasa.gov/EPIC/api/natural/images?api_key=DEMO_KEY` | endpoint returned 404 on 2026-11-05; availability UNVERIFIED | Catalog: per image `image, date, caption, centroid_coordinates, dscovr_j2000_position, lunar_j2000_position, sun_j2000_position, attitude_quaternions`. Archive PNG path `EPIC/archive/natural/YYYY/MM/DD/png/<image>.png`. |
+| DONKI | `https://api.nasa.gov/DONKI/CME?startDate=2017-01-03&endDate=2017-01-03&api_key=DEMO_KEY` | Check by calling the endpoint | Consult the [NASA API catalog](https://api.nasa.gov/) for current parameters and limits. |
+| EPIC | `https://api.nasa.gov/EPIC/api/natural/images?api_key=DEMO_KEY` | Endpoint returned 404 on 2026-11-05; retest before use | Check the [NASA API catalog](https://api.nasa.gov/) and current endpoint documentation for fields and archive paths. |
 | InSight weather | `https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0` | returned historical JSON on 2026-11-05 | Catalog page "Last Updated: 3/30/2021", warns of significant missing data. Treat as historical only. |
-| TechTransfer | `https://api.nasa.gov/techtransfer/patent/?engine&api_key=DEMO_KEY` | listed; not called (UNVERIFIED) | patent, patent_issued, software, spinoff searches. |
+| TechTransfer | `https://api.nasa.gov/techtransfer/patent/?engine&api_key=DEMO_KEY` | Check by calling the endpoint | Consult the [NASA API catalog](https://api.nasa.gov/) for current search options. |
 | SSD/CNEOS | see `knowledge/space/jpl-ssd-apis.md` | listed | CAD, Fireball, Mission Design, NHATS, Scout, Sentry on ssd-api.jpl.nasa.gov. |
 | Exoplanet | see `knowledge/space/exoplanet-archive.md` | listed | |
 | GIBS | see `knowledge/space/earthdata.md` | tested 200 | |
-| TLE API | `http://tle.ivanstanojevic.me/api/tle` | listed; not called (UNVERIFIED) | Third-party service fed from CelesTrak, per catalog. |
-| Trek WMTS | `https://api.nasa.gov/mars-wmts/catalog/` | Mars catalog opened on 2026-11-05 | Mars WMTS layer catalog; Moon and Vesta endpoints were not tested (UNVERIFIED). |
+| TLE API | `http://tle.ivanstanojevic.me/api/tle` | Check by calling the endpoint | Consult the [NASA API catalog](https://api.nasa.gov/) and service documentation for provenance and availability. |
+| Trek WMTS | `https://api.nasa.gov/mars-wmts/catalog/` | Mars catalog opened on 2026-11-05 | Test the Moon and Vesta endpoints and consult their current catalogs before use. |
 
 ## NeoWs fields and pitfalls
 

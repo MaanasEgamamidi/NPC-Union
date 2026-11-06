@@ -37,7 +37,7 @@ Catchphrase: "One idea per room. Show it, then twist it."
 - Red herrings should be rare and fair. One per level at most in a teaching phase; many at once reads as the designer being sneaky rather than the player being clever.
 - Difficulty curves in puzzle games are rarely smooth. Plan a "breather" after each spike, an easier level that uses the new idea with confidence.
 - Endless falling-block games tune pace, not answers. Modern Tetris games following The Tetris Company guideline use a "7-bag" randomizer that deals all seven tetrominoes before repeating, which limits long droughts of one piece.
-- Free-to-play match-3 tunes level pass rates and failure, not only fun. Candy Crush Saga uses lives and move limits, so the "near miss" (one or two moves short) is a designed outcome. Exact live tuning numbers change and are not public, UNVERIFIED for any specific figure.
+- Free-to-play match-3 can tune level pass rates and failure alongside fun. Measure near misses and pass rates in playtests, and check current game rules before citing a reference title.
 - Non-verbal teaching works when the environment frames the answer. The Witness teaches line-puzzle rules through sequences of panels with no text, each panel a small step from the last.
 - Mood can carry a short game. Monument Valley uses impossible geometry in the spirit of M. C. Escher and is short and gentle on purpose; its puzzles are about seeing, not about failure.
 

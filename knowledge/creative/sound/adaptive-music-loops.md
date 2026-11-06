@@ -2,21 +2,21 @@
 title: Adaptive music loops, layers and engine loop points
 tags: [music, loops, adaptive-audio, stems, godot, unity, web-audio, fmod, wwise]
 sources:
-  - https://docs.godotengine.org/en/stable/classes/class_audiostreamoggvorbis.html
-  - https://docs.godotengine.org/en/stable/classes/class_audiostreamwav.html
-  - https://godotengine.org/releases/4.3/
-  - https://docs.godotengine.org/en/stable/classes/class_audiostreaminteractive.html
-  - https://docs.godotengine.org/en/stable/classes/class_audiostreamsynchronized.html
-  - https://docs.unity3d.com/ScriptReference/AudioSource.PlayScheduled.html
-  - https://docs.unity3d.com/ScriptReference/AudioSettings-dspTime.html
-  - https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopStart
-  - https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopEnd
+  - "https://docs.godotengine.org/en/stable/classes/class_audiostreamoggvorbis.html"
+  - "https://docs.godotengine.org/en/stable/classes/class_audiostreamwav.html"
+  - "https://godotengine.org/releases/4.3/"
+  - "https://docs.godotengine.org/en/stable/classes/class_audiostreaminteractive.html"
+  - "https://docs.godotengine.org/en/stable/classes/class_audiostreamsynchronized.html"
+  - "https://docs.unity3d.com/ScriptReference/AudioSource.PlayScheduled.html"
+  - "https://docs.unity3d.com/ScriptReference/AudioSettings-dspTime.html"
+  - "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopStart"
+  - "https://developer.mozilla.org/en-US/docs/Web/API/AudioBufferSourceNode/loopEnd"
 last_verified: 2026-11-05
 ---
 
 # Adaptive music loops, layers and engine loop points
 
-The Godot interactive and synchronized stream documentation and 4.3 release notes were checked on 2026-11-05. Other engine properties remain UNVERIFIED until checked against the current docs.
+The Godot interactive and synchronized stream documentation and 4.3 release notes were checked on 2026-11-05. Check the documentation for the project's engine version before specifying its audio properties.
 
 ## Loop math
 
@@ -29,21 +29,21 @@ The Godot interactive and synchronized stream documentation and 4.3 release note
 
 - Print-twice method: render the loop body twice in a row and cut the loop from the second pass, so tails from the end wrap into the start.
 - Cut at zero crossings on all channels and match energy across the seam.
-- MP3 encoders add delay and padding samples, which break gapless loops. Use Ogg Vorbis or WAV. Exact padding counts per encoder: UNVERIFIED.
+- Encoder delay and padding can affect loop seams. Test the exported file in the target playback path; check the encoder documentation for delay and padding behavior.
 
-## Engine loop points (UNVERIFIED until checked)
+## Engine loop points
 
 - Godot 4 AudioStreamOggVorbis: `loop` (bool), `loop_offset` (seconds).
 - Godot 4 AudioStreamWAV: `loop_mode`, `loop_begin`, `loop_end` (samples).
 - [Godot 4.3](https://godotengine.org/releases/4.3/) added AudioStreamInteractive (clip switching with transitions), AudioStreamSynchronized (stems in sync with per-stream volume) and AudioStreamPlaylist.
-- Unity: AudioSource has `loop` but no loop-start property. Intro then loop is done by scheduling a second clip with `AudioSource.PlayScheduled` at a time based on `AudioSettings.dspTime`.
+- Unity: for an intro followed by a loop, evaluate scheduling clips with [`AudioSource.PlayScheduled`](https://docs.unity3d.com/ScriptReference/AudioSource.PlayScheduled.html); confirm timing and loop settings in the installed version's documentation and test the seam.
 - Web Audio: AudioBufferSourceNode `loop`, `loopStart`, `loopEnd` (seconds).
-- Some tools read `LOOPSTART` and `LOOPLENGTH` Ogg comment tags (RPG Maker MV/MZ is commonly cited). UNVERIFIED.
+- Check the target tool's documentation and test an imported file before relying on loop metadata tags.
 
-## Middleware terms (UNVERIFIED wording, check FMOD and Audiokinetic docs)
+## Middleware terms
 
 - FMOD Studio: loop regions, transition markers, destination markers, transition regions, quantization on transitions. See [FMOD authoring events](https://www.fmod.com/docs/2.04/studio/authoring-events.html).
-- Wwise: Music Segments with entry and exit cues; pre-entry (pickup) and post-exit (tail) regions; Music Playlist and Music Switch containers; transition matrix.
+- For Wwise terminology and transition settings, consult the documentation for the installed version and test the transition in the project.
 
 ## Layering and resequencing
 
@@ -58,4 +58,4 @@ The Godot interactive and synchronized stream documentation and 4.3 release note
 
 ## Loudness
 
-- Sony's Audio Standards Working Group (ASWG) has published loudness recommendations for games. Specific target values: UNVERIFIED, check the current ASWG document before quoting numbers.
+- Choose a loudness target with the audio director; check the current delivery requirements for each target platform before quoting a number.

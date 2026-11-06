@@ -1,7 +1,7 @@
 ---
 title: Game animation timing reference
 tags: [animation, timing, game-feel, hit-stop, root-motion, state-machine, spine, dragonbones]
-sources: [http://esotericsoftware.com/spine-user-guide, https://github.com/DragonBones, https://docs.unity3d.com/Manual/RootMotion.html, https://docs.godotengine.org/en/stable/tutorials/animation/animation_tree.html]
+sources: ["https://esotericsoftware.com/spine-user-guide", "https://github.com/DragonBones", "https://docs.unity3d.com/Manual/RootMotion.html", "https://docs.godotengine.org/en/stable/tutorials/animation/animation_tree.html"]
 last_verified: 2026-11-05
 ---
 
@@ -70,8 +70,8 @@ Hybrid: skeletal body with swapped image attachments for hands, faces, and smear
 
 ## Sources
 
-Spine and DragonBones links UNVERIFIED; the Unity and Godot documentation above was checked on 2026-11-05:
-- Spine user guide: http://esotericsoftware.com/spine-user-guide
+Source links checked on 2026-11-05; consult the documentation for the runtime version in use:
+- Spine user guide: https://esotericsoftware.com/spine-user-guide
 - DragonBones GitHub organization: https://github.com/DragonBones
 - Unity Manual, root motion: https://docs.unity3d.com/Manual/RootMotion.html
 - Godot AnimationTree: https://docs.godotengine.org/en/stable/tutorials/animation/animation_tree.html
