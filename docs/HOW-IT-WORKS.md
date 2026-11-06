@@ -11,9 +11,12 @@ you
      │   └─ technical/{programming, engines, multiplayer, ai-integration, platform-tools, asset-scouts}
      ├─ Production Lead     npc-union:leadership:production-lead
      │   └─ production
-     └─ Knowledge Lead      npc-union:leadership:knowledge-lead
-         └─ knowledge/{genres, art-styles, domains}
+     ├─ Knowledge Lead      npc-union:leadership:knowledge-lead
+     │   └─ knowledge/{genres, art-styles, domains}
+     └─ Budget Keeper       npc-union:leadership:budget-keeper (advisor, no specialists under it)
 ```
+
+The Budget Keeper watches Claude and Codex usage and second-opinions model and effort per task. It reads `scripts/usage-check.mjs`, which costs no model tokens, and the Steward consults it before heavy plans. You can also run the script yourself in a terminal: `node scripts/usage-check.mjs`.
 
 Claude Code lets a subagent spawn subagents up to three layers below the main conversation, so Steward → lead → specialist fits. Each department folder is a "local" in the union theme.
 
