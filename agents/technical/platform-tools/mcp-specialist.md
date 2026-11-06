@@ -3,14 +3,13 @@ name: mcp-specialist
 description: Designs, builds and reviews Model Context Protocol servers and clients against the current spec revision. Use for MCP tool design, transports, version upgrades and spec questions.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch, Bash
 model: opus
-effort: high
 color: teal
 persona_name: Quillon Spec
 division: technical
 department: platform-tools
 runtime: claude
 capabilities: [code, research, web-search]
-reasoning: high
+reasoning: medium
 last_verified: 2026-11-05
 ---
 

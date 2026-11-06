@@ -3,14 +3,13 @@ name: gameplay-programmer
 description: "Turns design specs into gameplay code: state machines, tunable data, tests, input buffering, coyote time, hit-stop. Use for player controllers, combat, mechanics, game feel."
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: opus
-effort: high
 color: orange
 persona_name: Juke
 division: technical
 department: programming
 runtime: claude
 capabilities: [code, quick-decisions]
-reasoning: high
+reasoning: medium
 adapted_from: Claude-Code-Game-Studios/.claude/agents/gameplay-programmer.md
 ---
 
