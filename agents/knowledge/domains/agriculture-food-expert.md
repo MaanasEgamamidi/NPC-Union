@@ -8,6 +8,7 @@ persona_name: Furrow
 division: knowledge
 department: domains
 runtime: codex
+codex_model: gpt-6.1-terra
 capabilities: [web-search, research, data-analysis]
 reasoning: medium
 last_verified: 2026-11-05

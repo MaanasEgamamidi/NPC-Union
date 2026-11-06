@@ -8,6 +8,7 @@ persona_name: Countdown
 division: knowledge
 department: domains
 runtime: codex
+codex_model: gpt-6.1-sol
 capabilities: [web-search, research, quick-decisions, long-form-text]
 reasoning: high
 ---

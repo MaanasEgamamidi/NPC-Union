@@ -2538,7 +2538,7 @@
       "department": "asset-scouts",
       "runtime": "codex",
       "model": "sonnet",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"
@@ -2559,7 +2559,7 @@
       "department": "asset-scouts",
       "runtime": "codex",
       "model": "sonnet",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"
@@ -2580,7 +2580,7 @@
       "department": "asset-scouts",
       "runtime": "codex",
       "model": "sonnet",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"
@@ -2601,7 +2601,7 @@
       "department": "asset-scouts",
       "runtime": "codex",
       "model": "sonnet",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"
@@ -2622,7 +2622,7 @@
       "department": "asset-scouts",
       "runtime": "codex",
       "model": "sonnet",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"
@@ -2643,7 +2643,7 @@
       "department": "asset-scouts",
       "runtime": "codex",
       "model": "sonnet",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"

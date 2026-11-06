@@ -8,6 +8,7 @@ persona_name: Tolerance
 division: knowledge
 department: domains
 runtime: codex
+codex_model: gpt-6.1-sol
 capabilities: [web-search, research, data-analysis]
 reasoning: high
 ---

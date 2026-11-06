@@ -8,6 +8,7 @@ persona_name: Quadrissa
 division: creative
 department: art
 runtime: codex
+codex_model: gpt-6.1-terra
 capabilities: [3d-gen, image-gen, web-search, research]
 reasoning: medium
 ---

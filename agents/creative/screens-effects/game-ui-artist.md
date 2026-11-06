@@ -8,6 +8,7 @@ persona_name: Ninepane Wickersly
 division: creative
 department: screens-effects
 runtime: codex
+codex_model: gpt-6.1-terra
 capabilities: [image-gen, web-search, quick-decisions]
 reasoning: medium
 ---

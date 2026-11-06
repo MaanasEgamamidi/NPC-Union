@@ -8,6 +8,7 @@ persona_name: Quire
 division: creative
 department: design
 runtime: codex
+codex_model: gpt-6.1-terra
 capabilities: [research, web-search, image-gen]
 reasoning: medium
 ---

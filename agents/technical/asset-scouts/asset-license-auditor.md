@@ -8,6 +8,7 @@ persona_name: Clausewell Marrow
 division: technical
 department: asset-scouts
 runtime: codex
+codex_model: gpt-6-astra
 capabilities: [web-search, research, data-analysis]
 reasoning: high
 last_verified: 2026-11-05

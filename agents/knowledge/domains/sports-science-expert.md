@@ -8,6 +8,7 @@ persona_name: Lactate
 division: knowledge
 department: domains
 runtime: codex
+codex_model: gpt-6.1-terra
 capabilities: [web-search, research, data-analysis, quick-decisions]
 reasoning: medium
 ---

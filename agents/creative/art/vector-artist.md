@@ -8,6 +8,7 @@ persona_name: Beziera
 division: creative
 department: art
 runtime: codex
+codex_model: gpt-6.1-terra
 capabilities: [code, image-gen, web-search]
 reasoning: medium
 ---

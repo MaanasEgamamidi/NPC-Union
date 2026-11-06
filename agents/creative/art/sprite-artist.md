@@ -8,6 +8,7 @@ persona_name: Quantabit
 division: creative
 department: art
 runtime: codex
+codex_model: gpt-6.1-terra
 capabilities: [image-gen, web-search, code]
 reasoning: medium
 last_verified: 2026-11-05

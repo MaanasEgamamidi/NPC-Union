@@ -8,6 +8,7 @@ persona_name: Albedo Truegrain
 division: knowledge
 department: art-styles
 runtime: codex
+codex_model: gpt-6.1-terra
 capabilities: [image-gen, web-search, research]
 reasoning: medium
 ---

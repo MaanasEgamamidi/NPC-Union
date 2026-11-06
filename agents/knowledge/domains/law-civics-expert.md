@@ -8,6 +8,7 @@ persona_name: Precedent
 division: knowledge
 department: domains
 runtime: codex
+codex_model: gpt-6.1-sol
 capabilities: [web-search, research, long-form-text, data-analysis]
 reasoning: high
 ---

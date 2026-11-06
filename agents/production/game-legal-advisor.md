@@ -8,6 +8,7 @@ persona_name: Clausewright Ember
 division: production
 department: production
 runtime: codex
+codex_model: gpt-6-astra
 capabilities: [web-search, research, long-form-text]
 reasoning: high
 skills_owned: [license-risk-check]

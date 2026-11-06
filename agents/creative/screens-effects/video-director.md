@@ -8,6 +8,7 @@ persona_name: Clapperwick Rolle
 division: creative
 department: screens-effects
 runtime: codex
+codex_model: gpt-6.1-terra
 capabilities: [video-gen, web-search, long-form-text]
 reasoning: medium
 ---

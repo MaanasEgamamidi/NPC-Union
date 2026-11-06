@@ -66,7 +66,7 @@ export function buildPlan(agent, task, opts = {}, env = process.env) {
   const f = agent.fields;
   const body = agent.body.replaceAll("${CLAUDE_PLUGIN_ROOT}", opts.root || ROOT).trim();
   const runtime = opts.runtime || f.runtime || "claude";
-  const codexModel = env.NPC_UNION_CODEX_MODEL || DEFAULT_CODEX_MODEL;
+  const codexModel = env.NPC_UNION_CODEX_MODEL || f.codex_model || DEFAULT_CODEX_MODEL;
   if (!/^[\w.:-]+$/.test(codexModel)) throw new Error(`NPC_UNION_CODEX_MODEL has unexpected characters: ${codexModel}`);
   const reasoning = ["low", "medium", "high"].includes(f.reasoning) ? f.reasoning : "medium";
   const notices = [];

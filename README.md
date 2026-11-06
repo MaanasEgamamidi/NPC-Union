@@ -89,10 +89,10 @@ Generated from `catalog/roster.json`.
 | release-manager | `npc-union:production:release-manager` | claude | sonnet |
 | live-ops-designer | `npc-union:production:live-ops-designer` | claude | sonnet |
 | analytics-engineer | `npc-union:production:analytics-engineer` | claude | sonnet |
-| community-manager | `npc-union:production:community-manager` | codex | sonnet |
-| store-page-marketer | `npc-union:production:store-page-marketer` | codex | sonnet |
+| community-manager | `npc-union:production:community-manager` | codex | gpt-6.1-terra |
+| store-page-marketer | `npc-union:production:store-page-marketer` | codex | gpt-6.1-terra |
 | monetization-designer | `npc-union:production:monetization-designer` | claude | sonnet |
-| game-legal-advisor | `npc-union:production:game-legal-advisor` | codex | opus |
+| game-legal-advisor | `npc-union:production:game-legal-advisor` | codex | gpt-6-astra |
 
 ### creative/design
 
@@ -103,7 +103,7 @@ Generated from `catalog/roster.json`.
 | controls-designer | `npc-union:creative:design:controls-designer` | claude | sonnet |
 | world-builder | `npc-union:creative:design:world-builder` | claude | opus |
 | character-designer | `npc-union:creative:design:character-designer` | claude | sonnet |
-| moodboard-curator | `npc-union:creative:design:moodboard-curator` | codex | sonnet |
+| moodboard-curator | `npc-union:creative:design:moodboard-curator` | codex | gpt-6.1-terra |
 | level-designer | `npc-union:creative:design:level-designer` | claude | sonnet |
 | systems-designer | `npc-union:creative:design:systems-designer` | claude | opus |
 | economy-designer | `npc-union:creative:design:economy-designer` | claude | sonnet |
@@ -116,27 +116,27 @@ Generated from `catalog/roster.json`.
 | Agent | Plugin ID | Runtime | Model |
 |---|---|---|---|
 | art-director | `npc-union:creative:art:art-director` | claude | opus |
-| concept-artist | `npc-union:creative:art:concept-artist` | codex | sonnet |
-| sprite-artist | `npc-union:creative:art:sprite-artist` | codex | sonnet |
-| anime-artist | `npc-union:creative:art:anime-artist` | codex | sonnet |
-| pose-artist | `npc-union:creative:art:pose-artist` | codex | sonnet |
+| concept-artist | `npc-union:creative:art:concept-artist` | codex | gpt-6.1-terra |
+| sprite-artist | `npc-union:creative:art:sprite-artist` | codex | gpt-6.1-terra |
+| anime-artist | `npc-union:creative:art:anime-artist` | codex | gpt-6.1-terra |
+| pose-artist | `npc-union:creative:art:pose-artist` | codex | gpt-6.1-terra |
 | animator | `npc-union:creative:art:animator` | claude | sonnet |
-| vector-artist | `npc-union:creative:art:vector-artist` | codex | sonnet |
-| texture-artist | `npc-union:creative:art:texture-artist` | codex | sonnet |
-| layer-compositor | `npc-union:creative:art:layer-compositor` | codex | sonnet |
-| environment-artist | `npc-union:creative:art:environment-artist` | codex | sonnet |
-| modeler-3d | `npc-union:creative:art:modeler-3d` | codex | sonnet |
+| vector-artist | `npc-union:creative:art:vector-artist` | codex | gpt-6.1-terra |
+| texture-artist | `npc-union:creative:art:texture-artist` | codex | gpt-6.1-terra |
+| layer-compositor | `npc-union:creative:art:layer-compositor` | codex | gpt-6.1-terra |
+| environment-artist | `npc-union:creative:art:environment-artist` | codex | gpt-6.1-terra |
+| modeler-3d | `npc-union:creative:art:modeler-3d` | codex | gpt-6.1-terra |
 
 ### creative/screens-effects
 
 | Agent | Plugin ID | Runtime | Model |
 |---|---|---|---|
-| logo-designer | `npc-union:creative:screens-effects:logo-designer` | codex | sonnet |
-| title-screen-designer | `npc-union:creative:screens-effects:title-screen-designer` | codex | sonnet |
-| game-ui-artist | `npc-union:creative:screens-effects:game-ui-artist` | codex | sonnet |
+| logo-designer | `npc-union:creative:screens-effects:logo-designer` | codex | gpt-6.1-terra |
+| title-screen-designer | `npc-union:creative:screens-effects:title-screen-designer` | codex | gpt-6.1-terra |
+| game-ui-artist | `npc-union:creative:screens-effects:game-ui-artist` | codex | gpt-6.1-terra |
 | shader-artist | `npc-union:creative:screens-effects:shader-artist` | claude | opus |
 | vfx-artist | `npc-union:creative:screens-effects:vfx-artist` | claude | sonnet |
-| video-director | `npc-union:creative:screens-effects:video-director` | codex | sonnet |
+| video-director | `npc-union:creative:screens-effects:video-director` | codex | gpt-6.1-terra |
 
 ### creative/sound
 
@@ -220,13 +220,13 @@ Generated from `catalog/roster.json`.
 
 | Agent | Plugin ID | Runtime | Model |
 |---|---|---|---|
-| itch-scout | `npc-union:technical:asset-scouts:itch-scout` | codex | sonnet |
-| unity-store-scout | `npc-union:technical:asset-scouts:unity-store-scout` | codex | sonnet |
-| unreal-fab-scout | `npc-union:technical:asset-scouts:unreal-fab-scout` | codex | sonnet |
-| godot-asset-scout | `npc-union:technical:asset-scouts:godot-asset-scout` | codex | sonnet |
-| open-asset-scout | `npc-union:technical:asset-scouts:open-asset-scout` | codex | sonnet |
-| audio-asset-scout | `npc-union:technical:asset-scouts:audio-asset-scout` | codex | sonnet |
-| asset-license-auditor | `npc-union:technical:asset-scouts:asset-license-auditor` | codex | opus |
+| itch-scout | `npc-union:technical:asset-scouts:itch-scout` | codex | gpt-6-luna |
+| unity-store-scout | `npc-union:technical:asset-scouts:unity-store-scout` | codex | gpt-6-luna |
+| unreal-fab-scout | `npc-union:technical:asset-scouts:unreal-fab-scout` | codex | gpt-6-luna |
+| godot-asset-scout | `npc-union:technical:asset-scouts:godot-asset-scout` | codex | gpt-6-luna |
+| open-asset-scout | `npc-union:technical:asset-scouts:open-asset-scout` | codex | gpt-6-luna |
+| audio-asset-scout | `npc-union:technical:asset-scouts:audio-asset-scout` | codex | gpt-6-luna |
+| asset-license-auditor | `npc-union:technical:asset-scouts:asset-license-auditor` | codex | gpt-6-astra |
 
 ### knowledge/genres
 
@@ -257,41 +257,41 @@ Generated from `catalog/roster.json`.
 
 | Agent | Plugin ID | Runtime | Model |
 |---|---|---|---|
-| pixel-art-stylist | `npc-union:knowledge:art-styles:pixel-art-stylist` | codex | sonnet |
-| low-poly-stylist | `npc-union:knowledge:art-styles:low-poly-stylist` | codex | sonnet |
-| voxel-stylist | `npc-union:knowledge:art-styles:voxel-stylist` | codex | sonnet |
-| hand-drawn-stylist | `npc-union:knowledge:art-styles:hand-drawn-stylist` | codex | sonnet |
-| anime-cel-stylist | `npc-union:knowledge:art-styles:anime-cel-stylist` | codex | sonnet |
-| photoreal-stylist | `npc-union:knowledge:art-styles:photoreal-stylist` | codex | sonnet |
-| neon-vector-stylist | `npc-union:knowledge:art-styles:neon-vector-stylist` | codex | sonnet |
-| toon-stylist | `npc-union:knowledge:art-styles:toon-stylist` | codex | sonnet |
-| ps1-retro-stylist | `npc-union:knowledge:art-styles:ps1-retro-stylist` | codex | sonnet |
-| paper-craft-stylist | `npc-union:knowledge:art-styles:paper-craft-stylist` | codex | sonnet |
-| painterly-stylist | `npc-union:knowledge:art-styles:painterly-stylist` | codex | sonnet |
-| isometric-stylist | `npc-union:knowledge:art-styles:isometric-stylist` | codex | sonnet |
-| monochrome-noir-stylist | `npc-union:knowledge:art-styles:monochrome-noir-stylist` | codex | sonnet |
+| pixel-art-stylist | `npc-union:knowledge:art-styles:pixel-art-stylist` | codex | gpt-6.1-terra |
+| low-poly-stylist | `npc-union:knowledge:art-styles:low-poly-stylist` | codex | gpt-6.1-terra |
+| voxel-stylist | `npc-union:knowledge:art-styles:voxel-stylist` | codex | gpt-6.1-terra |
+| hand-drawn-stylist | `npc-union:knowledge:art-styles:hand-drawn-stylist` | codex | gpt-6.1-terra |
+| anime-cel-stylist | `npc-union:knowledge:art-styles:anime-cel-stylist` | codex | gpt-6.1-terra |
+| photoreal-stylist | `npc-union:knowledge:art-styles:photoreal-stylist` | codex | gpt-6.1-terra |
+| neon-vector-stylist | `npc-union:knowledge:art-styles:neon-vector-stylist` | codex | gpt-6.1-terra |
+| toon-stylist | `npc-union:knowledge:art-styles:toon-stylist` | codex | gpt-6.1-terra |
+| ps1-retro-stylist | `npc-union:knowledge:art-styles:ps1-retro-stylist` | codex | gpt-6.1-terra |
+| paper-craft-stylist | `npc-union:knowledge:art-styles:paper-craft-stylist` | codex | gpt-6.1-terra |
+| painterly-stylist | `npc-union:knowledge:art-styles:painterly-stylist` | codex | gpt-6.1-terra |
+| isometric-stylist | `npc-union:knowledge:art-styles:isometric-stylist` | codex | gpt-6.1-terra |
+| monochrome-noir-stylist | `npc-union:knowledge:art-styles:monochrome-noir-stylist` | codex | gpt-6.1-terra |
 
 ### knowledge/domains
 
 | Agent | Plugin ID | Runtime | Model |
 |---|---|---|---|
-| nasa-data-specialist | `npc-union:knowledge:domains:nasa-data-specialist` | codex | opus |
-| space-science-expert | `npc-union:knowledge:domains:space-science-expert` | codex | opus |
+| nasa-data-specialist | `npc-union:knowledge:domains:nasa-data-specialist` | codex | gpt-6.1-sol |
+| space-science-expert | `npc-union:knowledge:domains:space-science-expert` | codex | gpt-6.1-sol |
 | orbital-mechanics-expert | `npc-union:knowledge:domains:orbital-mechanics-expert` | claude | opus |
-| space-apps-specialist | `npc-union:knowledge:domains:space-apps-specialist` | codex | opus |
-| healthcare-expert | `npc-union:knowledge:domains:healthcare-expert` | codex | opus |
-| business-finance-expert | `npc-union:knowledge:domains:business-finance-expert` | codex | opus |
-| education-expert | `npc-union:knowledge:domains:education-expert` | codex | opus |
-| climate-earth-expert | `npc-union:knowledge:domains:climate-earth-expert` | codex | opus |
-| law-civics-expert | `npc-union:knowledge:domains:law-civics-expert` | codex | opus |
-| history-expert | `npc-union:knowledge:domains:history-expert` | codex | opus |
-| defense-strategy-expert | `npc-union:knowledge:domains:defense-strategy-expert` | codex | opus |
-| sports-science-expert | `npc-union:knowledge:domains:sports-science-expert` | codex | sonnet |
-| agriculture-food-expert | `npc-union:knowledge:domains:agriculture-food-expert` | codex | sonnet |
-| cybersecurity-expert | `npc-union:knowledge:domains:cybersecurity-expert` | codex | opus |
-| biology-ecology-expert | `npc-union:knowledge:domains:biology-ecology-expert` | codex | opus |
-| physics-engineering-expert | `npc-union:knowledge:domains:physics-engineering-expert` | codex | opus |
-| urban-planning-expert | `npc-union:knowledge:domains:urban-planning-expert` | codex | sonnet |
+| space-apps-specialist | `npc-union:knowledge:domains:space-apps-specialist` | codex | gpt-6.1-sol |
+| healthcare-expert | `npc-union:knowledge:domains:healthcare-expert` | codex | gpt-6.1-sol |
+| business-finance-expert | `npc-union:knowledge:domains:business-finance-expert` | codex | gpt-6.1-sol |
+| education-expert | `npc-union:knowledge:domains:education-expert` | codex | gpt-6.1-sol |
+| climate-earth-expert | `npc-union:knowledge:domains:climate-earth-expert` | codex | gpt-6.1-sol |
+| law-civics-expert | `npc-union:knowledge:domains:law-civics-expert` | codex | gpt-6.1-sol |
+| history-expert | `npc-union:knowledge:domains:history-expert` | codex | gpt-6.1-sol |
+| defense-strategy-expert | `npc-union:knowledge:domains:defense-strategy-expert` | codex | gpt-6.1-sol |
+| sports-science-expert | `npc-union:knowledge:domains:sports-science-expert` | codex | gpt-6.1-terra |
+| agriculture-food-expert | `npc-union:knowledge:domains:agriculture-food-expert` | codex | gpt-6.1-terra |
+| cybersecurity-expert | `npc-union:knowledge:domains:cybersecurity-expert` | codex | gpt-6.1-sol |
+| biology-ecology-expert | `npc-union:knowledge:domains:biology-ecology-expert` | codex | gpt-6.1-sol |
+| physics-engineering-expert | `npc-union:knowledge:domains:physics-engineering-expert` | codex | gpt-6.1-sol |
+| urban-planning-expert | `npc-union:knowledge:domains:urban-planning-expert` | codex | gpt-6.1-terra |
 
 ## Gallery
 

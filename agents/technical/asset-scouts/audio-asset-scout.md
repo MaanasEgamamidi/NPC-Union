@@ -8,8 +8,9 @@ persona_name: Hushwick Ambry
 division: technical
 department: asset-scouts
 runtime: codex
+codex_model: gpt-6-luna
 capabilities: [web-search, research]
-reasoning: medium
+reasoning: low
 last_verified: 2026-11-05
 ---
 

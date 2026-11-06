@@ -8,6 +8,7 @@ persona_name: Megaphonia Drift
 division: production
 department: production
 runtime: codex
+codex_model: gpt-6.1-terra
 capabilities: [web-search, long-form-text, research, quick-decisions]
 reasoning: medium
 skills_owned: [patch-notes]

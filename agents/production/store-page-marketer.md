@@ -8,6 +8,7 @@ persona_name: Wishlist Wrenna
 division: production
 department: production
 runtime: codex
+codex_model: gpt-6.1-terra
 capabilities: [web-search, research, long-form-text, quick-decisions]
 reasoning: medium
 skills_owned: [store-page-audit]
