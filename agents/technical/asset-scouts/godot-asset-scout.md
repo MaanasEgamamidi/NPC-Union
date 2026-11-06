@@ -3,6 +3,7 @@ name: godot-asset-scout
 description: Finds Godot addons and assets on the Asset Library, Asset Store and GitHub, with licence, price and version fit. Use for "is there a Godot plugin for X" or addon shortlists.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
+effort: low
 color: teal
 persona_name: Nodewell Fennimore
 division: technical

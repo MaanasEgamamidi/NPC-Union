@@ -3,6 +3,7 @@ name: physics-programmer
 description: Builds and diagnoses game physics, collision detection, character contacts and simulation stability. Use for tunneling, jitter, fixed steps and collision filtering.
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Inertia
 division: technical

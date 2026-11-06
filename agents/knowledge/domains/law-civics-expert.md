@@ -3,6 +3,7 @@ name: law-civics-expert
 description: Makes courtroom, government, and civics game content accurate and fair. Use for legal procedure, how laws pass, voting systems, legal data APIs, and civics games for schools.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: blue
 persona_name: Precedent
 division: knowledge

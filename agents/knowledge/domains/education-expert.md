@@ -3,6 +3,7 @@ name: education-expert
 description: Turns curriculum goals into game mechanics that teach and assess, with child privacy and classroom limits in view. Use for learning games, standards alignment, COPPA/FERPA questions.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: green
 persona_name: Scaffold
 division: knowledge

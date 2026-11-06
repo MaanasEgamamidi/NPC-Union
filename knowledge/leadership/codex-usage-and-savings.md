@@ -7,7 +7,7 @@ sources:
 last_verified: 2026-11-05
 ---
 
-Facts the budget keeper relies on for Codex CLI. Both pages were read on 2026-11-05. The old addresses `developers.openai.com/codex/pricing` and `developers.openai.com/codex/config-reference` redirected to the `learn.chatgpt.com` pages above. The pricing page shows no date, so re-open it before quoting a number.
+Facts the budget keeper relies on for Codex CLI. Both pages were read on 2026-11-05. The old addresses `developers.openai.com/codex/pricing` and `developers.openai.com/codex/config-reference` return a 308 permanent redirect to the `learn.chatgpt.com` pages above, so those are the canonical addresses now. The pricing page shows no date, so re-open it before quoting a number.
 
 ## Limits
 
@@ -20,7 +20,7 @@ Facts the budget keeper relies on for Codex CLI. Both pages were read on 2026-11
 
 ## Reading current usage
 
-- Codex writes the plan windows into each session log under `~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl`. A `token_count` event carries `rate_limits.primary` (300 minutes) and `rate_limits.secondary` (10080 minutes), each with `used_percent` and `resets_at`, plus `plan_type` and `credits`. This was observed in this machine's logs on 2026-11-05, and is not documented on the pages above, so treat the field names as UNVERIFIED for other versions. `scripts/usage-check.mjs` reads them.
+- Codex writes the plan windows into each session log under `~/.codex/sessions/YYYY/MM/DD/rollout-*.jsonl`. A `token_count` event carries `rate_limits.primary` (300 minutes) and `rate_limits.secondary` (10080 minutes), each with `used_percent` and `resets_at`, plus `plan_type` and `credits`. This was observed in this machine's logs on 2026-11-05 and is not in the docs above. `scripts/usage-check.mjs` reads them.
 - A `resets_at` in the past means that window has already reset and the percentage is stale.
 - The pricing page points to the usage dashboard for current limits and reset times.
 
@@ -39,7 +39,11 @@ Facts the budget keeper relies on for Codex CLI. Both pages were read on 2026-11
 - Keep Codex for work where it is the better tool: live web search, fact-checking and image generation. Do text and code that Claude does equally well on Claude, so the two quotas are spent in parallel. `run-agent.mjs --runtime claude` or `--runtime codex` moves a single agent between them.
 - Image generation burns the window fastest. Batch the brief into one well-specified request, instead of several vague retries.
 
-## UNVERIFIED
+## Not published, and how to get the number
 
-- Weekly Codex limits per plan.
-- Whether `used_percent` fields appear the same way in other Codex versions.
+- OpenAI's pricing page says weekly limits "may also apply" and gives no weekly figures for any plan, on 2026-11-05. Community posts quote dollar-equivalent weekly caps, but they are user estimates, so this file excludes them. The real weekly figure is `rate_limits.secondary.used_percent` in your own session log, which `scripts/usage-check.mjs` prints.
+- OpenAI's help article on Codex plans returned HTTP 403 to the fetch tool, so it was not read.
+
+## Log field check
+
+- The `rate_limits` layout above was read from real Codex session logs on this machine on 2026-11-05 (plan `plus`, windows of 300 and 10080 minutes). The script prints "No Codex rate-limit data found" instead of guessing when a future version changes the layout, and `tests/usage-check.test.mjs` pins the shape it expects.

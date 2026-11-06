@@ -3,6 +3,7 @@ name: game-ai-engineer
 description: "Designs classic game AI: FSMs, behavior trees, utility, GOAP, HTN, navmesh, steering, perception, director AI. Use for NPC behavior that must read clearly and play fair."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Brancholm
 division: technical

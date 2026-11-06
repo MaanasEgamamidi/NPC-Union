@@ -3,6 +3,7 @@ name: producer
 description: Game producer who turns a pitch into milestones, a risk register, a cut list and a vertical slice plan. Use for scope checks, schedules, milestone gates and deciding what to cut.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
+effort: high
 color: amber
 persona_name: Ledgerline Vosk
 division: production

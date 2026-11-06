@@ -3,6 +3,7 @@ name: physics-engineering-expert
 description: "Checks real-world physics and engineering in games: structures, materials, aero, heat, circuits, units. Use for bridge builders, vehicle or machine sims, and plausibility checks of numbers."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: orange
 persona_name: Tolerance
 division: knowledge

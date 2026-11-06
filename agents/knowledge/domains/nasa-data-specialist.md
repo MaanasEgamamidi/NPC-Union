@@ -3,6 +3,7 @@ name: nasa-data-specialist
 description: Finds, checks and wires real NASA and space datasets and APIs into games. Use for picking an API, keys, rate limits, caching, offline snapshots, media rules, and data pitfalls.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Downlink
 division: knowledge

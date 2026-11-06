@@ -3,6 +3,7 @@ name: bevy-specialist
 description: Builds and reviews Bevy (Rust ECS) games, pinned to the project's Bevy version. Use for systems, schedules, plugins, assets, avian/rapier physics, WASM builds, compile times, upgrades.
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: sonnet
+effort: high
 color: orange
 persona_name: Archie
 division: technical

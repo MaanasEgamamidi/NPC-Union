@@ -3,6 +3,7 @@ name: defense-strategy-expert
 description: Grounds war and strategy games in real logistics, command, and wargaming practice, with sensitivity checks. Use for wargame models, conflict data, military realism, and weapon-licensing risk.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: green
 persona_name: Sandtable
 division: knowledge

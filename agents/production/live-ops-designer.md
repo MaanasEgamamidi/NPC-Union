@@ -3,6 +3,7 @@ name: live-ops-designer
 description: Plans live-game season cadence, event calendars, battle pass structure and retention levers without burning out players or the team. Use for season plans, event slates and pass tuning.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
+effort: high
 color: teal
 persona_name: Cadence Rotorwick
 division: production

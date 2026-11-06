@@ -3,6 +3,7 @@ name: shader-artist
 description: Writes animated background and effect shaders in GLSL, WGSL, HLSL, Godot and Shader Graph. Use for menu backdrops, dissolves, precision bugs, time wrapping, overdraw and mobile GPU cost.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: orange
 persona_name: Fresnelda Quarkwick
 division: creative

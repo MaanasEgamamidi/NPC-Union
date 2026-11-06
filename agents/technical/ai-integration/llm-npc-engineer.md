@@ -3,6 +3,7 @@ name: llm-npc-engineer
 description: Designs LLM-driven NPC dialogue with memory, tool calls for game actions, streaming TTS, and jailbreak resistance. Use for AI NPC chat, barks, persona prompts, latency budgets.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Murmurine
 division: technical

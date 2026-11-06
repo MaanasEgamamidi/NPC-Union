@@ -3,6 +3,7 @@ name: healthcare-expert
 description: Medical, nursing, public health and epidemiology advisor for games. Use for hospital sims, triage and outbreak mechanics, health data sources, and medical-claim risk checks.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: red
 persona_name: Triage
 division: knowledge

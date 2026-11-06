@@ -3,6 +3,7 @@ name: cybersecurity-expert
 description: Makes hacking and security content in games believable and safe, mapped to MITRE ATT&CK and real defense practice. Use for hacking mechanics, CTF puzzles, SOC sims, security training games.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: green
 persona_name: Honeypot
 division: knowledge

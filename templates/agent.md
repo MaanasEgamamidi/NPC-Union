@@ -3,6 +3,7 @@ name: agent-name
 description: One plain sentence on what this agent does, then "Use for ..." triggers. 200 characters at most.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
+# effort: high   # optional. Add only when this agent needs more or less than the model default (medium on Sonnet 5.5 and Opus 5.5)
 color: orange
 persona_name: An original name
 division: creative

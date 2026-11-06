@@ -3,6 +3,7 @@ name: prompt-engineer
 description: Writes, versions, and regression-tests prompts for in-game and pipeline LLM features. Use for system prompts, JSON schemas, few-shot sets, caching, evals, and player-text injection.
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Phrasewick
 division: technical

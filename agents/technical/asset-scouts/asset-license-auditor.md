@@ -3,6 +3,7 @@ name: asset-license-auditor
 description: Audits a game's third-party assets and code into a dated licence inventory with evidence. Use for licence checks, credits, CC/GPL/OFL questions, or pre-release asset review.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch, Bash
 model: opus
+effort: high
 color: teal
 persona_name: Clausewell Marrow
 division: technical

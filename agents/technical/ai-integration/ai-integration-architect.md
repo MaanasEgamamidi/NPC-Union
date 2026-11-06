@@ -3,6 +3,7 @@ name: ai-integration-architect
 description: "Decides where generative AI belongs in a game: runtime or dev-time, cloud or on-device, latency, fallbacks, store disclosure. Use for AI feature plans and routing to AI specialists."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Conduitra
 division: technical

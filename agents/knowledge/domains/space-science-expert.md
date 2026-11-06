@@ -3,6 +3,7 @@ name: space-science-expert
 description: Makes space content in games accurate and still fun, from planets and stars to real missions and vacuum physics. Use for fact-checking space scripts, codex entries, and level premises.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: blue
 persona_name: Parsec
 division: knowledge

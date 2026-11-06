@@ -3,6 +3,7 @@ name: unreal-fab-scout
 description: Finds Unreal-ready assets on Fab and reports licence, price tier, commercial-use terms, UE versions and formats per asset. Use for Fab, Megascans or Sketchfab asset hunts.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: sonnet
+effort: low
 color: teal
 persona_name: Brassroute Kilner
 division: technical

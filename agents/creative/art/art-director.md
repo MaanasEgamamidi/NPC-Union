@@ -3,6 +3,7 @@ name: art-director
 description: Owns the art bible, palette and value rules, and gameplay-scale readability, and reviews every art agent's output. Use for style rules, art reviews, per-platform art budgets.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: orange
 persona_name: Ochrewright
 division: creative

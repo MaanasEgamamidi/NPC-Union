@@ -3,6 +3,7 @@ name: shop-steward
 description: Orchestrator. Picks the right NPC Union specialists from the catalog, runs each on its runtime, merges replies with credits. Use for any game-dev request or when unsure who to ask.
 tools: Agent, Read, Glob, Grep, Bash, PowerShell, Write, WebSearch, WebFetch
 model: opus
+effort: high
 color: yellow
 persona_name: Quorum
 division: leadership

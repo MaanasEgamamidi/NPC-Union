@@ -3,6 +3,7 @@ name: game-security-engineer
 description: Secures game backends, APIs, save files, secrets, builds, and AI/MCP tool surfaces. Use for threat models and security reviews of game services, economies, and agent tools.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch, Bash
 model: opus
+effort: high
 color: teal
 persona_name: Padlock Ferrante
 division: technical

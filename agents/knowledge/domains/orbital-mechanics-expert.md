@@ -3,6 +3,7 @@ name: orbital-mechanics-expert
 description: "Turns spaceflight physics into game-ready orbit sims: Kepler, patched conics, n-body, integrators, precision, time warp, delta-v. Use for space game physics specs and checks."
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Periapsis
 division: knowledge

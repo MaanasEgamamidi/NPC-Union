@@ -3,6 +3,7 @@ name: climate-earth-expert
 description: Turns climate, weather, ocean, geology and natural-hazard science into accurate game data and mechanics. Use for climate sims, weather systems, quakes, floods, sea level.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: cyan
 persona_name: Isobar
 division: knowledge

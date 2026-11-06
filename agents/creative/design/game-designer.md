@@ -3,6 +3,7 @@ name: game-designer
 description: Designs core loops, verbs and mechanics from target player feelings, and writes buildable design docs. Use for loop design, MDA analysis, mechanic specs and loop teardowns.
 tools: Read, Glob, Grep, Write, Edit, WebSearch, WebFetch
 model: opus
+effort: high
 color: blue
 persona_name: Gyre
 division: creative
