@@ -35,7 +35,11 @@ test("codex runtime uses the verified codex invocation", { skip: process.platfor
   assert.equal(r.status, 0, r.stderr);
   assert.match(r.stdout, /STUB CODEX ANSWER/);
   const args = JSON.parse(readFileSync(log, "utf8"));
-  assert.deepEqual(args.slice(0, 9), ["--search", "exec", "-m", "test-model", "-c", 'model_reasoning_effort="high"', "-s", "workspace-write", "--skip-git-repo-check"]);
+  // Expected effort comes from the agent's own frontmatter, so effort triage doesn't break this test.
+  const agentFile = readFileSync(join(ROOT, "agents/leadership", `${AGENT}.md`), "utf8");
+  const reasoning = agentFile.match(/^reasoning:\s*(low|medium|high)\s*$/m)?.[1];
+  assert.ok(reasoning, "agent declares reasoning");
+  assert.deepEqual(args.slice(0, 9), ["--search", "exec", "-m", "test-model", "-c", `model_reasoning_effort="${reasoning}"`, "-s", "workspace-write", "--skip-git-repo-check"]);
   assert.equal(args[9], "-o");
   assert.match(args[11], /# Task\n\nplan a jam game/);
   assert.ok(!args[11].includes("${CLAUDE_PLUGIN_ROOT}"), "plugin root is substituted");
