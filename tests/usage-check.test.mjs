@@ -6,7 +6,7 @@ import { mkdirSync, mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { claudeSnapshot, codexSnapshot } from "../scripts/usage-check.mjs";
+import { claudeSnapshot, codexSnapshot, grade, watchLine } from "../scripts/usage-check.mjs";
 
 const SCRIPT = join(dirname(fileURLToPath(import.meta.url)), "../scripts/usage-check.mjs");
 const NOW = Date.parse("2026-11-05T20:00:00Z");
@@ -74,6 +74,32 @@ test("CLI prints numbers only and never prompt text", () => {
   assert.doesNotMatch(res.stdout, /SECRET PROMPT TEXT/);
   const json = spawnSync(process.execPath, [SCRIPT, "--codex-dir", codex, "--claude-dir", claude, "--json"], { encoding: "utf8" });
   assert.equal(JSON.parse(json.stdout).codex.found, true);
+});
+
+test("grade follows the 60 and 85 percent thresholds", () => {
+  assert.equal(grade(59.9), "green");
+  assert.equal(grade(60), "yellow");
+  assert.equal(grade(84), "yellow");
+  assert.equal(grade(85), "red");
+  assert.equal(grade(undefined), "unknown");
+});
+
+test("watchLine alerts on a live yellow or red window and ignores a stale one", () => {
+  const { codex, claude } = fixtures();
+  const snap = (nowMs, used) => {
+    const c = codexSnapshot(codex, nowMs);
+    c.five_hour.used_percent = used;
+    return { generated: new Date(nowMs).toISOString(), codex: c, claude: claudeSnapshot(claude, 5, nowMs) };
+  };
+  assert.equal(watchLine(snap(NOW, 10)).alerts.length, 0);
+  assert.match(watchLine(snap(NOW, 90)).alerts[0], /ALERT codex 5h window is red/);
+  assert.equal(watchLine(snap(NOW + 7200 * 1000, 90)).alerts.length, 0); // window already reset
+});
+
+test("CLI rejects a bad --watch value", () => {
+  for (const args of [["--watch", "0"], ["--watch", "abc"], ["--watch"]]) {
+    assert.equal(spawnSync(process.execPath, [SCRIPT, ...args], { encoding: "utf8" }).status, 2, args.join(" "));
+  }
 });
 
 test("CLI rejects a bad --hours value", () => {

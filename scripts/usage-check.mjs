@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Prints a numbers-only usage snapshot from local logs. Node only, no dependencies, no network, no model calls.
-// Usage: node scripts/usage-check.mjs [--hours 5] [--json] [--codex-dir <dir>] [--claude-dir <dir>]
+// Usage: node scripts/usage-check.mjs [--hours 5] [--json] [--watch <minutes>] [--codex-dir <dir>] [--claude-dir <dir>]
+//   --watch N: print one snapshot, then a compact line every N minutes (N >= 1) with ALERT lines, until Ctrl+C.
 //   Codex:  last token_count event in the newest ~/.codex/sessions/**/rollout-*.jsonl (plan windows, used_percent, resets_at).
 //   Claude: sums assistant `usage` fields from ~/.claude/projects/**/*.jsonl for the last N hours, per model.
 // Claude's plan-percentage bars are NOT in the transcripts. Run /usage in Claude Code for those.
@@ -103,6 +104,32 @@ export function claudeSnapshot(claudeDir, hours = 5, now = Date.now()) {
   };
 }
 
+// Budget keeper policy, not vendor numbers: green under 60% used, yellow 60-84%, red 85% or more.
+export function grade(percent) {
+  if (typeof percent !== "number" || Number.isNaN(percent)) return "unknown";
+  return percent >= 85 ? "red" : percent >= 60 ? "yellow" : "green";
+}
+
+// One compact line for --watch, plus alert text when a live Codex window is yellow or red or a limit was hit.
+export function watchLine(snap) {
+  const time = new Date(snap.generated).toLocaleTimeString();
+  const c = snap.codex;
+  const alerts = [];
+  const parts = [];
+  if (c.found) {
+    for (const [label, w] of [["5h", c.five_hour], ["wk", c.weekly]]) {
+      if (!w) continue;
+      const g = w.already_reset ? "stale" : grade(w.used_percent);
+      parts.push(`codex ${label} ${w.used_percent}% ${g}`);
+      if (g === "yellow" || g === "red") alerts.push(`ALERT codex ${label} window is ${g} (${w.used_percent}% used, resets ${local(w.resets_at)})`);
+    }
+    if (c.limit_reached) alerts.push(`ALERT codex limit reached: ${c.limit_reached}`);
+  } else parts.push("codex n/a");
+  const k = snap.claude;
+  parts.push(`claude ${k.total.requests} req, cache ${k.cache_hit_percent ?? "n/a"}%`);
+  return { line: `${time}  ${parts.join("  |  ")}`, alerts };
+}
+
 const fmt = (n) => (n >= 1e6 ? `${(n / 1e6).toFixed(2)}M` : n >= 1e3 ? `${(n / 1e3).toFixed(1)}k` : String(n));
 const local = (iso) => (iso ? new Date(iso).toLocaleString() : "unknown");
 
@@ -115,7 +142,7 @@ export function render(snap) {
     out.push(`  plan: ${c.plan_type ?? "unknown"}   recorded: ${local(c.recorded_at)} (${c.age_minutes} min ago)`);
     for (const [label, w] of [["5-hour window", c.five_hour], ["weekly window", c.weekly]]) {
       if (!w) { out.push(`  ${label}: not reported`); continue; }
-      out.push(`  ${label}: ${w.used_percent}% used, resets ${local(w.resets_at)}${w.already_reset ? "  (already reset: figure is stale)" : ""}`);
+      out.push(`  ${label}: ${w.used_percent}% used (${w.already_reset ? "stale" : grade(w.used_percent)}), resets ${local(w.resets_at)}${w.already_reset ? "  (already reset: figure is stale)" : ""}`);
     }
     if (c.credits) out.push(`  credits: ${c.credits.unlimited ? "unlimited" : c.credits.has_credits ? `balance ${c.credits.balance}` : "none"}`);
     if (c.limit_reached) out.push(`  LIMIT REACHED: ${c.limit_reached}`);
@@ -137,9 +164,22 @@ function main(argv) {
   if (!(hours > 0)) { console.error("usage-check: --hours must be a positive number"); return 2; }
   const codexDir = opt("--codex-dir", process.env.CODEX_HOME || join(homedir(), ".codex"));
   const claudeDir = opt("--claude-dir", process.env.CLAUDE_CONFIG_DIR || join(homedir(), ".claude"));
-  const snap = { generated: new Date().toISOString(), codex: codexSnapshot(codexDir), claude: claudeSnapshot(claudeDir, hours) };
+  const take = () => ({ generated: new Date().toISOString(), codex: codexSnapshot(codexDir), claude: claudeSnapshot(claudeDir, hours) });
+  if (argv.includes("--watch")) {
+    const minutes = Number(opt("--watch", NaN));
+    if (!(minutes >= 1)) { console.error("usage-check: --watch needs a number of minutes, 1 or more"); return 2; }
+    console.log(render(take()));
+    console.log(`\nWatching every ${minutes} min. Press Ctrl+C to stop. Costs no model tokens.`);
+    console.log("Only Codex windows and Claude token burn can raise an alert. The Claude plan percentage still needs /usage.\n");
+    setInterval(() => { const { line, alerts } = watchLine(take()); console.log(line); for (const a of alerts) console.log(a); }, minutes * 60000);
+    return null; // keep the process alive
+  }
+  const snap = take();
   console.log(argv.includes("--json") ? JSON.stringify(snap, null, 2) : render(snap));
   return 0;
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) process.exit(main(process.argv.slice(2)));
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  const code = main(process.argv.slice(2));
+  if (code !== null) process.exit(code);
+}
