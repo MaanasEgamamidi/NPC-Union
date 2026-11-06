@@ -1,5 +1,5 @@
 {
-  "count": 147,
+  "count": 148,
   "specialists": [
     {
       "name": "animator",
@@ -1561,6 +1561,24 @@
       "avatar": "../assets/avatars/visual-novel-expert.png"
     },
     {
+      "name": "budget-keeper",
+      "persona": "Gaugette Thrum",
+      "description": "Watches Claude and Codex usage, stretches both quotas without hurting quality, and second-opinions model and effort per task. Use before heavy plans, when limits run hot, or to set effort.",
+      "division": "leadership",
+      "department": "leadership",
+      "folder": "leadership",
+      "model": "sonnet",
+      "runtime": "claude",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "data-analysis",
+        "quick-decisions"
+      ],
+      "isMaster": false,
+      "avatar": "../assets/avatars/budget-keeper.png"
+    },
+    {
       "name": "creative-lead",
       "persona": "Kestrel Loom",
       "description": "Coordinates creative specialists across departments. Use for integrated plans, trade-offs and handoffs to the Steward.",
@@ -2065,7 +2083,7 @@
       "folder": "technical/asset-scouts",
       "model": "sonnet",
       "runtime": "codex",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"
@@ -2082,7 +2100,7 @@
       "folder": "technical/asset-scouts",
       "model": "sonnet",
       "runtime": "codex",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"
@@ -2099,7 +2117,7 @@
       "folder": "technical/asset-scouts",
       "model": "sonnet",
       "runtime": "codex",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"
@@ -2116,7 +2134,7 @@
       "folder": "technical/asset-scouts",
       "model": "sonnet",
       "runtime": "codex",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"
@@ -2133,7 +2151,7 @@
       "folder": "technical/asset-scouts",
       "model": "sonnet",
       "runtime": "codex",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"
@@ -2150,7 +2168,7 @@
       "folder": "technical/asset-scouts",
       "model": "sonnet",
       "runtime": "codex",
-      "reasoning": "medium",
+      "reasoning": "low",
       "capabilities": [
         "web-search",
         "research"

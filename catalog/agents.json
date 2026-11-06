@@ -1,7 +1,7 @@
 {
   "_generated": "by scripts/build-catalog.mjs; do not edit",
-  "count": 147,
-  "written": 147,
+  "count": 148,
+  "written": 148,
   "agents": [
     {
       "name": "animator",
@@ -1920,6 +1920,30 @@
       "description": "Reviews visual novel and narrative adventure designs for branching structure, route pacing, choice weight, and reader UX. Use for VN scope, flowcharts, and route reviews.",
       "skills": [
         "visual-novel-genre-review"
+      ],
+      "status": "written"
+    },
+    {
+      "name": "budget-keeper",
+      "id": "npc-union:leadership:budget-keeper",
+      "path": "agents/leadership/budget-keeper.md",
+      "folder": "leadership",
+      "persona_name": "Gaugette Thrum",
+      "division": "leadership",
+      "department": "leadership",
+      "runtime": "claude",
+      "model": "sonnet",
+      "reasoning": "medium",
+      "capabilities": [
+        "research",
+        "data-analysis",
+        "quick-decisions"
+      ],
+      "description": "Watches Claude and Codex usage, stretches both quotas without hurting quality, and second-opinions model and effort per task. Use before heavy plans, when limits run hot, or to set effort.",
+      "skills": [
+        "usage-check",
+        "token-savings-audit",
+        "effort-fit-check"
       ],
       "status": "written"
     },

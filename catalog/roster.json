@@ -2,7 +2,7 @@
   "_format": "Each entry is name:runtime:model. Path is agents/<folder>/<name>.md. Plugin ID is npc-union:<folder with / as :>:<name>.",
   "streams": {
     "a": {
-      "leadership": ["shop-steward:claude:opus", "creative-lead:claude:opus", "technical-lead:claude:opus", "production-lead:claude:opus", "knowledge-lead:claude:sonnet"],
+      "leadership": ["shop-steward:claude:opus", "creative-lead:claude:opus", "technical-lead:claude:opus", "production-lead:claude:opus", "knowledge-lead:claude:sonnet", "budget-keeper:claude:sonnet"],
       "production": ["producer:claude:sonnet", "prototyper:claude:sonnet", "qa-lead:claude:sonnet", "qa-tester:claude:sonnet", "playtest-analyst:claude:sonnet", "accessibility-specialist:claude:sonnet", "release-manager:claude:sonnet", "live-ops-designer:claude:sonnet", "analytics-engineer:claude:sonnet", "community-manager:codex:sonnet", "store-page-marketer:codex:sonnet", "monetization-designer:claude:sonnet", "game-legal-advisor:codex:opus"]
     },
     "b": {
