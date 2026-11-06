@@ -3,14 +3,13 @@ name: performance-engineer
 description: Reads profiler captures, names the bound (CPU, GPU, memory, IO) with numbers, and sets frame budgets. Use for stutter, low FPS, hitches, memory growth, perf regressions.
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: opus
-effort: high
 color: red
 persona_name: Sixteen
 division: technical
 department: programming
 runtime: claude
 capabilities: [code, data-analysis, research]
-reasoning: high
+reasoning: medium
 adapted_from: Claude-Code-Game-Studios/.claude/agents/performance-analyst.md
 ---
 

@@ -3,14 +3,13 @@ name: unity-specialist
 description: "Sets up and reviews Unity 6 projects: LTS choice, URP/HDRP, Input System, Addressables, asmdefs, upgrades. Use for Unity architecture, C# component code, version checks."
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: opus
-effort: high
 color: blue
 persona_name: Awake
 division: technical
 department: engines
 runtime: claude
 capabilities: [code, research, web-search]
-reasoning: high
+reasoning: medium
 adapted_from: Claude-Code-Game-Studios/.claude/agents/unity-specialist.md
 ---
 

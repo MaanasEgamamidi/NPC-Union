@@ -422,7 +422,7 @@
       "folder": "creative/narrative",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "long-form-text"
       ],
@@ -525,7 +525,7 @@
       "folder": "creative/screens-effects",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research"
@@ -1026,7 +1026,7 @@
       "folder": "knowledge/domains",
       "model": "opus",
       "runtime": "codex",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -1063,7 +1063,7 @@
       "folder": "knowledge/domains",
       "model": "opus",
       "runtime": "codex",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -1100,7 +1100,7 @@
       "folder": "knowledge/domains",
       "model": "opus",
       "runtime": "codex",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -1155,7 +1155,7 @@
       "folder": "knowledge/domains",
       "model": "opus",
       "runtime": "codex",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -1174,7 +1174,7 @@
       "folder": "knowledge/domains",
       "model": "opus",
       "runtime": "codex",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -1587,7 +1587,7 @@
       "folder": "leadership",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "research",
         "long-form-text",
@@ -1623,7 +1623,7 @@
       "folder": "leadership",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "research",
         "long-form-text",
@@ -1641,7 +1641,7 @@
       "folder": "leadership",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "research",
         "quick-decisions",
@@ -1659,7 +1659,7 @@
       "folder": "leadership",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "research",
         "long-form-text",
@@ -1991,7 +1991,7 @@
       "folder": "technical/ai-integration",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2010,7 +2010,7 @@
       "folder": "technical/ai-integration",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2028,7 +2028,7 @@
       "folder": "technical/ai-integration",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "long-form-text",
@@ -2065,7 +2065,7 @@
       "folder": "technical/asset-scouts",
       "model": "opus",
       "runtime": "codex",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -2220,7 +2220,7 @@
       "folder": "technical/engines",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2255,7 +2255,7 @@
       "folder": "technical/engines",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2273,7 +2273,7 @@
       "folder": "technical/engines",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2291,7 +2291,7 @@
       "folder": "technical/engines",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2384,7 +2384,7 @@
       "folder": "technical/multiplayer",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2436,7 +2436,7 @@
       "folder": "technical/platform-tools",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2488,7 +2488,7 @@
       "folder": "technical/programming",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "quick-decisions"
@@ -2522,7 +2522,7 @@
       "folder": "technical/programming",
       "model": "opus",
       "runtime": "claude",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "data-analysis",

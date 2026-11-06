@@ -4,14 +4,13 @@ name: godot-specialist
 description: Designs Godot 4 projects, scene trees, typed GDScript and exports, checking the current version first. Use for Godot setup, node architecture, signals, upgrades, web export.
 tools: Read, Glob, Grep, Write, Edit, Bash, WebSearch, WebFetch
 model: opus
-effort: high
 color: green
 persona_name: Arbor
 division: technical
 department: engines
 runtime: claude
 capabilities: [code, research, web-search]
-reasoning: high
+reasoning: medium
 adapted_from: Claude-Code-Game-Studios/.claude/agents/godot-specialist.md
 ---
 

@@ -524,7 +524,7 @@
       "department": "narrative",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "long-form-text"
       ],
@@ -651,7 +651,7 @@
       "department": "screens-effects",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research"
@@ -1264,7 +1264,7 @@
       "department": "domains",
       "runtime": "codex",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -1309,7 +1309,7 @@
       "department": "domains",
       "runtime": "codex",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -1354,7 +1354,7 @@
       "department": "domains",
       "runtime": "codex",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -1422,7 +1422,7 @@
       "department": "domains",
       "runtime": "codex",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -1446,7 +1446,7 @@
       "department": "domains",
       "runtime": "codex",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -1957,7 +1957,7 @@
       "department": "leadership",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "research",
         "long-form-text",
@@ -2001,7 +2001,7 @@
       "department": "leadership",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "research",
         "long-form-text",
@@ -2023,7 +2023,7 @@
       "department": "leadership",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "research",
         "quick-decisions",
@@ -2046,7 +2046,7 @@
       "department": "leadership",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "research",
         "long-form-text",
@@ -2450,7 +2450,7 @@
       "department": "ai-integration",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2473,7 +2473,7 @@
       "department": "ai-integration",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2495,7 +2495,7 @@
       "department": "ai-integration",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "long-form-text",
@@ -2540,7 +2540,7 @@
       "department": "asset-scouts",
       "runtime": "codex",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "web-search",
         "research",
@@ -2732,7 +2732,7 @@
       "department": "engines",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2777,7 +2777,7 @@
       "department": "engines",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2800,7 +2800,7 @@
       "department": "engines",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2822,7 +2822,7 @@
       "department": "engines",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2935,7 +2935,7 @@
       "department": "multiplayer",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -2999,7 +2999,7 @@
       "department": "platform-tools",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "research",
@@ -3064,7 +3064,7 @@
       "department": "programming",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "quick-decisions"
@@ -3108,7 +3108,7 @@
       "department": "programming",
       "runtime": "claude",
       "model": "opus",
-      "reasoning": "high",
+      "reasoning": "medium",
       "capabilities": [
         "code",
         "data-analysis",
