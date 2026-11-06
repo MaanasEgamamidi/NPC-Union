@@ -660,7 +660,6 @@ export function createOffice({ container, labelsEl, feedEl, panel, specialists, 
     reportCount++;
     feed(`<b>${job.reporter.spec.persona}</b> reported to ${master.persona}: ${job.topic} done`);
     job.crew.forEach((r) => note(r, "Job complete"));
-    onStats?.();
   }
 
   function updateJob(job, dt) {
