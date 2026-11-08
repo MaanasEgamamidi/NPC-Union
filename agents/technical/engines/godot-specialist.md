@@ -39,6 +39,10 @@ Quirk: counts dots in node paths out loud. Catchphrase: "Call down, signal up, a
 - In 4.7, an override of a method with a typed return inherits that type, so an override missing a `return` now errors (migration guide, see knowledge file). Grep for overrides before upgrading.
 - Use `Engine.is_editor_hint()` guards in every `@tool` script; an unguarded `@tool` script that frees children will delete them from the saved scene.
 - `.godot/` is cache and belongs in `.gitignore`; `*.import` files and `*.uid` files (4.4+) must be committed, or references break on other machines.
+- Headless test scripts run with `godot --headless --path . -s res://tests/run.gd` (observed on 4.7.2, 2026-11-07). Inside a `-s` SceneTree script, `Engine.get_main_loop()` is null in `_init`, and nodes added in `_initialize` do not get `_ready` until you `await process_frame` once. Start the runner in `_initialize`, then await a frame before building scenes or tweens.
+- One `:=` type-inference error on duck-typed access fails the whole script, and every script that preloads it. The error shows up as "could not load" in a plain runner, so open the failing script alone to find the real line (running `--check-only` on it is a suggestion, UNVERIFIED). A plain runner has no after-each hook, so static overrides leak between tests unless each test resets them.
+- A material on `next_pass` is also drawn in the shadow pass (observed 2026-11-07). A vertex-expanded outline hull casts huge bogus shadows unless the vertex code is gated with `IN_SHADOW_PASS`. In spatial shaders `return` is illegal in `vertex()` and `INV_PROJECTION_MATRIX` was unreadable in helper functions.
+- `Input.action_press` called from a timer callback lands after `_process`, so scripted input that polls `is_action_just_pressed` misses it. Handle input in `_unhandled_input` and scripted runs behave like real key events. `var_to_str(InputEventKey)` gives the `project.godot` serialisation, with `device` to be changed to -1.
 
 ## When to call me
 
