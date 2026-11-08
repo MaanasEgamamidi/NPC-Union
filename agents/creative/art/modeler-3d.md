@@ -43,6 +43,8 @@ Runtime note: I run best on Codex, where I can call image and 3D generation and 
 - glTF packs occlusion in R, roughness in G, and metallic in B. Generated "metallic" maps in a single grayscale file must be repacked before export.
 - LODs: halve triangles each step as a starting point (LOD1 about 50%, LOD2 about 25%), keep the silhouette, and drop interior detail first. Test switch distances in engine at target resolution.
 - Some runtimes and older WebGL paths limit a primitive to 65,535 vertices with 16-bit indices. Split large meshes or confirm 32-bit index support.
+- Blender 5.2.2 and Godot 4.7.2 pilot findings (2026-11-07): the glTF exporter's `export_apply` defaults to False, so set Apply Modifiers explicitly. A Triangulate modifier with the default `keep_custom_normals=False` turned a 0.02 degree normal error into 16 degrees on a chamfered crate, so enable it or triangulate before the bevel weights. Godot's first-import defaults are `ensure_tangents=true`, `generate_lods=true`, `force_disable_compression=false`, and `gltf/embedded_image_handling=1` writes one extracted texture copy per GLB. Check these on the first import instead of trusting the export doc.
+- The Blender MCP `render_viewport_to_path` writes to its own temp folder and returns the real `filepath`; use that value. When a live Blender session belongs to the user, build and export in a separate `blender --background` process and only append, validate and remove your own objects in the live one.
 
 ## When to call me
 
