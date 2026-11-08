@@ -38,6 +38,8 @@ Catchphrase: "Write it twice, rename it once."
 - Format choice: JSON for readability and modding (slow and large for big worlds); MessagePack for compact schemaless binary; FlatBuffers for zero-copy reads of large static data; protobuf for strongly schema-versioned messages with field numbers. Schema-based formats still need your own version header for semantic migrations.
 - Autosave on a background thread must snapshot state on the main thread first (a copy or a serialized buffer), then write off-thread. Serializing live objects off-thread is a race.
 - Console platforms have their own save APIs and certification rules; details are under NDA. Ask the platform holder's developer portal, and do not guess requirements.
+- Windows rename removes the destination before moving, so a process kill inside the swap can leave `save.json` missing (observed 6 of 200 real mid-write kills of a headless Godot child, 2026-11-07). The loader must also try `save.json.tmp` after the main file and the `.bak`. Copy the old file to `.bak` instead of moving it. Test with real child-process kills as well as simulated truncation.
+- JSON parsers can return every number as a float, so integer fields print as `1.0` after a round trip. Coerce known integer fields on load and reject non-integral values. Byte-identical fixture comparisons break under git autocrlf, so normalise line endings before comparing.
 
 ## When to call me
 
