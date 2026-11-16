@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 22
       - name: Validate agents and skills
-        run: node scripts/validate.mjs
+        run: node scripts/validate.mjs --strict
       - name: Tests
         run: node --test tests/*.test.mjs
       - name: Routing eval (keyword baseline)
