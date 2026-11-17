@@ -6,162 +6,147 @@ One real request, run through the Shop Steward on 2026-11-16 with Claude Code 2.
 
 > I want to make a small 2D roguelike in Godot 4 where you play a lighthouse keeper fighting sea creatures at night. Give me a first-playable plan: the core loop, a pixel art direction, and a brief for the music. Do not write any files; reply in chat.
 
-It was run headless from an empty folder:
+It was run headless from an empty folder, with web lookups, file reads and `node` allowed up front, because a headless run cannot stop to ask for permission:
 
 ```bash
-claude -p --plugin-dir <path to this repo> --agent npc-union:leadership:shop-steward "<the request>"
+claude -p --plugin-dir <path to this repo> --add-dir <path to this repo>   --agent npc-union:leadership:shop-steward   --allowedTools WebFetch WebSearch Read Grep Glob "Bash(node:*)" "PowerShell(node:*)"   "<the request>"
 ```
 
 ## What happened
 
 | Step | Who | What |
 |---|---|---|
-| 1 | Shop Steward | Looked for an active team. There was none, so the whole roster was available. |
-| 2 | `budget-keeper` | Checked the draft agenda. Kept all three items and advised high effort for design, medium for art and music. |
-| 3 | `game-designer` | Wrote the core loop. Ran first, because the art and music depend on its camera and night structure. |
-| 4 | `pixel-art-stylist` and `composer` | Ran at the same time, each given the core loop as input. |
-| 5 | Shop Steward | Merged the three answers, named one conflict between them, and listed what nobody could verify. |
+| 1 | Shop Steward | Ran `team.mjs show`. No team was active, so the whole roster was available. Read the catalog and asked `run-agent.mjs --which` for each pick's runtime. |
+| 2 | `budget-keeper` | Checked the draft agenda and said to keep all three items as planned. |
+| 3 | `game-designer` (Claude) | Wrote the core loop. Ran first, because the art and music depend on it. |
+| 4 | `pixel-art-stylist` (Codex) and `composer` (Claude) | Ran at the same time. The stylist went through `scripts/run-agent.mjs` on Codex CLI; the composer ran as a plugin subagent. Both opened the Godot docs. |
+| 5 | Shop Steward | Merged the three answers, listed four conflicts between them, and listed what nobody verified. |
 
-The run took 4 minutes and 11 turns of the Steward, and the CLI reported a cost of about $1.40 at API prices.
+The run took a little over 4 minutes and 13 turns of the Steward. The CLI reported a cost of about $1.56 at API prices; the Codex call is not in that figure.
 
 ## What this run shows, and what it does not
 
 - The request spans three departments in two divisions (creative and knowledge), so the Steward handled it itself instead of passing it to one lead. That is step 3 of the [route skill](../skills/route/SKILL.md).
 - The Steward ordered the work by dependency: design first, then art and music in parallel.
-- It reported a disagreement between two specialists (whether the crab should be invisible until lit) and did not settle it silently.
-- **The headless run had no permission to use the shell or the web.** The Steward could not run `team.mjs` or read the catalog, and the specialists could not open the Godot docs. Every Godot setting in the reply is therefore marked UNVERIFIED by the agents themselves. In a normal interactive session you would be asked to allow those tools and the facts would be checked. Treat the Godot details below as a draft to verify, which is what the reply says too.
-- All four agents here run on Claude. No Codex agent was used, so this run does not show the Codex path.
+- It used both runtimes: two Claude subagents and one Codex agent.
+- It checked the specialists' answers against each other. It caught that the "16-colour" palette lists 14 colours, that the phase timings do not add up to the stated run length, and that the two specialists read different Godot doc versions.
+- The Godot settings were checked against the Godot docs by the specialists on the day. The reply's own "Unverified" section lists what was not checked; take that list at its word.
+- An earlier run of the same request without `--allowedTools` could not use the shell or the web. The agents then marked every Godot setting UNVERIFIED instead of guessing. Without tool access, expect that.
 - The plan was not built or playtested. This shows routing and reporting, not that the design is good.
 
 ## The Steward's reply, unedited
 
-Quorum here. Your first-playable plan is ready: a top-down beam-aiming loop, a 320×180 pixel look with 16 colours, and a 5-cue adaptive folk-drone score. Every Godot 4 setting and version below is **unverified**, because web access and the shell were blocked this session and none of us could open the docs.
+Quorum here. The plan has three items and each one has an owner. No files were written: the specialists ran read-only lookups and the Codex log shows no writes.
 
 ## Agenda
-1. Budget check → Gaugette Thrum (`budget-keeper`). It kept all three items and set effort high for design and medium for the other two. I followed that.
-2. Core loop → Gyre (`game-designer`, effort high). It ran first, because the other two depend on its camera and night structure.
-3. Pixel art direction → Nibbleplot (`pixel-art-stylist`, effort medium). It ran at the same time as item 4.
-4. Music brief → Dalsegno Brix (`composer`, effort medium).
+1. Core loop → Gyre (`game-designer`, claude)
+2. Pixel art direction → Nibbleplot (`pixel-art-stylist`, codex; `--which` returned `codex`)
+3. Music brief → Dalsegno Brix (`composer`, claude)
 
-I couldn't read the catalog, so the runtimes are assumed to be claude. All three ran as plugin subagents.
+Gaugette Thrum (`budget-keeper`) said **keep** on all three runtimes and effort levels, so I changed nothing. Items 2 and 3 ran in parallel after the loop was set.
 
 ## Answer
 
 ### 1. Core loop (Gyre, game-designer)
-- **The idea:** your lamp is your weapon, and you can't light everything at once. Whatever you leave dark is the cost of every choice.
-- **Camera:** top-down, with the tower in the middle of a small rock. A turning cone of light reads clearly from above. From the side it would flatten into a line.
+**Assumptions:** the tower is fixed at screen centre with sea on all sides. The keeper doesn't walk, and the mouse aims.
+
+- **Feeling:** a tense vigil where you hold the dark back one sweep at a time.
 - **Verbs:**
-  - **Sweep:** the mouse aims a cone about 30° wide. It uses oil.
-  - **Focus:** hold to narrow the cone to about 10° and burn whatever it touches. It uses oil 3× faster.
-  - **Crank:** hold a key to refill oil. The beam freezes while you crank.
-  - **Harpoon:** works in the dark. You get 6 shots per night.
-- **Enemies:** each one reacts to light differently.
-
-  | Creature | How it behaves |
-  |---|---|
-  | Gulper (eel) | Flees the light, sneaks in through the dark and bites the lens |
-  | Lantern-swarm (jellies) | Follows the beam and dims the lens. You can lead it onto the rocks |
-  | Wreck-crab | Armoured, so only the harpoon kills it. You can only see it while it's lit |
-
-- **One night (about 4 min):** quiet dusk → the first creature → waves build to a peak → dawn.
-- **Day:** a single screen with no real-time play. You repair the lens a little, then pick 1 of 3 cards. Cards should change rules, for example "the beam splits in two".
-- **A run:** the full game is 5 nights, and the first playable has 3.
-  - You lose if the lens breaks or the keeper is hit 3 times.
-  - Nothing carries over between runs yet.
-- **In the first playable:**
-  - one rock map
-  - the 4 verbs, 3 enemies, oil and lens health
-  - 3 nights
-  - a placeholder day screen with 3 cards
-  - restart
-- **Left out:**
-  - progress that carries between runs
-  - walking around the rock, weather, story
-  - an upgrade tree
-  - final art and audio
-- **Done when:** 4 of 5 new testers play 3 nights using only a control card, then can say which creature killed them and name a moment they chose to leave something dark.
-- **Test this first:** aiming might feel like a chore rather than a choice. Build a rough grey-box version with one night, the Gulper and the swarm. If testers can't name a moment they left something dark on purpose, narrow the cone and cut the oil.
+  - **Sweep:** mouse-aim a wide beam that reveals and slows enemies. The turn rate is capped at 180°/s by default (tunable from 90 to 360).
+  - **Focus:** hold the right mouse button for a narrow beam that burns, at the cost of seeing less.
+  - **Flare:** left mouse button. Spends oil to stun everything in the cone.
+- **Moment loop (~3 s):** spot a sign in the dark, sweep to it, focus, and the creature burns and drops oil.
+- **Wave (~60 s):** threats come from 2–3 sides, so you choose which one to light.
+- **Night phases:**
+  - **Dusk**, 30 s: pick 1 of 3 upgrades.
+  - **Night**, 3 waves, about 3 min.
+  - **Surge**, 45 s: every enemy type from every side.
+  - **Dawn**, 10 s: creatures flee and the night is scored.
+- **Roguelike layer:** spawn sides, enemy mixes and upgrade offers are random. Nothing carries over between runs in the first playable.
+- **Enemies:** each one needs a different beam answer.
+  - **Drowner:** slow and heads for the rocks. Focus it.
+  - **Skitterers:** crabs in packs of 6 that scatter from wide light. Sweep them.
+  - **Ink Squid:** blacks out a 45° sector for 5 s. Flare it before it sprays.
+  - **Lamp Jelly:** drains oil while it is lit. Look away.
+- **Scope:**
+  - Upgrade pool of 8, with 3 picks per run. Half of them change rules, e.g. Prism splits the beam.
+  - A run is 3 nights. You win by reaching Dawn on night 3 and lose when tower integrity hits 0. Running out of oil only disables Flare.
+- **Cut:** walking and repairs, meta-progression, weather, bosses, ships, story and gamepad.
+- **Question the build must answer:** does aiming one beam feel like fair triage? Five testers play three runs each. If more than ⅓ still say "didn't see it coming" after one tuning pass, the single-beam premise goes back to the brief.
 
 ### 2. Pixel art direction (Nibbleplot, pixel-art-stylist)
-- **Resolution:** 320×180 with 16×16 tiles. It scales exactly 6× to 1080p and 4× to 720p. The camera never moves, so pixels won't shimmer.
-- **Palette:** a 16-colour draft of its own, not taken from Lospec.
-  - Dark: `#0b0714 #171028 #221a3e #2f3a63 #3f6283`
-  - Lit: `#5f93a6 #a3d1c8 #eef3dc`
-  - Dawn: `#f7e9a0 #f0b94d #d9733f #a8455a #6a2a52 #3a1d3d`
-  - Accents: `#58e0c0` for jelly glow and `#8a7f9e` for crab shell.
-  - Rules: unlit areas use only the 5 dark colours, the beam adds the 3 lit ones, and at dawn the warm colours take over.
-- **Darkness and beam:**
-  - CanvasModulate darkens the scene. A PointLight2D carries a pre-drawn cone texture, with one version at 30° and one at 10°.
-  - The cone is drawn as 3 or 4 hard bands of palette colours, never a smooth gradient.
-  - The light renders at 320×180 so its edges stay pixel-sharp.
-  - Hits are worked out from the cone's shape in code, never from which pixels are lit.
-- **Seeing creatures in the dark:**
-  - Silhouettes are darker than the sea.
-  - The Gulper shows two 1-pixel eyes.
-  - The jellies glow on their own.
-  - The crab shows nothing until it's lit.
-- **Sprite sizes:**
-
-  | Asset | Size | Frames |
-  |---|---|---|
-  | Tower on rock | 48×48 | 1 |
-  | Lamp head | 16×16 | 8 directions |
-  | Keeper | 8×8 | 2 |
-  | Gulper | 24×12 | 4 swim + 2 flee |
-  | Jelly | 8×8 | 4 |
-  | Crab | 16×12 | 4 |
-  | Hit effect | 16×16 | 4 |
-
-- **Godot 4 settings (UNVERIFIED, from memory):**
-  - viewport size 320×180
-  - `stretch/mode = viewport`
-  - `stretch/aspect = keep`
-  - `stretch/scale_mode = integer` (which 4.x version added this is unknown)
-  - `default_texture_filter = Nearest`
-  - snap 2D transforms and vertices to pixel: on
-  - on import: mipmaps off, lossless compression
+- **Camera:** top-down, rendered at **320×180** with one pixel size for sprites, effects, UI and text.
+  - 1280×720 scales 4× exactly.
+  - 1920×1080 scales 6× exactly.
+  - 1366×768 shows a centred 1280×720 with black bars.
+- **Grid and sizes:** 16×16 tiles. The tower is 48×48 and the keeper 16×24. Drowner 16×16, Skitterer 12×8, Ink Squid 16×24, Lamp Jelly 16×16. These are starting targets.
+- **Palette ramps** (dark to light):
+  - Sea: `#101426 #1D3042 #315364 #668A8A`
+  - Tower and keeper: `#1D3042 #52616B #A6A99A #E5D9AC`
+  - Beam and UI: `#52616B #B19555 #E5C975 #FFF3C4`
+  - Enemies: `#101426 #594573 #9678A2 #B9D0B6 #E8F0DC`
+- **Value rules:** the sea stays in its two darkest values. In the dark, only eyes and selected edges show. Inside the beam, keep a dark outline so the body separates from the light. Test both states in grayscale at 1×.
+- **Light:** ambient light comes from the top left, and the beam overrides it.
+- **Beam:** use hard-edged, low-resolution cone masks in the base viewport, one each for Sweep, Focus and Flare. Avoid soft Light2D gradients; a shader can come later. The visible cone must match the hit detection.
+- **Dithering:** sparse ordered dithering on sea gradients only, never over eyes or cone edges.
+- **Readability per enemy:**
+  - Drowner: two bright, separated eyes.
+  - Skitterers: gaps between all six.
+  - Ink Squid: a distinct edge on the blackout sector.
+  - Lamp Jelly: a clear drain indicator while it is lit.
+- **Animation:** 10 fps, with 4 idle frames and 6 attack frames.
+- **Godot settings**, checked against the [Godot 4.5 multiple-resolutions page](https://docs.godotengine.org/en/4.5/tutorials/rendering/multiple_resolutions.html) and [ProjectSettings](https://docs.godotengine.org/en/4.5/classes/class_projectsettings.html) on 2026-11-16:
+  - Default Texture Filter = Nearest
+  - Stretch Mode = viewport
+  - Aspect = keep
+  - Scale Mode = integer
+  - Snap 2D Transforms to Pixel = on
+  - Vertex snapping off, mipmaps off, lossless imports.
+- **References to discuss:** Hyper Light Drifter, Eastward, Stardew Valley.
 
 ### 3. Music brief (Dalsegno Brix, composer)
-- **Sound:** acoustic instruments over a drone, not chiptune. Bowed low strings, a detuned harmonium drone, a solo fiddle or whistle, a muted bell and a frame drum. Touchstones are *Return of the Obra Dinn*, *Dredge* and *Sunless Sea*.
-- **Cues:** all Ogg files at 48 kHz, in D. At 72 BPM one bar is exactly 160,000 samples. I checked that maths and the sample counts below.
+- **Mood:** lonely and steady, building from dread to defiance. The tower should be the warmest sound.
+- **Touchstones:** Hades (Darren Korb) for layered intensity, Sea of Stars (Yasunori Mitsuda) for colour, and Return of the Obra Dinn for the maritime feel.
+- **Not chiptune:** a few dry acoustic stems give a solo dev more mood.
+- **Instruments:** felt piano, cello and bass, harmonium, glockenspiel as the beam, frame drum and toms, and a low brass foghorn drone.
+- **Key:** D throughout, so every stinger shares the tonic.
+- **Structure:** horizontal sections by phase, with vertical layers inside Night. Samples are at 48 kHz.
 
-  | Cue | Format | Use |
-  |---|---|---|
-  | `mus_title` | 8-bar loop | Title screen |
-  | `mus_night` | 16-bar loop, 5 stems, 2,560,000 samples | The night |
-  | `mus_day` | 90 BPM, 16 bars | Card-pick screen |
-  | `stg_dawn` | 4 bars, plays once | Dawn |
-  | `stg_death` | 2 bars plus a tail | Death |
+| Cue | BPM | Key | Loop |
+|---|---|---|---|
+| Dusk | 72 | D Dorian | 8 bars (1,280,000 samples) |
+| Night | 96 | D minor | 16 bars (1,920,000), 3 stems |
+| Surge | 144 | D minor | 8 bars (640,000) |
+| Dawn | 72 | D major | 3-bar one-shot (480,000) |
 
-- **How the night music changes:** layers are added and removed, and each change waits for the next bar.
-  - `drone` plays from dusk.
-  - When the first Gulper is seen, everything drops out for a bar, then the fiddle comes in.
-  - When the swarm locks onto the beam (`swarm_lock`), a glassy shimmer rises.
-  - When `threat` passes 0.7, a drum layer called `pulse` comes in.
-  - At the peak wave, full strings (`swell`) join.
-  - When `oil_ratio` falls below 0.2 or the lens cracks, only a thin drone remains and it stutters with the light.
-  - At dawn: a 1-bar fade, then `stg_dawn`, then `mus_day`.
-- **In Godot:**
-  - Play the stems through AudioStreamSynchronized, with volume set per stem. Separate players for each stem can drift out of sync.
-  - Use AudioStreamInteractive to move between night, dawn and day.
-  - Both were said to arrive in Godot 4.3, which is UNVERIFIED.
-- **Mix:**
-  - about −20 LUFS overall, with peaks at or below −1 dBTP (Brix's working default, not a platform rule)
-  - keep 2–5 kHz clear for sound effects
-  - lower the music 3–4 dB under big hits
+- **Night stems:** the base stem plays from wave 1, percussion joins at wave 2 and the lead at wave 3. Each fades in over 1 bar.
+- **Transitions:** every change lands on the next bar line, with a 1-bar riser into Surge.
+- **Ink Squid blackout:** a low-pass filter on the music bus, with no new audio.
+- **Minimum to ship (7 files):** Dusk, 3 Night stems, Surge, Dawn (reused as the victory cue), plus a 1-bar wave stinger and a ~4 s death stinger.
+- **Godot:** play one `AudioStreamPlayer` per phase, with Night as an `AudioStreamSynchronized`. Drive stem volumes with Tweens on your own bar clock, and move to `AudioStreamInteractive` later.
+  - Docs checked 2026-11-16: [Interactive](https://docs.godotengine.org/en/stable/classes/class_audiostreaminteractive.html), [Synchronized](https://docs.godotengine.org/en/stable/classes/class_audiostreamsynchronized.html), [OggVorbis](https://docs.godotengine.org/en/stable/classes/class_audiostreamoggvorbis.html).
+- **Delivery:**
+  - Ogg Vorbis at about q5, looping from sample 0. Cut loops from a second pass at zero crossings.
+  - All stems in a cue are the same length, named like `mus_night_perc_96bpm_Dm.ogg`.
+  - Loudness: about −18 LUFS integrated and ≤ −1 dBTP true peak. This is his proposal, and `audio-director` makes the final call.
 
 ## Conflicts and open questions
-- **Crab fairness:** Gyre made the Wreck-crab invisible until lit. Nibbleplot suggests faint 1-pixel foam ripples at its waterline so players aren't hit by something they had no way to see. That's Gyre's call, and the grey-box test should decide it.
-- **Run length:** the full run is 5 nights and the first playable has 3. Gyre was consistent here; I'm noting it so it doesn't read as a contradiction.
+- **Godot version:** Nibbleplot checked the **4.5** docs, while Dalsegno read `/stable` and reports it as **4.7**. I haven't confirmed which is current. Tell me your Godot 4.x version and the settings should be rechecked against it.
+- **Palette count:** Nibbleplot calls it a 16-colour palette, but the ramps listed contain **14 unique hexes**. Either two slots are spare or two colours are missing. Nibbleplot should settle it.
+- **Run length:** Gyre's phase timings add up to about 4.4 min per night, so about 13 min per run, not the ~12 he states. It's minor and tuning will settle it.
+- **Keeper sprite:** the keeper doesn't walk under Gyre's loop, but Nibbleplot sized a 16×24 keeper sprite. It may only need idle and aim frames.
 
 ## Unverified
-- All of the Godot settings in §2: the stretch mode, aspect, integer scale mode and when it was added, the texture filter, the snap settings, how light textures behave when the window is scaled, and the Light Only canvas material.
-- AudioStreamSynchronized and AudioStreamInteractive arriving in Godot 4.3, the `set_sync_stream_volume` method, and the loop property names on Ogg streams.
-- Whether Godot's compressor has a sidechain option for lowering the music under hits.
-- The −20 LUFS target.
-- Nibbleplot's palette is an original draft. It hasn't been checked against Lospec.
-
-Fix: allow WebFetch in this session, or have `godot-specialist` check these against the docs for your exact Godot version.
+- **Art (Nibbleplot):**
+  - Sprite sizes at playable scale.
+  - Import settings in a real project.
+  - Your exact Godot minor version and monitors.
+  - No test sheet was generated, so the palette and sizes are untested on screen.
+- **Music (Dalsegno):**
+  - The Obra Dinn reference comes from memory.
+  - Which Godot version added `AudioStreamInteractive` and `AudioStreamSynchronized` (he recalls 4.3).
+  - Whether a Synchronized stream can be a clip inside an Interactive one.
+  - Whether Interactive's bar timing reads the Ogg `bpm` and `bar_beats` fields.
 
 ## Minutes
-Next step: `godot-specialist` checks the Godot settings and audio classes against your version, then builds Gyre's one-night grey box with the Gulper and the swarm. No files were written. Motion carried.
+Next step: `godot-specialist` (Arbor) sets up the 320×180 project, beam prototype and phase clock against your Godot version, then `prototyper` runs Gyre's five-tester fairness test. Waiting on your go and your Godot version. Motion carried.
