@@ -4,6 +4,15 @@ All notable changes to NPC Union are listed here. The format follows [Keep a Cha
 
 ## [Unreleased]
 
+### Changed
+
+- The worked example in `docs/EXAMPLE.md` is a new run with web and shell access, so the specialists checked their Godot settings and one of them ran on Codex.
+
+### Fixed
+
+- Twelve claims in the law, history, defense and climate experts were checked against sources. Five were corrected, including Japan's 2018 agreement system, the daily walking distance, and the link between climate and earthquakes.
+- Seventeen `UNVERIFIED` markers in the knowledge base were resolved against sources, several with corrections (Unity's Pixel Perfect camera in URP, Godot's third-party licence list, Tempest, Guacamelee, Lumino City).
+
 ## [0.1.0] - 2026-11-16
 
 First release. The plugin manifest is `.claude-plugin/plugin.json`.
