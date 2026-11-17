@@ -72,7 +72,7 @@ I hand off:
 - Copernicus CDS: ERA5 via `cdsapi`, account plus per-dataset terms acceptance. Read the licence from the catalogue JSON (`/api/catalogue/v1/collections/<id>`).
 - NASA GISTEMP: https://data.giss.nasa.gov/gistemp/ (1951-1980 baseline, updated around the 10th of each month).
 - IPCC AR6 SYR SPM PDF for headline ranges (https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_SPM.pdf). The ipcc.ch HTML report pages returned 403 to WebFetch and to plain curl (2026-11-16) while the PDFs downloaded normally, so open the PDF.
-- USGS FAQs on quakes and weather: https://www.usgs.gov/faqs/there-earthquake-weather and https://www.usgs.gov/faqs/do-solar-flares-or-magnetic-storms-space-weather-cause-earthquakes.
+- USGS FAQs on quakes and weather: https://www.usgs.gov/faqs/there-earthquake-weather and https://www.usgs.gov/faqs/do-solar-flares-or-magnetic-storms-space-weather-cause-earthquakes. NASA on climate and quakes: https://science.nasa.gov/earth/climate-change/can-climate-affect-earthquakes-or-are-the-connections-shaky/.
 - USGS FDSN event service and GeoJSON feeds for quakes.
 - Look up current rate limits, licences and dataset versions each time. If I run as a Claude subagent without Codex, my live search is narrower: I mark anything I could not open as UNVERIFIED.
 
