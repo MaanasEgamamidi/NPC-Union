@@ -9,6 +9,7 @@ sources:
   - "https://github.com/metrica-sports/sample-data"
   - "https://www.retrosheet.org/notice.txt"
   - "https://sabr.org/lahman-database/"
+  - "https://sabr.org/terms-of-use/"
   - "https://pacompendium.com/"
   - "https://www.who.int/news-room/fact-sheets/detail/physical-activity"
   - "https://www.who.int/publications/i/item/9789240015128"
@@ -38,7 +39,7 @@ For sports management sims, athlete attributes, fatigue, form, injury and ageing
 | SkillCorner open data (https://github.com/SkillCorner/opendata) | SkillCorner | GitHub download | Repository is MIT licensed; README asks you to credit SkillCorner | JSON, JSONL tracking, CSV events | Sample | 10 A-League 2024/25 matches of broadcast tracking at 10 fps, coordinates in metres from pitch centre, plus season physical aggregates. Broadcast tracking is extrapolated from video, so off-screen players are estimated |
 | Metrica Sports sample data (https://github.com/metrica-sports/sample-data) | Metrica Sports | GitHub download | No licence named; "If you use it for anything public, please aknowledge the source" (sic) | CSV; game 3 in FIFA EPTS format with JSON events | Static | Three sample games of synchronised tracking and event data; positions 0-1 on a 105 x 68 m pitch. No licence means rights are unclear for a shipped product |
 | Retrosheet (https://www.retrosheet.org/notice.txt) | Retrosheet | Download | Any use including commercial, if the notice appears prominently: "The information used here was obtained free of charge from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at "www.retrosheet.org"." | Event files, CSV | Corrected over time | No accuracy guarantee; data is "subject to correction" |
-| Lahman Baseball Database (https://sabr.org/lahman-database/) | SABR | Download | No licence stated on the page; footer "© 2026 SABR. All Rights Reserved"; Negro Leagues data "licensed from Seamheads.com". Licence UNVERIFIED | SQL, Access, CSV | Annual (2025 version released 2 January 2026) | Major league batting and pitching back to 1871. Check terms with SABR before shipping |
+| Lahman Baseball Database (https://sabr.org/lahman-database/) | SABR | Download | No licence stated on the page; footer "© 2026 SABR. All Rights Reserved"; Negro Leagues data "licensed from Seamheads.com". SABR's site Terms of Use (https://sabr.org/terms-of-use/, read 2026-11-16) allow site Content "solely for your personal, noncommercial use" but do not name the Lahman Database, so the licence for the download is UNVERIFIED | SQL, Access, CSV | Annual (2025 version released 2 January 2026) | Major league batting and pitching back to 1871. Check terms with SABR before shipping |
 | Compendium of Physical Activities (https://pacompendium.com/) | Compendium team | Web, download | Adult, Older Adult and Wheelchair compendia "free to use for commercial purposes"; cite the site; "do not change MET values or combine activities with different MET levels" | Tables | 2024 edition (published January 2024) | 1 MET = 1 kcal/kg/hour (about 3.5 ml O2/kg/min). Older adult (60+) and wheelchair compendia are separate |
 
 ## Standards and expert sources

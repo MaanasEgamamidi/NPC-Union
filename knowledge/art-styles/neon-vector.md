@@ -9,7 +9,7 @@ last_verified: 2026-11-05
 
 Thin bright lines on a dark field. The look comes from vector displays, where an electron beam drew lines directly instead of scanning a raster. Modern games recreate it with emissive lines, additive blending, and bloom.
 
-Link status: all Wikipedia and W3C links below returned HTTP 200 on 2026-11-05 except Tempest, which was rate limited and is marked `UNVERIFIED`. Page contents were not read in full; game facts here are limited to widely documented basics.
+Link status: all Wikipedia and W3C links below returned HTTP 200 on 2026-11-05 except Tempest, which was rate limited then; its page loaded and was read on 2026-11-16. Page contents were not read in full; game facts here are limited to widely documented basics.
 
 ## Reference games
 
@@ -17,7 +17,7 @@ Link status: all Wikipedia and W3C links below returned HTTP 200 on 2026-11-05 e
 |---|---|---|
 | Asteroids (Atari, 1979) | https://en.wikipedia.org/wiki/Asteroids_(video_game) | Monochrome vector outlines. How few line segments a readable ship, rock, and saucer need. |
 | Battlezone (Atari, 1980) | https://en.wikipedia.org/wiki/Battlezone_(1980_video_game) | First-person 3D wireframe. Horizon silhouettes and radar as depth and orientation cues with very few lines. |
-| Tempest (Atari, 1981) | https://en.wikipedia.org/wiki/Tempest_(video_game) `UNVERIFIED` (link rate limited during check) | Color vector display. Lanes converging toward a vanishing point give depth; level color changes signal progress. |
+| Tempest (Atari, 1981) | https://en.wikipedia.org/wiki/Tempest_(video_game) | Atari's Color-QuadraScan colour vector display. Play happens on a 3D surface divided into lanes, sometimes a closed tube, viewed from one end; after all sixteen levels the sequence repeats with a different colour scheme (checked 2026-11-16). Study how lane geometry alone gives depth. |
 | Star Wars (Atari, 1983) | https://en.wikipedia.org/wiki/Star_Wars_(1983_video_game) | Color 3D wireframe at speed. Trench sequences show how parallel lines sell motion. |
 | Vectrex (home console, 1982) | https://en.wikipedia.org/wiki/Vectrex | Built-in monochrome vector screen with plastic screen overlays to add color. A model for tinting by screen region. |
 | Geometry Wars: Retro Evolved (Bizarre Creations, 2005) | https://en.wikipedia.org/wiki/Geometry_Wars:_Retro_Evolved | Modern glow and particle density. Deforming background grid as feedback. How to keep a player readable among many enemies. |

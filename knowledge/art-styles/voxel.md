@@ -1,7 +1,7 @@
 ---
 title: Voxel art style reference
 tags: [art-style, voxel, 3d, low-res, magicavoxel]
-sources: [https://en.wikipedia.org/wiki/Voxel, https://en.wikipedia.org/wiki/Minecraft, https://en.wikipedia.org/wiki/Teardown_(video_game), https://en.wikipedia.org/wiki/Cube_World, https://en.wikipedia.org/wiki/3D_Dot_Game_Heroes, https://en.wikipedia.org/wiki/Crossy_Road, https://en.wikipedia.org/wiki/Voxatron, https://en.wikipedia.org/wiki/Dragon_Quest_Builders, https://ephtracy.github.io/, https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/, https://0fps.net/2013/07/03/ambient-occlusion-for-minecraft-like-worlds/]
+sources: [https://en.wikipedia.org/wiki/Voxel, https://en.wikipedia.org/wiki/Minecraft, https://en.wikipedia.org/wiki/Teardown_(video_game), https://en.wikipedia.org/wiki/Cube_World, https://en.wikipedia.org/wiki/3D_Dot_Game_Heroes, https://en.wikipedia.org/wiki/Crossy_Road, https://en.wikipedia.org/wiki/Voxatron, https://en.wikipedia.org/wiki/Dragon_Quest_Builders, https://ephtracy.github.io/, https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/, https://0fps.net/2013/07/03/ambient-occlusion-for-minecraft-like-worlds/, https://softwareengineeringdaily.com/wp-content/uploads/2024/12/SED1772-Teardown.txt, https://www.lexaloffle.com/voxatron.php?page=faq, https://github.com/guillaumechereau/goxel, https://www.getqubicle.com/]
 last_verified: 2026-11-05
 ---
 
@@ -16,11 +16,11 @@ All links below returned HTTP 200 on 2026-11-05. Notes on what to study are from
 | Game | Link | What to study |
 | --- | --- | --- |
 | Minecraft | https://en.wikipedia.org/wiki/Minecraft | 1 block per metre world grid with flat 16x16 pixel textures on each face. Shows how texture detail, not geometry, carries material identity. |
-| Teardown | https://en.wikipedia.org/wiki/Teardown_(video_game) | Small voxels (around 10 cm, `UNVERIFIED`) with fully destructible scenes, path-traced style lighting, reflections and fog. Study how lighting makes tiny cubes read as real materials. |
+| Teardown | https://en.wikipedia.org/wiki/Teardown_(video_game) | Small voxels ("1 voxel is 10 centimeters", Dennis Gustafsson on Software Engineering Daily, https://softwareengineeringdaily.com/wp-content/uploads/2024/12/SED1772-Teardown.txt, checked 2026-11-16) with fully destructible scenes, path-traced style lighting, reflections and fog. Study how lighting makes tiny cubes read as real materials. |
 | Cube World | https://en.wikipedia.org/wiki/Cube_World | Untextured flat-colour voxels, soft gradients across terrain, round chunky characters. Study colour-per-voxel shading without textures. |
 | 3D Dot Game Heroes | https://en.wikipedia.org/wiki/3D_Dot_Game_Heroes | 8-bit sprites extruded into 3D blocks. Study the sprite-to-voxel translation and toy-diorama camera. |
 | Crossy Road | https://en.wikipedia.org/wiki/Crossy_Road | Very low voxel counts per character, bright flat palette, fixed isometric-ish camera. Study silhouette readability at phone size. |
-| Voxatron | https://en.wikipedia.org/wiki/Voxatron | A fixed voxel "display" (128x128x64, `UNVERIFIED`) with a limited palette. Study hard constraints as a style. |
+| Voxatron | https://en.wikipedia.org/wiki/Voxatron | A fixed voxel "display" of 128x128x64 voxels (Lexaloffle FAQ, https://www.lexaloffle.com/voxatron.php?page=faq, checked 2026-11-16; the Wikipedia link redirects to "List of PC games (V)", which has no display or palette detail) with a limited palette. Study hard constraints as a style. |
 | Dragon Quest Builders | https://en.wikipedia.org/wiki/Dragon_Quest_Builders | Block world combined with smooth, non-voxel characters. Study the hybrid choice and where it helps character appeal. |
 
 ## Palette rules
@@ -43,7 +43,7 @@ All links below returned HTTP 200 on 2026-11-05. Notes on what to study are from
 
 ## Technical constraints
 
-- Tools: MagicaVoxel (https://ephtracy.github.io/) is free and exports .vox, OBJ and PLY. Other tools such as Qubicle and Goxel exist (`UNVERIFIED` for current status and features).
+- Tools: MagicaVoxel (https://ephtracy.github.io/) is free and exports .vox, OBJ and PLY. Goxel is free and open source (GPL-3.0); its GitHub repository is not archived and the latest release is v0.15.1, 28 July 2024 (https://github.com/guillaumechereau/goxel, checked 2026-11-16). Qubicle's site says it "is no longer in active development" (https://www.getqubicle.com/, checked 2026-11-16). Features of either were not checked.
 - Meshing: naive per-cube meshes waste triangles. Cull hidden faces, then use greedy meshing to merge coplanar faces (see https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/). Greedy meshing with per-voxel colour needs vertex colour or a palette texture, or merged quads will smear colour.
 - Ambient occlusion: per-vertex voxel AO from the 3 neighbours of each corner is cheap and gives the classic soft-corner look (see https://0fps.net/2013/07/03/ambient-occlusion-for-minecraft-like-worlds/). Flip quad triangulation based on AO values to avoid anisotropy artefacts.
 - Texturing: use a 256x1 palette texture with point (nearest) filtering and no mipmaps on the palette, or colours bleed.
