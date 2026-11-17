@@ -18,7 +18,16 @@ sources:
   - "https://www.pewresearch.org/short-reads/2023/06/14/fewer-than-1-of-defendants-in-federal-criminal-cases-were-acquitted-in-2022/"
   - "https://www.pewresearch.org/short-reads/2019/06/11/only-2-of-federal-criminal-defendants-go-to-trial-and-most-who-do-are-found-guilty/"
   - "https://www.senate.gov/about/powers-procedures/filibusters-cloture.htm"
+  - "https://www.senate.gov/about/powers-procedures/filibusters-cloture/overview.htm"
   - "https://www.senate.gov/legislative/vetoes/vetoCounts.htm"
+  - "https://www.archives.gov/founding-docs/constitution-transcript"
+  - "https://www.moj.go.jp/EN/hisho/kouhou/20200115.html"
+  - "https://www.moj.go.jp/EN/keiji1/saibanin_seido_gaiyou03.html"
+  - "https://hakusyo1.moj.go.jp/en/59/nfm/n_59_2_6_0_2_1.html"
+  - "https://hakusyo1.moj.go.jp/en/59/nfm/n_59_2_6_0_0_0.html"
+  - "https://www.bakermckenzie.co.jp/wp/wp-content/uploads/ClientAlert_180921_Japanese_Plea_Barganing_System_E.pdf"
+  - "https://www.fenwick.com/insights/publications/litigation-alert-california-superior-court-finds-use-of-likeness-of-former-panamanian-dictator-manuel-noriega-in-video-game-transformative"
+  - "https://cbldf.org/2014/11/california-court-dismisses-noriegas-lawsuit-against-activision/"
   - "https://en.wikipedia.org/wiki/Parliament_Acts_1911_and_1949"
   - "https://en.wikipedia.org/wiki/Lay_judges_in_Japan"
   - "https://en.wikipedia.org/wiki/2022_Alaska%27s_at-large_congressional_district_special_election"
@@ -54,10 +63,13 @@ For courtroom and trial mechanics, legislature and government sims, election and
 
 - Pleas, not trials (US federal): in fiscal 2022, 89.5% of 71,954 defendants pleaded guilty, 8.2% had cases dismissed, 1.9% (1,379) were convicted at trial and about 0.4% (290) acquitted (Pew, 2023). In fiscal 2018, 2% went to trial; 38% of bench-trial defendants were acquitted versus 14% at jury trials, and only 12% of trial defendants had a bench trial. Trials fell from 7% of defendants in 1998 to 2% (Pew, 2019).
 - US bill attrition: the congress.gov API on 2026-11-16 returned 19,315 measures for the 118th Congress (`/v3/bill/118`, all types including simple resolutions) and 274 laws (`/v3/law/118`).
-- Senate cloture: three-fifths of "all senators duly chosen and sworn", 60 of 100. Cloture began in 1917 at two-thirds; 1975 lowered it to three-fifths (senate.gov).
-- Vetoes 1789 to present (senate.gov): 1,533 regular, 1,066 pocket, 2,599 total; 112 overridden. That is about 7% of regular vetoes, or 4.3% of all vetoes. State which denominator you use. The 10-day presentment rule is not on that page and is UNVERIFIED here.
+- Senate cloture: three-fifths of "all senators duly chosen and sworn", 60 of 100. Cloture began in 1917 at two-thirds; 1975 lowered it to three-fifths. "The Senate adopted new precedents in the 2010s to allow a simple majority to end debate on nominations" (senate.gov cloture overview).
+- Vetoes 1789 to present (senate.gov): 1,533 regular, 1,066 pocket, 2,599 total; 112 overridden. That is about 7% of regular vetoes, or 4.3% of all vetoes. State which denominator you use.
+- Presentment (US Constitution, Art. I, §7, archives.gov transcript): a bill not returned "within ten Days (Sundays excepted)" becomes law "unless the Congress by their Adjournment prevent its Return, in which Case it shall not be a Law" (the pocket veto). Override needs two thirds of each House.
 - UK Parliament Acts 1911 and 1949: a money bill passes after one month if the Lords do not pass it; other Commons bills passed in two successive sessions and rejected twice by the Lords can become law, with at least one year between second reading in the first session and final passage. Not covered: bills extending Parliament beyond five years, bills starting in the Lords, private bills (Wikipedia).
-- Japan lay judges (saiban-in): in use since May 2009; usually six lay judges and three professional judges (four and one when guilt is not disputed); conviction needs a majority including at least one professional judge; lay judges also help set sentence; defendants cannot waive it (Wikipedia). Japan's conviction-rate and indictment-rate figures are UNVERIFIED here.
+- Japan lay judges (saiban-in): in use since 21 May 2009 (MOJ White Paper on Crime 2010, Part 6); panels of three judges and six lay judges, or one judge and four lay judges in certain cases (same White Paper, Part 6, Section 2); a guilty finding needs a majority of the panel that includes at least one professional judge, and lay judges also decide the sentence (MOJ saiban-in overview). Defendants cannot waive it (Wikipedia).
+- Japan conviction rate: the Minister of Justice's January 2020 response to the Wall Street Journal puts Japan's indictment ratio at 37% and explains that 99.3% is convictions divided by indictments, not by suspects. Quote the denominator with the number.
+- Japan agreement system (from June 2018): a suspect or defendant gives evidence or testimony against third parties in exchange for charges being dropped or reduced; it gives no benefit for evidence about one's own crimes. It covers drug and firearm crimes and economic or financial crimes (bribery, fraud, antitrust, tax evasion, Financial Instruments and Exchange Act), excluding crimes punishable by death or life imprisonment (Baker McKenzie client alert, 21 September 2018; a law-firm summary, not the statute).
 - Voting theory: Duverger's law says plurality in single-member districts tends toward two parties, a tendency with exceptions where regional parties win seats (Canada, UK, India). Arrow's theorem covers ranked (ordinal) methods, including plurality, instant-runoff, Borda and Condorcet; rated methods (score, approval) are outside its scope (Wikipedia).
 - Instant-runoff example: Alaska's August 2022 at-large special election. Round 1: Peltola 39.66%, Palin 30.92%, Begich 27.84%; Begich eliminated. Final: Peltola 51.48%, Palin 48.52%. Begich was preferred by a majority over each opponent, a "center squeeze" (Wikipedia).
 
@@ -97,7 +109,7 @@ Rules that must hold, or the game teaches the wrong thing:
 ## Sensitive topics and legal
 
 - Neutrality in civics games for schools: present procedures, not party positions; give each side's strongest case if politics appears.
-- Real politicians, judges and parties: fictionalise by default. Route any real-person depiction to `game-legal-advisor`.
+- Real politicians, judges and parties: fictionalise by default. Route any real-person depiction to `game-legal-advisor`. Precedent, not a licence: Noriega v. Activision Blizzard (No. BC 551747, Los Angeles Superior Court) was dismissed with prejudice on Activision's anti-SLAPP motion on 27 October 2014, the use of Noriega in Black Ops II found "transformative and protected under the First Amendment" (Fenwick); Noriega had sued in July 2014 (CBLDF).
 - Licences: V-Dem share-alike and Constitute non-commercial terms affect shipped data; CourtListener bulk and MEDSL datasets checked here are public domain mark or CC0.
 - Not legal advice: courtroom and rights games should say so, especially when aimed at teens.
 - Criminal justice and race, policing, and immigration detention are live political topics; consult affected communities and avoid caricature.
@@ -110,4 +122,5 @@ Rules that must hold, or the game teaches the wrong thing:
 - Pew: look for a newer federal plea and trial short read.
 - MEDSL: check the licence on each Dataverse dataset via the Dataverse API.
 - V-Dem: note the current version on the dataset page.
-- Federal Register and Japan figures: check in a browser and mark the date.
+- Federal Register: check in a browser and mark the date.
+- Japan: moj.go.jp returned 403 to WebFetch but loaded with a browser user agent; look for a newer White Paper on Crime for the indictment ratio.
