@@ -1,0 +1,18 @@
+{
+  "description": "NPC Union team rule: block spawning an NPC Union agent that is outside the team in .npc-union/team.json, unless the user approved it with scripts/team.mjs allow.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Agent|Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/team-guard.mjs"],
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

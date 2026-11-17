@@ -5,11 +5,15 @@
 //   codex runtime, codex missing:   falls back to `claude -p` with a notice on stderr
 //   claude runtime:                 claude -p --model <model> --append-system-prompt <body> <task>
 // Commands are always spawned with an argument array, never a shell string.
+// Team rule: before a real run (not --dry-run or --which), the agent must be on the team in
+// .npc-union/team.json, or have a one-time approval from `scripts/team.mjs allow`, which this run uses up.
+// Outside the team without approval: exit 3, nothing runs. A team file that cannot be read warns and runs.
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdtempSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { delimiter, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { gateAgent, loadCatalog, resolveTeamFile } from "./team.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DEFAULT_CODEX_MODEL = "gpt-6.1-terra";
@@ -88,6 +92,28 @@ export function buildPlan(agent, task, opts = {}, env = process.env) {
   return { runtime: "claude", command: claude, args, notices };
 }
 
+// Applies the team rule for one real run. Returns { ok, message }. Uses up an approval when it relies on one.
+export function teamGate(name, { env = process.env, cwd = process.cwd(), root = ROOT, now = Date.now() } = {}) {
+  const teamFile = resolveTeamFile({ env, cwd });
+  let result;
+  try {
+    result = gateAgent(teamFile, name, loadCatalog(root), now);
+  } catch (e) {
+    return { ok: true, message: `npc-union: could not read the team file (${e.message}); running ${name} without the team check.` };
+  }
+  if (result.verdict === "approved") return { ok: true, message: `npc-union: ${name} is outside the team; using the user's one-time approval.` };
+  if (result.verdict !== "outside-team") return { ok: true, message: "" };
+  const teamScript = join(root, "scripts", "team.mjs");
+  return {
+    ok: false,
+    message: [
+      `npc-union: ${name} is outside the active team (${result.team.members.join(", ")}), so it was not run.`,
+      `Ask the user first. If they say yes, record it with: node "${teamScript}" allow ${name} --file "${teamFile}"`,
+      "One yes covers one run.",
+    ].join("\n"),
+  };
+}
+
 function main(argv) {
   const flags = new Set(argv.filter((a) => a.startsWith("--")));
   const rtIdx = argv.indexOf("--runtime");
@@ -109,6 +135,9 @@ function main(argv) {
     console.log(JSON.stringify({ agent: agent.fields.name, runtime: plan.runtime, command: plan.command, args: shown, outFile: plan.outFile }, null, 2));
     return 0;
   }
+  const gate = teamGate(agent.fields.name);
+  if (gate.message) console.error(gate.message);
+  if (!gate.ok) return 3;
   const res = spawnSync(plan.command, plan.args, { stdio: plan.runtime === "codex" ? ["ignore", "inherit", "inherit"] : "inherit", maxBuffer: 64 * 1024 * 1024 });
   if (res.error) { console.error(`npc-union: failed to start ${plan.command}: ${res.error.message}`); return 1; }
   if (plan.runtime === "codex") {
