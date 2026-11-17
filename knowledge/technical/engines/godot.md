@@ -7,6 +7,7 @@ sources:
   - https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_web.html
   - https://docs.godotengine.org/en/stable/about/release_policy.html
   - https://godotengine.org/license/
+  - https://godotengine.org/features/
   - https://github.com/godotengine/godot/blob/master/editor/gui/editor_about.cpp
 last_verified: 2026-11-05
 ---
@@ -29,7 +30,7 @@ Do not start production work on a beta. Re-check the archive page before giving 
 
 ## Licence
 
-MIT licence, no royalties or fees (https://godotengine.org/license/). Ship the licence text with the game (Godot plus its third-party components). The licence page says third-party components are "distributed under their own license and copyright statements", all compatible with MIT, and points to `COPYRIGHT.txt` in the source repository for the full list (checked 2026-11-16). The editor's About dialog has a "Third-party Licenses" tab (https://github.com/godotengine/godot/blob/master/editor/gui/editor_about.cpp, master branch, checked 2026-11-16).
+MIT licence. The features page says "Godot is free under the MIT license", that "you don't owe us anything (other than a friendly mention)", under the heading "Download and create with no contracts or hidden fees" (https://godotengine.org/features/, checked 2026-11-16). The licence page says you are "free to use Godot Engine, for any purpose" and that the licence terms "do not apply to the content you create with it" (https://godotengine.org/license/, checked 2026-11-16). Neither page, nor the docs FAQ, uses the word "royalties". Ship the licence text with the game (Godot plus its third-party components). The licence page says third-party components are "distributed under their own license and copyright statements", all compatible with MIT, and points to `COPYRIGHT.txt` in the source repository for the full list (checked 2026-11-16). The editor's About dialog has a "Third-party Licenses" tab (https://github.com/godotengine/godot/blob/master/editor/gui/editor_about.cpp, master branch, checked 2026-11-16).
 
 ## Support policy
 

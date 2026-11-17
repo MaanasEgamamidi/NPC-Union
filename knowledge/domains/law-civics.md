@@ -15,6 +15,8 @@ sources:
   - "https://www.v-dem.net/data/the-v-dem-dataset/"
   - "https://www.constituteproject.org/content/about"
   - "https://www.constituteproject.org/content/data"
+  - "https://www.federalregister.gov/developers/documentation/api/v1"
+  - "https://www.federalregister.gov/reader-aids/government-policy-and-ofr-procedures/about-this-site"
   - "https://www.pewresearch.org/short-reads/2023/06/14/fewer-than-1-of-defendants-in-federal-criminal-cases-were-acquitted-in-2022/"
   - "https://www.pewresearch.org/short-reads/2019/06/11/only-2-of-federal-criminal-defendants-go-to-trial-and-most-who-do-are-found-guilty/"
   - "https://www.senate.gov/about/powers-procedures/filibusters-cloture.htm"
@@ -57,7 +59,7 @@ For courtroom and trial mechanics, legislature and government sims, election and
 | MEDSL election returns (https://electionlab.mit.edu/data) | MIT Election Data and Science Lab | Harvard Dataverse download | CC0 1.0 (checked on "U.S. President 1976-2024", v10.1, released 2026-09-04); check each dataset | Data files on Dataverse | Per election | House 1976-2024 by district; precinct-level returns for 2016, 2018, 2020, 2024. Licence not stated on the MEDSL page itself |
 | V-Dem dataset (https://www.v-dem.net/data/the-v-dem-dataset/) | V-Dem Institute | Download | CC BY-SA 4.0 (share-alike on derived data) | CSV, Stata, R, SPSS | Annual (version 16, March 2026) | 531 V-Dem indicators plus indices in Country-Year Full+Others. Share-alike: a shipped table of derived democracy scores must carry the same licence |
 | Constitute (https://www.constituteproject.org/content/about) | Comparative Constitutions Project | Web, XML data files, API (docs in a Google Doc) | CC BY-NC 3.0 Unported except third-party copyrighted material | XML, CSV export | Not stated | Non-commercial: a paid game needs permission to ship constitution text. Some translations used with permission from HeinOnline and Oxford |
-| Federal Register API | US Office of the Federal Register | UNVERIFIED: federalregister.gov redirected our fetcher to an "unblock" page | UNVERIFIED | JSON | Daily | Check in a browser before relying on it |
+| Federal Register API (https://www.federalregister.gov/developers/documentation/api/v1) | US Office of the Federal Register | Public endpoints; "FederalRegister.gov APIs do not require API keys" (checked 2026-11-16 in a browser; scripted fetches are redirected to an "unblock" page) | "Any person may reproduce or republish any material" in the Federal Register (1 CFR 2.6), with no restrictions on what, who or where (About This Site, https://www.federalregister.gov/reader-aids/government-policy-and-ofr-procedures/about-this-site, checked 2026-11-16) | JSON | Daily | FederalRegister.gov calls itself an unofficial informational resource; verify legal research against the official edition |
 
 ## Standards and expert sources
 
