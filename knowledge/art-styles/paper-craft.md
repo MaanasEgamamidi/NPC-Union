@@ -1,7 +1,7 @@
 ---
 title: Papercraft and cutout art style
 tags: [art-style, papercraft, cutout, cardboard, felt, craft, diorama]
-sources: [https://en.wikipedia.org/wiki/Tearaway_(video_game), https://en.wikipedia.org/wiki/Paper_Mario:_The_Origami_King, https://en.wikipedia.org/wiki/Yoshi%27s_Crafted_World, https://en.wikipedia.org/wiki/Kirby%27s_Epic_Yarn, https://en.wikipedia.org/wiki/LittleBigPlanet_(2008_video_game), https://en.wikipedia.org/wiki/Paper_Mario_(video_game), https://en.wikipedia.org/wiki/Lumino_City]
+sources: [https://en.wikipedia.org/wiki/Tearaway_(video_game), https://en.wikipedia.org/wiki/Paper_Mario:_The_Origami_King, https://en.wikipedia.org/wiki/Yoshi%27s_Crafted_World, https://en.wikipedia.org/wiki/Kirby%27s_Epic_Yarn, https://en.wikipedia.org/wiki/LittleBigPlanet_(2008_video_game), https://en.wikipedia.org/wiki/Paper_Mario_(video_game), https://en.wikipedia.org/wiki/Lumino_City, https://thenvm.org/games/lumino-city/, https://mcvuk.com/development-news/crafting-the-lumino-city]
 last_verified: 2026-11-05
 ---
 
@@ -19,7 +19,7 @@ Worlds that look built by hand from paper, card stock, cardboard, felt, yarn and
 | Yoshi's Crafted World (2019, Good-Feel) | https://en.wikipedia.org/wiki/Yoshi%27s_Crafted_World | Cardboard, boxes, cups and household craft items; strong shallow depth of field; levels that can be seen from the back to reveal the reverse side of props. |
 | Kirby's Epic Yarn (2010, Good-Feel / HAL Laboratory) | https://en.wikipedia.org/wiki/Kirby%27s_Epic_Yarn | Yarn outlines and fabric patches; stitched seams and buttons as readable shape and gameplay cues. |
 | LittleBigPlanet (2008, Media Molecule) | https://en.wikipedia.org/wiki/LittleBigPlanet_(2008_video_game) | Mixed craft materials (cardboard, felt, sponge, fabric) on a small number of depth planes; sticker decoration on surfaces. |
-| Lumino City (2014, State of Play) | https://en.wikipedia.org/wiki/Lumino_City | A physical model city built from paper, card and real light, then captured for the game. Study real paper lighting and edge shadows. Exact model size `UNVERIFIED`. |
+| Lumino City (2014, State of Play) | https://en.wikipedia.org/wiki/Lumino_City | A physical model city built from paper, card, miniature lights and motors, then captured for the game. The models took three years and together make a model city about 10 feet (3 m) high (National Videogame Museum, https://thenvm.org/games/lumino-city/, and MCV, https://mcvuk.com/development-news/crafting-the-lumino-city, checked 2026-11-16; the Wikipedia page does not describe the build). Study real paper lighting and edge shadows. |
 
 ## Palette rules
 

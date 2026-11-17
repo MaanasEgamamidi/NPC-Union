@@ -1,13 +1,13 @@
 ---
 title: Neon vector art for games
 tags: [vector, svg, neon, glow, bloom, export, palette]
-sources: [https://www.w3.org/TR/SVG2/, https://github.com/svg/svgo, https://github.com/linebender/resvg, https://inkscape.org/doc/inkscape-man.html, https://docs.godotengine.org/en/stable/tutorials/3d/environment_and_post_processing.html]
+sources: [https://www.w3.org/TR/SVG2/, https://github.com/svg/svgo, https://github.com/linebender/resvg, https://inkscape.org/doc/inkscape-man.html, https://docs.godotengine.org/en/stable/tutorials/3d/environment_and_post_processing.html, https://svgwg.org/svg2-draft/painting.html, https://gitlab.com/inkscape/inkscape/-/raw/master/man/inkscape.pod.in, https://github.com/godotengine/godot-docs/blob/master/tutorials/3d/environment_and_post_processing.rst]
 last_verified: 2026-11-05
 ---
 
 # Neon vector art for games
 
-Source links other than the individually cited CLI references remain UNVERIFIED. Check tool flags against the installed version before quoting them.
+w3.org, inkscape.org and docs.godotengine.org refuse automated access, so the claims that rest on them were checked on 2026-11-16 against the projects' own copies: `vector-effect: non-scaling-stroke` in the SVG Working Group's SVG 2 editor's draft (https://svgwg.org/svg2-draft/painting.html), the Inkscape `--export-type`, `-o`/`--export-filename` and `-w`/`--export-width` options in the man page source (https://gitlab.com/inkscape/inkscape/-/raw/master/man/inkscape.pod.in), and the Godot glow HDR threshold ("expected to be at 1.0") in the godot-docs repository, master branch (https://github.com/godotengine/godot-docs/blob/master/tutorials/3d/environment_and_post_processing.rst). Check tool flags against the installed version before quoting them.
 
 ## Stroke width at target resolution
 

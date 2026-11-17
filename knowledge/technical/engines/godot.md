@@ -7,6 +7,7 @@ sources:
   - https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_web.html
   - https://docs.godotengine.org/en/stable/about/release_policy.html
   - https://godotengine.org/license/
+  - https://github.com/godotengine/godot/blob/master/editor/gui/editor_about.cpp
 last_verified: 2026-11-05
 ---
 
@@ -28,7 +29,7 @@ Do not start production work on a beta. Re-check the archive page before giving 
 
 ## Licence
 
-MIT licence, no royalties or fees (https://godotengine.org/license/). Ship the licence text with the game (Godot plus its third-party components; the editor's Help > About lists them). Fetched page not read in full today: treat the third-party list as UNVERIFIED.
+MIT licence, no royalties or fees (https://godotengine.org/license/). Ship the licence text with the game (Godot plus its third-party components). The licence page says third-party components are "distributed under their own license and copyright statements", all compatible with MIT, and points to `COPYRIGHT.txt` in the source repository for the full list (checked 2026-11-16). The editor's About dialog has a "Third-party Licenses" tab (https://github.com/godotengine/godot/blob/master/editor/gui/editor_about.cpp, master branch, checked 2026-11-16).
 
 ## Support policy
 

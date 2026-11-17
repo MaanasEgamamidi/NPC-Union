@@ -23,7 +23,7 @@ Each link was checked for a live page on 2026-11-05 unless marked otherwise.
 | Bastion (Supergiant Games, 2011) | https://en.wikipedia.org/wiki/Bastion_(video_game) | Hand-painted isometric tiles with baked light and color; the painted ground assembles under the player. |
 | Ori and the Blind Forest (Moon Studios, 2015) | https://en.wikipedia.org/wiki/Ori_and_the_Blind_Forest | Painted layered backgrounds with depth haze, glowing accents, and a readable gameplay plane in front of soft painted depth. |
 
-Technique reference: Kuwahara filter, https://en.wikipedia.org/wiki/Kuwahara_filter (`UNVERIFIED`: page returned HTTP 429 during checking).
+Technique reference: Kuwahara filter, https://en.wikipedia.org/wiki/Kuwahara_filter (checked 2026-11-16): a non-linear smoothing filter that preserves edges; the page notes its abstraction gives "a desirable painting-like effect" and mentions an anisotropic variant.
 
 ## Palette rules
 
