@@ -70,7 +70,7 @@ Each agent's frontmatter has a `runtime` field.
 
 ## Knowledge base
 
-`knowledge/` holds Markdown files with `title`, `tags`, `sources`, and `last_verified` frontmatter. `scripts/build-index.mjs` builds `knowledge/index.json`, and `scripts/kb-search.mjs` does keyword (BM25-style) search over it. There is no vector database. Agents are told to look up version-specific facts (engine versions, API limits, prices, licences) at run time and say when they are unsure.
+`knowledge/` holds Markdown files with `title`, `tags`, `sources`, and `last_verified` frontmatter. `scripts/build-index.mjs` builds `knowledge/index.json`, and `scripts/kb-search.mjs` does keyword (BM25-style) search over it. There is no vector database. `scripts/kb-stale.mjs` reports files past a `last_verified` age limit and dead source links; a monthly workflow runs it. Agents are told to look up version-specific facts (engine versions, API limits, prices, licences) at run time and say when they are unsure.
 
 ## Reporting
 

@@ -1,0 +1,42 @@
+name: kb-freshness
+on:
+  schedule:
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check knowledge base freshness and links
+        id: check
+        run: |
+          set +e
+          node scripts/kb-stale.mjs --check-links --strict > kb-report.md
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          cat kb-report.md
+          { echo '### Knowledge base freshness'; echo '```'; cat kb-report.md; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          exit 0
+      - name: Open or update the freshness issue
+        if: steps.check.outputs.code == '1'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          TITLE="Knowledge base freshness report"
+          { echo "Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"; echo; echo '```'; cat kb-report.md; echo '```'; } > kb-issue.md
+          N=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number,title --jq "map(select(.title == \"$TITLE\")) | .[0].number // empty")
+          if [ -n "$N" ]; then
+            gh issue comment "$N" --body-file kb-issue.md
+          else
+            gh issue create --title "$TITLE" --body-file kb-issue.md
+          fi
+      - name: Flag a script error
+        if: steps.check.outputs.code != '0' && steps.check.outputs.code != '1'
+        run: echo "::warning::kb-stale.mjs exited with code ${{ steps.check.outputs.code }}; see the step log."
