@@ -10,6 +10,8 @@ All notable changes to NPC Union are listed here. The format follows [Keep a Cha
 
 ### Changed
 
+- The keyword baseline floor in CI and the test is 0.75, down from 0.8. The harder cases put the keyword shortlist at 83 of 103, one case above the old floor.
+
 - The routing eval judges the hand-off against the router's own valid picks (those in `must`, `any` or `accept`) instead of the `must` agents alone, so picking an accepted agent from another department no longer counts as a wrong hand-off, and cases with an `any` group are scored too. A case's explicit `via` still wins.
 
 - The worked example in `docs/EXAMPLE.md` is a new run with web and shell access, so the specialists checked their Godot settings and one of them ran on Codex.

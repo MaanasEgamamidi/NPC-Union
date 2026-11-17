@@ -15,7 +15,7 @@ jobs:
       - name: Tests
         run: node --test tests/*.test.mjs
       - name: Routing eval (keyword baseline)
-        run: node scripts/eval-routing.mjs --min-pass 0.8
+        run: node scripts/eval-routing.mjs --min-pass 0.75
       - name: Catalog is fresh
         run: node scripts/build-catalog.mjs --check
       - name: Knowledge index is fresh

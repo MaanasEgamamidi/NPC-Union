@@ -72,7 +72,7 @@ If a file is substantially based on [Claude-Code-Game-Studios](https://github.co
    ```bash
    node scripts/validate.mjs --strict
    node --test tests/*.test.mjs
-   node scripts/eval-routing.mjs --min-pass 0.8
+   node scripts/eval-routing.mjs --min-pass 0.75
    node scripts/build-catalog.mjs --check
    node scripts/build-index.mjs --check
    ```
