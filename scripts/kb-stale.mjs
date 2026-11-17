@@ -15,7 +15,6 @@ const ROOT = join(fileURLToPath(new URL(".", import.meta.url)), "..");
 const DAY = 86400000;
 const USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 const BLOCKED = new Set([401, 403, 429]);
-const HEAD_REFUSED = new Set([403, 405, 501]);
 
 // Parses a strict YYYY-MM-DD calendar date to a UTC midnight timestamp, or null.
 export function parseDate(s) {
@@ -56,7 +55,9 @@ export async function checkUrl(url, fetchFn = fetch, { timeoutMs = 15000 } = {})
   let code, error = "";
   try {
     code = await attempt("HEAD");
-    if (HEAD_REFUSED.has(code)) code = await attempt("GET");
+    // A failed HEAD proves little: some APIs answer 404 to HEAD and 200 to GET. Only GET may call a link dead.
+    // 429 is left alone so a rate-limited site is not asked twice.
+    if (code >= 400 && code !== 429) code = await attempt("GET");
   } catch (e) {
     // Some servers drop HEAD requests; try GET once before calling it dead.
     try { code = await attempt("GET"); } catch (e2) { code = null; error = String(e2?.cause?.code || e2?.name === "TimeoutError" && "timeout" || e2?.message || e2); }

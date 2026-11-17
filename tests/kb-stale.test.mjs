@@ -83,8 +83,8 @@ test("parseDate rejects impossible dates", () => {
   assert.equal(parseDate("2026-1-1"), null);
 });
 
-test("HEAD that is refused falls back to GET", async () => {
-  for (const refused of [403, 405, 501]) {
+test("HEAD that fails falls back to GET, so a HEAD-only 404 is not called dead", async () => {
+  for (const refused of [403, 404, 405, 500, 501]) {
     const calls = [];
     const fake = async (url, init) => { calls.push(init.method); return res(init.method === "HEAD" ? refused : 200); };
     assert.deepEqual(await checkUrl("https://x.test/", fake), { url: "https://x.test/", state: "ok", code: 200 });
@@ -100,6 +100,13 @@ test("a HEAD that works is not repeated, and the request carries a plain browser
   assert.match(seen[0].headers["User-Agent"], /^Mozilla\/5\.0 .*Chrome/);
   assert.ok(!/npc|union|claude|studious/i.test(seen[0].headers["User-Agent"]));
   assert.ok(seen[0].signal, "a timeout signal is passed");
+});
+
+test("a 429 on HEAD is not retried", async () => {
+  const calls = [];
+  const fake = async (url, init) => { calls.push(init.method); return res(429); };
+  assert.equal((await checkUrl("https://x.test/", fake)).state, "blocked");
+  assert.deepEqual(calls, ["HEAD"]);
 });
 
 test("401, 403 and 429 are blocked, 404 and 500 are dead, a thrown error is dead", async () => {

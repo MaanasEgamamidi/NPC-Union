@@ -1,6 +1,9 @@
 ---
 owner: ai-integration-architect
 topic: AI feature placement, store disclosure, provider facts
+sources:
+  - https://partner.steamgames.com/doc/gettingstarted/contentsurvey
+last_verified: 2026-11-16
 ---
 
 # AI integration architect knowledge
@@ -11,7 +14,7 @@ Facts that can go stale. Re-check before relying on them. Provider model names, 
 
 ### Steam content survey: AI disclosure
 - Source: https://partner.steamgames.com/doc/gettingstarted/contentsurvey
-- last_verified: 2026-11-05
+- last_verified: 2026-11-16
 - What it says: the survey covers AI used in content that ships with the game, not AI used only as a development efficiency tool. Two categories:
   - Pre-Generated: content created with AI tools during development. Reviewed like other content, including legality and consistency with marketing.
   - Live-Generated: content created with AI tools while the game runs. Same rules, plus the developer must describe the guardrails that stop the AI producing illegal content.
