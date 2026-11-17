@@ -240,7 +240,7 @@ test("gitignore note: printed for a repo that does not ignore settings.local.jso
 
   let r = cli(local, "--also", shared, "--script", guard);
   assert.equal(r.status, 0, r.stderr);
-  assert.match(r.stdout, /^Note: .*settings\.local\.json is not ignored by git; add \.claude\/settings\.local\.json to \.gitignore/m);
+  assert.match(r.stdout, /^Note: .*settings\.local\.json is not ignored by git; add \*\*\/\.claude\/settings\.local\.json to \.gitignore/m);
   assert.equal(r.stdout.trim().split("\n").length, 2, "one line for the registration, one for the note");
   assert.equal(existsSync(join(project, ".gitignore")), false, "the user's .gitignore is never edited");
 

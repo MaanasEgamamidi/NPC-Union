@@ -145,7 +145,7 @@ export function gitignoreNote(file, env = process.env) {
   if (!/(^|[\\/])settings\.local\.json$/.test(file)) return null;
   const r = spawnSync("git", ["-C", dirname(file), "check-ignore", "-q", file], { env, stdio: "ignore" });
   if (r.error || r.status !== 1) return null;
-  return `Note: ${file} is not ignored by git; add .claude/settings.local.json to .gitignore so this machine's path is not committed.`;
+  return `Note: ${file} is not ignored by git; add **/.claude/settings.local.json to .gitignore so this machine's path is not committed.`;
 }
 
 // Removes our handler from a file already read. Returns a message, or null when the file had none.
