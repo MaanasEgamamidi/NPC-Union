@@ -124,5 +124,5 @@ Rules that must hold, or the game teaches the wrong thing:
 - Pew: look for a newer federal plea and trial short read.
 - MEDSL: check the licence on each Dataverse dataset via the Dataverse API.
 - V-Dem: note the current version on the dataset page.
-- Federal Register: check in a browser and mark the date.
+- Federal Register: scripted fetches are redirected to an "unblock" page; re-read the API documentation and About This Site in a browser and mark the date.
 - Japan: moj.go.jp returned 403 to WebFetch but loaded with a browser user agent; look for a newer White Paper on Crime for the indictment ratio.

@@ -103,5 +103,5 @@ Fun levers that are also accurate: trophic cascades when a predator is removed, 
 - GBIF: call `https://api.gbif.org/v1/enumeration/license` and `https://api.gbif.org/v1/occurrence/search?limit=0&facet=license`; re-read the OpenAPI page for auth and download rules.
 - iNaturalist: read `info.description` in `https://api.inaturalist.org/v1/swagger.json` for rate limits.
 - Catalogue of Life: read `license`, `version` and `alias` from `https://api.checklistbank.org/dataset/3LR`.
-- IUCN and NCBI: open the terms and documentation in a browser; scripted fetches were blocked today.
+- IUCN and NCBI: scripted fetches are often blocked; re-read the Red List Terms of Use (check the version number) and the NCBI Policies and Disclaimers page in a browser.
 - Games: Wikipedia infoboxes and developer sites.

@@ -20,6 +20,7 @@ sources:
   - "https://archive.org/developers/"
   - "https://seshatdatabank.info/"
   - "https://seshat-db.com/terms/current/"
+  - "https://github.com/Seshat-Global-History-Databank/build_polaris_dataset"
   - "https://en.wikipedia.org/wiki/Seshat_(project)"
   - "https://orbis.stanford.edu/"
   - "https://gwern.net/doc/technology/2026-hall.pdf"
@@ -52,7 +53,7 @@ For period games, historical strategy, maps and borders, daily-life sims, war lo
 | David Rumsey Map Collection (https://www.davidrumsey.com/about) | Stanford Libraries | Web, georeferencer, Google Earth | CC BY-NC-SA 3.0; commercial use needs permission | Images | Ongoing | Over 152,000 maps and images; georeferenced maps let you overlay a period map on modern terrain. Non-commercial licence: a paid game must ask first |
 | Wikidata (https://www.wikidata.org/wiki/Wikidata:Licensing) | Wikimedia | SPARQL / dumps | Structured data CC0; text in other namespaces CC BY-SA 4.0 | JSON, RDF | Live | Good for dates and places of people and events; crowd-edited, so cross-check with a primary source |
 | Internet Archive (https://archive.org/developers/) | Internet Archive | Item Metadata API, S3-like API, Python library | Archive "does not assert any new copyright" over items; each item's own rights apply | Varied | Live | No rate limits stated on the developer page. Many uploads are not public domain despite being free to view |
-| Seshat Global History Databank (https://seshatdatabank.info/) | Seshat / Evolution Institute | Website data section; downloads from seshat-db.com need a free account and acceptance of its User Agreement | Public Data: CC BY-SA 4.0, commercial use allowed with attribution, a licence link and share-alike on adaptations; unreleased Private Data may not be shared (https://seshat-db.com/terms/current/, checked 2026-11-16 in a browser). The MIT licence on the Polaris GitHub repo covers its scripts, not the data | CSV, JSON (seshat-db.com downloads) | Research releases | Codes social complexity of past polities, roughly 4000 BCE to 1900 CE (Wikipedia). Useful for strategy-game tech and state stats; share-alike means a shipped table built from it must carry CC BY-SA 4.0 or a licence Creative Commons declares compatible |
+| Seshat Global History Databank (https://seshatdatabank.info/) | Seshat / Evolution Institute | Website data section; downloads from seshat-db.com need a free account and acceptance of its User Agreement | Public Data: CC BY-SA 4.0, commercial use allowed with attribution, a licence link and share-alike on adaptations; unreleased Private Data may not be shared (https://seshat-db.com/terms/current/, checked 2026-11-16 in a browser). The Polaris-2026 GitHub repo (https://github.com/Seshat-Global-History-Databank/build_polaris_dataset) carries an MIT licence whose text covers "the Software" and its documentation and does not mention data (checked 2026-11-16) | CSV, JSON (seshat-db.com downloads) | Research releases | Codes social complexity of past polities, roughly 4000 BCE to 1900 CE (Wikipedia). Useful for strategy-game tech and state stats; share-alike means a shipped table built from it must carry CC BY-SA 4.0 or a licence Creative Commons declares compatible |
 
 ## Standards and expert sources
 
@@ -113,5 +114,5 @@ Popular myths, all corrected in Wikipedia's list of common misconceptions about 
 - Smithsonian: check the AWS registry entry; try si.edu/openaccess in a browser (blocked to scripts).
 - Europeana: read the API key page and Media policy in a browser for current limits and rights statements.
 - Pleiades: check the downloads page for the latest numbered release.
-- Old Bailey and Seshat: open in a browser and record licence and API terms (both blocked our fetcher).
+- Old Bailey and Seshat: both block scripted fetches; re-read the Old Bailey licensing and API pages and the Seshat User Agreement in a browser.
 - Games: Wikipedia infoboxes and developer sites.

@@ -100,7 +100,7 @@ Trust breakers for engineers:
 - Unsafe real-world lessons: keep electrical work, improvised structures, pressure vessels and hazardous materials non-instructional; no step-by-step real procedures.
 - Real products and brands (cars, aircraft, bridges by name): trademark and likeness questions go to `game-legal-advisor`.
 - Claims that a game teaches engineering or certifies skills: route wording to `game-legal-advisor` and `education-expert`.
-- Licences: NIST WebBook is "All rights reserved"; MIT OCW is non-commercial; Engineering ToolBox reuse terms are unchecked. Cite values, write your own tables.
+- Licences: NIST WebBook is "All rights reserved"; MIT OCW is non-commercial; Engineering ToolBox says its content is copyrighted and its terms page returned 404, so reuse beyond citation is unclear. Cite values, write your own tables.
 
 ## How to check this is current
 

@@ -107,7 +107,7 @@ Fun levers that are also accurate: frost dates and planting windows, harvest win
 
 ## How to check this is current
 
-- FAOSTAT: download `https://bulks-faostat.fao.org/production/datasets_E.json` and read `DateUpdate` for the dataset you use; re-read the FAO database terms. Check whether the query API needs a key.
+- FAOSTAT: download `https://bulks-faostat.fao.org/production/datasets_E.json` and read `DateUpdate` for the dataset you use; re-read the FAO database terms. Re-read the API developer portal's authentication guide for token rules.
 - NASS: re-read the Quick Stats API page for the record limit and terms.
 - FoodData Central: re-read the API guide for rate limits and licence.
 - Open Food Facts: re-read the API introduction for rate limits and User-Agent rules.
