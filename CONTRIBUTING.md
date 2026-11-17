@@ -79,7 +79,7 @@ If a file is substantially based on [Claude-Code-Game-Studios](https://github.co
 
    CI also runs the installer round trip on Linux and Windows, and `claude plugin validate` if the CLI installs.
 4. Commit, then tag the commit: `git tag vX.Y.Z`.
-5. Push the commit and the tag: `git push origin vX.Y.Z`.
+5. Push the commit and the tag: `git push origin main vX.Y.Z`.
 
 ## Writing style
 

@@ -120,7 +120,7 @@ you
      └─ Knowledge Lead   → genres · art styles · domains
 ```
 
-Agents live in `agents/<division>/<department>/<name>.md` and register as `npc-union:<division>:<department>:<name>`. The Steward routes from a generated catalog ([`catalog/CATALOG.md`](catalog/CATALOG.md)), hands cross-department work to a division lead, and checks each agent's `runtime` before running it. More: [HOW-IT-WORKS](docs/HOW-IT-WORKS.md), [PIPELINE](docs/PIPELINE.md), [agent schema](docs/AGENT-SCHEMA.md).
+Agents live in `agents/<division>/<department>/<name>.md` and register as `npc-union:<division>:<department>:<name>`. The Steward routes from a generated catalog ([`catalog/CATALOG.md`](catalog/CATALOG.md)), hands cross-department work to a division lead, and checks each agent's `runtime` before running it. To see one request go through from start to finish, read the [worked example](docs/EXAMPLE.md). More: [HOW-IT-WORKS](docs/HOW-IT-WORKS.md), [PIPELINE](docs/PIPELINE.md), [agent schema](docs/AGENT-SCHEMA.md).
 
 | Division | Agents |
 |---|---|
@@ -131,6 +131,8 @@ Agents live in `agents/<division>/<department>/<name>.md` and register as `npc-u
 | Leadership | 6 |
 
 The full list with portraits is in [docs/ROSTER.md](docs/ROSTER.md).
+
+Routing is tested. [`evals/routing`](evals/routing/README.md) holds requests paired with the agents that should handle them. When last run by hand (2026-11-16), the Steward's rules on Claude Opus passed every case. CI reruns a free keyword baseline on every push; `node scripts/eval-routing.mjs` prints the current numbers.
 
 ## Contributing
 
