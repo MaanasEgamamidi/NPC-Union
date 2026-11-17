@@ -43,7 +43,7 @@ You rarely need all 148. Pick the specialists for the job and the Steward works 
 - **Build it in the browser** (Assemble Team tab) from nine starter teams or card by card, then copy the command or download `team.json`.
 - **Or in Claude Code:** `/npc-union:team set game-designer,sprite-artist,composer`, or `/npc-union:team preset pixel-platformer`.
 - **The rule:** with a team active the Steward uses *only* those agents. If the work needs someone outside it, the Steward stops, names who and why, and asks you first. A yes covers that agent for that task only.
-- The team lives in your project at `.npc-union/team.json`. A hook blocks spawning an NPC Union agent outside the team, and `scripts/run-agent.mjs` refuses to run one, until you say yes and the Steward records it with `node scripts/team.mjs allow <agent>`. Each yes covers one run. The plugin brings the hook with it, and the script installers register it in `settings.json` unless you pass `--no-hook`. Details: [How it works](docs/HOW-IT-WORKS.md#teams).
+- The team lives in your project at `.npc-union/team.json`. A hook blocks spawning an NPC Union agent outside the team, and `scripts/run-agent.mjs` refuses to run one, until you say yes and the Steward records it with `node scripts/team.mjs allow <agent>`. Each yes covers one run. The plugin brings the hook with it, and the script installers register it unless you pass `--no-hook`. Details: [How it works](docs/HOW-IT-WORKS.md#teams).
 
 ## Install
 
@@ -60,7 +60,7 @@ Then start a session with the Steward:
 claude --agent npc-union:leadership:shop-steward
 ```
 
-No plugin system? `install.sh` (macOS, Linux) and `install.ps1` (Windows) copy the agents into a project's `.claude/` or your `~/.claude/`, and register the team-rule hook in the `settings.json` there (`--no-hook` / `-NoHook` to skip it; uninstall removes it). The hook needs `node` on your PATH. See [CONTRIBUTING.md](CONTRIBUTING.md) for running from a clone.
+No plugin system? `install.sh` (macOS, Linux) and `install.ps1` (Windows) copy the agents into a project's `.claude/` or your `~/.claude/`, and register the team-rule hook (`--no-hook` / `-NoHook` to skip it; uninstall removes it). The hook entry holds a path on your machine, so a project install puts it in `.claude/settings.local.json`, which is not meant to be committed, and `--user` puts it in `~/.claude/settings.json`. The hook needs `node` on your PATH. See [CONTRIBUTING.md](CONTRIBUTING.md) for running from a clone.
 
 ```
 > /npc-union:steward I want a pixel-art metroidvania in Godot. Where do I start?

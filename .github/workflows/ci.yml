@@ -23,20 +23,45 @@ jobs:
       - name: Installer round trip
         run: |
           T=$(mktemp -d)
-          # Counts our team-guard handlers in a settings.json (0 when the file is missing).
+          # Counts our team-guard handlers in a settings file (0 when the file is missing).
           hooks() { node -e 'const f=process.argv[1],fs=require("fs");const s=fs.existsSync(f)?JSON.parse(fs.readFileSync(f,"utf8")):{};console.log((s.hooks?.PreToolUse??[]).filter(g=>g.matcher==="Agent|Task").flatMap(g=>g.hooks).filter(h=>h.command==="node"&&/npc-union\/scripts\/team-guard\.mjs$/.test(h.args?.[0]??"")).length)' "$1"; }
           ./install.sh --project "$T"
           test -f "$T/.claude/agents/npc-union/leadership/shop-steward.md"
           ! grep -rq 'CLAUDE_PLUGIN_ROOT' "$T/.claude/agents/npc-union"
           ./install.sh --project "$T"
-          test "$(hooks "$T/.claude/settings.json")" = 1
+          # A project install registers in the uncommitted settings.local.json, never in settings.json.
+          test "$(hooks "$T/.claude/settings.local.json")" = 1
+          test ! -f "$T/.claude/settings.json"
           ./install.sh --uninstall --project "$T"
           test ! -d "$T/.claude/npc-union"
-          test "$(hooks "$T/.claude/settings.json")" = 0
+          test "$(hooks "$T/.claude/settings.local.json")" = 0
+          # Over an older install that wrote the hook into settings.json beside the team's own keys.
+          O=$(mktemp -d)
+          ./install.sh --no-hook --project "$O"
+          echo '{"model":"opus"}' > "$O/.claude/settings.json"
+          node scripts/install-hook.mjs "$O/.claude/settings.json" --script "$O/.claude/npc-union/scripts/team-guard.mjs"
+          test "$(hooks "$O/.claude/settings.json")" = 1
+          ./install.sh --project "$O"
+          test "$(hooks "$O/.claude/settings.local.json")" = 1
+          test "$(hooks "$O/.claude/settings.json")" = 0
+          test "$(node -p 'JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).model' "$O/.claude/settings.json")" = opus
+          node scripts/install-hook.mjs "$O/.claude/settings.json" --script "$O/.claude/npc-union/scripts/team-guard.mjs"
+          ./install.sh --uninstall --project "$O"
+          test "$(hooks "$O/.claude/settings.local.json")" = 0
+          test "$(hooks "$O/.claude/settings.json")" = 0
+          test -f "$O/.claude/settings.json"
           N=$(mktemp -d)
           ./install.sh --no-hook --project "$N"
+          test "$(hooks "$N/.claude/settings.local.json")" = 0
           test "$(hooks "$N/.claude/settings.json")" = 0
           ./install.sh --uninstall --project "$N"
+          # --user registers in ~/.claude/settings.json (a throwaway HOME here).
+          H=$(mktemp -d)
+          HOME="$H" ./install.sh --user
+          test "$(hooks "$H/.claude/settings.json")" = 1
+          test ! -f "$H/.claude/settings.local.json"
+          HOME="$H" ./install.sh --uninstall --user
+          test "$(hooks "$H/.claude/settings.json")" = 0
       - name: Claude plugin validate (if the CLI installs)
         continue-on-error: true
         run: |
@@ -49,7 +74,7 @@ jobs:
         shell: pwsh
         run: |
           $t = Join-Path $env:RUNNER_TEMP "npc"; New-Item -ItemType Directory -Force $t | Out-Null
-          # Counts our team-guard handlers in a settings.json (0 when the file is missing).
+          # Counts our team-guard handlers in a settings file (0 when the file is missing).
           function Count-Hook($f) {
             if (-not (Test-Path $f)) { return 0 }
             $s = Get-Content -Raw $f | ConvertFrom-Json
@@ -59,11 +84,29 @@ jobs:
           ./install.ps1 -Project $t
           if (-not (Test-Path "$t/.claude/agents/npc-union/leadership/shop-steward.md")) { throw "agent missing" }
           ./install.ps1 -Project $t
-          if ((Count-Hook "$t/.claude/settings.json") -ne 1) { throw "team hook not registered exactly once" }
+          # A project install registers in the uncommitted settings.local.json, never in settings.json.
+          if ((Count-Hook "$t/.claude/settings.local.json") -ne 1) { throw "team hook not registered exactly once" }
+          if (Test-Path "$t/.claude/settings.json") { throw "project install wrote settings.json" }
           ./install.ps1 -Project $t -Uninstall
           if (Test-Path "$t/.claude/npc-union") { throw "uninstall failed" }
-          if ((Count-Hook "$t/.claude/settings.json") -ne 0) { throw "team hook not removed" }
+          if ((Count-Hook "$t/.claude/settings.local.json") -ne 0) { throw "team hook not removed" }
+          # Over an older install that wrote the hook into settings.json beside the team's own keys.
+          $o = Join-Path $env:RUNNER_TEMP "npc-old"; New-Item -ItemType Directory -Force $o | Out-Null
+          ./install.ps1 -Project $o -NoHook
+          Set-Content -Path "$o/.claude/settings.json" -Value '{"model":"opus"}' -Encoding ascii
+          node scripts/install-hook.mjs "$o/.claude/settings.json" --script "$o/.claude/npc-union/scripts/team-guard.mjs"
+          if ((Count-Hook "$o/.claude/settings.json") -ne 1) { throw "could not simulate the older install" }
+          ./install.ps1 -Project $o
+          if ((Count-Hook "$o/.claude/settings.local.json") -ne 1) { throw "hook not moved to settings.local.json" }
+          if ((Count-Hook "$o/.claude/settings.json") -ne 0) { throw "stale hook left in settings.json" }
+          if ((Get-Content -Raw "$o/.claude/settings.json" | ConvertFrom-Json).model -ne "opus") { throw "settings.json lost a key" }
+          node scripts/install-hook.mjs "$o/.claude/settings.json" --script "$o/.claude/npc-union/scripts/team-guard.mjs"
+          ./install.ps1 -Project $o -Uninstall
+          if ((Count-Hook "$o/.claude/settings.local.json") -ne 0) { throw "hook left in settings.local.json" }
+          if ((Count-Hook "$o/.claude/settings.json") -ne 0) { throw "hook left in settings.json" }
+          if (-not (Test-Path "$o/.claude/settings.json")) { throw "settings.json removed with other keys in it" }
           $n = Join-Path $env:RUNNER_TEMP "npc-nohook"; New-Item -ItemType Directory -Force $n | Out-Null
           ./install.ps1 -Project $n -NoHook
+          if ((Count-Hook "$n/.claude/settings.local.json") -ne 0) { throw "-NoHook still registered the hook" }
           if ((Count-Hook "$n/.claude/settings.json") -ne 0) { throw "-NoHook still registered the hook" }
           ./install.ps1 -Project $n -Uninstall
