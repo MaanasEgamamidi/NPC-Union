@@ -1,11 +1,18 @@
 #!/usr/bin/env node
-// Registers or removes the NPC Union team-rule hook (scripts/team-guard.mjs) in a Claude Code settings.json.
+// Registers or removes the NPC Union team-rule hook (scripts/team-guard.mjs) in a Claude Code settings file.
 // The plugin gets this hook from hooks/hooks.json; install.sh and install.ps1 call this script instead,
 // because a script install has no plugin hooks. Node only, no dependencies, no network.
 //
-// Usage: node scripts/install-hook.mjs <settings.json> [--script <team-guard.mjs>] [--remove]
+// Usage: node scripts/install-hook.mjs <settings file> [--also <settings file>]... [--script <team-guard.mjs>] [--remove]
 //   --script  path to the team-guard.mjs the hook should run (default: the one beside this script)
+//   --also    another settings file that must not hold our entry: registering removes it from there
+//             (an older install wrote it there), and --remove removes it from there too. Repeatable.
 //   --remove  delete our entry and any hooks/PreToolUse containers that become empty because of it
+// Every file is read and checked before any is written, so a bad file leaves all of them unchanged.
+// The installers register in <project>/.claude/settings.local.json for a project install (the entry holds an
+// absolute path on this machine, so it must not land in the committed settings.json) and in ~/.claude/settings.json
+// for a user install, passing the other file with --also. When the file registered in is a settings.local.json
+// inside a git repository that does not ignore it, a one-line note says to add it to .gitignore.
 //
 // The entry it writes, in exec form (no shell, so paths with spaces need no quoting):
 //   "hooks": { "PreToolUse": [ { "matcher": "Agent|Task",
@@ -15,6 +22,7 @@
 // Every other key and hook is left as it is. Running it twice leaves one entry. A file that is not valid JSON,
 // or whose "hooks" is not shaped the way Claude Code expects, is refused and left unchanged (exit 1).
 // Writes go to a temp file that is then renamed over the target.
+import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync, realpathSync, renameSync, unlinkSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -109,7 +117,7 @@ export function readSettings(file) {
   const raw = readFileSync(file, "utf8").replace(/^﻿/, "");
   if (!raw.trim()) return { settings: {}, existed: true, indent: 2 };
   let settings;
-  try { settings = JSON.parse(raw); } catch (e) { throw new Error(`${file} is not valid JSON (${e.message}); left unchanged`); }
+  try { settings = JSON.parse(raw); } catch (e) { throw new Error(`${file} is not valid JSON (${e.message})`); }
   const m = raw.match(/^([ \t]+)"/m);
   return { settings, existed: true, indent: m ? m[1] : 2 };
 }
@@ -130,45 +138,85 @@ export function canonicalGuardPath(p) {
   return real.replace(/\\/g, "/");
 }
 
+// The note to print when file (a settings.local.json) sits in a git work tree that does not ignore it, else null.
+// git check-ignore exits 0 when ignored, 1 when not (a tracked file also gives 1), 128 outside a repository.
+// Anything but 1, including git not being installed, prints nothing.
+export function gitignoreNote(file, env = process.env) {
+  if (!/(^|[\\/])settings\.local\.json$/.test(file)) return null;
+  const r = spawnSync("git", ["-C", dirname(file), "check-ignore", "-q", file], { env, stdio: "ignore" });
+  if (r.error || r.status !== 1) return null;
+  return `Note: ${file} is not ignored by git; add .claude/settings.local.json to .gitignore so this machine's path is not committed.`;
+}
+
+// Removes our handler from a file already read. Returns a message, or null when the file had none.
+// If our hook was all the file held, it was ours to begin with: the file is removed rather than left as "{}".
+function removeFrom(file, read, guard, label) {
+  if (!read.existed || !countOurHandlers(read.settings, guard)) return null;
+  const next = removeHook(read.settings, guard);
+  if (Object.keys(next).length === 0 && Object.keys(read.settings).length === 1) unlinkSync(file);
+  else writeSettingsAtomic(file, next, read.indent);
+  return `NPC Union team hook ${label} ${file}`;
+}
+
+const USAGE = "Usage: node scripts/install-hook.mjs <settings file> [--also <settings file>]... [--script <team-guard.mjs>] [--remove]";
+
 // Returns { code, message }; never throws.
-export function run(argv) {
+export function run(argv, env = process.env) {
   const args = [...argv];
   const remove = args.includes("--remove");
   let script = join(HERE, "team-guard.mjs");
-  const i = args.indexOf("--script");
-  if (i >= 0) {
+  const also = [];
+  for (let i = args.indexOf("--script"); i >= 0; i = args.indexOf("--script")) {
     if (!args[i + 1]) return { code: 2, message: "--script needs a path" };
     script = args[i + 1];
     args.splice(i, 2);
   }
-  const files = args.filter((a) => a !== "--remove");
-  if (files.length !== 1 || files[0].startsWith("--")) {
-    return { code: 2, message: "Usage: node scripts/install-hook.mjs <settings.json> [--script <team-guard.mjs>] [--remove]" };
+  for (let i = args.indexOf("--also"); i >= 0; i = args.indexOf("--also")) {
+    if (!args[i + 1] || args[i + 1].startsWith("--")) return { code: 2, message: "--also needs a path" };
+    also.push(args[i + 1]);
+    args.splice(i, 2);
   }
+  const files = args.filter((a) => a !== "--remove");
+  if (files.length !== 1 || files[0].startsWith("--")) return { code: 2, message: USAGE };
   const file = resolve(files[0]);
-  let read;
-  try { read = readSettings(file); } catch (e) { return { code: 1, message: `NPC Union hook: ${e.message}` }; }
+  const others = also.map((f) => resolve(f)).filter((f) => norm(f) !== norm(file));
+  const all = [file, ...others];
+  // Read and check every file before writing any, so one bad file cannot leave the hook in two places or none.
+  const reads = new Map();
+  for (const f of all) {
+    try {
+      const read = readSettings(f);
+      checkShape(read.settings);
+      reads.set(f, read);
+    } catch (e) {
+      const msg = e.message.includes(f) ? e.message : `${f}: ${e.message}`;
+      return { code: 1, message: `NPC Union hook: ${msg}; no settings file was changed` };
+    }
+  }
   const guard = canonicalGuardPath(script);
   try {
     if (remove) {
-      if (!read.existed) return { code: 0, message: `NPC Union team hook: nothing to remove (${file} does not exist)` };
-      const before = countOurHandlers(read.settings, guard);
-      if (!before) return { code: 0, message: `NPC Union team hook: not registered in ${file}` };
-      const next = removeHook(read.settings, guard);
-      // If our hook was all the file held, it was ours to begin with: remove the file rather than leave "{}".
-      if (Object.keys(next).length === 0 && Object.keys(read.settings).length === 1) unlinkSync(file);
-      else writeSettingsAtomic(file, next, read.indent);
-      return { code: 0, message: `NPC Union team hook removed from ${file}` };
+      const lines = all.map((f) => removeFrom(f, reads.get(f), guard, "removed from")).filter(Boolean);
+      if (lines.length) return { code: 0, message: lines.join("\n") };
+      return { code: 0, message: `NPC Union team hook: not registered in ${all.join(" or ")}` };
     }
-    if (!existsSync(guard)) return { code: 1, message: `NPC Union hook: ${guard} not found; ${file} left unchanged` };
+    if (!existsSync(guard)) return { code: 1, message: `NPC Union hook: ${guard} not found; no settings file was changed` };
+    // Clear stale entries first: if the write below then fails, no guard runs and the installer warns,
+    // which is better than two guards competing for the same one-time approval.
+    const lines = others.map((f) => removeFrom(f, reads.get(f), guard, "(old entry) removed from")).filter(Boolean);
+    const read = reads.get(file);
     const next = addHook(read.settings, guard);
     if (read.existed && JSON.stringify(next) === JSON.stringify(read.settings)) {
-      return { code: 0, message: `NPC Union team hook already registered in ${file}` };
+      lines.push(`NPC Union team hook already registered in ${file}`);
+    } else {
+      writeSettingsAtomic(file, next, read.indent);
+      lines.push(`NPC Union team hook registered in ${file}`);
     }
-    writeSettingsAtomic(file, next, read.indent);
-    return { code: 0, message: `NPC Union team hook registered in ${file}` };
+    const note = gitignoreNote(file, env);
+    if (note) lines.push(note);
+    return { code: 0, message: lines.join("\n") };
   } catch (e) {
-    return { code: 1, message: `NPC Union hook: ${e.message}; ${file} left unchanged` };
+    return { code: 1, message: `NPC Union hook: ${e.message}` };
   }
 }
 

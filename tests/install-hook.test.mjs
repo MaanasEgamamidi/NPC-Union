@@ -1,5 +1,5 @@
-// Tests scripts/install-hook.mjs, which registers the team-rule hook in a settings.json for script installs.
-// Uses temp folders only, never a real ~/.claude.
+// Tests scripts/install-hook.mjs, which registers the team-rule hook in a settings file for script installs
+// (settings.local.json for a project, settings.json for ~/.claude). Uses temp folders only, never a real ~/.claude.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
@@ -158,6 +158,104 @@ test("CLI: accepts a settings.json with a UTF-8 BOM", () => {
   writeFileSync(file, '\uFEFF{"model":"opus"}');
   assert.equal(runCli(file, "--script", guard).status, 0);
   assert.equal(readJson(file).model, "opus");
+});
+
+test("CLI --also: registering moves an older install's entry out of settings.json and keeps its other keys", () => {
+  const { guard, npc } = installedCopy();
+  const claude = dirname(npc);
+  const local = join(claude, "settings.local.json");
+  const shared = join(claude, "settings.json");
+  // An older install wrote the hook into the committed settings.json, beside the team's own keys.
+  writeFileSync(shared, JSON.stringify({ model: "opus", hooks: { Stop: [{ hooks: [{ type: "command", command: "say hi" }] }] } }, null, 2) + "\n");
+  assert.equal(runCli(shared, "--script", guard).status, 0);
+  assert.equal(countOurHandlers(readJson(shared)), 1);
+  writeFileSync(local, JSON.stringify({ permissions: { allow: ["Bash(ls)"] } }));
+  const r = runCli(local, "--also", shared, "--script", guard);
+  assert.equal(r.status, 0, r.stderr);
+  assert.match(r.stdout, /old entry\) removed from .*settings\.json/);
+  assert.match(r.stdout, /registered in .*settings\.local\.json/);
+  assert.equal(countOurHandlers(readJson(local)), 1);
+  assert.deepEqual(readJson(local).permissions, { allow: ["Bash(ls)"] }, "Claude Code's own entries in the local file stay");
+  assert.deepEqual(readJson(shared), { model: "opus", hooks: { Stop: [{ hooks: [{ type: "command", command: "say hi" }] }] } });
+  // Running again changes nothing and adds no second entry.
+  const again = runCli(local, "--also", shared, "--script", guard);
+  assert.match(again.stdout, /already registered/);
+  assert.equal(countOurHandlers(readJson(local)), 1);
+  assert.equal(countOurHandlers(readJson(shared)), 0);
+});
+
+test("CLI --also: a settings.json that held only the old entry is removed; --remove clears both files", () => {
+  const { guard, npc } = installedCopy();
+  const local = join(dirname(npc), "settings.local.json");
+  const shared = join(dirname(npc), "settings.json");
+  assert.equal(runCli(shared, "--script", guard).status, 0);
+  assert.equal(runCli(local, "--also", shared, "--script", guard).status, 0);
+  assert.equal(existsSync(shared), false);
+  assert.equal(countOurHandlers(readJson(local)), 1);
+  // Uninstall over a mixed state: both files carry an entry.
+  writeFileSync(shared, JSON.stringify({ env: { A: "1" }, ...addHook({}, guard) }));
+  const r = runCli(local, "--also", shared, "--remove", "--script", guard);
+  assert.equal(r.status, 0, r.stderr);
+  assert.equal(existsSync(local), false, "local file held only our hook");
+  assert.deepEqual(readJson(shared), { env: { A: "1" } });
+  const none = runCli(local, "--also", shared, "--remove", "--script", guard);
+  assert.equal(none.status, 0);
+  assert.match(none.stdout, /not registered/);
+});
+
+test("CLI --also: a bad file anywhere leaves every file unchanged", () => {
+  const { guard, npc } = installedCopy();
+  const local = join(dirname(npc), "settings.local.json");
+  const shared = join(dirname(npc), "settings.json");
+  const bad = '{ "model": "opus", }\n';
+  writeFileSync(shared, bad);
+  const r = runCli(local, "--also", shared, "--script", guard);
+  assert.notEqual(r.status, 0);
+  assert.match(r.stderr, /not valid JSON.*no settings file was changed/);
+  assert.equal(existsSync(local), false);
+  assert.equal(readFileSync(shared, "utf8"), bad);
+  assert.equal(runCli(local, "--also").status, 2, "--also needs a path");
+});
+
+// git with no global or system config, so the developer's own excludes file (where Claude Code may already have
+// added settings.local.json) does not decide the result.
+function isolatedGit() {
+  const home = tmp();
+  const empty = join(home, "gitconfig");
+  writeFileSync(empty, "");
+  const env = { ...process.env, HOME: home, USERPROFILE: home, XDG_CONFIG_HOME: join(home, "xdg"), GIT_CONFIG_GLOBAL: empty, GIT_CONFIG_NOSYSTEM: "1" };
+  const git = (cwd, ...args) => spawnSync("git", args, { cwd, env, encoding: "utf8" });
+  return { env, git };
+}
+
+test("gitignore note: printed for a repo that does not ignore settings.local.json, silent otherwise", (t) => {
+  const { env, git } = isolatedGit();
+  if (git(tmp(), "--version").error) return t.skip("git not installed");
+  const { guard } = installedCopy();
+  const project = tmp(); // outside this checkout, which is itself a git repository
+  assert.equal(git(project, "init", "-q").status, 0);
+  const local = join(project, ".claude", "settings.local.json");
+  const shared = join(project, ".claude", "settings.json");
+  const cli = (...args) => spawnSync(process.execPath, [SCRIPT, ...args], { encoding: "utf8", env });
+
+  let r = cli(local, "--also", shared, "--script", guard);
+  assert.equal(r.status, 0, r.stderr);
+  assert.match(r.stdout, /^Note: .*settings\.local\.json is not ignored by git; add \.claude\/settings\.local\.json to \.gitignore/m);
+  assert.equal(r.stdout.trim().split("\n").length, 2, "one line for the registration, one for the note");
+  assert.equal(existsSync(join(project, ".gitignore")), false, "the user's .gitignore is never edited");
+
+  writeFileSync(join(project, ".gitignore"), ".claude/settings.local.json\n");
+  r = cli(local, "--also", shared, "--script", guard);
+  assert.doesNotMatch(r.stdout, /Note:/);
+
+  const plain = tmp(); // not a repository
+  r = cli(join(plain, ".claude", "settings.local.json"), "--script", guard);
+  assert.equal(r.status, 0, r.stderr);
+  assert.doesNotMatch(r.stdout, /Note:/);
+
+  // A user install registers in settings.json, which never gets the note.
+  r = cli(shared, "--also", local, "--script", guard);
+  assert.doesNotMatch(r.stdout, /Note:/);
 });
 
 test("the registered command, spawned as Claude Code does (exec form, no shell), denies an out-of-team agent", () => {

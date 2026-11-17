@@ -3,12 +3,13 @@
 # Usage: ./install.sh [--project DIR | --user] [--no-hook] [--uninstall]
 #   --project DIR  install into DIR/.claude (default: current directory)
 #   --user         install into ~/.claude
-#   --no-hook      do not register the team-rule hook in <target>/settings.json
+#   --no-hook      do not register the team-rule hook
 #   --uninstall    remove everything this installer added, including the hook
 # Copies agents into <target>/agents/npc-union/, skills into <target>/skills/<name>/,
 # and support files into <target>/npc-union/, rewriting ${CLAUDE_PLUGIN_ROOT} to that path.
-# Registers the team-rule hook (a PreToolUse hook on Agent|Task running npc-union/scripts/team-guard.mjs)
-# in <target>/settings.json through scripts/install-hook.mjs, keeping every other setting. Needs node.
+# Registers the team-rule hook (a PreToolUse hook on Agent|Task running npc-union/scripts/team-guard.mjs) through
+# scripts/install-hook.mjs, keeping every other setting. Needs node. The entry holds an absolute path, so a project
+# install puts it in <project>/.claude/settings.local.json (personal, not committed); --user uses ~/.claude/settings.json.
 set -euo pipefail
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TARGET="$(pwd)/.claude"; UNINSTALL=0; HOOK=1
@@ -18,18 +19,23 @@ while [ $# -gt 0 ]; do
     --user) TARGET="$HOME/.claude"; shift ;;
     --uninstall) UNINSTALL=1; shift ;;
     --no-hook) HOOK=0; shift ;;
-    -h|--help) sed -n 2,11p "$0"; exit 0 ;;
+    -h|--help) sed -n 2,12p "$0"; exit 0 ;;
     *) echo "Unknown option: $1" >&2; exit 2 ;;
   esac
 done
-ROOT="$TARGET/npc-union"; MANIFEST="$ROOT/.installed-skills"; SETTINGS="$TARGET/settings.json"
-# Runs install-hook.mjs; a failure (no node, settings.json not valid JSON) warns and does not stop the installer.
+ROOT="$TARGET/npc-union"; MANIFEST="$ROOT/.installed-skills"
+# The hook goes in settings.json only for ~/.claude; a project gets the uncommitted settings.local.json.
+# OTHER is the file that must not hold our entry (older installs wrote to settings.json); it is cleaned too.
+if [ "$TARGET" = "$HOME/.claude" ]; then SETTINGS="$TARGET/settings.json"; OTHER="$TARGET/settings.local.json"
+else SETTINGS="$TARGET/settings.local.json"; OTHER="$TARGET/settings.json"; fi
+# Runs install-hook.mjs; a failure (no node, a settings file not valid JSON) warns and does not stop the installer.
+# The checkout's copy comes first, so an uninstall uses the current script rather than an older installed one.
 hook() {
-  local script="$ROOT/scripts/install-hook.mjs"
-  [ -f "$script" ] || script="$SRC/scripts/install-hook.mjs"
+  local script="$SRC/scripts/install-hook.mjs"
+  [ -f "$script" ] || script="$ROOT/scripts/install-hook.mjs"
   if ! command -v node >/dev/null 2>&1; then echo "Warning: node not found, team hook not $1 in $SETTINGS" >&2; return 0; fi
-  if [ "$1" = registered ]; then node "$script" "$SETTINGS" --script "$ROOT/scripts/team-guard.mjs" || echo "Warning: team hook not registered" >&2
-  else [ -f "$SETTINGS" ] || return 0; node "$script" "$SETTINGS" --remove --script "$ROOT/scripts/team-guard.mjs" || echo "Warning: team hook not removed" >&2; fi
+  if [ "$1" = registered ]; then node "$script" "$SETTINGS" --also "$OTHER" --script "$ROOT/scripts/team-guard.mjs" || echo "Warning: team hook not registered" >&2
+  else node "$script" "$SETTINGS" --also "$OTHER" --remove --script "$ROOT/scripts/team-guard.mjs" || echo "Warning: team hook not removed" >&2; fi
 }
 if [ "$UNINSTALL" = 1 ]; then
   hook removed

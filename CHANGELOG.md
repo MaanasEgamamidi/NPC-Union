@@ -12,6 +12,7 @@ All notable changes to NPC Union are listed here. The format follows [Keep a Cha
 
 - Twelve claims in the law, history, defense and climate experts were checked against sources. Five were corrected, including Japan's 2018 agreement system, the daily walking distance, and the link between climate and earthquakes.
 - Seventeen `UNVERIFIED` markers in the knowledge base were resolved against sources, several with corrections (Unity's Pixel Perfect camera in URP, Godot's third-party licence list, Tempest, Guacamelee, Lumino City).
+- A project install by `install.sh` or `install.ps1` wrote the team-rule hook, with an absolute path on the installer's machine, into the project's `.claude/settings.json`. Teams usually commit that file, so the path reached git and the hook broke for everyone else. The hook now goes in `.claude/settings.local.json`, the per-user file; `--user` still uses `~/.claude/settings.json`. Installing again moves an older entry out of `settings.json`, uninstall removes it from both files, and the installer prints which file it used and notes when git does not ignore `settings.local.json`.
 
 ## [0.1.0] - 2026-11-16
 
