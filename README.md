@@ -134,7 +134,7 @@ The full list with portraits is in [docs/ROSTER.md](docs/ROSTER.md).
 
 ## Contributing
 
-New specialists are welcome. Run `/npc-union:new-specialist <topic>` to draft one, then follow [CONTRIBUTING.md](CONTRIBUTING.md). Checks: `node scripts/validate.mjs --strict` and `node --test tests/*.test.mjs`. Please read the [Code of Conduct](CODE_OF_CONDUCT.md) and report security issues as described in [SECURITY.md](SECURITY.md).
+New specialists are welcome. Run `/npc-union:new-specialist <topic>` to draft one, then follow [CONTRIBUTING.md](CONTRIBUTING.md). Checks: `node scripts/validate.mjs --strict` and `node --test tests/*.test.mjs`. Release notes are in [CHANGELOG.md](CHANGELOG.md). Please read the [Code of Conduct](CODE_OF_CONDUCT.md) and report security issues as described in [SECURITY.md](SECURITY.md).
 
 ## Licence
 

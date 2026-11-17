@@ -63,6 +63,24 @@ If a file is substantially based on [Claude-Code-Game-Studios](https://github.co
 - `node scripts/kb-stale.mjs` reports knowledge files past their `last_verified` age limit. A monthly workflow runs it with link checks and opens an issue.
 - CI also runs the routing eval's keyword baseline. If you add or reword an agent, add a case for it in `evals/routing/cases.json` and run `node scripts/eval-routing.mjs`. See [evals/routing/README.md](evals/routing/README.md).
 
+## Releasing
+
+1. Set `version` in `.claude-plugin/plugin.json` to the new number.
+2. In `CHANGELOG.md`, move the items under `## [Unreleased]` into a new `## [X.Y.Z] - YYYY-MM-DD` heading and leave `## [Unreleased]` empty above it.
+3. Run the checks CI runs:
+
+   ```bash
+   node scripts/validate.mjs --strict
+   node --test tests/*.test.mjs
+   node scripts/eval-routing.mjs --min-pass 0.8
+   node scripts/build-catalog.mjs --check
+   node scripts/build-index.mjs --check
+   ```
+
+   CI also runs the installer round trip on Linux and Windows, and `claude plugin validate` if the CLI installs.
+4. Commit, then tag the commit: `git tag vX.Y.Z`.
+5. Push the commit and the tag: `git push origin vX.Y.Z`.
+
 ## Writing style
 
 Plain and specific. No hype words, no filler intros. Do not state counts in prose unless a script generates them.
