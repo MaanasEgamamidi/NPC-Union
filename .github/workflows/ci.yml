@@ -31,7 +31,7 @@ jobs:
       - name: Claude plugin validate (if the CLI installs)
         continue-on-error: true
         run: |
-          npm install -g @anthropic-ai/claude-code && claude plugin validate .
+          npm install -g @anthropic-ai/claude-code && claude plugin validate . && claude plugin validate .claude-plugin/plugin.json
   windows-installer:
     runs-on: windows-latest
     steps:

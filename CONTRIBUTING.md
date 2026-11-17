@@ -60,6 +60,7 @@ If a file is substantially based on [Claude-Code-Game-Studios](https://github.co
 - One agent, or one related group, per pull request.
 - Fill in the pull request template, including how you checked facts.
 - CI runs the validator, tests, and a catalog freshness check. Regenerate the catalog if it fails.
+- `node scripts/kb-stale.mjs` reports knowledge files past their `last_verified` age limit. A monthly workflow runs it with link checks and opens an issue.
 - CI also runs the routing eval's keyword baseline. If you add or reword an agent, add a case for it in `evals/routing/cases.json` and run `node scripts/eval-routing.mjs`. See [evals/routing/README.md](evals/routing/README.md).
 
 ## Writing style
