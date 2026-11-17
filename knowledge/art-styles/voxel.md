@@ -20,7 +20,7 @@ All links below returned HTTP 200 on 2026-11-05. Notes on what to study are from
 | Cube World | https://en.wikipedia.org/wiki/Cube_World | Untextured flat-colour voxels, soft gradients across terrain, round chunky characters. Study colour-per-voxel shading without textures. |
 | 3D Dot Game Heroes | https://en.wikipedia.org/wiki/3D_Dot_Game_Heroes | 8-bit sprites extruded into 3D blocks. Study the sprite-to-voxel translation and toy-diorama camera. |
 | Crossy Road | https://en.wikipedia.org/wiki/Crossy_Road | Very low voxel counts per character, bright flat palette, fixed isometric-ish camera. Study silhouette readability at phone size. |
-| Voxatron | https://en.wikipedia.org/wiki/Voxatron | A fixed voxel "display" of 128x128x64 voxels (Lexaloffle FAQ, https://www.lexaloffle.com/voxatron.php?page=faq, checked 2026-11-16; the Wikipedia link redirects to "List of PC games (V)", which has no detail on the game) with a limited palette. Study hard constraints as a style. |
+| Voxatron | https://en.wikipedia.org/wiki/Voxatron | A fixed voxel "display" of 128x128x64 voxels (Lexaloffle FAQ, https://www.lexaloffle.com/voxatron.php?page=faq, checked 2026-11-16; the Wikipedia link redirects to "List of PC games (V)", which has no display or palette detail) with a limited palette. Study hard constraints as a style. |
 | Dragon Quest Builders | https://en.wikipedia.org/wiki/Dragon_Quest_Builders | Block world combined with smooth, non-voxel characters. Study the hybrid choice and where it helps character appeal. |
 
 ## Palette rules
