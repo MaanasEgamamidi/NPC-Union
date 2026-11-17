@@ -4,7 +4,13 @@ All notable changes to NPC Union are listed here. The format follows [Keep a Cha
 
 ## [Unreleased]
 
+### Added
+
+- 33 harder routing eval cases (103 in all): plain-language and symptom-only requests, confusable agents, keyword traps (new `t` prefix), forgotten production, legal and accessibility specialists, and domain experts paired with designers. On 2026-11-16 the keyword shortlist passed 83/103, Claude Opus 103/103 and Codex 102/103.
+
 ### Changed
+
+- The routing eval judges the hand-off against the router's own valid picks (those in `must`, `any` or `accept`) instead of the `must` agents alone, so picking an accepted agent from another department no longer counts as a wrong hand-off, and cases with an `any` group are scored too. A case's explicit `via` still wins.
 
 - The worked example in `docs/EXAMPLE.md` is a new run with web and shell access, so the specialists checked their Godot settings and one of them ran on Codex.
 

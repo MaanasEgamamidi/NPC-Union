@@ -40,13 +40,27 @@ export function validateCases(cases, agents) {
   return errors;
 }
 
-// The hand-off the route skill's step 3 asks for, worked out from where the must agents sit.
-// Returns null when the case leaves it open (an "any" pick could change the answer).
-export function expectedVia(c, agents) {
+// The hand-off the route skill's step 3 asks for. An explicit `via` in the case always wins.
+// With `picks`, it is worked out from the router's own valid picks (those in must, any or accept;
+// extras and avoided agents are ignored), and is null when a must is missing or the any group is
+// not met, because a hand-off for an incomplete team is not worth judging.
+// Without `picks`, it is worked out from the must agents, and is null when the case has an any group.
+export function expectedVia(c, agents, picks) {
   if (c.via) return c.via;
-  if (!(c.must || []).length || (c.any || []).length) return null;
+  const must = c.must || []; const any = c.any || [];
+  let names;
+  if (picks === undefined) {
+    if (!must.length || any.length) return null;
+    names = must;
+  } else {
+    const got = new Set(picks);
+    if (must.some((n) => !got.has(n)) || (any.length && !any.some((n) => got.has(n)))) return null;
+    const valid = new Set([...must, ...any, ...(c.accept || [])]);
+    names = [...got].filter((n) => valid.has(n));
+  }
   const byName = new Map(agents.map((a) => [a.name, a]));
-  const picked = c.must.map((n) => byName.get(n));
+  const picked = names.map((n) => byName.get(n)).filter(Boolean);
+  if (!picked.length) return null;
   const divisions = new Set(picked.map((a) => a.division));
   if (divisions.size > 1) return "shop-steward";
   const [division] = divisions;
@@ -54,7 +68,9 @@ export function expectedVia(c, agents) {
   return departments.size > 1 && division !== LEADERSHIP ? `${division}-lead` : "direct";
 }
 
-export function scoreCase(c, picks, via) {
+// Pass `agents` to judge `via` against the router's own picks (expectedVia). A precomputed
+// `c.viaExpected` overrides that; with neither, only an explicit `c.via` is scored.
+export function scoreCase(c, picks, via, agents) {
   const got = new Set(picks);
   const must = c.must || []; const any = c.any || [];
   const missing = must.filter((n) => !got.has(n));
@@ -66,7 +82,11 @@ export function scoreCase(c, picks, via) {
   const avoided = (c.avoid || []).filter((n) => got.has(n));
   const precision = picks.length ? (picks.length - extras.length) / picks.length : 0;
   const out = { id: c.id, picks, missing, anyOk, extras, avoided, recall, precision, pass: recall === 1 && avoided.length === 0 };
-  if (via !== undefined) { out.via = via; out.viaExpected = c.viaExpected ?? null; out.viaOk = out.viaExpected === null ? null : via === out.viaExpected; }
+  if (via !== undefined) {
+    out.via = via;
+    out.viaExpected = c.viaExpected !== undefined ? c.viaExpected : agents ? expectedVia(c, agents, picks) : c.via ?? null;
+    out.viaOk = out.viaExpected === null ? null : via === out.viaExpected;
+  }
   return out;
 }
 
@@ -152,7 +172,7 @@ function runModel(router, model, cases, agents, batchSize, log) {
     for (const c of batch) {
       const row = rows.get(c.id) || {};
       const raw = Array.isArray(row.specialists) ? row.specialists.map(String) : [];
-      const r = scoreCase(c, raw.filter((n) => names.has(n)), typeof row.via === "string" ? row.via : "");
+      const r = scoreCase(c, raw.filter((n) => names.has(n)), typeof row.via === "string" ? row.via : "", agents);
       r.unknown = raw.filter((n) => !names.has(n));
       if (!rows.has(c.id)) r.note = "the model returned no row for this case";
       results.push(r);
@@ -172,7 +192,6 @@ function main(argv) {
   const agents = loadAgents(); let cases = loadCases();
   const errors = validateCases(cases, agents);
   if (errors.length) { for (const e of errors) console.error(e); return 2; }
-  cases = cases.map((c) => ({ ...c, viaExpected: expectedVia(c, agents) }));
   if (only) cases = cases.filter((c) => c.id === only);
   if (!cases.length) { console.error(`No case with id ${only}`); return 2; }
 

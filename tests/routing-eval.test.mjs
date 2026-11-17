@@ -27,6 +27,26 @@ test("expectedVia follows the route skill: direct, division lead, or shop-stewar
   assert.equal(expectedVia({ must: ["godot-specialist", "composer"] }, agents), "shop-steward");
   assert.equal(expectedVia({ any: ["composer", "sfx-designer"] }, agents), null);
   assert.equal(expectedVia({ must: ["composer"], via: "shop-steward" }, agents), "shop-steward");
+  assert.equal(expectedVia({ must: ["budget-keeper"] }, agents), "direct", "leadership has no lead above it");
+});
+
+test("expectedVia judges the hand-off from the router's own valid picks", () => {
+  const s16 = { must: ["build-engineer"], accept: ["release-manager", "godot-specialist"] };
+  assert.equal(expectedVia(s16, agents, ["build-engineer"]), "direct");
+  assert.equal(expectedVia(s16, agents, ["build-engineer", "godot-specialist"]), "technical-lead", "an accept pick in another department counts");
+  assert.equal(expectedVia(s16, agents, ["build-engineer", "release-manager"]), "shop-steward", "an accept pick in another division counts");
+  assert.equal(expectedVia(s16, agents, ["build-engineer", "composer"]), "direct", "an extra pick is ignored");
+  assert.equal(expectedVia({ ...s16, avoid: ["composer"] }, agents, ["build-engineer", "composer"]), "direct", "an avoided pick is ignored");
+  assert.equal(expectedVia(s16, agents, ["godot-specialist"]), null, "a missing must leaves the hand-off unscored");
+  const anyCase = { any: ["composer", "sfx-designer"], accept: ["sprite-artist"] };
+  assert.equal(expectedVia(anyCase, agents, ["composer"]), "direct", "an any-group case is scored");
+  assert.equal(expectedVia(anyCase, agents, ["composer", "sprite-artist"]), "creative-lead");
+  assert.equal(expectedVia(anyCase, agents, ["sprite-artist"]), null, "an unmet any group leaves it unscored");
+  assert.equal(expectedVia({ must: ["composer"], via: "shop-steward" }, agents, ["sprite-artist"]), "shop-steward", "an explicit via always wins");
+  assert.equal(expectedVia({ must: ["budget-keeper"] }, agents, ["budget-keeper"]), "direct");
+  assert.equal(expectedVia({ must: ["budget-keeper"], accept: ["producer"] }, agents, ["budget-keeper", "producer"]), "shop-steward");
+  assert.equal(scoreCase(s16, ["build-engineer", "godot-specialist"], "technical-lead", agents).viaOk, true, "scoreCase uses the picks when given agents");
+  assert.equal(scoreCase(s16, ["godot-specialist"], "direct", agents).viaOk, null);
 });
 
 test("scoreCase counts must, any, accept and avoid", () => {
