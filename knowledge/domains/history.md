@@ -43,7 +43,7 @@ For period games, historical strategy, maps and borders, daily-life sims, war lo
 | Smithsonian Open Access images (https://registry.opendata.aws/smithsonian-open-access/) | Smithsonian | S3 bucket `smithsonian-open-access` (us-west-2), no AWS account (`--no-sign-request`) | CC0 | Images, metadata | Pushed weekly | Over 2.8 million CC0 2-D and 3-D images, a subset of the collections. Separate count: the archived GitHub repo (https://github.com/Smithsonian/OpenAccess) holds over 11 million metadata records as line-delimited JSON. si.edu/openaccess returned 403 to our fetcher |
 | Europeana APIs (https://europeana.atlassian.net/wiki/spaces/EF/pages/2462351393/Accessing+the+APIs) | Europeana Foundation | API key plus a Europeana account (account required since 28 May 2025); one personal key at a time | Metadata and media licences UNVERIFIED (pro.europeana.eu returned 403). Items stay with the holding institution, so rights differ per item | JSON | Live | Personal-key rate limits "progressively reduced until April 2026"; no figures published on that page. Project keys have higher limits. Wikipedia gives "over 50 million" records from 3,000+ institutions |
 | Pleiades (https://pleiades.stoa.org/downloads) | Pleiades community gazetteer | Download, no key | CC BY 3.0 (downloads page) | GIS-ready CSV, JSON (the only complete dump), KML, RDF Turtle; GeoJSON derived | JSON/CSV/KML exported daily; numbered releases quarterly (4.1, 28 May 2025) | Gazetteer of ancient places. Coverage is strongest for the Mediterranean, Near East and Nile; Central Asia, India and East Africa are partial. Do not use the legacy CSV ("DEPRECATED") |
-| Old Bailey Proceedings Online | Academic project (Wikipedia names Hertfordshire, Sheffield and Open University researchers) | Web; API exists | UNVERIFIED: oldbaileyonline.org returned 403 | Text | Static | Proceedings 1674-1913, "over 197,000 trials", plus Ordinary of Newgate's Accounts 1679-1772 (Wikipedia). Rich for London crime, speech and prices |
+| Old Bailey Proceedings Online | Academic project (Wikipedia names Hertfordshire, Sheffield and Open University researchers) | Web; API UNVERIFIED | UNVERIFIED: oldbaileyonline.org returned 403 | Text | Static | Proceedings 1674-1913, "over 197,000 trials", plus Ordinary of Newgate's Accounts 1679-1772 (Wikipedia). A large corpus of London criminal trials |
 | David Rumsey Map Collection (https://www.davidrumsey.com/about) | Stanford Libraries | Web, georeferencer, Google Earth | CC BY-NC-SA 3.0; commercial use needs permission | Images | Ongoing | Over 152,000 maps and images; georeferenced maps let you overlay a period map on modern terrain. Non-commercial licence: a paid game must ask first |
 | Wikidata (https://www.wikidata.org/wiki/Wikidata:Licensing) | Wikimedia | SPARQL / dumps | Structured data CC0; text in other namespaces CC BY-SA 4.0 | JSON, RDF | Live | Good for dates and places of people and events; crowd-edited, so cross-check with a primary source |
 | Internet Archive (https://archive.org/developers/) | Internet Archive | Item Metadata API, S3-like API, Python library | Archive "does not assert any new copyright" over items; each item's own rights apply | Varied | Live | No rate limits stated on the developer page. Many uploads are not public domain despite being free to view |
@@ -62,7 +62,7 @@ Acceptable simplifications:
 - Compressing travel and campaign time, if relative distances and seasons still matter.
 - A single named year and place for the whole game, with a visible register of deliberate departures.
 - Modern readable language with period terms for titles, money and objects.
-- Fictional characters inside a real setting (Attentat 1942's family, Pentiment's town of Tassing).
+- Fictional characters inside a real setting (Pentiment's fictional town of Tassing).
 
 Trust breakers for historians and enthusiasts:
 - Objects, foods or weapons that had not yet arrived (Tier 1 anachronism).
@@ -99,7 +99,7 @@ Popular myths, all corrected in Wikipedia's list of common misconceptions about 
 - Symbols of extremist regimes: legal treatment differs by country (Germany's USK case-by-case rule above). Hand off to `game-legal-advisor`.
 - Living descendants and named real people: defamation and personality-rights risk; flag to `game-legal-advisor`.
 - Indigenous and colonised cultures: consult the community; sacred objects and ceremonies may be off limits.
-- Image rights: CC0 (Met open access, Smithsonian Open Access) is safe for commercial games; CC BY-NC-SA (David Rumsey) is not without permission; Wikidata text outside structured data is share-alike.
+- Image rights: CC0 (Met open access, Smithsonian Open Access) carries no copyright restriction, but trademarks and personality rights can still apply; CC BY-NC-SA (David Rumsey) is not without permission; Wikidata text outside structured data is share-alike.
 
 ## How to check this is current
 

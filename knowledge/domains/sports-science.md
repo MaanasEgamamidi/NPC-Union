@@ -34,7 +34,7 @@ For sports management sims, athlete attributes, fatigue, form, injury and ageing
 
 | Name | Publisher | Access | Licence / terms (as stated) | Format | Cadence | Limit or pitfall |
 |---|---|---|---|---|---|---|
-| StatsBomb open data (https://github.com/statsbomb/open-data) | StatsBomb Services Ltd | GitHub download; registration of interest requested | README: credit StatsBomb and use its logo; for "research projects and genuine interest". `LICENSE.pdf` (User Agreement, updated 8 Sep 2023): the user may not "commercially exploit the data or any analysis derived" from it, nor distribute it to third parties | JSON (events, lineups, 360 frames for selected matches) | Irregular additions | Not usable to calibrate or ship a commercial game without written consent. Fine for prototypes and research write-ups with the logo credit |
+| StatsBomb open data (https://github.com/statsbomb/open-data) | StatsBomb Services Ltd | GitHub download; registration of interest requested | README: credit StatsBomb and use its logo; for "research projects and genuine interest". `LICENSE.pdf` (User Agreement, updated 8 Sep 2023): the user may not "commercially exploit the data or any analysis derived" from it, nor distribute it to third parties | JSON (events, lineups, 360 frames for selected matches) | Irregular additions | Research and non-commercial analysis only, with the logo credit. Calibrating or prototyping a commercial game with it is still commercial use: get written consent, and route to `game-legal-advisor` |
 | SkillCorner open data (https://github.com/SkillCorner/opendata) | SkillCorner | GitHub download | Repository is MIT licensed; README asks you to credit SkillCorner | JSON, JSONL tracking, CSV events | Sample | 10 A-League 2024/25 matches of broadcast tracking at 10 fps, coordinates in metres from pitch centre, plus season physical aggregates. Broadcast tracking is extrapolated from video, so off-screen players are estimated |
 | Metrica Sports sample data (https://github.com/metrica-sports/sample-data) | Metrica Sports | GitHub download | No licence named; "If you use it for anything public, please aknowledge the source" (sic) | CSV; game 3 in FIFA EPTS format with JSON events | Static | Three sample games of synchronised tracking and event data; positions 0-1 on a 105 x 68 m pitch. No licence means rights are unclear for a shipped product |
 | Retrosheet (https://www.retrosheet.org/notice.txt) | Retrosheet | Download | Any use including commercial, if the notice appears prominently: "The information used here was obtained free of charge from and is copyrighted by Retrosheet. Interested parties may contact Retrosheet at "www.retrosheet.org"." | Event files, CSV | Corrected over time | No accuracy guarantee; data is "subject to correction" |
@@ -67,13 +67,12 @@ Trust breakers for coaches and analysts:
 
 - Body metrics that shame: Wii Fit's BMI calculation labelled a UK child overweight, parents complained, and Nintendo apologised for any offence (Wikipedia). Make weight and BMI opt-in and default to performance and consistency measures.
 - Reusing "free" data that is not free for commercial use. StatsBomb's agreement forbids commercial exploitation of the data and of analysis derived from it.
-- Shipping on a fixed release date regardless of quality: Football Manager 25 was delayed three times and cancelled in February 2025; FM26 followed on 4 November 2025 (Wikipedia).
 
 ## Reference games
 
 | Game | Year | Developer | What to study | Link |
 |---|---|---|---|---|
-| Football Manager series | 2004 (FM2005) | Sports Interactive | Deep attribute and squad sim; Everton agreed in 2008 to use its database for scouting | https://en.wikipedia.org/wiki/Football_Manager |
+| Football Manager series | 2004 (FM2005) | Sports Interactive | Deep attribute and squad sim; Everton agreed in 2008 to use its database for scouting. FM25 was postponed twice and cancelled in February 2025; FM26 released 4 November 2025, so check which edition is current | https://en.wikipedia.org/wiki/Football_Manager |
 | Out of the Park Baseball | 1999 | Out of the Park Developments | Baseball management; MLB and MiLB licences from OOTP 16 (2015), MLBPA from OOTP 17 | https://en.wikipedia.org/wiki/Out_of_the_Park_Baseball |
 | Ring Fit Adventure | 2019 | Nintendo EPD | Exercise as turn-based combat input via Ring-Con strain sensor and leg strap; quiet mode swaps running for squats | https://en.wikipedia.org/wiki/Ring_Fit_Adventure |
 | Wii Fit | 2007 | Nintendo EAD | Fitness game with body-metric feedback; cautionary BMI terminology | https://en.wikipedia.org/wiki/Wii_Fit |
