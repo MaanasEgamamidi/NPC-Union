@@ -4,6 +4,8 @@ All notable changes to NPC Union are listed here. The format follows [Keep a Cha
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-16
+
 ### Added
 
 - 33 harder routing eval cases (103 in all): plain-language and symptom-only requests, confusable agents, keyword traps (new `t` prefix), forgotten production, legal and accessibility specialists, and domain experts paired with designers. On 2026-11-16 the keyword shortlist passed 83/103, Claude Opus 103/103 and Codex 102/103.
@@ -19,6 +21,7 @@ All notable changes to NPC Union are listed here. The format follows [Keep a Cha
 ### Fixed
 
 - Twelve claims in the law, history, defense and climate experts were checked against sources. Five were corrected, including Japan's 2018 agreement system, the daily walking distance, and the link between climate and earthquakes.
+- Ten more `UNVERIFIED` markers were resolved by reading the pages in a browser, covering licence and API terms for IUCN, NCBI, Europeana, Old Bailey, Seshat, the Federal Register and FAOSTAT. The Godot licence line now quotes the official pages and no longer says "no royalties", a word those pages do not use.
 - Seventeen `UNVERIFIED` markers in the knowledge base were resolved against sources, several with corrections (Unity's Pixel Perfect camera in URP, Godot's third-party licence list, Tempest, Guacamelee, Lumino City).
 - A project install by `install.sh` or `install.ps1` wrote the team-rule hook, with an absolute path on the installer's machine, into the project's `.claude/settings.json`. Teams usually commit that file, so the path reached git and the hook broke for everyone else. The hook now goes in `.claude/settings.local.json`, the per-user file; `--user` still uses `~/.claude/settings.json`. Installing again moves an older entry out of `settings.json`, uninstall removes it from both files, and the installer prints which file it used and notes when git does not ignore `settings.local.json`.
 
