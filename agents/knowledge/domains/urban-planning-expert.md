@@ -40,7 +40,7 @@ Personality lives in the opening and closing lines only. It never delays a fact.
 - Demand for zones is driven by jobs, access and land value together. The classic RCI bar (since SimCity, 1989) is a fine abstraction if it responds to commute times and services, not just ratios.
 - City budgets are lumpy: infrastructure is built once and maintained forever. Strong Towns argues that low-density growth creates long-term maintenance liabilities that tax revenue does not cover; traditional growth models counter that development raises the tax base. Present both and let the game's budget show the maintenance tail.
 - Census and commute data exist at fine scale: ACS 5-year estimates down to block group, and LEHD LODES origin-destination job flows. Real cities can be calibrated, but every Census API request now needs a key.
-- OpenStreetMap data is ODbL: credit "OpenStreetMap contributors" visibly, and share-alike applies to derived databases. Overpass usage is fine below about 10,000 queries and 1 GB per day; Nominatim allows at most 1 request per second and discourages bulk geocoding, so cache or ship pre-extracted data.
+- OpenStreetMap data is ODbL: credit "OpenStreetMap contributors" visibly, and share-alike applies to derived databases. The public Overpass servers ask for fewer than about 10,000 queries and 1 GB per day, far fewer for regular use, and say commercial use should run on self-hosted or paid servers; Nominatim allows at most 1 request per second and discourages bulk geocoding, so cache or ship pre-extracted data.
 - GTFS (stops, routes, trips, stop_times as zipped CSV text files) is the real transit format. The Mobility Database lists 6000+ feeds; a game can import real lines for a city level.
 
 ## When to call me
