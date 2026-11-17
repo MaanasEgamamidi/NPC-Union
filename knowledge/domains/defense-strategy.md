@@ -16,6 +16,8 @@ sources:
   - "https://en.wikipedia.org/wiki/OODA_loop"
   - "https://usnwc.edu/Research-and-Wargaming/Wargaming"
   - "https://www.gov.uk/government/publications/defence-wargaming-handbook"
+  - "https://assets.publishing.service.gov.uk/media/5a82e90d40f0b6230269d575/doctrine_uk_wargaming_handbook.pdf"
+  - "https://rulespal.com/tactics-ii/rulebook"
   - "https://en.wikipedia.org/wiki/War_Thunder"
   - "https://en.wikipedia.org/wiki/Arma_3"
   - "https://en.wikipedia.org/wiki/Tactics_II"
@@ -51,7 +53,7 @@ For wargames, grand strategy, military sims and games about war's effect on peop
 ## Standards and expert sources
 
 - US Naval War College: wargaming "since 1887", "more than 50 gaming events per year", from "complex, multi-sided computer-assisted games to simple, single-sided seminar games"; games "foster an understanding of the decisions" leaders make.
-- UK Ministry of Defence, *Wargaming Handbook* (first published 4 August 2017, updated 30 August 2017): wargaming at national strategic, strategic, operational and tactical levels, for education and training, planning and decision-making.
+- UK Ministry of Defence, *Wargaming Handbook* (first published 4 August 2017, updated 30 August 2017): wargaming at national strategic, strategic, operational and tactical levels, for education and training, planning and decision-making. From the PDF (DCDC, August 2017): "Wargaming is a decision-making technique" (1.5); elements are aim and objectives, setting and scenario, players ("Player decisions drive all wargames"), simulation, rules, procedures and adjudication, data and sources, supporting personnel and experts, and analysis (1.9); "Wargames are not predictive" (1.19); the design process "should determine the analysis plan" (2.17), and "An analysis plan should exist for both training and analytical wargames". Adjudication methods: free, rigid, semi-rigid, minimal/consensual (3.11).
 - UCDP for conflict events and deaths (commercial-friendly licence); SIPRI for spending and arms-transfer volumes (permission for commercial use); COW and ACLED with the licence limits above.
 
 ## Accuracy vs fun
@@ -82,7 +84,7 @@ Fun levers that are also accurate: cut supply lines, delayed orders, unreliable 
 | Game | Year | Developer | What to study | Link |
 |---|---|---|---|---|
 | Kriegsspiel | 1824 | Georg von Reisswitz | Umpire, hidden information, dice and loss tables; adopted by the Prussian army | https://en.wikipedia.org/wiki/Kriegsspiel |
-| Tactics II | 1958 | Charles S. Roberts (Avalon Hill) | Roberts' 1958 board wargame; he formed Avalon Hill to publish it | https://en.wikipedia.org/wiki/Tactics_II |
+| Tactics II | 1958 | Charles S. Roberts (Avalon Hill) | Roberts' 1958 board wargame; he formed Avalon Hill to publish it. Its rules compute "the odds at which the opposing units are fighting", then a die roll "plus the odds ratio" is read on the Combat Results Table (rulespal.com rulebook transcription; edition not stated) | https://en.wikipedia.org/wiki/Tactics_II |
 | This War of Mine | 2014 | 11 bit studios | Civilian experience of war rather than frontline combat | https://en.wikipedia.org/wiki/This_War_of_Mine |
 | Hearts of Iron IV | 2016 | Paradox Development Studio | Grand-strategy production (civilian factories build military factories and dockyards), customisable divisions | https://en.wikipedia.org/wiki/Hearts_of_Iron_IV |
 | Arma 3: Laws of War | 2017 (DLC) | Bohemia Interactive with the ICRC | Humanitarian demining, bomb disposal, civilian harm; part of earnings went to the Red Cross ($176,667 total) | https://en.wikipedia.org/wiki/Arma_3 |

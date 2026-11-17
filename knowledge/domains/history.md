@@ -18,6 +18,7 @@ sources:
   - "https://seshatdatabank.info/"
   - "https://en.wikipedia.org/wiki/Seshat_(project)"
   - "https://orbis.stanford.edu/"
+  - "https://gwern.net/doc/technology/2026-hall.pdf"
   - "https://ourworldindata.org/life-expectancy"
   - "https://en.wikipedia.org/wiki/List_of_common_misconceptions_about_history"
   - "https://usk.de/usk-beruecksichtigt-bei-altersfreigabe-von-spielen-kuenftig-sozialadaequanz/"
@@ -52,7 +53,7 @@ For period games, historical strategy, maps and borders, daily-life sims, war lo
 ## Standards and expert sources
 
 - Life expectancy: low historical life expectancy at birth was driven largely by child mortality. Our World in Data: "in 1800, no region had a life expectancy higher than 40 years"; a 15-year-old in France in 1816 could expect to reach 58 (OWID, CC BY). Wikipedia's misconceptions list: a 21-year-old man in medieval England could expect to reach about 64.
-- Travel: ORBIS (Stanford, Scheidel and Meeks) models Roman travel by road, river, coastal and open sea, by season, cost and speed, with donkey, wagon and carriage options. Use it to set travel times for antiquity instead of guessing. The home page gives no fixed speeds; no walking-pace figure is verified here.
+- Travel: ORBIS (Stanford, Scheidel and Meeks) models Roman travel by road, river, coastal and open sea, by season, cost and speed, with donkey, wagon and carriage options. Use it to set travel times for antiquity instead of guessing. The home page gives no fixed speeds. Jacob R. Hall, "Travel Speed over the Longue Durée" (European Review of Economic History, 2026, doi:10.1093/ereh/heag011), reports that ORBIS cites about 19 miles (roughly 30 km) a day for "travellers on foot with moderate loads"; medieval English and French royal itineraries average "15 to 20 miles per day", slower with the household baggage train. Hall also quotes Prestwich on Edward I ("fifteen miles seems to have been a comfortable distance") and Boyer's 1951 estimate that most journeys in 14th-century France ran "between twenty and thirty miles (per day)" (journeys of all kinds, not only on foot).
 - Maps: use a map dated to your year (David Rumsey, Library of Congress), and Pleiades for ancient place names and coordinates.
 - Germany, symbols: USK press release of 9 August 2018 lets rating boards apply the "social adequacy" clause (§ 86a Abs. 3 StGB) to games with symbols of unconstitutional organisations used for art, science or depicting history. Each case is reviewed individually and it "stellt keine generelle Ausnahme dar" (is not a blanket exception). Route to `game-legal-advisor`.
 

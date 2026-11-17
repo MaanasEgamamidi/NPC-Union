@@ -13,6 +13,9 @@ sources:
   - "https://www.usgs.gov/programs/earthquake-hazards/earthquake-magnitude-energy-release-and-shaking-intensity"
   - "https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php"
   - "https://earthquake.usgs.gov/fdsnws/event/1/"
+  - "https://www.usgs.gov/faqs/there-earthquake-weather"
+  - "https://www.usgs.gov/faqs/do-solar-flares-or-magnetic-storms-space-weather-cause-earthquakes"
+  - "https://science.nasa.gov/earth/climate-change/can-climate-affect-earthquakes-or-are-the-connections-shaky/"
   - "https://www.climateinteractive.org/en-roads/"
   - "https://en.wikipedia.org/wiki/SimEarth"
   - "https://en.wikipedia.org/wiki/Fate_of_the_World"
@@ -44,11 +47,12 @@ For climate and policy sims, weather systems, sea level and flooding, earthquake
 - **Sea level.** WGI SPM A.1.7: global mean sea level rose 0.20 [0.15 to 0.25] m from 1901 to 2018; the rate went from 1.3 mm per year (1901-1971) to 1.9 (1971-2006) to 3.7 (2006-2018). Projections relative to 1995-2014 (SYR B.3.1): 0.28-0.55 m by 2100 under SSP1-1.9 and 0.63-1.01 m under SSP5-8.5. Sea level rise "is unavoidable for centuries to millennia". A century of play is tens of centimetres to about a metre, not many metres; storms on top of that do the flooding.
 - **Hazards scale smoothly.** SYR SPM: "Every increment of global warming will intensify multiple and concurrent hazards". Scale hazard rates with the temperature variable, not with a switch at 2 °C.
 - **Earthquakes.** USGS: each whole magnitude step is a tenfold increase in recorded amplitude and about 32 times more energy. Magnitude is one number per quake; intensity (Modified Mercalli in the US) is the shaking at each place and falls with distance. Drive damage from intensity at the location, not from magnitude alone.
+- **Quakes are not weather or climate.** USGS FAQ "Is there earthquake weather?": "There is no such thing as 'earthquake weather'"; quakes are spread about equally across cold, hot and rainy weather. Very large low-pressure changes from major storms "are known to trigger episodes of fault slip (slow earthquakes)" and may play a role in some damaging quakes, but "the numbers are small and are not statistically significant." USGS space-weather FAQ: "earthquakes are driven by processes in the Earth's interior." NASA (Buis, 2019, updated 2024): climate-like stress changes can affect microseismicity (magnitudes below zero), and JPL's Paul Lundgren says "We're simply not in a position at this point to say that climate processes could trigger a large quake." Model quakes on their own geophysical system.
 - **Weather versus history.** Use a forecast API for live weather and ERA5 or station data for history; ERA5 is a 0.25-degree grid and will smooth mountains and coasts that a station sees.
 
 ## Standards and expert sources
 
-- IPCC AR6 Synthesis Report and Working Group I Summaries for Policymakers (PDFs, both downloaded and read today).
+- IPCC AR6 Synthesis Report and Working Group I Summaries for Policymakers (PDFs, both downloaded and read today). The HTML page https://www.ipcc.ch/report/ar6/syr/ returned 403 to WebFetch and plain curl on 2026-11-16 (it loaded with a browser user agent); the SPM PDF downloaded with plain curl. Use the PDFs.
 - NASA GISTEMP FAQ for anomaly baselines and why they differ.
 - Copernicus Climate Data Store catalogue JSON for ERA5 licence and latency.
 - USGS Earthquake Hazards Program for magnitude, intensity and feeds (the usgs.gov magnitude page loaded through WebFetch but returned 403 to plain curl).
@@ -67,7 +71,7 @@ Trust breakers for climate scientists:
 - Metres of sea level rise in a decade presented as realistic.
 - A single cold snap shown as evidence against warming.
 - Anomalies with no baseline, or two baselines mixed.
-- Earthquake damage scaled linearly with magnitude, or quakes caused by climate.
+- Earthquake damage scaled linearly with magnitude, or quakes driven by weather or climate (see USGS and NASA above).
 
 Fun levers that are also accurate: delayed payoffs, adaptation (seawalls, wetlands, raised buildings), carbon budgets as a shared resource, regional politics, early warning systems.
 
