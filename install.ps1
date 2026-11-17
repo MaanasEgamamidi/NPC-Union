@@ -1,12 +1,32 @@
 # NPC Union installer for Windows PowerShell, for people not using the Claude Code plugin system.
-# Usage: .\install.ps1 [-Project DIR | -User] [-Uninstall]
-param([string]$Project = (Get-Location).Path, [switch]$User, [switch]$Uninstall)
+# Usage: .\install.ps1 [-Project DIR | -User] [-NoHook] [-Uninstall]
+#   -Project DIR  install into DIR\.claude (default: current directory)
+#   -User         install into ~\.claude
+#   -NoHook       do not register the team-rule hook in <target>\settings.json
+#   -Uninstall    remove everything this installer added, including the hook
+# Copies agents into <target>\agents\npc-union\, skills into <target>\skills\<name>\,
+# and support files into <target>\npc-union\, rewriting ${CLAUDE_PLUGIN_ROOT} to that path.
+# Registers the team-rule hook (a PreToolUse hook on Agent|Task running npc-union/scripts/team-guard.mjs)
+# in <target>\settings.json through scripts/install-hook.mjs, keeping every other setting. Needs node.
+param([string]$Project = (Get-Location).Path, [switch]$User, [switch]$NoHook, [switch]$Uninstall)
 $ErrorActionPreference = "Stop"
 $Src = $PSScriptRoot
 $Target = if ($User) { Join-Path $HOME ".claude" } else { Join-Path (Resolve-Path $Project).Path ".claude" }
 $Root = Join-Path $Target "npc-union"
 $Manifest = Join-Path $Root ".installed-skills"
+$Settings = Join-Path $Target "settings.json"
+# Runs install-hook.mjs; a failure (no node, settings.json not valid JSON) warns and does not stop the installer.
+function Invoke-Hook([string]$What) {
+  $script = Join-Path $Root "scripts/install-hook.mjs"
+  if (-not (Test-Path $script)) { $script = Join-Path $Src "scripts/install-hook.mjs" }
+  if (-not (Get-Command node -ErrorAction SilentlyContinue)) { Write-Warning "node not found, team hook not $What in $Settings"; return }
+  $guard = Join-Path $Root "scripts/team-guard.mjs"
+  if ($What -eq "registered") { & node $script $Settings --script $guard }
+  else { if (-not (Test-Path $Settings)) { return }; & node $script $Settings --remove --script $guard }
+  if ($LASTEXITCODE -ne 0) { Write-Warning "team hook not $What" }
+}
 if ($Uninstall) {
+  Invoke-Hook "removed"
   if (Test-Path $Manifest) { Get-Content $Manifest | Where-Object { $_ } | ForEach-Object { Remove-Item -Recurse -Force (Join-Path $Target "skills/$_") -ErrorAction SilentlyContinue } }
   Remove-Item -Recurse -Force (Join-Path $Target "agents/npc-union"), $Root -ErrorAction SilentlyContinue
   Write-Host "NPC Union removed from $Target"; exit 0
@@ -33,4 +53,5 @@ Get-ChildItem -Directory (Join-Path $Root "skills") | ForEach-Object {
   New-Item -ItemType File -Force (Join-Path $dest ".npc-union") | Out-Null
   Add-Content -Path $Manifest -Value $_.Name
 }
+if (-not $NoHook) { Invoke-Hook "registered" }
 Write-Host "NPC Union installed into $Target. Start with: claude --agent shop-steward"
