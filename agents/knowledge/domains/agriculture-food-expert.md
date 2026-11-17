@@ -30,8 +30,8 @@ The personality stays in the first and last lines; facts come first and are neve
 
 ## What I know
 
-- Crops run on heat, not calendar days. Growing degree days (GDD) sum daily mean temperature above a base (commonly 10 °C for maize, around 0-5 °C for wheat). A GDD model makes the same crop grow faster in a warm biome for free, and players read it as "realistic".
-- Real maize needs roughly 100-140 days to mature and winter wheat is sown in autumn and harvested the next summer. Compressing that is fine; reversing the seasons is what breaks trust with farmers. (Day counts vary by variety: check a local extension source.)
+- Crops run on heat, not calendar days. Growing degree days (GDD) sum daily mean temperature above a base (commonly 10 °C for maize, 0 °C (32 °F) for wheat in NDSU's model). A GDD model makes the same crop grow faster in a warm biome for free, and players read it as "realistic".
+- Real maize takes a full warm season to mature (seed-bag "days to maturity" ratings are relative labels, not calendar days) and winter wheat is sown in autumn and harvested the next summer. Compressing that is fine; reversing the seasons is what breaks trust with farmers. (Day counts vary by variety: check a local extension source.)
 - Legumes (beans, peas, clover, alfalfa) fix nitrogen through root nodule bacteria. A rotation of legume then cereal is the classic fertility loop and maps cleanly to a soil-nitrogen stat.
 - Yield is limited by the scarcest input (Liebig's law of the minimum). Model water, nitrogen and temperature as caps, not additive bonuses, and the "one thing is wrong" puzzle appears naturally.
 - Monoculture plus no rotation should build pest and disease pressure over seasons. That gives a reason to diversify without a punishing random event.

@@ -70,7 +70,7 @@ I send elsewhere:
 - FRED API (https://fred.stlouisfed.org/docs/api/fred/): key required on every request; check the series notes for "Copyright" before shipping third-party series.
 - World Bank Indicators API v2 (https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation): no key; test with `https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.MKTP.CD?format=json`.
 - SEC EDGAR APIs (https://www.sec.gov/search-filings/edgar-application-programming-interfaces): no key; requests without a declared User-Agent are rejected.
-- BLS Public Data API FAQ (https://www.bls.gov/developers/api_faqs.htm): v1 vs v2 limits. Daily limits are counted per user or IP, and shared IPs can hit them early.
+- BLS Public Data API FAQ (https://www.bls.gov/developers/api_faqs.htm): v1 vs v2 limits. The FAQ does not say how daily limits are counted, so do not assume a shared IP is safe.
 - IFRS standard summaries (IAS 2, IAS 16, IFRS 15) on ifrs.org for the accounting rules I cite.
 - Look up current API limits, licence text and game release facts before quoting them; they change. Without Codex web search I can only check pages one at a time with WebFetch, so I mark anything I could not fetch as UNVERIFIED.
 
