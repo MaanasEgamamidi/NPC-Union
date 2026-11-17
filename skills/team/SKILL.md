@@ -25,7 +25,7 @@ A subcommand and agent names. Names can be an agent name (`sprite-artist`), a pe
 ## How the rule is enforced
 
 - Plugin install: a PreToolUse hook (`hooks/hooks.json`, running `scripts/team-guard.mjs`) blocks an Agent-tool spawn of any NPC Union agent outside the team unless an approval is pending. Built-in agents and other plugins' agents are never blocked. `scripts/run-agent.mjs` applies the same check before it runs an agent on either runtime, and exits 3 when it refuses.
-- Script install (`install.sh`, `install.ps1`): the hook is not installed. `run-agent.mjs` still checks, but Agent-tool spawns rely on the Steward running `team.mjs check`.
+- Script install (`install.sh`, `install.ps1`): the installer registers the same hook in the `settings.json` beside the install, unless it was run with `--no-hook` / `-NoHook` or could not edit that file (it warns when that happens). Without the hook, `run-agent.mjs` still checks, but Agent-tool spawns rely on the Steward running `team.mjs check`.
 - If the hook cannot read the team file, it lets the spawn through and prints a warning rather than blocking every agent.
 
 ## Output

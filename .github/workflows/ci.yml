@@ -23,11 +23,20 @@ jobs:
       - name: Installer round trip
         run: |
           T=$(mktemp -d)
+          # Counts our team-guard handlers in a settings.json (0 when the file is missing).
+          hooks() { node -e 'const f=process.argv[1],fs=require("fs");const s=fs.existsSync(f)?JSON.parse(fs.readFileSync(f,"utf8")):{};console.log((s.hooks?.PreToolUse??[]).filter(g=>g.matcher==="Agent|Task").flatMap(g=>g.hooks).filter(h=>h.command==="node"&&/npc-union\/scripts\/team-guard\.mjs$/.test(h.args?.[0]??"")).length)' "$1"; }
           ./install.sh --project "$T"
           test -f "$T/.claude/agents/npc-union/leadership/shop-steward.md"
           ! grep -rq 'CLAUDE_PLUGIN_ROOT' "$T/.claude/agents/npc-union"
+          ./install.sh --project "$T"
+          test "$(hooks "$T/.claude/settings.json")" = 1
           ./install.sh --uninstall --project "$T"
           test ! -d "$T/.claude/npc-union"
+          test "$(hooks "$T/.claude/settings.json")" = 0
+          N=$(mktemp -d)
+          ./install.sh --no-hook --project "$N"
+          test "$(hooks "$N/.claude/settings.json")" = 0
+          ./install.sh --uninstall --project "$N"
       - name: Claude plugin validate (if the CLI installs)
         continue-on-error: true
         run: |
@@ -40,7 +49,21 @@ jobs:
         shell: pwsh
         run: |
           $t = Join-Path $env:RUNNER_TEMP "npc"; New-Item -ItemType Directory -Force $t | Out-Null
+          # Counts our team-guard handlers in a settings.json (0 when the file is missing).
+          function Count-Hook($f) {
+            if (-not (Test-Path $f)) { return 0 }
+            $s = Get-Content -Raw $f | ConvertFrom-Json
+            @($s.hooks.PreToolUse | Where-Object { $_.matcher -eq "Agent|Task" } | ForEach-Object { $_.hooks } |
+              Where-Object { $_.command -eq "node" -and $_.args[0] -match 'npc-union/scripts/team-guard\.mjs$' }).Count
+          }
           ./install.ps1 -Project $t
           if (-not (Test-Path "$t/.claude/agents/npc-union/leadership/shop-steward.md")) { throw "agent missing" }
+          ./install.ps1 -Project $t
+          if ((Count-Hook "$t/.claude/settings.json") -ne 1) { throw "team hook not registered exactly once" }
           ./install.ps1 -Project $t -Uninstall
           if (Test-Path "$t/.claude/npc-union") { throw "uninstall failed" }
+          if ((Count-Hook "$t/.claude/settings.json") -ne 0) { throw "team hook not removed" }
+          $n = Join-Path $env:RUNNER_TEMP "npc-nohook"; New-Item -ItemType Directory -Force $n | Out-Null
+          ./install.ps1 -Project $n -NoHook
+          if ((Count-Hook "$n/.claude/settings.json") -ne 0) { throw "-NoHook still registered the hook" }
+          ./install.ps1 -Project $n -Uninstall
