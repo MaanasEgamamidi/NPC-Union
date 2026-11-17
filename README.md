@@ -43,7 +43,7 @@ You rarely need all 148. Pick the specialists for the job and the Steward works 
 - **Build it in the browser** (Assemble Team tab) from nine starter teams or card by card, then copy the command or download `team.json`.
 - **Or in Claude Code:** `/npc-union:team set game-designer,sprite-artist,composer`, or `/npc-union:team preset pixel-platformer`.
 - **The rule:** with a team active the Steward uses *only* those agents. If the work needs someone outside it, the Steward stops, names who and why, and asks you first. A yes covers that agent for that task only.
-- The team lives in your project at `.npc-union/team.json`, and `node scripts/team.mjs check <agent>` enforces it by script instead of by memory. Details: [How it works](docs/HOW-IT-WORKS.md#teams).
+- The team lives in your project at `.npc-union/team.json`. In the plugin, a hook blocks spawning an NPC Union agent outside the team, and `scripts/run-agent.mjs` refuses to run one, until you say yes and the Steward records it with `node scripts/team.mjs allow <agent>`. Each yes covers one run. The script installers do not install the hook, so there the Steward's own check is what holds for Agent-tool spawns. Details: [How it works](docs/HOW-IT-WORKS.md#teams).
 
 ## Install
 

@@ -47,9 +47,19 @@ You do not have to run all of the union on every job. Assemble a team, either in
 
 - The team is stored in your project at `.npc-union/team.json`. With no file, every agent is available.
 - With a team active, the Steward routes only to team members, and briefs them directly. It goes through a division lead only when the lead is on the team.
-- If the work needs someone outside the team, the Steward stops, names the agent and the reason, and asks you. A yes covers that agent for that task only.
+- If the work needs someone outside the team, the Steward stops, names the agent and the reason, and asks you. A yes covers that agent for one run only.
+- The Steward records your yes with `node scripts/team.mjs allow <agent>`. That writes a one-time approval to `.npc-union/approvals/`. The next spawn or run of that agent uses it up, so the run after that needs a new yes. An unused approval expires after an hour. `team.mjs show` lists pending approvals and `team.mjs revoke <agent>` drops them. Agents already on the team never need or use one.
 - Subagents cannot ask you questions. Every brief carries the team list and the rule "do not spawn anyone outside it; report NEED <agent> instead", so a lead hands the question back to the Steward.
-- `node scripts/team.mjs check <agent>` answers `in-team`, `no-team` or `outside-team`, so the rule is checked by a script, not by memory.
+- `node scripts/team.mjs check <agent>` answers `in-team`, `no-team` or `outside-team`. It only reads; it never uses an approval.
+
+### Enforcement
+
+- Plugin install: `hooks/hooks.json` registers a PreToolUse hook on the Agent tool that runs `scripts/team-guard.mjs`. With a team active, it blocks a spawn of any NPC Union agent outside the team, unless an approval is pending, in which case it uses the approval and lets the spawn through. The block message names the agent and gives the Steward the exact `allow` command to run after you say yes. Built-in agents (Explore, Plan, general-purpose), other plugins' agents and your own agents are never blocked.
+- The hook also fires when a lead spawns a specialist. An approval covers only the agent it names, so approving a lead does not approve the specialists under it, and whichever agent spawns the approved one first uses the approval. A lead that gets blocked is told to report `NEED <agent> (outside team)` instead of asking you.
+- `scripts/run-agent.mjs` applies the same check before it runs an agent on either runtime (Codex or `claude -p`), and exits 3 without running anything when the agent is outside the team and has no approval. `--dry-run` and `--which` skip the check.
+- If the hook cannot read its input or the team file, it lets the spawn through and prints a warning. A broken guard should not block every agent.
+- The team file is found at `NPC_UNION_TEAM_FILE` if set, otherwise `.npc-union/team.json` under the project folder Claude Code started in, otherwise under the current folder.
+- Script install (`install.sh`, `install.ps1`): the installers copy agents, skills and scripts but not `hooks/`, so no hook runs. There, Agent-tool spawns still rely on the Steward running `team.mjs check`. `run-agent.mjs` still enforces the rule for agents run through it.
 - Starter teams live in `catalog/teams.json` (`node scripts/team.mjs presets`).
 
 ## Runtimes
